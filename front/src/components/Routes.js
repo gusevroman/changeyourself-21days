@@ -22,7 +22,7 @@ function Routes (props) {
         <Registration />
       </Route>
       <Route exact path="/user/settings">
-        <Registration />
+        <Settings />
       </Route>
       <Route exact path="/user">
         <HomeAuth />

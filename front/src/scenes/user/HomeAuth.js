@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import CarouselAccount from "./Carousel/CarouselAccount";
-import InfoButton from "./infoButton/InfoButton";
-
 
 import Target from "./target/Target";
 
@@ -18,9 +16,8 @@ class HomeAuth extends React.Component {
     return (
       <>
          <h2  style={{ textAlign: "center", margin: "30px 0px" }}>Welcome {isLoggined}</h2>
-        < InfoButton />
+        <Target />
         < CarouselAccount />
-       <Target />
       </>
     );
   }
