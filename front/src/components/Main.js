@@ -1,17 +1,10 @@
 import React from "react";
-import Router from "../components/router/Routes";
+import Router from "./Routes";
 import Header from "./header/Header";
 import { BrowserRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 
 class Main extends React.Component{
-
-  // handleFormSubmit = () => {
-  //   const { isLoggined } = this.props;
-    
-  //   localStorage.setItem('isLoggined', isLoggined);
-  //   // localStorage.setItem('user', rememberMe ? user : '');
-  // };
   
   render(){      
     return (
