@@ -5,6 +5,7 @@ import Registration from '../scenes/Auth/Registration';
 import Home from '../scenes/home/Home';
 import { connect } from "react-redux";
 import HomeAuth from '../scenes/user/HomeAuth';
+import Settings from '../scenes/user/profile/settings';
 
 
 function Routes (props) {
