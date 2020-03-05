@@ -10,7 +10,9 @@ class Main extends React.Component{
     return (
         <BrowserRouter>
           <Header />
+          <div className="container">
           <Router />
+          </div>
         </BrowserRouter>
     );
   }
