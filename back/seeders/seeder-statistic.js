@@ -47,6 +47,15 @@ let target2 = new Target({
   status: 'completed',
   author: user2._id,
 } )
+let target3 = new Target({
+  title: "Бросить курить",
+  description: "Бросить курить за 21 день",
+  category: "Здоровье",
+  startDate: new Date( "01 01 2020" ),
+  endDate: new Date( "01 22 2020" ),
+  status: 'active',
+  author: user2._id,
+} )
 
 
 let method1 = new Method({
@@ -238,11 +247,12 @@ let method2 = new Method({
 })
 
 
-user2.targets = method1._id;
-user1.targets = method2._id;
+user2.targets = target1._id;
+user1.targets = target2._id;
 
 target1.method = method1._id;
 target2.method = method2._id;
+target3.method = method2._id;
 
 
 user1.save();
@@ -250,6 +260,7 @@ user2.save();
 
 target1.save();
 target2.save();
+target3.save();
 
 method1.save();
 method2.save();

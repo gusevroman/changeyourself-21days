@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Cathegory = require('../models/cathegory')
 
 /* GET home page. */
 router.get('/', async (req, res) => {
