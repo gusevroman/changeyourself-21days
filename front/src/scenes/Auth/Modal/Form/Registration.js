@@ -1,8 +1,6 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
-import { logIn } from "../../redux/actions";
+import { logIn } from "../../../../redux/actions";
 import { withRouter } from 'react-router-dom';
 
 class Registration extends React.Component {
@@ -43,26 +41,26 @@ class Registration extends React.Component {
       <>
         <h1 style={{ textAlign: "center", marginTop: "20px" }}>Регистрация</h1>
         { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2> }
-        <Form
+        <form
           style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/registration"
           onSubmit={this.registration}
         >
-          <Form.Group controlId="formBasicLogin">
-            <Form.Label>Login:</Form.Label>
-            <Form.Control type="Login" name="login" required />
-          </Form.Group>
+          <div >
+            <label>Login:</label>
+            <input type="Login" name="login" required />
+          </div>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password:</Form.Label>
-            <Form.Control type="password" name="password" required />
-          </Form.Group>
+          <div >
+            <label>Password:</label>
+            <input type="password" name="password" required />
+          </div>
 
-          <Button variant="dark" type="submit">
+          <button type="submit">
             Registration
-          </Button>
-        </Form>
-      </>
+          </button>
+        </form>
+        </>
     );
   }
 }

@@ -5,7 +5,9 @@ import { withRouter } from 'react-router-dom';
 import "./style.css";
 
 class Login extends React.Component {
+
   constructor(...args) {
+  
     super(...args);
     this.validate = this.validate.bind(this);
   }
@@ -36,9 +38,12 @@ class Login extends React.Component {
   };
 
   render() {
-
+    const loginForm = this.props.isLoginForm
+    console.log(loginForm);
+    
     return (
       <>
+
         <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Логин</h1>
         { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Неверный логин или пароль</h2> }
         <form
@@ -46,18 +51,18 @@ class Login extends React.Component {
           action="http://localhost:5000/login"
           onSubmit={this.validate}
         >
-          <div controlId="divBasicLogin">
+          <div >
             <label>Логин:</label>
             <input type="Login" name="login" required />
           </div>
 
-          <div controlId="formBasicPassword">
+          <div>
             <label>Пароль:</label>
             <input type="password" name="password" required />
           </div>
-          <div controlId="formBasicCheckbox" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+          <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
             <input type="checkbox" label="Чужой компухтер" name="saveUser" />
-          <button variant="dark" type="submit">Войти</button>
+          <button type="submit">Войти</button>
           </div>
         </form>
       </>
