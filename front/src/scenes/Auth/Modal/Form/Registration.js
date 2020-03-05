@@ -27,12 +27,12 @@ class Registration extends React.Component {
       body: JSON.stringify({ login, password })
     });
     const result = await response.json();
-    
+
     if (result.res) {
       logIn(result.res);
       this.props.history.push('/')
     } else {
-      this.setState({error: true})
+      this.setState({ error: true })
     }
   };
 
@@ -40,27 +40,26 @@ class Registration extends React.Component {
     return (
       <>
         <h1 style={{ textAlign: "center", marginTop: "20px" }}>Регистрация</h1>
-        { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2> }
+        {!this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2>}
         <form
           style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/registration"
           onSubmit={this.registration}
         >
           <div >
-            <label>Login:</label>
+            <label>Логин:</label>
             <input type="Login" name="login" required />
           </div>
 
           <div >
-            <label>Password:</label>
+            <label>Пароль:</label>
             <input type="password" name="password" required />
           </div>
-
-          <button type="submit">
-            Registration
-          </button>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <button className='btn' style={{ width: "270px", backgroundColor: 'green' }} type="submit">Создать</button>
+          </div>
         </form>
-        </>
+      </>
     );
   }
 }

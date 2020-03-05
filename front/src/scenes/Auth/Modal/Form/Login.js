@@ -44,7 +44,7 @@ class Login extends React.Component {
     return (
       <>
 
-        <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Логин</h1>
+        <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Вход</h1>
         { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Неверный логин или пароль</h2> }
         <form
           style={{ width: "600px", margin: "auto", textAlign: "center" }}
@@ -60,9 +60,8 @@ class Login extends React.Component {
             <label>Пароль:</label>
             <input type="password" name="password" required />
           </div>
-          <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-            <input type="checkbox" label="Чужой компухтер" name="saveUser" />
-          <button type="submit">Войти</button>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <button className='btn' style={{width: "270px", backgroundColor:'green'}} type="submit">Войти</button>
           </div>
         </form>
       </>

@@ -2,6 +2,9 @@
   background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
+.myModal-body {
+  box-shadow: 0 0px 15px #67ff52;
+}
 .myModal form {
   max-width: 500px;
   margin: 0 auto;
@@ -44,6 +47,13 @@
   color: white;
   font-size: 14px;
   font-weight: 200;
+}
+.myModal .btn {
+  cursor: pointer;
+}
+.myModal .auth-btn {
+  width: 170px;
+  background-color: grey;
 }
 .myModal button[type="submit"],
 .myModal input[type="submit"] {
