@@ -1,6 +1,6 @@
 import React from "react";
 // import store from '../redux/store';
-import { logout } from "../redux/actions";
+import { logout } from "../../redux/actions";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 

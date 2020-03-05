@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Login from '../../scenes/Login';
-import Registration from '../../scenes/Registration';
-import Home from '../../scenes/Home';
+import Login from '../../scenes/Auth/Login';
+import Registration from '../../scenes/Auth/Registration';
+import Home from '../../scenes/home/Home';
 import { connect } from "react-redux";
 
 

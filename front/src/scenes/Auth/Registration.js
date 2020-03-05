@@ -2,7 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
-import { logIn } from "../redux/actions";
+import { logIn } from "../../redux/actions";
 import { withRouter } from 'react-router-dom';
 
 class Registration extends React.Component {
