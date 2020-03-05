@@ -16,10 +16,6 @@ class Home extends React.Component {
       <>
           <h1 style={{ textAlign: "center", margin: "30px 0px" }}>Главная</h1>
 
-
-
-
-
       { isLoggined &&
          <HomeAuth />
       }
