@@ -1,9 +1,8 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
-import { logIn } from "../redux/actions";
+import { logIn } from "../../../../redux/actions";
 import { withRouter } from 'react-router-dom';
+import "./style.css";
 
 class Login extends React.Component {
   constructor(...args) {
@@ -37,29 +36,30 @@ class Login extends React.Component {
   };
 
   render() {
+
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "20px" }}>Логин</h1>
+        <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Логин</h1>
         { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Неверный логин или пароль</h2> }
-        <Form
+        <form
           style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/login"
           onSubmit={this.validate}
         >
-          <Form.Group controlId="formBasicLogin">
-            <Form.Label>Логин:</Form.Label>
-            <Form.Control type="Login" name="login" required />
-          </Form.Group>
+          <div controlId="divBasicLogin">
+            <label>Логин:</label>
+            <input type="Login" name="login" required />
+          </div>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Пароль:</Form.Label>
-            <Form.Control type="password" name="password" required />
-          </Form.Group>
-          <Form.Group controlId="formBasicCheckbox" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-            <Form.Check type="checkbox" label="Чужой компухтер" name="saveUser" />
-          <Button variant="dark" type="submit">Войти</Button>
-          </Form.Group>
-        </Form>
+          <div controlId="formBasicPassword">
+            <label>Пароль:</label>
+            <input type="password" name="password" required />
+          </div>
+          <div controlId="formBasicCheckbox" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+            <input type="checkbox" label="Чужой компухтер" name="saveUser" />
+          <button variant="dark" type="submit">Войти</button>
+          </div>
+        </form>
       </>
     );
   }
