@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 function getConnection() {
-  const db = "mongodb://localhost/mygame";
+  const db = "mongodb+srv://change:yourself@changeyourself-vyt2m.mongodb.net/21challenge?retryWrites=true&w=majority";
 
   mongoose.connect(db, {
     useNewUrlParser: true,

@@ -30,9 +30,7 @@ class Header extends React.Component {
          : 
           <>
             <LinkButton href="/" name="Главная" />
-            {/* <LinkButton href="/login" name="Логин" /> */}
             <Modal />
-            <LinkButton href="/registration" name="Регистрация" />
           </>
         }
         </nav>
