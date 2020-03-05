@@ -1,6 +1,4 @@
 import React from 'react';
-import './HomeAuth.css'
-// import { CSSTransitionGroup } from 'react-transition-group'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
