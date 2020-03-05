@@ -17,7 +17,6 @@ class Login extends React.Component {
 
   validate = async event => {
     event.preventDefault();
-    const saveUser = event.target.saveUser.checked
 
     const response = await fetch(event.target.action, {
       method: "POST",
@@ -30,7 +29,7 @@ class Login extends React.Component {
     const result = await response.json();
 
     if (result.res) {      
-      this.props.logIn(result.res, saveUser);
+      this.props.logIn(result.res);
       this.props.history.push('/');
     } else {
       this.setState({error: true})
@@ -76,7 +75,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (login, noSave) => dispatch(logIn(login, noSave))
+  logIn: (login) => dispatch(logIn(login))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

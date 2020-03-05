@@ -1,9 +1,8 @@
 import { LOGGINED, LOGOUT } from "./action-types";
 
-export const logIn = (login, noSave) => ({
+export const logIn = (login) => ({
   type: LOGGINED,
   login,
-  noSave
 });
 export const logout = () => ({
   type: LOGOUT,

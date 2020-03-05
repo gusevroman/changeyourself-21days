@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Statistic = require('../models/statistic');
 
 router.get('/', async (req, res, next) => {
   try {

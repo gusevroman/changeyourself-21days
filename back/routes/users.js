@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const Method = require('../models/method');
+const Target = require('../models/target');
 
 router.post('/registration', async (req, res) => {
   const { login, password } = req.body;
@@ -23,6 +25,13 @@ router.post('/login', async (req, res) => {
   } else {
     res.json({ res: false })
   }
+});
+
+router.post('/user/:login', async (req, res) => {
+  const { login } = req.params;
+  const user = await User.findOne({ login })
+  const targets = await Target.find({author: user._id});
+  res.json({targets})
 });
 
 
