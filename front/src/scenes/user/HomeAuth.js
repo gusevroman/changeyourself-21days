@@ -1,15 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
+import CarouselAccount from "./Carousel/CarouselAccount";
+import InfoButton from "./infoButton/InfoButton";
+
+
 import Target from "./target/Target";
 
 class HomeAuth extends React.Component {
 
+
+
   render() {
+
+    const { isLoggined } = this.props;
     return (
       <>
-         <h2  style={{ textAlign: "center", margin: "30px 0px" }}>Tut component target</h2>
-        <Target />
+         <h2  style={{ textAlign: "center", margin: "30px 0px" }}>Welcome {isLoggined}</h2>
+        < InfoButton />
+        < CarouselAccount />
+       <Target />
       </>
     );
   }
