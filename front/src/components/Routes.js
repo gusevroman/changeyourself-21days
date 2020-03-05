@@ -4,6 +4,7 @@ import Login from '../scenes/Auth/Login';
 import Registration from '../scenes/Auth/Registration';
 import Home from '../scenes/home/Home';
 import { connect } from "react-redux";
+import Settings from '../scenes/user/profile/settings';
 
 
 function Routes (props) {
@@ -18,6 +19,9 @@ function Routes (props) {
       </Route>
       <Route exact path="/registration">
         <Registration />
+      </Route>
+      <Route exact path="/settings">
+        <Settings />
       </Route>
     </Switch> 
   )
