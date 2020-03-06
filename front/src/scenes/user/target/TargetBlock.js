@@ -9,14 +9,10 @@ import { showTargets } from "../../../redux/actions";
 
 class TargetBlock extends React.Component {
 
-  state = {
-    targets: false,
-  }
 
   async componentDidMount() {
     const {targets} = await ( await fetch(`http://localhost:5000/user/${this.props.isLoggined}`,{method:"POST"})).json();    
     this.props.showTargets(targets);
-    this.setState({targets});
   }
 
     render() {
@@ -24,9 +20,9 @@ class TargetBlock extends React.Component {
       
         return (
             <>
-              { !this.state.targets 
+              { !this.props.targets 
                   ? <div>Загрузка 0</div>
-                  : this.state.targets.map((elem) => {
+                  : this.props.targets.map((elem) => {
                       return <Target parameters={elem}/>
                     })
 
