@@ -6,7 +6,9 @@ import Home from '../scenes/home/Home';
 import {connect} from "react-redux";
 import HomeAuth from '../scenes/user/HomeAuth';
 import Settings from '../scenes/user/profile/settings';
-import InfoMethod from "../scenes/user/infoMethod/InfoMethod";
+import SelectTarget from "../scenes/user/selectTarget/selectTarget";
+import TargetList from '../scenes/user/targetList/TargetList';
+
 
 
 function Routes(props) {
@@ -28,10 +30,12 @@ function Routes(props) {
             <Route exact path="/user">
                 <HomeAuth/>
             </Route>
-            <Route exact path="/methods/:id">
-                <InfoMethod />
+            <Route exact path="/newTarget">
+                <SelectTarget />
             </Route>
-             {/*<Route exact path="/methods/:id" render={(props) => (<InfoMethod id={props.match.params.id}/>)}/>*/}
+            <Route path="/target/:id">
+                <TargetList />
+            </Route>
         </Switch>
     )
 }

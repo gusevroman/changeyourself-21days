@@ -4,48 +4,10 @@ import { withRouter } from "react-router-dom";
 
 
 import CarouselAccount from "./Carousel/CarouselAccount";
+import TargetBlock from "./target/TargetBlock";
 
-
-import Target from "./target/Target";
 
 class HomeAuth extends React.Component {
-
-    state = {
-        methodData: [
-            {
-                id: '1313',
-                title: 'пить',
-                description: 'dafds',
-                days: [
-                    {
-                        number: 1,
-                        toDo: 'jhkjhkj'
-                    },
-                    {
-                        number: 2,
-                        toDo: 'wwww'
-                    }
-                ]
-            },
-            {
-                id: '09980987',
-                title: 'курить',
-                description: 'dafds',
-                days: [
-                    {
-                        number: 1,
-                        toDo: 'jhkjhkj'
-                    },
-                    {
-                        number: 2,
-                        toDo: 'tttttt'
-                    }
-                ]
-            }
-        ]
-    };
-
-
 
   render() {
 
@@ -53,7 +15,7 @@ class HomeAuth extends React.Component {
     return (
       <>
          <h2  style={{ textAlign: "center", margin: "30px 0px" }}>Welcome {isLoggined}</h2>
-        <Target methods={this.state.methodData}/>
+        <TargetBlock />
         < CarouselAccount />
       </>
     );
@@ -62,8 +24,6 @@ class HomeAuth extends React.Component {
 
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
-  login: state.login,
-  allPoints: state.allPoints
 });
 
 const mapDispatchToProps = dispatch => ({
