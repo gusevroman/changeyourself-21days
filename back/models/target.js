@@ -4,7 +4,7 @@ const targetSchema = new mongoose.Schema({
   title: String,
   description: String,
   category: [String],
-  teg: String,
+  tag: String,
   startDate: Date,
   endDate: Date,
   status: {
