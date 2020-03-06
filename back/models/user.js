@@ -8,10 +8,6 @@ const userSchema = new mongoose.Schema({
     about: String,
     tel: String,
     instagram: String,
-    targets: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Target'
-    },
 });
 
 module.exports = mongoose.model('User', userSchema);
