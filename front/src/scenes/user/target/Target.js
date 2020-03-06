@@ -1,54 +1,55 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 
 
 class Target extends React.Component {
 
-    render() {
-      const { parameters } = this.props;
+  render() {
+    const { parameters } = this.props;
 
-      // Получаем процент выполненных задач
-      // const days    = Math.ceil((Date.parse(parameters.endDate) - new Date()) / 1000 / 60 / 60 / 24);
-      let doneTasks = 0;
-      parameters.actions.forEach((elem) => {
-        elem.status &&  doneTasks++
-      })
-      const personts = (doneTasks * 100 / parameters.actions.length).toFixed(0);
+    // Получаем процент выполненных задач
+    // const days    = Math.ceil((Date.parse(parameters.endDate) - new Date()) / 1000 / 60 / 60 / 24);
+    let doneTasks = 0;
+    parameters.actions.forEach((elem) => {
+      elem.status && doneTasks++
+    })
+    const personts = (doneTasks * 100 / parameters.actions.length).toFixed(0);
 
-      // Узнаем закончилось ли задание 
-      let color = "progress-bar__";
-      switch (parameters.status){
-        case "active" :
-          color += "orange"
-          break;
-        case "fallen" :
-          color += "red"
-          break;
-        case "completed" :
-          color += "green"
-          break;
-      }
+    // Узнаем закончилось ли задание 
+    let color = "progress-bar__";
+    switch (parameters.status) {
+      case "active":
+        color += "orange"
+        break;
+      case "fallen":
+        color += "red"
+        break;
+      case "completed":
+        color += "green"
+        break;
+    }
 
-      // Узнаем сколько Времени осталось до конца времени
-      console.log(this.props);
-      
-        return (
-            <>
-              <div className="target">
-                <h2 className="target__title">{parameters.title}</h2>
+    // Узнаем сколько Времени осталось до конца времени
+    console.log(this.props);
+    let link=`/methods/${this.props.parameters._id}`
+    return (
+      <>
+      <Link to={link}>
+          <div className="target">
+            <h2 className="target__title">{parameters.title}</h2>
 
-                <div className="progress-bar">
-                  <span className={color} style={{flex: `0 0 ${personts}%`}}>{personts}%</span>
-                </div>
-
-              <h3 className="progress-bar__last">Осталось 1 дней</h3>
+            <div className="progress-bar">
+              <span className={color} style={{ flex: `0 0 ${personts}%` }}>{personts}%</span>
             </div>
 
-            </>
-        );
-    }
+            <h3 className="progress-bar__last">Осталось 1 дней</h3>
+          </div>
+          </Link>
+      </>
+    );
+  }
 }
 
 
@@ -90,11 +91,12 @@ class Target extends React.Component {
 
 
 const mapStateToProps = state => ({
-  isLoggined: state.isLoggined
+  isLoggined: state.isLoggined,
+  targets: state.targets
 });
 
 const mapDispatchToProps = dispatch => ({});
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(Target)
+  connect(mapStateToProps, mapDispatchToProps)(Target)
 );
