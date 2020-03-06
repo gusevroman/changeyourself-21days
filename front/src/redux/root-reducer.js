@@ -1,4 +1,4 @@
-import { LOGGINED, LOGOUT } from "./action-types";
+import { LOGGINED, LOGOUT, TARGETS } from "./action-types";
 
 const initialState = {
   isLoggined: localStorage.isLoggined || true,
@@ -18,6 +18,13 @@ export default (state = initialState, action) => {
         delete localStorage.isLoggined;
       return {
         state: initialState
+      }
+      case TARGETS:
+        console.log('aaaaa');
+        
+      return {
+        ...state,
+        targets: action.targets
       }
     default:
       return state;
