@@ -1,7 +1,7 @@
 import { LOGGINED, LOGOUT, TARGETS } from "./action-types";
 
 const initialState = {
-  isLoggined: localStorage.isLoggined || true,
+  isLoggined: localStorage.isLoggined || false,
 };
 
 export default (state = initialState, action) => {
