@@ -11,6 +11,7 @@ const DBconnection = require('./DBconnection');
 DBconnection();
 
 const usersRouter = require('./routes/users');
+
 const cathegoriesRouter = require('./routes/cathegories');
 const statisticRouter = require('./routes/statistic');
 const newTargetRouter = require('./routes/newTarget');
@@ -34,3 +35,5 @@ app.use('/getTags', getTagsRouter);
 
 module.exports = app
 
+
+module.exports = app;

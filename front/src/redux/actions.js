@@ -1,4 +1,4 @@
-import { LOGGINED, LOGOUT } from "./action-types";
+import { LOGGINED, LOGOUT, TARGETS } from "./action-types";
 
 export const logIn = (login) => ({
   type: LOGGINED,
@@ -7,9 +7,14 @@ export const logIn = (login) => ({
 export const logout = () => ({
   type: LOGOUT,
 });
+export const showTargets = (targets) => ({
+  type: TARGETS,
+  targets: targets
+});
 
 
 export default {
   logIn,
   logout,
+  showTargets
 };
