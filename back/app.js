@@ -11,9 +11,6 @@ const DBconnection = require('./DBconnection');
 DBconnection();
 
 const usersRouter = require('./routes/users');
-const cathegoriesRouter = require('./routes/cathegories');
-const statisticRouter = require('./routes/statistic');
-
 
 const app = express();
 
@@ -25,8 +22,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', usersRouter);
-app.use('/cathegories', cathegoriesRouter);
-app.use('/statistic', statisticRouter);
 
 module.exports = app
 

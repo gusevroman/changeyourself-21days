@@ -32,9 +32,9 @@ let target1 = new Target({
   title: "Бросить курить",
   description: "Бросить курить за 21 день",
   category: "Здоровье",
+  teg: "Курение",
   startDate: new Date( "03 01 2020" ),
   endDate: new Date( "03 22 2020" ),
-  status: 'active',
   author: user1._id,
 } )
 
@@ -42,15 +42,18 @@ let target2 = new Target({
   title: "Подтянись 25 раз",
   description: "Научится подтягиваться 25 раз за 3 недели",
   category: ["Здоровье", "Спорт"],
+  teg: "Подтягивания",
   startDate: new Date( "02 05 2020" ),
   endDate: new Date( "02 26 2020" ),
   status: 'completed',
   author: user2._id,
 } )
+
 let target3 = new Target({
   title: "Бросить курить",
   description: "Бросить курить за 21 день",
   category: "Здоровье",
+  teg: "Курение",
   startDate: new Date( "01 01 2020" ),
   endDate: new Date( "01 22 2020" ),
   status: 'active',
@@ -251,8 +254,12 @@ user2.targets = target1._id;
 user1.targets = target2._id;
 
 target1.method = method1._id;
+target1.actions = method1.method;
 target2.method = method2._id;
+target2.actions = method2.method;
 target3.method = method2._id;
+target3.actions = method2.method;
+
 
 
 user1.save();
