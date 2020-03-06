@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     targets: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Target'
-  },
+    },
 });
 
 module.exports = mongoose.model('User', userSchema);
