@@ -12,8 +12,6 @@ DBconnection();
 
 const usersRouter = require('./routes/users');
 
-const cathegoriesRouter = require('./routes/cathegories');
-const statisticRouter = require('./routes/statistic');
 const newTargetRouter = require('./routes/newTarget');
 const getTagsRouter = require('./routes/getTags');
 
@@ -28,8 +26,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', usersRouter);
-app.use('/cathegories', cathegoriesRouter);
-app.use('/statistic', statisticRouter);
 app.use('/newTarget', newTargetRouter);
 app.use('/getTags', getTagsRouter);
 

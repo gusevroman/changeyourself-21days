@@ -1,8 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
 import './selectTarget.css'
-import {logIn} from "../../../redux/actions";
-
 
 class SelectTarget extends React.Component {
     state = {
