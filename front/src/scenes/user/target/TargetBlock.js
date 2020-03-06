@@ -2,7 +2,6 @@ import React from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import Target from "./Target";
-
 import { showTargets } from "../../../redux/actions";
 
 
@@ -16,7 +15,7 @@ class TargetBlock extends React.Component {
   }
 
     render() {
-      console.log(this.props);
+      // console.log(this.props);
       
         return (
             <>

@@ -27,6 +27,13 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/user/target/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(id)
+  const target = await Target.findById({_id: id} )
+  res.json({target})
+});
+
 router.post('/user/:login', async (req, res) => {
   const { login } = req.params;
   const user = await User.findOne({ login })

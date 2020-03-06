@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 
 
@@ -159,21 +159,21 @@ class Target extends React.Component {
                 </div>
 
               <h3 className="progress-bar__last">{text}</h3>
-            </div>
-
+              </div>
             </>
-        );
-    }
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-  isLoggined: state.isLoggined
+  isLoggined: state.isLoggined,
+  targets: state.targets
 });
 
 const mapDispatchToProps = dispatch => ({});
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(Target)
+  connect(mapStateToProps, mapDispatchToProps)(Target)
 );
 
 
