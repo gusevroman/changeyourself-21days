@@ -20,7 +20,7 @@ class TargetBlock extends React.Component {
               { !this.props.targets 
                   ? <div>Загрузка 0</div>
                   : this.props.targets.map((elem) => {
-                      return <Target parameters={elem}/>
+                      return <Target parameters={elem} key={elem.id}/>
                     })
 
               }
