@@ -318,9 +318,11 @@ html,
   padding: 25px 10px;
   flex: 0 0 45%;
   overflow: hidden;
+  transition: 1s;
 }
 .topMethods .content__column:hover {
-  box-shadow: 0 0 5px white;
+  border: 2px solid #808080;
+  box-shadow: 0 0 15px #000;
 }
 .topMethods .content__title {
   font-size: 26px;
@@ -355,6 +357,7 @@ html,
 }
 .topMethods .content__info:hover {
   color: #000;
+  border: 2px solid #000;
   background-color: #e6e6e6;
   box-shadow: 0 0 15px #fff;
 }

@@ -35,7 +35,18 @@ export default class Modal extends React.Component {
 
           <div className="myModal">
             <div className="myModal-body">
+            <div className="myModal__btns">
             <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit}/>
+            {this.state.isLoginForm
+                ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
+                    Регистрация
+                  </div>
+                : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
+                    Вход
+                  </div>
+            }
+
+            </div>
               {this.state.isLoginForm
                 ?
                 <Login login={this.state.isLoginForm} />
@@ -44,18 +55,6 @@ export default class Modal extends React.Component {
               }
               <br></br>
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-                {this.state.isLoginForm
-                ?
-              <button className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
-                  Регистрация
-              </button>
-              :
-              <button className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
-                  Вход
-              </button>
-                }
- 
- 
               </div>
             </div>
           </div>
