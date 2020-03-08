@@ -1,0 +1,8 @@
+.target_spoiler {
+  border: 2px solid #fff;
+  min-height: 50px;
+  border-radius: 15px;
+}
+.target_spoiler_title {
+  margin-left: 30px;
+}
