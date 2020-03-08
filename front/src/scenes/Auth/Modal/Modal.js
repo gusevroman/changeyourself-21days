@@ -20,7 +20,6 @@ export default class Modal extends React.Component {
 
 
   render() {
-    console.log(this.state.login);
 
     return (
       <React.Fragment>
@@ -35,7 +34,10 @@ export default class Modal extends React.Component {
 
           <div className="myModal">
             <div className="myModal-body">
+            <div className="close">
+
             <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit}/>
+            </div>
               {this.state.isLoginForm
                 ?
                 <Login login={this.state.isLoginForm} />
