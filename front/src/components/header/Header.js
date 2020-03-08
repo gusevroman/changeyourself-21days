@@ -15,18 +15,19 @@ class Header extends React.Component {
   logout() {
     this.props.logout();
     this.props.history.push("/");
-  }
+  } 
 
   render() {
     const { isLoggined } = this.props;
     return (
-      <header style={{ position: "relative" }} bg="dark" variant="dark">
+      <header bg="dark" variant="dark">
         <nav className="nav">
         {isLoggined ? 
-          <div className="logout">
+          <>
             <LinkButton href="/" name="Главная" />
-            <Link to="/" onClick={this.logout} className="link" >Выйти</Link>
-          </div>
+            <LinkButton href="/user/settings" name="Настройки"/>
+            {/* <Link to="/" onClick={this.logout} className="link" >Выйти</Link> */}
+          </>
          : 
           <>
             <LinkButton href="/" name="Главная" />

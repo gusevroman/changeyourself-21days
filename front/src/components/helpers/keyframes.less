@@ -1,0 +1,40 @@
+// main: ../../index.less
+
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
+      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+  }
+  50% {
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.3) inset,
+      0 -5px 5px rgba(255, 255, 255, 0.3) inset;
+  }
+  100% {
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
+      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+  }
+}
+
+@keyframes stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    width: 95%;
+  }
+}

@@ -81,8 +81,9 @@ class Target extends React.Component {
       const { days, hours, minutes, seconds } = this.state;
       text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`;
     }
-
     const link = `/target/${this.props.parameters._id}`;
+
+
     return (
       <>
         <div

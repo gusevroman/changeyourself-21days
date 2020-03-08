@@ -70,7 +70,6 @@ class SelectTarget extends React.Component {
     };
 
     render() {
-        console.log('llllll', this.state.uniqMet);
         return (
             <>
                 <div className="mainFlex">

@@ -15,7 +15,7 @@
   .content {
     &__column {
       box-sizing: border-box;
-      border: 2px solid white;
+      border: 2px solid @mainColor;
       border-radius: 25px;
       margin: 20px 0px;
       padding: 25px 10px;
@@ -23,8 +23,8 @@
       overflow: hidden;
       transition: 1s;
       &:hover {
-        border: 2px solid darken(#fff,50%);
-        box-shadow: 0 0 15px #000;
+        border: 2px solid darken(@mainColor, 20%);
+        box-shadow: 0 0 15px @mainColor;
       }
     }
 
@@ -54,18 +54,18 @@
       box-sizing: border-box;
       font-weight: 800;
       width: 160px;
-      color: #000;
-      border: 2px solid #fff;
-      background-color: #fff;
+      color: @mainColorText;
+      border: 2px solid @mainColor;
+      background-color: @mainColor;
       border-radius: 20px;
       padding: 10px;
       margin: 30px auto 0px;
-      transition: .2s;
+      transition: .3s;
       &:hover{
-        color: #000;
-        border: 2px solid #000;
-        background-color: darken(#fff,10%);
-        box-shadow: 0 0 15px #fff;
+        color: @mainColor;
+        border: 2px solid @mainColor;
+        background-color: @mainBgColor;
+        box-shadow: 0 0 15px  @mainColor;
       }
     }
   }
