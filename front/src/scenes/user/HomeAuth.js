@@ -16,7 +16,7 @@ class HomeAuth extends React.Component {
       <>
          <h2  style={{ textAlign: "center", margin: "30px 0px" }}>Welcome {isLoggined}</h2>
         <TargetBlock />
-        < CarouselAccount />
+        <CarouselAccount />
       </>
     );
   }

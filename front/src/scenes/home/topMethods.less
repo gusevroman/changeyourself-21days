@@ -1,72 +1,67 @@
 // main: ../../index.less
-
 .topMethods {
-  margin: 30px -20px;
-  &__title {
-    text-align: center;
-  }
-  &__content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-  .content {
-    &__column {
-      box-sizing: border-box;
-      border: 2px solid white;
-      border-radius: 25px;
-      margin: 20px 0px;
-      padding: 25px 10px;
-      flex: 0 0 45%;
-      overflow: hidden;
-      transition: 1s;
-      &:hover {
-        border: 2px solid darken(#fff,50%);
-        box-shadow: 0 0 15px #000;
-      }
-    }
-
-    &__title {
-      font-size: 26px;
-      margin: 0px 0px 10px;
-    }
-
-    &__text {
-      max-height: 74px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      flex: 0 0 100%;
-    }
-
-    &__likes {
-      margin: 20px 0px 0px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    &__info {
-      display: block;
-      text-decoration: none;
-      box-sizing: border-box;
-      font-weight: 800;
-      width: 160px;
-      color: #000;
-      border: 2px solid #fff;
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 10px;
-      margin: 30px auto 0px;
-      transition: .2s;
-      &:hover{
-        color: #000;
-        border: 2px solid #000;
-        background-color: darken(#fff,10%);
-        box-shadow: 0 0 15px #fff;
-      }
-    }
-  }
+	margin: 30px -20px;
+	&__title {
+		text-align: center;
+	}
+	&__content {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		flex-wrap: wrap;
+	}
+	.content {
+		&__column {
+			box-sizing: border-box;
+			border: 2px solid white;
+			border-radius: 25px;
+			margin: 20px 0px;
+			padding: 25px 10px;
+			flex: 0 0 45%;
+			overflow: hidden;
+			transition: 1s;
+			&:hover {
+				border: 2px solid darken(#fff, 50%);
+				box-shadow: 0 0 15px #000;
+			}
+		}
+		&__title {
+			font-size: 26px;
+			margin: 0px 0px 10px;
+		}
+		&__text {
+			max-height: 74px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			flex: 0 0 100%;
+		}
+		&__likes {
+			margin: 20px 0px 0px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		&__info {
+			display: block;
+			text-decoration: none;
+			box-sizing: border-box;
+			font-weight: 800;
+			width: 160px;
+			color: #000;
+			border: 2px solid #fff;
+			background-color: #fff;
+			border-radius: 20px;
+			padding: 10px;
+			margin: 30px auto 0px;
+			transition: 0.2s;
+			&:hover {
+				color: #000;
+				border: 2px solid #000;
+				background-color: darken(#fff, 10%);
+				box-shadow: 0 0 15px #fff;
+			}
+		}
+	}
 }
