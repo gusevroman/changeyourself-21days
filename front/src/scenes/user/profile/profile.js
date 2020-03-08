@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import { showProfile } from '../../../redux/actions';
 
 
-class Profile extends React.Component {
+class Profile extends Component {
   state = {
     name: '',
     avatar: "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png",
@@ -13,11 +13,6 @@ class Profile extends React.Component {
     tel: '',
     instagram: '',
     about: '',
-    targets: [
-      { target: 'Для теста: Run a marathon in 3 mounths' },
-      { target: 'Для теста: Start smoking in 21 days' },
-      { target: 'Для теста: Learn React in 30 days' }
-    ],
   }
 
   componentDidMount() {
@@ -55,12 +50,6 @@ class Profile extends React.Component {
           <span className="profile">{tel}</span><br />
           <span className="profile">{instagram}</span><br />
         </div>
-        <div>
-          Мои цели:
-          <span className="profile">
-            {targets.map(target => <div>{target.target} </div>)}
-          </span><br />
-        </div>
       </div>)
   }
 
@@ -80,7 +69,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  showProfile: (profile) => dispatch(showProfile(profile))
+  showProfile: (profile) => dispatch(showProfile(profile)),
 });
 
 export default withRouter(

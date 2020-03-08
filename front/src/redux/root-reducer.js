@@ -20,14 +20,11 @@ export default (state = initialState, action) => {
         state: initialState
       }
     case TARGETS:
-      console.log('Reducer case TARGETS');
-
       return {
         ...state,
         targets: action.targets
       }
     case PROFILE:
-      console.log('Reducer case PROFILE')
       return {
         ...state,
         profile: action.profile
