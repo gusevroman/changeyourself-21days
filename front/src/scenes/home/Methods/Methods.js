@@ -12,6 +12,8 @@ class Methods extends React.Component {
   async componentDidMount() {
     const methods = await (await fetch("http://localhost:5000/method",{method:"POST"})).json();
     this.setState({methods})
+    
+    // console.log('STATEEEEEE>>>>', this.state);
   }
   render() {
     return (

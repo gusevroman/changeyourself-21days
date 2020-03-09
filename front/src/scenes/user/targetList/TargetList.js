@@ -10,15 +10,14 @@ class TargetList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      target: 0,
-      days: '',
-      hours: '',
-      minutes: '',
-      seconds: '',
-
-    }
   }
+      state = {
+        target: ['123'],
+        days: '',
+        hours: '',
+        minutes: '',
+        seconds: '',
+      }
 
   getCountdown() {
     const date = Date.parse(this.state.target.endDate);
@@ -45,13 +44,14 @@ class TargetList extends React.Component {
   }
 
 
-  async componentWillMount() {
-    const { target } = await (await fetch(`http://localhost:5000/user/target/${this.props.match.params.id}`, { method: "GET" })).json();
-    this.setState({ target: target })
+  // async componentWillMount() {
 
-  }
+  // }
 
-  componentDidMount() {
+ async componentDidMount() {
+  const  action  = await (await fetch(`http://localhost:5000/user/target/${this.props.match.params.id}`, { method: "GET" })).json();  
+  this.setState({ target: action.target })
+
     if ((new Date() - Date.parse(this.state.target.endDate)) < 0) {
       this.getCountdown();
 
@@ -79,19 +79,24 @@ class TargetList extends React.Component {
       text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`
     }
 
+    // console.log('ZAPIS V STATE', this.state.target.actions);
+//  const {actions} = target.actions
+    console.log('PEREDAU eb4nii target',  target.actions)
     return (
       <>
-        <div>
-          ID фрагмента:{target._id}
-        </div>
+
+
         <TargetHead target={target} text={text} />
-
-
-        <div className="target">
-          <h2 className="target__title">actions</h2>
-
-          <TargetDay list={target} />
+             <div className="target:hover">
+          <h2 className="target__title"></h2>
+        {
+          target.actions && target.actions.map((elem)=>{
+          return ( <TargetDay day={elem} id={target._id}/>
+        )
+          })
+        }
         </div>
+       
 
       </>
     )

@@ -1,16 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 import Home from '../scenes/home/Home';
-import Profile from '../scenes/user/profile/profile';
+import Profile from '../scenes/user/profile/Profile';
 import SelectTarget from "../scenes/user/selectTarget/selectTarget";
 import TargetList from '../scenes/user/targetList/TargetList';
 import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
 import Personal from '../scenes/user/Personal'
 
 function Routes() {
-
     return (
         <Switch>
             <Route exact path="/">
@@ -33,6 +32,7 @@ function Routes() {
             </Route>
         </Switch>
     )
+
 }
 
 export default connect()(Routes)
