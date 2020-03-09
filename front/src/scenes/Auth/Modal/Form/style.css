@@ -6,9 +6,17 @@
   opacity: 1;
   box-shadow: 0 0px 15px #67ff52;
 }
+.myModal__btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .myModal form {
   max-width: 500px;
   margin: 0 auto;
+  width: 600px;
+  margin: auto;
+  text-align: center;
 }
 .myModal h1 {
   font-weight: 100;
@@ -57,8 +65,17 @@
   justify-content: flex-end;
 }
 .myModal .auth-btn {
+  transition: 0.2s;
   width: 170px;
   background-color: grey;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+.myModal .auth-btn:hover {
+  background-color: #676767;
+  box-shadow: 0 0 10px #fff;
+  color: #fff;
 }
 .myModal button[type="submit"],
 .myModal input[type="submit"] {

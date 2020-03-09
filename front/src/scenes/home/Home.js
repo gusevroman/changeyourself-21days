@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from "react-redux";
 import {withRouter, Link} from "react-router-dom";
 import HomeAuth from "../user/HomeAuth";
+import Methods from "./Methods/Methods";
+
 
 class Home extends React.Component {
 
@@ -10,16 +12,18 @@ class Home extends React.Component {
 
     render() {
         const {isLoggined} = this.props
+        console.log('name',  isLoggined)
         return (
             <>
                 <h1 style={{textAlign: "center", margin: "30px 0px"}}>Главная</h1>
 
                 {isLoggined &&
-                <div>
+                <>
                     <Link to="/newTarget">Добавить цель</Link>
                     <HomeAuth/>
-                </div>
+                </>
                 }
+                <Methods />
             </>
         );
     }

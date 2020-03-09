@@ -1,6 +1,11 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
+
+import NewMethodForm from './AddMethodForm'
+import NewMethodButton from "./AddMethodButton";
+
 import './selectTarget.css'
+
 
 class SelectTarget extends React.Component {
     state = {
@@ -8,24 +13,29 @@ class SelectTarget extends React.Component {
         dataMethods: false,
         uniqArr: [],
         uniqMet: [],
-        value: ''
+        value: '',
+        addClick: false
+  };
 
+    // createMethod = () => {
+    //
+    // };
+
+    addMethods = (event) => {
+        this.setState({
+            addClick: !this.state.addClick
+        })
     };
 
-    async getData(url, options) {
-        const response = await fetch(url, options);
-        const json = await response.json();
-        return json
-    }
-
     async componentDidMount() {
-        const json = await this.getData('http://localhost:5000/newTarget');
+        const response = await fetch('http://localhost:5000/newTarget');
+        const json = await response.json();
         this.setState(({obj}) => {
             return {dataTarget: json}
         });
         const arr = [];
-        this.state.dataTarget.forEach((elem) => arr.push(elem.category));
         const newArr = [];
+        this.state.dataTarget.forEach((elem) => arr.push(elem.category));
         for (let str of arr.flat()) {
             if (!newArr.includes(str)) {
                 newArr.push(str);
@@ -34,28 +44,29 @@ class SelectTarget extends React.Component {
         this.setState({
             uniqArr: newArr
         })
-    }
 
-    takeSelectValue = async (value) => {
-        this.setState({
-            value
-        })
+//     }
+//     this.setState({
+//       uniqArr: newArr
+//     })
+//   }
 
-        const response = await fetch('http://localhost:5000/getTags', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({value})
-        });
+  takeSelectValue = async (value) => {
+    this.setState({
+      value
+    })
+
+    const response = await fetch('http://localhost:5000/getTags', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ value })
+    });
 
         const dataMethods = await response.json();
-        console.log(dataMethods);
         const newArr = [];
 
-        // dataMethods.map((elem) => {
-        //     console.log(elem.tag)
-        // })
         dataMethods.map((elem) => {
             if (!newArr.includes(elem.tag)) {
                 newArr.push(elem.tag)
@@ -65,12 +76,10 @@ class SelectTarget extends React.Component {
         this.setState({
             uniqMet: newArr
         })
-
-
     };
 
     render() {
-        console.log('llllll', this.state.uniqMet);
+
         return (
             <>
                 <div className="mainFlex">
@@ -107,10 +116,19 @@ class SelectTarget extends React.Component {
                             </div>
                             : null}
                     </div>
+
+                    <NewMethodButton addMethodsFunc={this.addMethods}/>
+
+                    <div className='childFlex'>
+                        {(this.state.addClick) ?
+                            <NewMethodForm/>
+                            : null}
+                    </div>
                 </div>
             </>
         )
     }
+
 }
 
 export default withRouter(SelectTarget)
