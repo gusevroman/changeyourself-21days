@@ -45,11 +45,7 @@ class SelectTarget extends React.Component {
             uniqArr: newArr
         })
 
-//     }
-//     this.setState({
-//       uniqArr: newArr
-//     })
-//   }
+    }
 
   takeSelectValue = async (value) => {
     this.setState({
@@ -79,7 +75,6 @@ class SelectTarget extends React.Component {
     };
 
     render() {
-
         return (
             <>
                 <div className="mainFlex">
@@ -128,7 +123,6 @@ class SelectTarget extends React.Component {
             </>
         )
     }
-
 }
 
 export default withRouter(SelectTarget)

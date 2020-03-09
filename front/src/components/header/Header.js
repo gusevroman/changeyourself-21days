@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import store from '../redux/store';
-import { logout } from "../../redux/actions";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import LinkButton from "./LinkButton"
@@ -10,13 +9,7 @@ class Header extends Component {
   constructor(...args) {
     console.log('<<< Header args', ...args);
     super(...args);
-    this.logout = this.logout.bind(this);
   }
-
-  logout() {
-    this.props.logout();
-    this.props.history.push("/");
-  } 
 
   render() {
     const { isLoggined } = this.props;
@@ -29,7 +22,6 @@ class Header extends Component {
           <>
             <LinkButton href="/" name="Главная" />
             <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
-            {/* <Link to="/" onClick={this.logout} className="link" >Выйти</Link> */}
           </>
          : 
           <>
@@ -47,8 +39,6 @@ const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

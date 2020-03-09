@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import { logout } from "../../../redux/actions";
 
 import { showProfile } from '../../../redux/actions';
 
 
 class Profile extends Component {
+  constructor(){
+    super()
+    this.logout = this.logout.bind(this);
+  }
+  
   state = {
     name: '',
     avatar: "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png",
@@ -14,6 +20,11 @@ class Profile extends Component {
     instagram: '',
     about: '',
   }
+
+  logout() {
+    this.props.logout();
+    this.props.history.push("/");
+  } 
 
   componentDidMount() {
     this.getProfile()
@@ -58,6 +69,7 @@ class Profile extends Component {
     return (
       <>
         {this.renderProfile()}
+        <Link to="/" onClick={this.logout} className="link" >Выйти</Link>
       </>
     );
   }
@@ -70,6 +82,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   showProfile: (profile) => dispatch(showProfile(profile)),
+  logout: () => dispatch(logout()),
 });
 
 export default withRouter(
