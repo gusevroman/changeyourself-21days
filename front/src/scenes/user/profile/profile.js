@@ -45,7 +45,7 @@ class Profile extends Component {
   }
 
   renderProfile() {
-    const { name, avatar, about, email, tel, instagram, targets } = this.state;
+    const { name, avatar, about, email, tel, instagram } = this.state;
     return (
       <div className="settings">
         <div>
