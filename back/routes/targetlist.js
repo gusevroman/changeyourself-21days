@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+const Target = require('../models/target');
 
-router.get('/status', async (req, res) => {
-  // const { id } = req.body;
-  console.log(req.body);
-  
-  // const user = await User.findOne({ login })
-  // if (user) {
-  //   res.json({ res: false })
-  // } else {
-  //   await User.create({ login, password })
-  //   res.json({ res: login })
-  // }
+router.post('/status', async (req, res) => {
+  const { id, day } = req.body;
+  const doc = await Target.findById(id)
+  const aIndex = await doc.actions.findIndex(el => el._id == day)
+if(doc.actions[aIndex].status == true){
+  doc.actions[aIndex].status = false
+}else{
+  doc.actions[aIndex].status = true
+}
+  doc.markModified('actions')
+  await doc.save()
 });
 
 
