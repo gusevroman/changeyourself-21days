@@ -1,17 +1,24 @@
-
 .myModal {
   background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    
-    &-body {
-      box-shadow: 0 0px 15px rgb(103, 255, 82),
-    }
+
+  &-body {
+    box-shadow: 0 0px 15px rgb(103, 255, 82);
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   form {
     max-width: 500px;
     margin: 0 auto;
+    width: 600px;
+    margin: auto;
+    text-align: center;
   }
 
   h1 {
@@ -64,8 +71,17 @@
   }
 
   .auth-btn {
+    transition: 0.2s;
     width: 170px;
-    background-color: grey
+    background-color: grey;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 10px;
+    &:hover {
+      background-color: darken(grey, 10%);
+      box-shadow: 0 0 10px #fff;
+      color: #fff;
+    }
   }
 
   button[type="submit"],

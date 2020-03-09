@@ -4,14 +4,14 @@ import Login from '../scenes/Auth/Modal/Form/Login';
 import Registration from '../scenes/Auth/Modal/Form/Registration';
 import Home from '../scenes/home/Home';
 import {connect} from "react-redux";
-import HomeAuth from '../scenes/user/HomeAuth';
 import Settings from '../scenes/user/profile/settings';
 import SelectTarget from "../scenes/user/selectTarget/selectTarget";
 import TargetList from '../scenes/user/targetList/TargetList';
+import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
 
 
 
-function Routes(props) {
+function Routes() {
 
     return (
         <Switch>
@@ -27,14 +27,14 @@ function Routes(props) {
             <Route exact path="/user/settings">
                 <Settings/>
             </Route>
-            <Route exact path="/user">
-                <HomeAuth/>
-            </Route>
             <Route exact path="/newTarget">
                 <SelectTarget />
             </Route>
             <Route path="/target/:id">
                 <TargetList />
+            </Route>
+            <Route path="/method/:id">
+                <MethodInfo />
             </Route>
         </Switch>
     )

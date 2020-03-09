@@ -16,7 +16,7 @@
   width: 100%;
   text-align: center;
   z-index: 1;
-  background-color: black;
+  background-color: @mainBgColor;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -164,19 +164,6 @@
   transition: -webkit-transform 500ms linear;
   transition: transform 500ms linear;
   transition: transform 500ms linear, -webkit-transform 500ms linear;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  overflow-x: hidden;
-  height: 100%;
-  background-image: radial-gradient(ellipse farthest-side at 100% 100%, #b1b1b1 20%, #a79b9f 40%, #d78745 120%);
-}
-
-html, #root {
-  height: 100%;
 }
 
 .appCar {

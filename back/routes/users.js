@@ -8,7 +8,6 @@ router.post('/registration', async (req, res) => {
   const { login, password } = req.body;
   const user = await User.findOne({ login })
   if (user) {
-    console.log('Такой есть');
     res.json({ res: false })
   } else {
     await User.create({ login, password })
@@ -20,7 +19,6 @@ router.post('/login', async (req, res) => {
   const { login, password } = req.body;
   const user = await User.findOne({ login, password })
   if (user) {
-    console.log('nashel');
     res.json({ res: login })
   } else {
     res.json({ res: false })
@@ -38,6 +36,25 @@ router.post('/user/:login', async (req, res) => {
   const { login } = req.params;
   const user = await User.findOne({ login })
   const targets = await Target.find({author: user._id});
+  
+  targets.map(async (target)=>{
+    if ( new Date() > target.endDate  && target.status === 'active') {
+      let doneTasks = 0;
+      target.actions.forEach(action => {
+        action.status && doneTasks++;
+      });
+      const personts = ((doneTasks * 100) / target.actions.length).toFixed(0);
+      let newStatus = ''
+      if( personts > 80 ){
+        newStatus = 'completed'
+      } else {
+        newStatus = 'fallen'
+      }
+      target.status = newStatus;
+      await Target.findByIdAndUpdate(target._id, {status: newStatus})
+    }
+    return target
+  })
   res.json({targets})
 });
 

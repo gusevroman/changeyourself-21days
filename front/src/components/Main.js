@@ -11,7 +11,7 @@ class Main extends React.Component{
         <BrowserRouter>
           <Header />
           <div className="container">
-          <Router />
+            <Router />
           </div>
         </BrowserRouter>
     );

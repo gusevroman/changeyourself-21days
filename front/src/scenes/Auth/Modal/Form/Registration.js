@@ -42,9 +42,9 @@ class Registration extends React.Component {
         <h1 style={{ textAlign: "center", marginTop: "20px" }}>Регистрация</h1>
         {!this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2>}
         <form
-          style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/registration"
           onSubmit={this.registration}
+          className="form-auth"
         >
           <div >
             <label>Логин:</label>
