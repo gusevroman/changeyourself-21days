@@ -34,7 +34,6 @@ export default class TargetDay extends Component {
   }
 
   render() {
-
     const day = this.props.day
     return (
       <>

@@ -9,6 +9,8 @@
 @import "./scenes/home/topMethods.less";
 @import "./scenes/home/Methods/methodInfo/method.less";
 @import "./components/loader/loaders.less";
+@import "./scenes/user/methodButton.less";
+@import "./scenes/Auth/Modal/form.less";
 
 
 body {
@@ -53,6 +55,11 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  &__personal {
+    display: flex;
+    
+  }
 }
 .link {
   display: flex;
@@ -65,6 +72,7 @@ header {
   border-radius: 7px;
   text-decoration: none;
   transition: .2s;
+
 }
 .link:hover {
   text-decoration: none;

@@ -74,15 +74,10 @@ class TargetList extends React.Component {
     let text = false;
     let time = new Date() - Date.parse(target.endDate);
 
-    if (time > -1) {
-      const endDate = target.endDate.split(/[-T]{1}/)
-      text = `Цель закончилась ${endDate[2]}.${endDate[1]}.${endDate[0]}`;
-    } else {
+    if (time <= 0) {
       const { days, hours, minutes, seconds } = this.state;
       text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`
     }
-
-    
 
     // console.log('ZAPIS V STATE', this.state.target.actions);
 //  const {actions} = target.actions
