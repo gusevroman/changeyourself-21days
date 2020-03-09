@@ -10,3 +10,4 @@ function getConnection() {
 }
 
 module.exports = getConnection;
+

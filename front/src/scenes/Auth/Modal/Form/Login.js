@@ -46,7 +46,6 @@ class Login extends React.Component {
         <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Вход</h1>
         { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Неверный логин или пароль</h2> }
         <form
-          style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/login"
           onSubmit={this.validate}
         >

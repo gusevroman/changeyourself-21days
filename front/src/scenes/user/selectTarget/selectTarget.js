@@ -1,8 +1,11 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
+
 import NewMethodForm from './AddMethodForm'
-import './selectTarget.css'
 import NewMethodButton from "./AddMethodButton";
+
+import './selectTarget.css'
+
 
 class SelectTarget extends React.Component {
     state = {
@@ -12,8 +15,7 @@ class SelectTarget extends React.Component {
         uniqMet: [],
         value: '',
         addClick: false
-
-    };
+  };
 
     // createMethod = () => {
     //
@@ -42,20 +44,25 @@ class SelectTarget extends React.Component {
         this.setState({
             uniqArr: newArr
         })
-    }
 
-    takeSelectValue = async (value) => {
-        this.setState({
-            value
-        });
+//     }
+//     this.setState({
+//       uniqArr: newArr
+//     })
+//   }
 
-        const response = await fetch('http://localhost:5000/getTags', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({value})
-        });
+  takeSelectValue = async (value) => {
+    this.setState({
+      value
+    })
+
+    const response = await fetch('http://localhost:5000/getTags', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({ value })
+    });
 
         const dataMethods = await response.json();
         const newArr = [];
@@ -121,6 +128,7 @@ class SelectTarget extends React.Component {
             </>
         )
     }
+
 }
 
 export default withRouter(SelectTarget)
