@@ -43,11 +43,6 @@ class TargetList extends React.Component {
     return (n < 10 ? '0' : '') + n;
   }
 
-
-  // async componentWillMount() {
-
-  // }
-
  async componentDidMount() {
   const  action  = await (await fetch(`http://localhost:5000/user/target/${this.props.match.params.id}`, { method: "GET" })).json();  
   this.setState({ target: action.target })
@@ -79,9 +74,6 @@ class TargetList extends React.Component {
       text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`
     }
 
-    // console.log('ZAPIS V STATE', this.state.target.actions);
-//  const {actions} = target.actions
-    console.log('PEREDAU eb4nii target',  target.actions)
     return (
       <>
 
