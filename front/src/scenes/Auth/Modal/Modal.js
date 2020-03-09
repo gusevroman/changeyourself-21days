@@ -18,10 +18,7 @@ export default class Modal extends React.Component {
   };
 
 
-
-
   render() {
-    console.log(this.state.login);
 
     return (
       <>
@@ -36,18 +33,25 @@ export default class Modal extends React.Component {
 
           <div className="myModal">
             <div className="myModal-body">
-              <div className="myModal__btns">
-                <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit} />
-                {this.state.isLoginForm
-                  ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
-                    Регистрация
-                  </div>
-                  : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
-                    Вход
-                  </div>
-                }
+// <<<<<<< target-list-continue
+            <div className="close">
 
-              </div>
+            <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit}/>
+            </div>
+// =======
+//               <div className="myModal__btns">
+//                 <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit} />
+//                 {this.state.isLoginForm
+//                   ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
+//                     Регистрация
+//                   </div>
+//                   : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
+//                     Вход
+//                   </div>
+//                 }
+
+//               </div>
+// >>>>>>> develop
               {this.state.isLoginForm
                 ?
                 <Login login={this.state.isLoginForm} />

@@ -3,6 +3,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .myModal-body {
+  opacity: 1;
   box-shadow: 0 0px 15px #67ff52;
 }
 .myModal__btns {
@@ -58,6 +59,10 @@
 }
 .myModal .btn {
   cursor: pointer;
+}
+.myModal .close {
+  display: flex;
+  justify-content: flex-end;
 }
 .myModal .auth-btn {
   transition: 0.2s;
