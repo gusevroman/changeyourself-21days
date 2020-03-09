@@ -9,7 +9,10 @@ import Loader from "../../../components/loader/loader";
 
 
 class TargetBlock extends React.Component {
-
+  constructor() {
+    super();
+    this.searchByTargets = this.searchByTargets.bind(this)
+  }
   state = {
     search: ''
   }
@@ -20,7 +23,8 @@ class TargetBlock extends React.Component {
   }
 
   searchByTargets(event) {
-    this.setState({search:event.target.value})
+    const search = event.target.value;
+    this.setState({search})
   }
   
 
@@ -29,16 +33,21 @@ class TargetBlock extends React.Component {
       if ( this.props.targets && this.props.targets.length === 0 ){
         empty = true;
       }
-      const { targets } = this.props;
-      // if (targets){
-      //   const regExp = `/{this.state.search}/` + 
-      //   const searchTargets = targets.map((target) => {
-      //     if ( regExp.test(target) ){
-      //       console.log(target);
-      //     }
-      //   })
-      // }
+      let { targets } = this.props;
+      const regExp = new RegExp(this.state.search, 'gi');
+      
+      let searchTargets = targets;
 
+      if (targets){
+        searchTargets = [];
+        targets.map((target) => {
+          if ( regExp.test(target.title) ){
+            searchTargets.push(target)
+          }
+        })
+      }
+      console.log(searchTargets);
+      
         return (
           <>
           <h3 className="target__search search">
@@ -59,14 +68,14 @@ class TargetBlock extends React.Component {
                 // empty || <h3>У вас еще нет целей, вы можете добавить ее <Link to='/newTarget'>тут</Link></h3>
               }
               { targets 
-                  ? targets.map((elem) => {
+                  ? searchTargets.map((elem) => {
                       return <Target parameters={elem} key={elem.id}/>
                     })
 
                   : <Loader/>
               }
             </div>
-          </>
+        </>
         );
     }
 }
