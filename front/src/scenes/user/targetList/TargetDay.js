@@ -40,10 +40,10 @@ export default class TargetDay extends Component {
         <div className="target_spoiler">
           <div className="task">
             <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{day.title}</h2>
-            <input class="tgl tgl-flip" id="cb5" type="checkbox" />
+            <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox" />
              {/* onClick={this.handleStatus.bind(this)} */}
             
-            <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for="cb5"></label>
+            <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for={this.props.day._id}></label>
           </div>
           <div className="spoiler" style={{ display: this.state.display }}>
             <h2 align="center">{day.description}</h2>
