@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import moment from 'moment';
+
 
 export default class TargetDay extends Component {
 
@@ -8,10 +10,17 @@ export default class TargetDay extends Component {
   }
 
   state = {
-    
+    date: false,
     display: 'none'
   }
 
+  componentDidMount(){
+    let { date, counter } = this.props
+    date = date.setDate(date.getDate() + counter);
+    const dayDate = new Date(date) + '';
+
+    this.setState({date: moment(dayDate).format('DD MMMM YYYY')});
+  }
 
   
    async handleStatus() {
@@ -34,15 +43,15 @@ export default class TargetDay extends Component {
   }
 
   render() {
-    const day = this.props.day
+    const { day } = this.props;
+    const status = day.status;
     return (
       <>
         <div className="target_spoiler">
           <div className="task">
-            <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{day.title}</h2>
-            <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox" />
+            <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{this.state.date}</h2>
+            <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox"/>
              {/* onClick={this.handleStatus.bind(this)} */}
-            
             <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for={this.props.day._id}></label>
           </div>
           <div className="spoiler" style={{ display: this.state.display }}>

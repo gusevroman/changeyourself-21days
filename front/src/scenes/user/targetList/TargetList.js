@@ -67,8 +67,6 @@ class TargetList extends React.Component {
     }
   }
 
-
-
   render() {
     const target = this.state.target
     let text = false;
@@ -81,7 +79,10 @@ class TargetList extends React.Component {
 
     // console.log('ZAPIS V STATE', this.state.target.actions);
 //  const {actions} = target.actions
-    console.log('PEREDAU eb4nii target',  target.actions)
+    console.log('PEREDAU eb4nii target',  target.actions);
+    let date = new Date(target.startDate);
+    date.setDate(date.getDate() - 2);
+    let counter = 1;
     return (
       <>
 
@@ -90,9 +91,8 @@ class TargetList extends React.Component {
              <div className="target:hover">
           <h2 className="target__title"></h2>
         {
-          target.actions && target.actions.map((elem)=>{
-          return ( <TargetDay day={elem} id={target._id}/>
-        )
+          target.actions && target.actions.map((elem) => {
+            return ( <TargetDay day={elem} id={target._id} date={date} counter={counter}/>)
           })
         }
         </div>
