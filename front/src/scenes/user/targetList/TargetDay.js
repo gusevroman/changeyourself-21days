@@ -22,17 +22,16 @@ export default class TargetDay extends Component {
     this.setState({date: moment(dayDate).format('DD MMMM YYYY')});
   }
 
-  
-   async handleStatus() {
-      const  response  = await fetch(`http://localhost:5000/targetlist/status`, { 
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({id: this.props.id}, {day: this.props.day._id})
-      });  
 
-    }
+  async handleStatus() {
+    await fetch(`http://localhost:5000/targetlist/status`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id: this.props.id, day: this.props.day._id })
+    });
+  }
 
   handleSpoiler() {
     if (this.state.display === 'none') {
@@ -49,9 +48,10 @@ export default class TargetDay extends Component {
       <>
         <div className="target_spoiler">
           <div className="task">
-            <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{this.state.date}</h2>
-            <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox"/>
-             {/* onClick={this.handleStatus.bind(this)} */}
+            <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{day.title}</h2>
+            <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox"
+              onClick={this.handleStatus.bind(this)}
+            />
             <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for={this.props.day._id}></label>
           </div>
           <div className="spoiler" style={{ display: this.state.display }}>
