@@ -1,43 +1,35 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Login from '../scenes/Auth/Modal/Form/Login';
-import Registration from '../scenes/Auth/Modal/Form/Registration';
+import {connect} from "react-redux";
+
 import Home from '../scenes/home/Home';
-import { connect } from "react-redux";
-import HomeAuth from '../scenes/user/HomeAuth';
+import Profile from '../scenes/user/profile/profile';
 import SelectTarget from "../scenes/user/selectTarget/selectTarget";
 import TargetList from '../scenes/user/targetList/TargetList';
-import Profile from '../scenes/user/profile/profile';
+import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
 
 
+function Routes() {
 
-function Routes(props) {
-
-  return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-      <Route exact path="/registration">
-        <Registration />
-      </Route>
-      <Route exact path="/user/profile">
-        <Profile />
-      </Route>
-      <Route exact path="/user">
-        <HomeAuth />
-      </Route>
-      <Route exact path="/newTarget">
-        <SelectTarget />
-      </Route>
-      <Route path="/target/:id">
-        <TargetList />
-      </Route>
-    </Switch>
-  )
+    return (
+        <Switch>
+            <Route exact path="/">
+                <Home/>
+            </Route>
+            <Route exact path="/user/profile">
+                <Profile />
+            </Route>
+            <Route exact path="/newTarget">
+                <SelectTarget />
+            </Route>
+            <Route path="/target/:id">
+                <TargetList />
+            </Route>
+            <Route path="/method/:id">
+                <MethodInfo />
+            </Route>
+        </Switch>
+    )
 }
 
 export default connect()(Routes)

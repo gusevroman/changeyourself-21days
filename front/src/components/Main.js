@@ -8,12 +8,12 @@ class Main extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <Header />
-        <div className="container">
-          <Router />
-        </div>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Header />
+          <div className="container">
+            <Router />
+          </div>
+        </BrowserRouter>
     );
   }
 }

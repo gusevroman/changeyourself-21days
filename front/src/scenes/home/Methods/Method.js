@@ -4,8 +4,6 @@ import { withRouter, Link } from "react-router-dom";
 
 class Method extends React.Component {
   render() {
-    console.log(this.props.method);
-
     const link = "/method/" + this.props.method._id
     return (
       <div className="content__column">

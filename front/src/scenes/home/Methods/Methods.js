@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Method from "./Method";
+import Loader from "../../../components/loader/loader";
 
 class Methods extends React.Component {
   state = {
@@ -27,7 +28,7 @@ class Methods extends React.Component {
             </div>
           </div>
         ) : (
-          <div>Загрузка</div>
+          <Loader/>
         )}
       </>
     );

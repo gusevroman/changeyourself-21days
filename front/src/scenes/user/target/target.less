@@ -1,59 +1,23 @@
 // main: ../../../index.less
 
-.progressAfter(@light, @dark) {
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
-      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
-  }
-  50% {
-    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.3) inset,
-      0 -5px 5px rgba(255, 255, 255, 0.3) inset;
-  }
-  100% {
-    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
-      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
-  }
-}
-
-@keyframes stripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@keyframes shine {
-  0% {
-    opacity: 0;
-    width: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    width: 95%;
-  }
-}
 
 .target {
-  border: 2px solid #fff;
   min-height: 200px;
   padding: 0px 100px;
   margin: 0 0 30px;
+  border: 2px solid @mainColor;
   border-radius: 15px;
+  transition: all 1s ease;
   cursor: pointer;
+  box-shadow: 0 0 5px @mainColor;
+
   &:hover {
-    box-shadow: 0 0 30px white;
+    box-shadow: 0 0 25px @mainColor;
   }
 
   &__title {
     text-align: center;
-    color: #fff;
+    color: @mainColorText;
   }
 
   .progress-bar {
@@ -72,7 +36,6 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      background-color: #ff0000;
       border-radius: 3px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
       transition: width 0.4s ease-in-out;
@@ -127,7 +90,7 @@
 
     &__last {
       text-align: center;
-      color: white;
+      color: @mainColorText;
       font-size: 20px;
       margin: 0px 0px 20px;
     }

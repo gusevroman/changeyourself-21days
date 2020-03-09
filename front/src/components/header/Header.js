@@ -16,27 +16,27 @@ class Header extends Component {
   logout() {
     this.props.logout();
     this.props.history.push("/");
-  }
+  } 
 
   render() {
     const { isLoggined } = this.props;
     console.log(`const { isLoggined } in Header ${this.props.isLoggined}`);
 
     return (
-      <header style={{ position: "relative" }} bg="dark" variant="dark">
+      <header bg="dark" variant="dark">
         <nav className="nav">
-          {isLoggined ?
-            <div className="logout">
-              <LinkButton href="/" name="Главная" />
-              <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`} />
-              <Link to="/" onClick={this.logout} className="link" >Выйти</Link>
-            </div>
-            :
-            <>
-              <LinkButton href="/" name="Главная" />
-              <Modal />
-            </>
-          }
+        {isLoggined ? 
+          <>
+            <LinkButton href="/" name="Главная" />
+            <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
+            {/* <Link to="/" onClick={this.logout} className="link" >Выйти</Link> */}
+          </>
+         : 
+          <>
+            <LinkButton href="/" name="Главная" />
+            <Modal />
+          </>
+        }
         </nav>
       </header>
     );

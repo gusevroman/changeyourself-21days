@@ -69,27 +69,26 @@ class SelectTarget extends React.Component {
 
   };
 
-  render() {
-    console.log('llllll', this.state.uniqMet);
-    return (
-      <>
-        <div className="mainFlex">
-          <div className='childFlex'>
-            {this.state.uniqArr.length !== 0 ?
-              <div className="box">
-                <form>
-                  <select onChange={(elem) => this.takeSelectValue(elem.target.value)} id="select">
-                    <option>Выберите категорию</option>
-                    {this.state.uniqArr.map((elem) => {
-                      return (
-                        <option value={elem}>{elem}</option>
-                      )
-                    })}
-                  </select>
-                </form>
-              </div>
-              : null}
-          </div>
+    render() {
+        return (
+            <>
+                <div className="mainFlex">
+                    <div className='childFlex'>
+                        {this.state.uniqArr.length !== 0 ?
+                            <div className="box">
+                                <form>
+                                    <select onChange={(elem) => this.takeSelectValue(elem.target.value)} id="select">
+                                        <option>Выберите категорию</option>
+                                        {this.state.uniqArr.map((elem) => {
+                                            return (
+                                                <option value={elem}>{elem}</option>
+                                            )
+                                        })}
+                                    </select>
+                                </form>
+                            </div>
+                            : null}
+                    </div>
 
           <div className='childFlex'>
             {this.state.uniqMet.length !== 0 ?
