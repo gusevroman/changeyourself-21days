@@ -12,6 +12,7 @@ class Home extends React.Component {
 
     render() {
         const {isLoggined} = this.props
+        console.log('name',  isLoggined)
         return (
             <>
                 <h1 style={{textAlign: "center", margin: "30px 0px"}}>Главная</h1>
