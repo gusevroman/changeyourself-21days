@@ -10,9 +10,48 @@
 			margin: 0.5rem;
 		}
 	}
-  margin: 1rem;
-  color: whitesmoke;
-  .profile{
-    color: greenyellow;
+	margin: 1rem;
+	color: whitesmoke;
+	.profile {
+		color: greenyellow;
+	}
+	.row {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-bottom: 16px;
+		align-items: stretch;
+		border: 0 solid #000;
+		box-sizing: border-box;
+		flex-shrink: 0;
+		// margin: 0;
+		padding: 0;
+		position: relative;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	.item {
+		padding-left: 32px;
+		padding-right: 32px;
+		text-align: right;
+		flex: 0 0 194px;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 18px;
+		margin-top: 6px;
   }
+  .value{
+    display: flex;
+    flex-basis: 355px;
+    flex-direction: row;
+    padding-right: 60px;
+    flex-grow: 1;
+    font-size: 16px;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
 }
