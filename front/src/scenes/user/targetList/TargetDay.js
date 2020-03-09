@@ -9,11 +9,12 @@ export default class TargetDay extends Component {
 
   state = {
     date: false,
-    display: 'none'
+    display: 'none',
+    status: false
   }
 
   componentDidMount(){
-    let { date, counter } = this.props
+    let { day, date, counter } = this.props
     date = date.setDate(date.getDate() + counter);
     moment.lang('ru', {
       months : {
@@ -21,10 +22,11 @@ export default class TargetDay extends Component {
         standalone: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_')
       }
     });
-    this.setState({date: moment(date).format('DD MMMM YYYY')});
+    this.setState({date: moment(date).format('DD MMMM YYYY'), status:day.status});
   }
 
   async handleStatus() {
+    this.setState({status:!this.state.status})
     await fetch(`http://localhost:5000/targetlist/status`, {
       method: "POST",
       headers: {
@@ -44,7 +46,6 @@ export default class TargetDay extends Component {
 
   render() {
     const { day } = this.props;
-    const status = day.status;
     return (
       <>
         <div className="target_spoiler">
@@ -52,6 +53,7 @@ export default class TargetDay extends Component {
             <h2 className="target_spoiler_title" onClick={this.handleSpoiler.bind(this)}>{this.state.date}</h2>
             <input class="tgl tgl-flip" id={this.props.day._id} type="checkbox"
               onClick={this.handleStatus.bind(this)}
+              checked={this.state.status}
             />
           <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for={this.props.day._id}></label>
           </div>
