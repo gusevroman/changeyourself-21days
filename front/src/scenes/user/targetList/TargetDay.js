@@ -32,7 +32,7 @@ export default class TargetDay extends Component {
       },
       body: JSON.stringify({ id: this.props.id, day: this.props.day._id })
     });
-  }
+  } 
 
   handleSpoiler() {
     if (this.state.display === 'none') {
