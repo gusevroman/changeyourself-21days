@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import moment from 'moment';
+
 
 export default class TargetDay extends Component {
 
@@ -8,10 +10,17 @@ export default class TargetDay extends Component {
   }
 
   state = {
-
+    date: false,
     display: 'none'
   }
 
+  componentDidMount(){
+    let { date, counter } = this.props
+    date = date.setDate(date.getDate() + counter);
+    const dayDate = new Date(date) + '';
+
+    this.setState({date: moment(dayDate).format('DD MMMM YYYY')});
+  }
 
 
   async handleStatus() {
@@ -33,7 +42,8 @@ export default class TargetDay extends Component {
   }
 
   render() {
-    const day = this.props.day
+    const { day } = this.props;
+    const status = day.status;
     return (
       <>
         <div className="target_spoiler">
