@@ -99,7 +99,7 @@ class Profile extends Component {
               <input
                 id="about"
                 type="text"
-                value={about}
+                placeholder={about}
               />
             </div>
           </div>
@@ -122,7 +122,7 @@ class Profile extends Component {
           <div className="row">
             <aside className="item">
               <label for="instagram">
-                Инстраграм
+                Инстаграм
               </label>
             </aside>
             <div className="value">
