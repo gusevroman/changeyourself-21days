@@ -3,47 +3,41 @@ import {logIn} from "../../../redux/actions";
 
 
 export default class AddNewDay extends React.Component {
-    state = {
-        days: [
-            {
-                title: 0,
-                description: 'hgjh',
-                task: 'hgjhg'
-            }
-        ]
-    };
 
-    inputValueDays = (event) => {
-        event.preventDefault()
+    state =
+        {
+            title: this.props.day.title,
+            description: this.props.day.description,
+            task: this.props.day.task
+
+        };
+
+
+    inputValueLocal = (event) => {
+        event.preventDefault();
         const target = event.target;
         const value = target.value;
         const name = target.name;
 
         this.setState({
-            days: [
-                {
-                    [name]: value
-                }
-            ]
+            [name]: value
         });
-        // console.log('Наши стейты', this.state.days.description, this.state.days.task)
-        console.log('ffff', this.state.days[0].description)
+        this.props.inputValueDays(this.state.title - 1, this.state)
     };
-
 
 
     render() {
         return (
             <div>
-                <div>День: 1</div>
-                <div>Описание: <textarea onChange={this.inputValueDays}
-                                         value={this.state.days.description}
+                <div>День {this.state.title}</div>
+                <div>Описание: <textarea onChange={this.inputValueLocal}
+                                         value={this.state.description}
                                          name='description'
                                          style={{width: 350, height: 75, fontSize: 16}}
                                          type="text"/>
                 </div>
-                <div>Задание: <textarea onChange={this.inputValueDays}
-                                        value={this.state.days.task}
+                <div>Задание: <textarea onChange={this.inputValueLocal}
+                                        value={this.state.task}
                                         name='task'
                                         style={{width: 350, height: 75, fontSize: 16}}
                                         type="text"/>
