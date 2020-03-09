@@ -15,6 +15,7 @@ class TargetBlock extends React.Component {
     const { targets } = await ( await fetch(`http://localhost:5000/user/${this.props.isLoggined}`,{method:"POST"})).json();    
     this.props.showTargets(targets);
   }
+  
 
     render() {
         return (

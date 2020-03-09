@@ -4,9 +4,9 @@ import Header from "./header/Header";
 import { BrowserRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 
-class Main extends React.Component{
-  
-  render(){      
+class Main extends React.Component {
+
+  render() {
     return (
         <BrowserRouter>
           <Header />

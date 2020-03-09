@@ -1,14 +1,12 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import Login from '../scenes/Auth/Modal/Form/Login';
-import Registration from '../scenes/Auth/Modal/Form/Registration';
-import Home from '../scenes/home/Home';
+import { Route, Switch } from 'react-router-dom';
 import {connect} from "react-redux";
-import Settings from '../scenes/user/profile/settings';
+
+import Home from '../scenes/home/Home';
+import Profile from '../scenes/user/profile/profile';
 import SelectTarget from "../scenes/user/selectTarget/selectTarget";
 import TargetList from '../scenes/user/targetList/TargetList';
 import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
-
 
 
 function Routes() {
@@ -18,14 +16,8 @@ function Routes() {
             <Route exact path="/">
                 <Home/>
             </Route>
-            <Route exact path="/login">
-                <Login/>
-            </Route>
-            <Route exact path="/registration">
-                <Registration/>
-            </Route>
-            <Route exact path="/user/settings">
-                <Settings/>
+            <Route exact path="/user/profile">
+                <Profile />
             </Route>
             <Route exact path="/newTarget">
                 <SelectTarget />

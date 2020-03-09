@@ -1,9 +1,10 @@
 import React from "react";
-import "./Modal.css";
+import { Link } from "react-router-dom";
 import Login from "../Modal/Form/Login";
 import Registration from "../Modal/Form/Registration";
-import { Link } from "react-router-dom";
 import quit from './quit.png'
+import "./Modal.css";
+
 
 export default class Modal extends React.Component {
   constructor(props) {
@@ -23,11 +24,11 @@ export default class Modal extends React.Component {
     console.log(this.state.login);
 
     return (
-      <React.Fragment>
+      <>
         {!this.state.isOpen && (
-          <Link 
-          className="link"
-          onClick={() => this.setState({ isOpen: true })}>
+          <Link
+            className="link"
+            onClick={() => this.setState({ isOpen: true })}>
             Вход
         </Link>)}
 
@@ -35,18 +36,18 @@ export default class Modal extends React.Component {
 
           <div className="myModal">
             <div className="myModal-body">
-            <div className="myModal__btns">
-            <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit}/>
-            {this.state.isLoginForm
-                ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
+              <div className="myModal__btns">
+                <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit} />
+                {this.state.isLoginForm
+                  ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
                     Регистрация
                   </div>
-                : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
+                  : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
                     Вход
                   </div>
-            }
+                }
 
-            </div>
+              </div>
               {this.state.isLoginForm
                 ?
                 <Login login={this.state.isLoginForm} />
@@ -60,7 +61,7 @@ export default class Modal extends React.Component {
           </div>
 
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

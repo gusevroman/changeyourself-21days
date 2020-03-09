@@ -19,7 +19,7 @@ class Methods extends React.Component {
         {this.state.methods ? (
           <div className="topMethods">
             <h3 className="topMethods__title">
-              10 самый популярный методологий
+              ТОП-10 методик!
             </h3>
             <div className="topMethods__content">
               {this.state.methods.map(method => {
