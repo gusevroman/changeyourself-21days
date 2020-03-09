@@ -16,12 +16,15 @@ class Header extends Component {
     console.log(`const { isLoggined } in Header ${this.props.isLoggined}`);
 
     return (
-      <header bg="dark" variant="dark">
+      <header>
         <nav className="nav">
         {isLoggined ? 
           <>
             <LinkButton href="/" name="Главная" />
+            <div className="nav__personal">
+            <LinkButton href="/user" name="Мои цели"/>
             <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
+            </div>
           </>
          : 
           <>

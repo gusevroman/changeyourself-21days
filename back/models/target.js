@@ -17,7 +17,7 @@ const targetSchema = new mongoose.Schema({
   },
   method: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Method'
+    ref: 'Method',
   },
   actions: [],
 });

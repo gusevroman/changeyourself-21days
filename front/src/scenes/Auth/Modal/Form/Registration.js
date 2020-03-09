@@ -30,7 +30,7 @@ class Registration extends React.Component {
 
     if (result.res) {
       logIn(result.res);
-      this.props.history.push('/')
+      this.props.history.push('/user')
     } else {
       this.setState({ error: true })
     }
@@ -39,8 +39,8 @@ class Registration extends React.Component {
   render() {
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "20px" }}>Регистрация</h1>
-        {!this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2>}
+        <h1>Регистрация</h1>
+        {!this.state.error || <h2 className="error">Этот логин уже существует</h2>}
         <form
           action="http://localhost:5000/registration"
           onSubmit={this.registration}
@@ -55,8 +55,8 @@ class Registration extends React.Component {
             <label>Пароль:</label>
             <input type="password" name="password" required />
           </div>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <button className='btn' style={{ width: "270px", backgroundColor: 'green' }} type="submit">Создать</button>
+          <div>
+            <button className='btn' type="submit">Создать</button>
           </div>
         </form>
       </>

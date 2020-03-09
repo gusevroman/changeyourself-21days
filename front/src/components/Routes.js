@@ -7,7 +7,7 @@ import Profile from '../scenes/user/profile/profile';
 import SelectTarget from "../scenes/user/selectTarget/selectTarget";
 import TargetList from '../scenes/user/targetList/TargetList';
 import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
-
+import Personal from '../scenes/user/Personal'
 
 function Routes() {
 
@@ -21,6 +21,9 @@ function Routes() {
             </Route>
             <Route exact path="/newTarget">
                 <SelectTarget />
+            </Route>
+            <Route exact path="/user">
+                <Personal />
             </Route>
             <Route path="/target/:id">
                 <TargetList />

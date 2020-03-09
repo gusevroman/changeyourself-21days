@@ -21,8 +21,6 @@ export default class TargetDay extends Component {
   render() {
 
     let list = this.props.list
-    console.log('TARGET!!', list);
-
     return (
       <>
         <div className="target_spoiler" onClick={this.handleSpoiler.bind(this)}>

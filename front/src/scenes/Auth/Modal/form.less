@@ -1,15 +1,37 @@
+// main: ../../../index.less
+
 .myModal {
   background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.185);
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  z-index: 100;
   
   &-body {
-
-      opacity: 1;
-      box-shadow: 0 0px 15px rgb(103, 255, 82),
+    padding: 2rem;
+    margin-top: 15vh;
+    min-width: 60vw;
+    border-radius: 5px;
+    background: rgba(19, 19, 19, 1);
+    height: 60vh;
+    opacity: 1;
+    box-shadow: 0 0px 15px @mainColor,
     }
 
+  .error {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+  }
 
   form {
     max-width: 500px;
@@ -24,7 +46,7 @@
     color: white;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgb(79, 98, 148);
+    border-bottom: 1px solid @mainColor;
   }
 
   .form {
@@ -33,21 +55,12 @@
     margin: 0 auto;
   }
 
-  p {
-    color: #bf1650;
-  }
-
-  p::before {
-    display: inline;
-    content: "⚠ ";
-  }
-
   input {
     display: block;
     box-sizing: border-box;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid white;
+    border: 1px solid @mainColor;
     padding: 10px 15px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -66,6 +79,29 @@
 
   .btn {
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-weight: 800;
+    width: 160px;
+    color: @mainColorText;
+    border: 2px solid @mainColor;
+    background-color: @mainColor;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 30px auto 0px;
+    transition: .3s;
+
+    &:hover{
+      color: @mainColor;
+      border: 2px solid @mainColor;
+      background-color: @mainBgColor;
+      box-shadow: 0 0 15px  @mainColor;
+    }
+
+    &__close {
+      cursor: pointer;
+    }
   }
 
   .close {
@@ -75,35 +111,35 @@
 
   .auth-btn {
     transition: 0.2s;
-    width: 170px;
     background-color: grey;
-    padding: 10px 15px;
     text-align: center;
     border-radius: 10px;
     &:hover {
       background-color: darken(grey, 10%);
-      box-shadow: 0 0 10px #fff;
-      color: #fff;
+      box-shadow: 0 0 10px @mainColor;
+      color: @mainColorText;
     }
   }
 
   button[type="submit"],
   input[type="submit"] {
-    background: #ec5990;
-    color: white;
+    background: @mainColor;
+    color: @mainColorText;
     text-transform: uppercase;
-    border: none;
+    border: 2px solid @mainColor;
     border-radius: 15px;
     margin-top: 40px;
     padding: 15px;
     font-size: 16px;
     font-weight: 100;
     letter-spacing: 10px;
+    transition: .5s;
   }
 
   button[type="submit"]:hover,
   input[type="submit"]:hover {
-    background: #bf1650;
+    background: darken(@mainColor, 20%);
+    color: @mainColorText;
   }
 
   button[type="submit"]:active,
@@ -137,8 +173,8 @@
   button[type="button"] {
     display: block;
     appearance: none;
-    background: #333;
-    color: white;
+    background: @mainBgColor;
+    color: @mainColorText;
     border: none;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -146,7 +182,7 @@
   }
 
   pre {
-    color: white;
+    color: @mainColorText;
   }
 
   hr {
@@ -157,7 +193,7 @@
     display: block;
     appearance: none;
     margin-top: 40px;
-    border: 1px solid #333;
+    border: 1px solid @mainBgColor;
     margin-bottom: 20px;
     text-transform: uppercase;
     padding: 10px 20px;

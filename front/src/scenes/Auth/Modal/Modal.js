@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Login from "../Modal/Form/Login";
 import Registration from "../Modal/Form/Registration";
 import quit from './quit.png'
-import "./Modal.css";
 
 
 export default class Modal extends React.Component {
@@ -35,30 +34,29 @@ export default class Modal extends React.Component {
             <div className="myModal-body">
             <div className="close">
 
-            <img className='btn' onClick={() => this.setState({ isOpen: false })} src={quit}/>
+            <img className='btn__close' onClick={() => this.setState({ isOpen: false })} src={quit}/>
             </div>
-              {this.state.isLoginForm
-              ? <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
-                Регистрация
-              </div>
-              : <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
-                Вход
-              </div>
-              }
 
               {this.state.isLoginForm
                 ?
-                <Login login={this.state.isLoginForm} />
+                <>
+                  <Login login={this.state.isLoginForm} />
+                  <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: false })}>
+                    Регистрация
+                  </div>
+                </>
                 :
-                <Registration />
+                <>
+                  <Registration />
+                  <div className='btn auth-btn' onClick={() => this.setState({ isLoginForm: true })}>
+                    Вход
+                  </div>
+                </>
               }
-              <br></br>
-              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-              </div>
             </div>
           </div>
 
-        )}
+)}
       </>
     );
   }
