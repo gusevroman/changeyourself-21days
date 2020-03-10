@@ -11,7 +11,7 @@ class SelectTarget extends React.Component {
     state = {
         dataTarget: false,
         dataMethods: false,
-        uniqArr: [],
+        uniqArr: ['Спорт', 'Образование', 'Хобби', 'Здоровье'],
         uniqMet: [],
         value: '',
         addClick: false
@@ -28,22 +28,22 @@ class SelectTarget extends React.Component {
     };
 
     async componentDidMount() {
-        const response = await fetch('http://localhost:5000/newTarget');
-        const json = await response.json();
-        this.setState(({obj}) => {
-            return {dataTarget: json}
-        });
-        const arr = [];
-        const newArr = [];
-        this.state.dataTarget.forEach((elem) => arr.push(elem.category));
-        for (let str of arr.flat()) {
-            if (!newArr.includes(str)) {
-                newArr.push(str);
-            }
-        }
-        this.setState({
-            uniqArr: newArr
-        })
+        // const response = await fetch('http://localhost:5000/newTarget');
+        // const json = await response.json();
+        // this.setState(({obj}) => {
+        //     return {dataTarget: json}
+        // });
+        // const arr = [];
+        // const newArr = [];
+        // this.state.dataTarget.forEach((elem) => arr.push(elem.category));
+        // for (let str of arr.flat()) {
+        //     if (!newArr.includes(str)) {
+        //         newArr.push(str);
+        //     }
+        // }
+        // this.setState({
+        //     uniqArr: newArr
+        // })
 
     }
 

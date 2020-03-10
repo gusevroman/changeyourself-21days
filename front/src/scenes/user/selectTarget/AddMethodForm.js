@@ -2,16 +2,18 @@ import React from "react";
 import './addMethodForm.css'
 import AddNewDay from "./AddNewDay";
 import {logIn} from "../../../redux/actions";
+import {withRouter} from "react-router-dom";
+import {connect} from "react-redux";
 
 
-export default class NewMethodForm extends React.Component {
+class NewMethodForm extends React.Component {
 
     state = {
         title: 'yq',
         description: 'hw',
         category: '',
         tag: '',
-        author: '',
+        author: this.props.isLoggined,
         days: [
             {
                 title: 1,
@@ -21,13 +23,19 @@ export default class NewMethodForm extends React.Component {
         ]
     };
 
+    selectValue = (value) => {
+        this.setState({
+            category: value
+        })
+    };
+
 
     plusDay = (event) => {
         event.preventDefault();
         let newArr = [...this.state.days];
 
         newArr.push({
-            title:  this.state.days.length + 1,
+            title: this.state.days.length + 1,
             description: 'qqqqqqq',
             task: ''
         });
@@ -57,12 +65,7 @@ export default class NewMethodForm extends React.Component {
     };
 
     sendForm = async (event) => {
-        event.preventDefault()
-
-        // let newState = [...this.state.days];
-        console.log(this.state);
-
-
+        event.preventDefault();
 
         const response = await fetch('http://localhost:5000/newMethod', {
             method: 'POST',
@@ -79,6 +82,7 @@ export default class NewMethodForm extends React.Component {
     };
 
     render() {
+        let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье'];
         return (
             <div className="box">
                 <form>
@@ -89,23 +93,46 @@ export default class NewMethodForm extends React.Component {
                                                  type="text"/>
                     </div>
 
+                    <select onChange={(elem) => this.selectValue(elem.target.value)} >
+                        {uniqArr.map(elem => {
+                            return <option value={elem}>{elem}</option>
+                        })}
+                    </select>
+
                     <div>Описание: <textarea onChange={this.firstInputValue}
                                              value={this.state.description}
                                              name="description"
                                              style={{width: 350, height: 75, fontSize: 16}}
                                              type="text"/>
                     </div>
-                    {this.state.days.map((elem) => {
+
+                    <div>{this.state.days.map((elem) => {
                         return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
                     })
-                    }
+                    }</div>
+
+                    <div>Напишите тэги: <input onChange={this.firstInputValue}
+                                               value={this.state.tag}
+                                               name="tag" type="text"/></div>
+
+
 
                     <button onClick={this.plusDay}>Добавить день</button>
                     <button onClick={this.sendForm}>Отправить</button>
                 </form>
             </div>
-
-
         )
     }
 }
+
+const mapStateToProps = state => ({
+    isLoggined: state.isLoggined,
+    login: state.login,
+    allPoints: state.allPoints
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(NewMethodForm)
+);
