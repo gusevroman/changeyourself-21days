@@ -1,5 +1,6 @@
 import React from "react";
 import './addMethodForm.css'
+import './icono.min.css'
 import AddNewDay from "./AddNewDay";
 import {logIn} from "../../../redux/actions";
 import {withRouter} from "react-router-dom";
@@ -74,11 +75,15 @@ class NewMethodForm extends React.Component {
             },
             body: JSON.stringify(this.state)
         });
+    };
 
-        // const dataMethods = await response.json();
-        // console.log(this.state.title);
-        // console.log(this.state.description)
-        // this.state.days.forEach(elem => console.log('!!!!!', elem))
+    deleteDay = (event) => {
+        event.preventDefault();
+        let newDays = [...this.state.days];
+        newDays.pop();
+        this.setState({
+            days: newDays
+        })
     };
 
     render() {
@@ -117,10 +122,28 @@ class NewMethodForm extends React.Component {
                     </div>
 
 
-                    <div>{this.state.days.map((elem) => {
-                        return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
-                    })
-                    }</div>
+
+
+                    {this.state.days.length > 1 ?
+                        <>
+                            <div>{this.state.days.map((elem) => {
+                                return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
+                            })
+                            }
+                            </div>
+                            <div className='logoTrash'>
+                                <i onClick={this.deleteDay} className="icono-trash"></i>
+                            </div>
+
+                        {/*<button onClick={this.deleteDay}>удалить день</button>*/}
+                        </>
+                        : <div>{this.state.days.map((elem) => {
+                            return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
+                        })
+                        }
+                        </div>}
+
+
 
                     <div className="buttonContainer">
                         <button className="outline orange oneButton" onClick={this.plusDay}>Добавить день</button>

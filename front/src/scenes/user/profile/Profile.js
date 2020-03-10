@@ -169,6 +169,7 @@ class Profile extends Component {
 
           <div className="row">
             <button className="edit" type="submit">Сохранить изменения</button>
+            <button className="edit" type="submit">Удалить аккаунт</button>
             <Link to="/" onClick={this.logout} className="link">
               Выйти
             </Link>
