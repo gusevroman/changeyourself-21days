@@ -16,19 +16,20 @@ class Header extends Component {
     return (
       <header>
         <nav className="nav">
+          <div className="nav__section">
+            <LinkButton href="/" name="Главная" />
+            <LinkButton href="/methods" name="Все методы" />
+          </div>
         {isLoggined ? 
           <>
-            <LinkButton href="/" name="Главная" />
-            <div className="nav__personal">
-            <LinkButton href="/user" name="Мои цели"/>
-            <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
+            <div className="nav__section">
+              <LinkButton href="/newMethod" name="Добавить методику"/>
+              <LinkButton href="/user" name="Мои цели"/>
+              <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
             </div>
           </>
          : 
-          <>
-            <LinkButton href="/" name="Главная" />
-            <Modal />
-          </>
+          <Modal />
         }
         </nav>
       </header>

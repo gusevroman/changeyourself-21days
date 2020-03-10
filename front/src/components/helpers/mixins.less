@@ -1,1 +1,24 @@
 // main: ../../index.less
+
+.button(@color){
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: @mainColorText;
+  border: 2px solid @mainColor;
+  background-color: @mainColor;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: @color;
+    border: 2px solid @color;
+    background-color: @mainBgColor;
+    box-shadow: 0 0 15px @color;
+  }
+}

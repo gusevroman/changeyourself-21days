@@ -10,6 +10,9 @@
 @import "./components/loader/loaders.less";
 @import "./scenes/user/methodButton.less";
 @import "./scenes/Auth/Modal/form.less";
+@import "./scenes/user/selectTarget/newMethod.less";
+@import "./components/methods/methods.less";
+
 
 body {
   margin: 0;
@@ -53,7 +56,7 @@ header {
   align-items: center;
   height: 100%;
 
-  &__personal {
+  &__section {
     display: flex;
   }
 }
@@ -83,24 +86,11 @@ header {
 }
 
 .delete {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: @mainColorText;
-  border: 2px solid @mainColor;
-  background-color: @mainColor;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-  &:hover {
-    color: red;
-    border: 2px solid red;
-    background-color: @mainBgColor;
-    box-shadow: 0 0 15px red;
-  }
+  .button(red);
+}
+
+.edit {
+  .button(@mainColor);
+  font-size: 16px;
+  width: 230px;
 }

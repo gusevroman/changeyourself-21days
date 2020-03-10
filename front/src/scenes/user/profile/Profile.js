@@ -3,24 +3,24 @@ import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import { logout } from "../../../redux/actions";
 
-import { showProfile } from '../../../redux/actions';
-
+import { showProfile } from "../../../redux/actions";
 
 class Profile extends Component {
   constructor() {
-    super()
+    super();
     this.logout = this.logout.bind(this);
-    this.inputHandler = this.inputHandler.bind(this)
+    this.inputHandler = this.inputHandler.bind(this);
   }
 
   state = {
-    name: '',
-    avatar: "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png",
-    email: '',
-    tel: '',
-    instagram: '',
-    about: '',
-  }
+    name: "",
+    avatar:
+      "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png",
+    email: "",
+    tel: "",
+    instagram: "",
+    about: ""
+  };
 
   logout() {
     this.props.logout();
@@ -28,62 +28,68 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    this.getProfile()
+    this.getProfile();
   }
 
-  componentWillUnmount() {
-
-  }
+  componentWillUnmount() {}
 
   changeAvatar(event) {
-    event.preventDefault()
-
+    event.preventDefault();
   }
 
   async getProfile() {
     const profile = await (
-      await fetch(`http://localhost:5000/user/profile/${this.props.isLoggined}`, {
-        method: "POST",
-        headers: {
-          'Content-type': 'application/json'
-        },
-      })).json();
-    this.props.showProfile(profile)
-    this.setState(profile)
+      await fetch(
+        `http://localhost:5000/user/profile/${this.props.isLoggined}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          }
+        }
+      )
+    ).json();
+    this.props.showProfile(profile);
+    this.setState(profile);
   }
 
   saveProfile(event) {
-    event.preventDefault()
+    event.preventDefault();
     const { name, about, email, tel, instagram } = event.target;
-    this.sendProfile(name.value, about.value, email.value, tel.value, instagram.value)
+    this.sendProfile(
+      name.value,
+      about.value,
+      email.value,
+      tel.value,
+      instagram.value
+    );
   }
 
   async sendProfile(name, about, email, tel, instagram) {
-    const login = this.props.isLoggined
+    const login = this.props.isLoggined;
     const send = await (
       await fetch(`http://localhost:5000/user/profile/edit/`, {
         method: "POST",
         headers: {
-          'Content-type': 'application/json'
+          "Content-type": "application/json"
         },
         body: JSON.stringify({ login, name, about, email, tel, instagram })
-      })).json();
+      })
+    ).json();
   }
 
   inputHandler(event) {
-    const { value, name } = event.target
-    console.log('inputHandler', event.target.value, event.target.name);
-    this.setState({ [name]: value })
+    const { value, name } = event.target;
+    console.log("inputHandler", event.target.value, event.target.name);
+    this.setState({ [name]: value });
   }
 
   renderProfile() {
     const { name, avatar, about, email, tel, instagram } = this.state;
-    const isLoggined = this.props.isLoggined
+    const isLoggined = this.props.isLoggined;
     return (
-
       <div className="profile">
-
-        <div className="">
+        <div className="profile__main">
           <div>
             <span className="user-logo">
               <img src={avatar} alt="avatar" />
@@ -91,19 +97,17 @@ class Profile extends Component {
           </div>
           <div>
             <h1 title="rvgusev">{isLoggined}</h1>
-            <button
-              className=""
-              onClick={this.changeAvatar}>
-              Изменить фото профиля
-            </button>
           </div>
         </div>
 
-        <form method="POST" action="/user/profile/edit" onSubmit={this.saveProfile.bind(this)}>
+        <form
+          method="POST"
+          action="/user/profile/edit"
+          onSubmit={this.saveProfile.bind(this)}
+        >
           <div className="">
-
-            <h3 className="target__search search">
-              Имя
+            <h3 className="profile__input">
+              <span>Имя</span>
               <input
                 className="search__input"
                 name="name"
@@ -114,8 +118,8 @@ class Profile extends Component {
               />
             </h3>
 
-            <h3 className="target__search search">
-              Email
+            <h3 className="profile__input">
+              <span>Email</span>
               <input
                 className="search__input"
                 name="email"
@@ -126,8 +130,8 @@ class Profile extends Component {
               />
             </h3>
 
-            <h3 className="target__search search">
-              Обо мне
+            <h3 className="profile__input">
+              <span>Обо мне</span>
               <input
                 className="search__input"
                 name="about"
@@ -138,8 +142,8 @@ class Profile extends Component {
               />
             </h3>
 
-            <h3 className="target__search search">
-              Телефон
+            <h3 className="profile__input">
+              <span>Телефон</span>
               <input
                 className="search__input"
                 name="tel"
@@ -150,8 +154,8 @@ class Profile extends Component {
               />
             </h3>
 
-            <h3 className="target__search search">
-              Инстаграм
+            <h3 className="profile__input">
+              <span>Инстаграм</span>
               <input
                 className="search__input"
                 name="instagram"
@@ -161,40 +165,32 @@ class Profile extends Component {
                 onChange={this.inputHandler}
               />
             </h3>
-
           </div>
 
           <div className="row">
-            <button type="submit"
-            >
-              Сохранить изменения
-          </button>
+            <button className="edit" type="submit">Сохранить изменения</button>
+            <Link to="/" onClick={this.logout} className="link">
+              Выйти
+            </Link>
           </div>
-
         </form>
       </div>
-    )
+    );
   }
 
   render() {
-
-    return (
-      <>
-        {this.renderProfile()}
-        <Link to="/" onClick={this.logout} className="link" >Выйти</Link>
-      </>
-    );
+    return <>{this.renderProfile()}</>;
   }
 }
 
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
-  profile: state.profile,
+  profile: state.profile
 });
 
 const mapDispatchToProps = dispatch => ({
-  showProfile: (profile) => dispatch(showProfile(profile)),
-  logout: () => dispatch(logout()),
+  showProfile: profile => dispatch(showProfile(profile)),
+  logout: () => dispatch(logout())
 });
 
 export default withRouter(
