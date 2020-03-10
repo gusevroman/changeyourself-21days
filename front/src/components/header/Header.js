@@ -13,8 +13,6 @@ class Header extends Component {
 
   render() {
     const { isLoggined } = this.props;
-    console.log(`const { isLoggined } in Header ${this.props.isLoggined}`);
-
     return (
       <header>
         <nav className="nav">

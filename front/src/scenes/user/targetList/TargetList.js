@@ -3,26 +3,25 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import TargetHead from "./TargetHead";
 import TargetDay from "./TargetDay";
-import './targetlist.css'
+import "./targetlist.css";
 
 class TargetList extends React.Component {
-
   constructor(props) {
     super(props);
-
+    this.deleteTarget = this.deleteTarget.bind(this)
   }
-      state = {
-        target: ['123'],
-        days: '',
-        hours: '',
-        minutes: '',
-        seconds: '',
-      }
+  state = {
+    target: ["123"],
+    days: "",
+    hours: "",
+    minutes: "",
+    seconds: ""
+  };
 
   getCountdown() {
     const date = Date.parse(this.state.target.endDate);
     let days, hours, minutes, seconds;
-    const target_date = date
+    const target_date = date;
 
     let current_date = new Date().getTime();
     let seconds_left = (target_date - current_date) / 1000;
@@ -36,40 +35,53 @@ class TargetList extends React.Component {
     minutes = this.pad(parseInt(seconds_left / 60));
     seconds = this.pad(parseInt(seconds_left % 60));
 
-    this.setState({ days, hours, minutes, seconds })
+    this.setState({ days, hours, minutes, seconds });
   }
 
   pad(n) {
-    return (n < 10 ? '0' : '') + n;
+    return (n < 10 ? "0" : "") + n;
   }
 
- async componentDidMount() {
-  const  action  = await (await fetch(`http://localhost:5000/user/target/${this.props.match.params.id}`, { method: "GET" })).json();  
-  this.setState({ target: action.target })
+  async componentDidMount() {
+    const action = await (
+      await fetch(
+        `http://localhost:5000/user/target/${this.props.match.params.id}`,
+        { method: "GET" }
+      )
+    ).json();
+    this.setState({ target: action.target });
 
-    if ((new Date() - Date.parse(this.state.target.endDate)) < 0) {
+    if (new Date() - Date.parse(this.state.target.endDate) < 0) {
       this.getCountdown();
-
     }
-
   }
 
   componentDidUpdate() {
-    if ((new Date() - Date.parse(this.state.target.endDate)) < 0) {
+    if (new Date() - Date.parse(this.state.target.endDate) < 0) {
       setTimeout(() => {
-        this.getCountdown()
-      }, 1000)
+        this.getCountdown();
+      }, 1000);
+    }
+  }
+
+  async deleteTarget(){
+    const { id } = this.props.match.params;
+    const url = 'http://localhost:5000/user/target/' + id;
+    const res = prompt("Введите 'да', что бы удалить свою цель")
+    if (res === 'да'){
+      this.props.history.push('/user');
+      await fetch(url, { method:"DELETE" })
     }
   }
 
   render() {
-    const target = this.state.target
+    const target = this.state.target;
     let text = false;
     let time = new Date() - Date.parse(target.endDate);
 
     if (time <= 0) {
       const { days, hours, minutes, seconds } = this.state;
-      text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`
+      text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`;
     }
 
     let date = new Date(target.startDate);
@@ -78,27 +90,30 @@ class TargetList extends React.Component {
 
     return (
       <>
-
-
         <TargetHead target={target} text={text} />
-             <div className="target:hover">
+        <div className="target:hover">
           <h2 className="target__title"></h2>
-        {
-          target.actions && target.actions.map((elem) => {
-            return ( <TargetDay day={elem} id={target._id} date={date} counter={counter}/>)
-          })
-        }
+          {target.actions &&
+            target.actions.map(elem => {
+              return (
+                <TargetDay
+                  day={elem}
+                  id={target._id}
+                  date={date}
+                  counter={counter}
+                />
+              );
+            })}
         </div>
-       
-
+        <span className="delete" onClick={this.deleteTarget}>
+          Удалить методику
+        </span>
       </>
-    )
+    );
   }
 }
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
   targets: state.targets
 });
-export default withRouter(
-  connect(mapStateToProps)(TargetList)
-)
+export default withRouter(connect(mapStateToProps)(TargetList));

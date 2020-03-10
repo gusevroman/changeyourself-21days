@@ -1,33 +1,28 @@
 const express = require('express');
 const Method = require('../models/method');
+const User = require('../models/user');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const newMethodObj = await req.body.value;
+    let user = await User.findOne({login: req.body.author});
+    let methodArr = [];
+    req.body.days.forEach(elem => {
+        methodArr.push(elem)
+    });
+
+    console.log(req.body);
+    console.log('>>>>', methodArr);
+
     let method1 = await Method.create({
         title: req.body.title,
         description: req.body.description,
-        category: [String],
-        tag: String,
-        author: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        },
-        followers: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        }],
-        method: [{
-            title: String,
-            description: String,
-            task: String,
-            status: {
-                type: Boolean,
-                default: false,
-            },
-        }],
+        category: req.body.category,
+        tag: req.body.tag.join(' ').split(' '),
+        author: user._id,
+        followers: [user._id],
+        method: methodArr,
     });
-    return res.json(takeTags)
+    // return res.json(takeTags)
 });
 
 

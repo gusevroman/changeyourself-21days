@@ -27,18 +27,16 @@ class Login extends React.Component {
     });
     const result = await response.json();
 
-    if (result.res) {      
-      this.props.logIn(result.res);
-      this.props.history.push('/user');
-    } else {
+    if (result.error) {      
       this.setState({error: true})
+    } else {
+      this.props.logIn(result.login, result.id);
+      this.props.history.push('/user');
     }
   };
 
   render() {
     const loginForm = this.props.isLoginForm
-    console.log(loginForm);
-    
     return (
       <>
 
@@ -73,7 +71,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (login) => dispatch(logIn(login))
+  logIn: (login, id) => dispatch(logIn(login, id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

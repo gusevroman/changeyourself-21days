@@ -73,7 +73,7 @@ class TargetBlock extends React.Component {
           {targets ? (
             searchTargets.map(elem => {
               return <Target parameters={elem} key={elem.id} />;
-            })
+          })
           ) : (
             <Loader />
           )}
