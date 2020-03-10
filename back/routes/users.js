@@ -27,8 +27,8 @@ router.post('/login', async (req, res) => {
 
 router.get('/user/target/:id', async (req, res) => {
   const { id } = req.params;
-  const target = await Target.findById({_id: id} )
-  res.json({target})
+  const target = await Target.findById({ _id: id })
+  res.json({ target })
 
 });
 
@@ -57,6 +57,12 @@ router.post('/user/:login', async (req, res) => {
   })
   res.json({ targets })
 });
+
+router.post('/user/profile/edit', async (req, res) => {
+  const { login, name, about, email, tel, instagram } = req.body;
+  console.log('req.body', req.body);
+  await User.findOneAndUpdate({ login }, { name, about, email, tel, instagram })
+})
 
 router.post('/user/profile/:login', async (req, res) => {
   const { login } = req.params;

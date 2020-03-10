@@ -10,6 +10,7 @@ class Profile extends Component {
   constructor() {
     super()
     this.logout = this.logout.bind(this);
+    this.inputHandler = this.inputHandler.bind(this)
   }
 
   state = {
@@ -34,20 +35,45 @@ class Profile extends Component {
 
   }
 
-
   changeAvatar(event) {
     event.preventDefault()
 
   }
 
-  editProfile(event) {
-    event.preventDefault()
-  }
-
   async getProfile() {
-    const profile = await (await fetch(`http://localhost:5000/user/profile/${this.props.isLoggined}`, { method: "POST" })).json();
+    const profile = await (
+      await fetch(`http://localhost:5000/user/profile/${this.props.isLoggined}`, {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json'
+        },
+      })).json();
     this.props.showProfile(profile)
     this.setState(profile)
+  }
+
+  saveProfile(event) {
+    event.preventDefault()
+    const { name, about, email, tel, instagram } = event.target;
+    this.sendProfile(name.value, about.value, email.value, tel.value, instagram.value)
+  }
+
+  async sendProfile(name, about, email, tel, instagram) {
+    const login = this.props.isLoggined
+    const send = await (
+      await fetch(`http://localhost:5000/user/profile/edit/`, {
+        method: "POST",
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({ login, name, about, email, tel, instagram })
+      })).json();
+  }
+
+  inputHandler(event) {
+    const { value, name } = event.target
+    console.log('inputHandler', event.target.value, event.target.name);
+    this.setState({ [name]: value })
   }
 
   renderProfile() {
@@ -72,71 +98,93 @@ class Profile extends Component {
           </div>
         </div>
 
-        <form method="POST">
-
+        <form method="POST" action="/user/profile/edit" onSubmit={this.saveProfile.bind(this)}>
           <div className="row">
-            <aside className="item">
+            <div className="item">
               <label for="name">
                 Имя
               </label>
-            </aside>
+            </div>
             <div className="value">
               <input
+                name="name"
                 id="name"
                 type="text"
                 value={name}
+                onChange={this.inputHandler}
               />
             </div>
           </div>
 
           <div className="row">
-            <aside className="item">
+            <div className="item">
+              <label for="email">
+                Email
+              </label>
+            </div>
+            <div className="value">
+              <input
+                name="email"
+                id="email"
+                type="text"
+                value={email}
+                onChange={this.inputHandler}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="item">
               <label for="about">
                 Обо мне
               </label>
-            </aside>
+            </div>
             <div className="value">
               <input
+                name="about"
                 id="about"
                 type="text"
-                placeholder={about}
+                value={about}
+                onChange={this.inputHandler}
               />
             </div>
           </div>
 
           <div className="row">
-            <aside className="item">
+            <div className="item">
               <label for="tel">
                 Телефон
               </label>
-            </aside>
+            </div>
             <div className="value">
               <input
+                name="tel"
                 id="tel"
                 type="text"
                 value={tel}
+                onChange={this.inputHandler}
               />
             </div>
           </div>
 
           <div className="row">
-            <aside className="item">
+            <div className="item">
               <label for="instagram">
                 Инстаграм
               </label>
-            </aside>
+            </div>
             <div className="value">
               <input
+                name="instagram"
                 id="instagram"
                 type="text"
                 value={instagram}
+                onChange={this.inputHandler}
               />
             </div>
           </div>
 
           <div className="row">
-            <button
-              onClick={this.editProfile}
+            <button type="submit"
             >
               Сохранить изменения
           </button>
@@ -149,7 +197,9 @@ class Profile extends Component {
   }
 
   render() {
-    const linkEdit = `/user/profile/edit/${this.props.isLoggined}`
+    // const linkEdit = `/user/profile/edit/${this.props.isLoggined}`
+    // console.log('<<<<< this.state', this.state);
+
     return (
       <>
         {this.renderProfile()}
