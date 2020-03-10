@@ -36,7 +36,7 @@ class NewMethodForm extends React.Component {
 
         newArr.push({
             title: this.state.days.length + 1,
-            description: 'qqqqqqq',
+            description: '',
             task: ''
         });
         this.setState({
@@ -91,42 +91,41 @@ class NewMethodForm extends React.Component {
                     <input onChange={this.firstInputValue} placeholder="НАЗВАНИЕ МЕТОДА"
                            value={this.state.title}
                            name='title'
-                           type="text"/>
+                           type="text"
+                           required
+                    />
 
-
-
-
-                    {/*<select onChange={(elem) => this.selectValue(elem.target.value)} >*/}
-                    {/*    {uniqArr.map(elem => {*/}
-                    {/*        return <option value={elem}>{elem}</option>*/}
-                    {/*    })}*/}
-                    {/*</select>*/}
 
                     <textarea onChange={this.firstInputValue} placeholder='ОПИСАНИЕ'
                               value={this.state.description}
                               name="description"
-                              type="text"/>
+                              type="text"
+                              required/>
 
 
                     <input className="inputClass" placeholder="УКАЖИТЕ ТЭГИ" onChange={this.firstInputValue}
                            value={this.state.tag}
                            name="tag" type="text"/>
 
-                    <select name="slct" id="slct">
-                        <option selected disabled>Choose an option</option>
-                        <option value="1">Pure CSS</option>
-                        <option value="2">No JS</option>
-                        <option value="3">Nice!</option>
+
+                    <div className="selectContainer"><select className="addSelect" onChange={(elem) => this.selectValue(elem.target.value)}>
+                        <option>Выберите категорию</option>
+                        {uniqArr.map(elem => {
+                            return <option value={elem}>{elem}</option>
+                        })}
                     </select>
+                    </div>
+
 
                     <div>{this.state.days.map((elem) => {
                         return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
                     })
                     }</div>
 
-
-                    <button onClick={this.plusDay}>Добавить день</button>
-                    <button onClick={this.sendForm}>Отправить</button>
+                    <div className="buttonContainer">
+                        <button className="outline orange oneButton" onClick={this.plusDay}>Добавить день</button>
+                        <button className="outline orange oneButton" onSubmit={this.sendForm}>Отправить</button>
+                    </div>
                 </form>
             </div>
         )

@@ -15,7 +15,7 @@ class SelectTarget extends React.Component {
         uniqMet: [],
         value: '',
         addClick: false
-  };
+    };
 
     // createMethod = () => {
     //
@@ -47,18 +47,18 @@ class SelectTarget extends React.Component {
 
     }
 
-  takeSelectValue = async (value) => {
-    this.setState({
-      value
-    })
+    takeSelectValue = async (value) => {
+        this.setState({
+            value
+        })
 
-    const response = await fetch('http://localhost:5000/getTags', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify({ value })
-    });
+        const response = await fetch('http://localhost:5000/getTags', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({value})
+        });
 
         const dataMethods = await response.json();
         const newArr = [];
@@ -82,6 +82,7 @@ class SelectTarget extends React.Component {
                         {this.state.uniqArr.length !== 0 ?
                             <div className="box">
                                 <form>
+                                    <span>
                                     <select onChange={(elem) => this.takeSelectValue(elem.target.value)} id="select">
                                         <option>Выберите категорию</option>
                                         {this.state.uniqArr.map((elem) => {
@@ -90,6 +91,7 @@ class SelectTarget extends React.Component {
                                             )
                                         })}
                                     </select>
+                                    </span>
                                 </form>
                             </div>
                             : null}

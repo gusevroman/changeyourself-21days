@@ -15,26 +15,37 @@ body {
   margin-top: 20px;
 }
 
-/*.box select {*/
-/*  width: 350px;*/
-/*  padding: 10px;*/
-/*  height: 50px;*/
-/*  border: none;*/
-/*  background: darkorange;*/
-/*  font-family: "Russo One", sans-serif;*/
-/*  color: #fff;*/
-/*  font-size: 20px;*/
-/*  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);*/
-/*  outline: none;*/
-/*}*/
 
-/*.box select option:hover {*/
-/*  background: green;*/
-/*}*/
 
-/*.box:hover::before {*/
-/*  background: coral;*/
-/*}*/
+
+
+
+
+
+
+
+
+.box select {
+  width: 350px;
+  padding: 10px;
+  height: 50px;
+  border: none;
+  background: darkorange;
+  font-family: "Russo One", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  outline: none;
+
+}
+
+.box select option:hover {
+  background: green;
+}
+
+.box:hover::before {
+  background: coral;
+}
 
 
 

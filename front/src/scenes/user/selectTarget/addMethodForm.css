@@ -86,8 +86,9 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 
 #form {
     position: relative;
+    /*display: flex;*/
     width: 500px;
-    margin: 50px auto 100px auto;
+    margin: 0;
 }
 
 
@@ -243,8 +244,8 @@ select::-ms-expand {
     border-radius: .25em;
 }
 select {
-    flex: 1;
-    padding: 0 .5em;
+    flex: 0 0 ;
+    padding: 0 20px;
     color: #fff;
     cursor: pointer;
 }
@@ -266,3 +267,76 @@ select {
 .select:hover::after {
     color: #f39c12;
 }
+
+.addSelect {
+    align-items: center;
+    max-width: 320px;
+    text-align: center;
+
+}
+
+
+.selectContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+
+}
+
+
+/*кнопки*/
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+button.outline {
+    /*position: relative;*/
+    /*z-index: 3;*/
+    background: transparent;
+    color: #1172c4;
+    font-size: 14px;
+    border-color: #1172c4;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    width: 200px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+}
+button.outline a {
+    text-decoration: none;
+}
+button.outline:hover {
+    color: black;
+    background: #fd9215;
+    border-color: white;
+    transition: all 0.2s linear;
+}
+button.outline:active {
+    border-radius: 22px;
+}
+
+
+button.orange {
+    font-weight: 700;
+    color: #fd9215;
+    border-color: #fd9215;
+    background: transparent;
+
+}
+
+.buttonContainer {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-around;
+}
+
+.addSelect {
+    display: flex;
+    justify-content: center;
+    /*text-align: center;*/
+}
+
+

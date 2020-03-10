@@ -14,8 +14,8 @@ router.post('/', async (req, res) => {
     console.log('>>>>', methodArr);
 
     let method1 = await Method.create({
-        title: req.body.title,
-        description: req.body.description,
+        title: req.body.title.join(),
+        description: req.body.description.join(),
         category: req.body.category,
         tag: req.body.tag.join(' ').split(' '),
         author: user._id,
