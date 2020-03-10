@@ -5,11 +5,12 @@ export default class ShowSelectMetods extends Component {
 
 
   state = {
-    methods: null
+    methods: null,
+     tag: null
   }
 
 
-  async componentDidMount() {
+  async aaa() {
     const tag = this.props.tag
     const response = await fetch('http://localhost:5000/method/getmethods', {
       method: 'POST',
@@ -20,11 +21,16 @@ export default class ShowSelectMetods extends Component {
     })
     const data = await response.json()
     console.log(data)
-    this.setState({ methods: data })
+    this.setState({ methods: data, tag: this.props.tag })
 
   }
 
   render() {
+    if(this.state.tag  !== this.props.tag){
+      this.aaa()
+    }
+    console.log(this.state.methods, this.props.tag);
+    
     return (
       <>
         <div>
