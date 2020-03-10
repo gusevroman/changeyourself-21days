@@ -7,6 +7,12 @@ router.post('/', async (req, res) => {
   res.json(methods)
 });
 
+router.post('/getmethods', async (req, res) => {
+  const { tag } = req.body
+  const methods = await Method.find({tag:tag});
+  res.json({methods})
+});
+
 router.post('/:id', async (req, res) => {
   const { id } = req.params;
   const method = await Method.findById(id);
