@@ -35,12 +35,16 @@ export default class AddNewDay extends React.Component {
                           value={this.state.description}
                           name='description'
                           className="textareaClass"
-                          type="text"/>
+                          type="text"
+                          required
+                />
                 <textarea placeholder="ЗАДАНИЕ" onChange={this.inputValueLocal}
                           value={this.state.task}
                           name='task'
                           className="textareaClass"
-                          type="text"/>
+                          type="text"
+                          required
+                />
             </div>
         )
     }
