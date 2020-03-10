@@ -64,6 +64,12 @@ router.post('/user/:login', async (req, res) => {
   res.json({ targets })
 });
 
+router.post('/user/profile/edit', async (req, res) => {
+  const { login, name, about, email, tel, instagram } = req.body;
+  console.log('req.body', req.body);
+  await User.findOneAndUpdate({ login }, { name, about, email, tel, instagram })
+})
+
 router.post('/user/profile/:login', async (req, res) => {
   const { login } = req.params;
   const profile = await User.findOne({ login });
