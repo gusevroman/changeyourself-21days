@@ -13,5 +13,9 @@ router.post('/:id', async (req, res) => {
   res.json({method})
 });
 
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+  await Method.findByIdAndDelete(id);
+});
 
 module.exports = router;

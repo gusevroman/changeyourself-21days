@@ -14,13 +14,8 @@ class Registration extends React.Component {
 
   registration = async event => {
     event.preventDefault();
-
-    const { logIn } = this.props;
-
     const login = event.target.login.value;
     const password = event.target.password.value;
-    console.log(login, password);
-
     const response = await fetch(event.target.action, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,11 +23,11 @@ class Registration extends React.Component {
     });
     const result = await response.json();
 
-    if (result.res) {
-      logIn(result.res);
-      this.props.history.push('/user')
-    } else {
+    if (result.error) {
       this.setState({ error: true })
+    } else {
+      this.props.logIn(result.login, result.id);
+      this.props.history.push('/user')
     }
   };
 
@@ -71,7 +66,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (login) => dispatch(logIn(login))
+  logIn: (login, id) => dispatch(logIn(login, id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Registration));
