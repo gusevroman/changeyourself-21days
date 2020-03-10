@@ -89,6 +89,11 @@ class Profile extends Component {
     const isLoggined = this.props.isLoggined;
     return (
       <div className="profile">
+        <form
+          method="POST"
+          action="/user/profile/edit"
+          onSubmit={this.saveProfile.bind(this)}
+        >
         <div className="profile__main">
           <div>
             <span className="user-logo">
@@ -100,11 +105,6 @@ class Profile extends Component {
           </div>
         </div>
 
-        <form
-          method="POST"
-          action="/user/profile/edit"
-          onSubmit={this.saveProfile.bind(this)}
-        >
           <div className="">
             <h3 className="profile__input">
               <span>Имя</span>

@@ -74,6 +74,7 @@ class NewMethodForm extends React.Component {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(this.state)
+
         });
     };
 

@@ -1,18 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #aca49c;
-    font-size: 0.875em;
-}
 
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
-    color: #bbb5af;
-}
+ 
 
-input::-moz-placeholder, textarea::-moz-placeholder {
-    color: #aca49c;
-    font-size: 0.875em;
-}
 
 input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
     color: #bbb5af;
@@ -362,4 +351,3 @@ button.orange {
     color: #fd9215;
     cursor: pointer;
 }
-

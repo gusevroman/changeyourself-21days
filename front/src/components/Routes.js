@@ -9,6 +9,7 @@ import Methods from "../components/methods/Methods";
 import TargetList from '../scenes/user/targetList/TargetList';
 import MethodInfo from '../scenes/home/Methods/methodInfo/MethodInfo';
 import Personal from '../scenes/user/Personal'
+import NewTarget from '../scenes/user/selectTarget/NewTarget';
 
 function Routes() {
     return (
@@ -21,6 +22,9 @@ function Routes() {
             </Route>
             <Route exact path="/newMethod">
                 <Method />
+            </Route>            
+            <Route exact path="/newTarget">
+                <NewTarget />
             </Route>
             <Route exact path="/methods">
                 <Methods />
