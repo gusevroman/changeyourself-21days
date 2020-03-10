@@ -2,6 +2,7 @@ import { LOGGINED, LOGOUT, TARGETS, PROFILE } from "./action-types";
 
 const initialState = {
   isLoggined: localStorage.isLoggined || false,
+  userId: localStorage.userId || false,
 };
 
 export default (state = initialState, action) => {
@@ -9,13 +10,16 @@ export default (state = initialState, action) => {
     case LOGGINED:
       if (!action.noSave) {
         localStorage.isLoggined = action.login;
+        localStorage.userId = action.id;
       }
       return {
         ...state,
-        isLoggined: action.login
+        isLoggined: action.login,
+        userId: action.id,
       }
     case LOGOUT:
       delete localStorage.isLoggined;
+      delete localStorage.userId;
       return {
         state: initialState
       }
