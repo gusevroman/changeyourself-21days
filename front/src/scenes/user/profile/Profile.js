@@ -81,9 +81,9 @@ class Profile extends Component {
     const isLoggined = this.props.isLoggined
     return (
 
-      <div className="settings">
+      <div className="profile">
 
-        <div className="row">
+        <div className="">
           <div>
             <span className="user-logo">
               <img src={avatar} alt="avatar" />
@@ -92,6 +92,7 @@ class Profile extends Component {
           <div>
             <h1 title="rvgusev">{isLoggined}</h1>
             <button
+              className=""
               onClick={this.changeAvatar}>
               Изменить фото профиля
             </button>
@@ -99,88 +100,68 @@ class Profile extends Component {
         </div>
 
         <form method="POST" action="/user/profile/edit" onSubmit={this.saveProfile.bind(this)}>
-          <div className="row">
-            <div className="item">
-              <label for="name">
-                Имя
-              </label>
-            </div>
-            <div className="value">
+          <div className="">
+
+            <h3 className="target__search search">
+              Имя
               <input
+                className="search__input"
                 name="name"
                 id="name"
                 type="text"
                 value={name}
                 onChange={this.inputHandler}
               />
-            </div>
-          </div>
+            </h3>
 
-          <div className="row">
-            <div className="item">
-              <label for="email">
-                Email
-              </label>
-            </div>
-            <div className="value">
+            <h3 className="target__search search">
+              Email
               <input
+                className="search__input"
                 name="email"
                 id="email"
                 type="text"
                 value={email}
                 onChange={this.inputHandler}
               />
-            </div>
-          </div>
-          <div className="row">
-            <div className="item">
-              <label for="about">
-                Обо мне
-              </label>
-            </div>
-            <div className="value">
+            </h3>
+
+            <h3 className="target__search search">
+              Обо мне
               <input
+                className="search__input"
                 name="about"
                 id="about"
                 type="text"
                 value={about}
                 onChange={this.inputHandler}
               />
-            </div>
-          </div>
+            </h3>
 
-          <div className="row">
-            <div className="item">
-              <label for="tel">
-                Телефон
-              </label>
-            </div>
-            <div className="value">
+            <h3 className="target__search search">
+              Телефон
               <input
+                className="search__input"
                 name="tel"
                 id="tel"
                 type="text"
                 value={tel}
                 onChange={this.inputHandler}
               />
-            </div>
-          </div>
+            </h3>
 
-          <div className="row">
-            <div className="item">
-              <label for="instagram">
-                Инстаграм
-              </label>
-            </div>
-            <div className="value">
+            <h3 className="target__search search">
+              Инстаграм
               <input
+                className="search__input"
                 name="instagram"
                 id="instagram"
                 type="text"
                 value={instagram}
                 onChange={this.inputHandler}
               />
-            </div>
+            </h3>
+
           </div>
 
           <div className="row">
@@ -188,7 +169,6 @@ class Profile extends Component {
             >
               Сохранить изменения
           </button>
-
           </div>
 
         </form>
@@ -197,8 +177,6 @@ class Profile extends Component {
   }
 
   render() {
-    // const linkEdit = `/user/profile/edit/${this.props.isLoggined}`
-    // console.log('<<<<< this.state', this.state);
 
     return (
       <>
@@ -222,5 +200,3 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(Profile)
 );
-
-
