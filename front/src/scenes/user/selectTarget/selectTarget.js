@@ -5,7 +5,8 @@ import NewMethodForm from './AddMethodForm'
 import NewMethodButton from "./AddMethodButton";
 
 import './selectTarget.css'
-
+import ShowSelectMetods from "./ShowSelectMetods";
+import Loader from '../../../components/loader/loader'
 
 class SelectTarget extends React.Component {
     state = {
@@ -14,7 +15,8 @@ class SelectTarget extends React.Component {
         uniqArr: ['Спорт', 'Образование', 'Хобби', 'Здоровье'],
         uniqMet: [],
         value: '',
-        addClick: false
+        addClick: false,
+        selectedTag: ''
   };
 
     // createMethod = () => {
@@ -74,6 +76,12 @@ class SelectTarget extends React.Component {
         })
     };
 
+    tagSelected(event){
+      this.setState({
+        selectedTag: event
+      })
+    }
+
     render() {
         return (
             <>
@@ -99,19 +107,23 @@ class SelectTarget extends React.Component {
                         {this.state.uniqMet.length !== 0 ?
                             <div className="box">
                                 <form>
-                                    <select id="select">
+                                    <select onChange={(elem) => this.tagSelected(elem.target.value)} id="select">
                                         <option>Выберите тэг</option>
                                         {this.state.uniqMet.map((elem) => {
                                             return (
                                                 <option value={elem}>{elem}</option>
                                             )
+
                                         })}
                                     </select>
                                 </form>
                             </div>
                             : null}
                     </div>
-
+                    {this.state.selectedTag.length > 1 ?
+                    <ShowSelectMetods tag={this.state.selectedTag} />
+                    : null
+                    }
                     <NewMethodButton addMethodsFunc={this.addMethods}/>
 
                     <div className='childFlex'>
