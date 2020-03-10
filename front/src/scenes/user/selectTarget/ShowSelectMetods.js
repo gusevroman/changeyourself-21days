@@ -33,9 +33,6 @@ export default class ShowSelectMetods extends Component {
     
     return (
       <>
-        <div>
-          <h2>Methods:</h2>
-        </div>
         <div className="topMethods__content">
           {this.state.methods && this.state.methods.methods.map(method => {
             return <Method method={method} />

@@ -1243,6 +1243,25 @@ svg rect {
 .mainFlex .box:hover::before {
   background: coral;
 }
+.mainFlex .stage {
+  text-align: left;
+}
+.mainFlex [class*="icono"] {
+  opacity: 0.6;
+}
+.mainFlex .logoTrash {
+  color: #fd9215;
+  padding: 10px;
+  display: inline-block;
+}
+.mainFlex .logoTrash:hover {
+  transform: scale(1.5);
+}
+.mainFlex .logoTrash:hover i {
+  opacity: 0.8;
+  color: #fd9215;
+  cursor: pointer;
+}
 .childFlex {
   margin-top: 20px;
 }

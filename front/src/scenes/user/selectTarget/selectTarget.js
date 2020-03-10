@@ -64,42 +64,7 @@ class SelectTarget extends React.Component {
         return (
             <>
                 <div className="mainFlex">
-                    <div className='childFlex'>
-                        {this.state.uniqArr.length !== 0 ?
-                            <div className="box">
-                                <form>
-                                    <span>
-                                    <select onChange={(elem) => this.takeSelectValue(elem.target.value)} id="select">
-                                        <option>Выберите категорию</option>
-                                        {this.state.uniqArr.map((elem) => {
-                                            return (
-                                                <option value={elem}>{elem}</option>
-                                            )
-                                        })}
-                                    </select>
-                                    </span>
-                                </form>
-                            </div>
-                            : null}
-                    </div>
-
-                    <div className='childFlex'>
-                        {this.state.uniqMet.length !== 0 ?
-                            <div className="box">
-                                <form>
-                                    <select onChange={(elem) => this.tagSelected(elem.target.value)} id="select">
-                                        <option>Выберите тэг</option>
-                                        {this.state.uniqMet.map((elem) => {
-                                            return (
-                                                <option value={elem}>{elem}</option>
-                                            )
-
-                                        })}
-                                    </select>
-                                </form>
-                            </div>
-                            : null}
-                    </div>
+                    
                     {this.state.selectedTag.length > 1 ?
                     <ShowSelectMetods tag={this.state.selectedTag} />
                     : null
@@ -107,12 +72,12 @@ class SelectTarget extends React.Component {
 
 
                     {/*<div className='childFlex'>*/}
-                        {(this.state.addClick) ?
-                            <>
-                            <NewMethodButton value={'CANCEL'} addMethodsFunc={this.addMethods}/>
+                        {/* {(this.state.addClick) ?
+                            <> */}
+                            {/* <NewMethodButton value={'CANCEL'} addMethodsFunc={this.addMethods}/> */}
                             <NewMethodForm/>
-                            </>
-                            : <NewMethodButton value={'ADD METHOD'} addMethodsFunc={this.addMethods}/>}
+                            {/* </>
+                            : <NewMethodButton value={'ADD METHOD'} addMethodsFunc={this.addMethods}/>} */}
                     {/*</div>*/}
                 </div>
             </>
