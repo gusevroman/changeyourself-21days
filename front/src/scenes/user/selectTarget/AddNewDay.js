@@ -29,19 +29,18 @@ export default class AddNewDay extends React.Component {
     render() {
         return (
             <div>
-                <div>День {this.state.title}</div>
-                <div>Описание: <textarea onChange={this.inputValueLocal}
-                                         value={this.state.description}
-                                         name='description'
-                                         style={{width: 350, height: 75, fontSize: 16}}
-                                         type="text"/>
-                </div>
-                <div>Задание: <textarea onChange={this.inputValueLocal}
-                                        value={this.state.task}
-                                        name='task'
-                                        style={{width: 350, height: 75, fontSize: 16}}
-                                        type="text"/>
-                </div>
+                <div className="nameBar">DAY: {this.state.title}</div>
+                <textarea onChange={this.inputValueLocal}
+                          placeholder="ОПИСАНИЕ"
+                          value={this.state.description}
+                          name='description'
+                          className="textareaClass"
+                          type="text"/>
+                <textarea placeholder="ЗАДАНИЕ" onChange={this.inputValueLocal}
+                          value={this.state.task}
+                          name='task'
+                          className="textareaClass"
+                          type="text"/>
             </div>
         )
     }

@@ -9,8 +9,8 @@ import {connect} from "react-redux";
 class NewMethodForm extends React.Component {
 
     state = {
-        title: 'yq',
-        description: 'hw',
+        title: '',
+        description: '',
         category: '',
         tag: '',
         author: this.props.isLoggined,
@@ -85,36 +85,44 @@ class NewMethodForm extends React.Component {
         let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье'];
         return (
             <div className="box">
-                <form>
-                    <div>Название метода: <input onChange={this.firstInputValue}
-                                                 value={this.state.title}
-                                                 name='title'
-                                                 style={{width: 250, height: 45, fontSize: 30}}
-                                                 type="text"/>
-                    </div>
+                <form id="form" className="topBefore">
 
-                    <select onChange={(elem) => this.selectValue(elem.target.value)} >
-                        {uniqArr.map(elem => {
-                            return <option value={elem}>{elem}</option>
-                        })}
+
+                    <input onChange={this.firstInputValue} placeholder="НАЗВАНИЕ МЕТОДА"
+                           value={this.state.title}
+                           name='title'
+                           type="text"/>
+
+
+
+
+                    {/*<select onChange={(elem) => this.selectValue(elem.target.value)} >*/}
+                    {/*    {uniqArr.map(elem => {*/}
+                    {/*        return <option value={elem}>{elem}</option>*/}
+                    {/*    })}*/}
+                    {/*</select>*/}
+
+                    <textarea onChange={this.firstInputValue} placeholder='ОПИСАНИЕ'
+                              value={this.state.description}
+                              name="description"
+                              type="text"/>
+
+
+                    <input className="inputClass" placeholder="УКАЖИТЕ ТЭГИ" onChange={this.firstInputValue}
+                           value={this.state.tag}
+                           name="tag" type="text"/>
+
+                    <select name="slct" id="slct">
+                        <option selected disabled>Choose an option</option>
+                        <option value="1">Pure CSS</option>
+                        <option value="2">No JS</option>
+                        <option value="3">Nice!</option>
                     </select>
-
-                    <div>Описание: <textarea onChange={this.firstInputValue}
-                                             value={this.state.description}
-                                             name="description"
-                                             style={{width: 350, height: 75, fontSize: 16}}
-                                             type="text"/>
-                    </div>
 
                     <div>{this.state.days.map((elem) => {
                         return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
                     })
                     }</div>
-
-                    <div>Напишите тэги: <input onChange={this.firstInputValue}
-                                               value={this.state.tag}
-                                               name="tag" type="text"/></div>
-
 
 
                     <button onClick={this.plusDay}>Добавить день</button>
