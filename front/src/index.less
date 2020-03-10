@@ -13,7 +13,6 @@
 @import "./scenes/user/selectTarget/newMethod.less";
 @import "./components/methods/methods.less";
 
-
 body {
   margin: 0;
   padding: 0;
@@ -58,8 +57,10 @@ header {
 
   &__section {
     display: flex;
+    align-items: center;
   }
 }
+
 .link {
   display: flex;
   align-items: center;
@@ -91,6 +92,12 @@ header {
 
 .edit {
   .button(@mainColor);
+  font-size: 16px;
+  width: 230px;
+}
+
+.use {
+  .button(green);
   font-size: 16px;
   width: 230px;
 }

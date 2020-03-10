@@ -59,7 +59,10 @@ class Method extends React.Component {
                 }
               </tbody>
             </table>
+            <div className="method__buttons">
             { access && <span className="delete" onClick={this.deleteMethod}>Удалить методику</span>}
+            { this.props.isLoggined && <span className="use">Воспользоваться</span>}
+            </div>
           </div>
         : 
         <div class="loader loader--style3" title="2">

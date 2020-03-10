@@ -18,7 +18,7 @@ class Header extends Component {
         <nav className="nav">
           <div className="nav__section">
             <LinkButton href="/" name="Главная" />
-            <LinkButton href="/methods" name="Все методы" />
+            <LinkButton href="/methods" name="Все методики" />
           </div>
         {isLoggined ? 
           <>

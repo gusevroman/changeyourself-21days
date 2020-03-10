@@ -3,6 +3,11 @@ const Method = require('../models/method');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
+  const methods = await Method.find();
+  res.json(methods)
+});
+
+router.post('/top', async (req, res) => {
   const methods = await Method.find().sort({followers:-1}).limit(10);
   res.json(methods)
 });
