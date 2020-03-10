@@ -8,7 +8,7 @@ export default class NewMethodButton extends React.Component {
                 <span className="sfl"></span>
                 <span className="cross"></span>
                 <i></i>
-                <p>add methods</p>
+                <p>{this.props.value}</p>
             </a>
         )
     }

@@ -19,9 +19,6 @@ class SelectTarget extends React.Component {
         selectedTag: ''
   };
 
-    // createMethod = () => {
-    //
-    // };
 
     addMethods = (event) => {
         this.setState({
@@ -29,30 +26,11 @@ class SelectTarget extends React.Component {
         })
     };
 
-    async componentDidMount() {
-        // const response = await fetch('http://localhost:5000/newTarget');
-        // const json = await response.json();
-        // this.setState(({obj}) => {
-        //     return {dataTarget: json}
-        // });
-        // const arr = [];
-        // const newArr = [];
-        // this.state.dataTarget.forEach((elem) => arr.push(elem.category));
-        // for (let str of arr.flat()) {
-        //     if (!newArr.includes(str)) {
-        //         newArr.push(str);
-        //     }
-        // }
-        // this.setState({
-        //     uniqArr: newArr
-        // })
-
-    }
 
     takeSelectValue = async (value) => {
         this.setState({
             value
-        })
+        });
 
         const response = await fetch('http://localhost:5000/getTags', {
             method: 'POST',
@@ -126,13 +104,16 @@ class SelectTarget extends React.Component {
                     <ShowSelectMetods tag={this.state.selectedTag} />
                     : null
                     }
-                    <NewMethodButton addMethodsFunc={this.addMethods}/>
 
-                    <div className='childFlex'>
+
+                    {/*<div className='childFlex'>*/}
                         {(this.state.addClick) ?
+                            <>
+                            <NewMethodButton value={'CANCEL'} addMethodsFunc={this.addMethods}/>
                             <NewMethodForm/>
-                            : null}
-                    </div>
+                            </>
+                            : <NewMethodButton value={'ADD METHOD'} addMethodsFunc={this.addMethods}/>}
+                    {/*</div>*/}
                 </div>
             </>
         )
