@@ -4,11 +4,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
 
 .mainFlex {
-  padding-top: 40px;
+  padding: 40px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 
   input::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
@@ -110,20 +109,21 @@
 
   #form {
     position: relative;
+    /*display: flex;*/
     width: 500px;
-    margin: 50px auto 100px auto;
+    margin: 0;
   }
 
   .inputClass {
     font-family: "Lato", sans-serif;
-    font-size: 0.875em;
+    font-size: 20px;
     width: 470px;
     height: 50px;
     padding: 0px 15px 0px 15px;
 
     background: transparent;
     outline: none;
-    color: #726659;
+    color: @mainColorText;
 
     border: solid 1px #fd9215;
 
@@ -135,14 +135,14 @@
 
   input {
     font-family: "Lato", sans-serif;
-    font-size: 0.875em;
+    font-size: 26px;
     width: 470px;
     height: 50px;
     padding: 0px 15px 0px 15px;
 
     background: transparent;
     outline: none;
-    color: #726659;
+    color: @mainColorText;
 
     border: solid 1px #fd9215;
     border-bottom: none;
@@ -154,8 +154,8 @@
   }
 
   input:hover {
-    background: #b3aca7;
-    color: #e2dedb;
+    background: fade(#b3aca7, 10%);
+    color: @mainColorText;
   }
 
   textarea {
@@ -168,9 +168,9 @@
     background: transparent;
     outline: none;
 
-    color: #726659;
+    color: @mainColorText;
     font-family: "Lato", sans-serif;
-    font-size: 0.875em;
+    font-size: 20px;
 
     border: solid 1px #fd9215;
 
@@ -190,9 +190,7 @@
     background: transparent;
     outline: none;
 
-    color: #726659;
     font-family: "Lato", sans-serif;
-    font-size: 0.875em;
 
     border: solid 1px #fd9215;
 
@@ -203,7 +201,7 @@
   }
 
   textarea:hover {
-    background: #b3aca7;
+    background: fade(#b3aca7, 10%);
     color: #e2dedb;
   }
 
@@ -257,8 +255,8 @@
     border-radius: 0.25em;
   }
   select {
-    flex: 1;
-    padding: 0 0.5em;
+    flex: 0 0;
+    padding: 0 20px;
     color: #fff;
     cursor: pointer;
   }
@@ -279,6 +277,92 @@
   /* Transition */
   .select:hover::after {
     color: #f39c12;
+  }
+
+  .addSelect {
+    align-items: center;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .selectContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  /*кнопки*/
+
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+  button.outline {
+    /*position: relative;*/
+    /*z-index: 3;*/
+    background: transparent;
+    color: #1172c4;
+    font-size: 14px;
+    border-color: #1172c4;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    width: 200px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+  }
+  button.outline a {
+    text-decoration: none;
+  }
+  button.outline:hover {
+    color: black;
+    background: #fd9215;
+    border-color: white;
+    transition: all 0.2s linear;
+  }
+  button.outline:active {
+    border-radius: 22px;
+  }
+
+  button.orange {
+    font-weight: 700;
+    color: #fd9215;
+    border-color: #fd9215;
+    background: transparent;
+  }
+
+  .buttonContainer {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-around;
+  }
+
+  .addSelect {
+    display: flex;
+    justify-content: center;
+    /*text-align: center;*/
+  }
+
+  .box select {
+    width: 350px;
+    padding: 10px;
+    height: 50px;
+    border: none;
+    background: darkorange;
+    font-family: "Russo One", sans-serif;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+
+  .box select option:hover {
+    background: green;
+  }
+
+  .box:hover::before {
+    background: coral;
   }
 }
 

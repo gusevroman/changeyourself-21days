@@ -907,7 +907,7 @@ svg rect {
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
 }
 .mainFlex {
-  padding-top: 40px;
+  padding: 40px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -917,6 +917,7 @@ svg rect {
   /* Custom Select */
   /* Arrow */
   /* Transition */
+  /*кнопки*/
 }
 .mainFlex input::-webkit-input-placeholder,
 .mainFlex textarea::-webkit-input-placeholder {
@@ -999,18 +1000,19 @@ svg rect {
 }
 .mainFlex #form {
   position: relative;
+  /*display: flex;*/
   width: 500px;
-  margin: 50px auto 100px auto;
+  margin: 0;
 }
 .mainFlex .inputClass {
   font-family: "Lato", sans-serif;
-  font-size: 0.875em;
+  font-size: 20px;
   width: 470px;
   height: 50px;
   padding: 0px 15px 0px 15px;
   background: transparent;
   outline: none;
-  color: #726659;
+  color: #fff;
   border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1019,13 +1021,13 @@ svg rect {
 }
 .mainFlex input {
   font-family: "Lato", sans-serif;
-  font-size: 0.875em;
+  font-size: 26px;
   width: 470px;
   height: 50px;
   padding: 0px 15px 0px 15px;
   background: transparent;
   outline: none;
-  color: #726659;
+  color: #fff;
   border: solid 1px #fd9215;
   border-bottom: none;
   transition: all 0.3s ease-in-out;
@@ -1034,8 +1036,8 @@ svg rect {
   -ms-transition: all 0.3s ease-in-out;
 }
 .mainFlex input:hover {
-  background: #b3aca7;
-  color: #e2dedb;
+  background: rgba(179, 172, 167, 0.1);
+  color: #fff;
 }
 .mainFlex textarea {
   width: 470px;
@@ -1045,9 +1047,9 @@ svg rect {
   padding: 15px;
   background: transparent;
   outline: none;
-  color: #726659;
+  color: #fff;
   font-family: "Lato", sans-serif;
-  font-size: 0.875em;
+  font-size: 20px;
   border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1062,9 +1064,7 @@ svg rect {
   padding: 15px;
   background: transparent;
   outline: none;
-  color: #726659;
   font-family: "Lato", sans-serif;
-  font-size: 0.875em;
   border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1072,7 +1072,7 @@ svg rect {
   -ms-transition: all 0.3s ease-in-out;
 }
 .mainFlex textarea:hover {
-  background: #b3aca7;
+  background: rgba(179, 172, 167, 0.1);
   color: #e2dedb;
 }
 .mainFlex #submit {
@@ -1115,8 +1115,8 @@ svg rect {
   border-radius: 0.25em;
 }
 .mainFlex select {
-  flex: 1;
-  padding: 0 0.5em;
+  flex: 0 0;
+  padding: 0 20px;
   color: #fff;
   cursor: pointer;
 }
@@ -1135,6 +1135,81 @@ svg rect {
 }
 .mainFlex .select:hover::after {
   color: #f39c12;
+}
+.mainFlex .addSelect {
+  align-items: center;
+  max-width: 320px;
+  text-align: center;
+}
+.mainFlex .selectContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.mainFlex button {
+  cursor: pointer;
+  outline: none;
+}
+.mainFlex button.outline {
+  /*position: relative;*/
+  /*z-index: 3;*/
+  background: transparent;
+  color: #1172c4;
+  font-size: 14px;
+  border-color: #1172c4;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 22px;
+  width: 200px;
+  padding: 20px 0;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+}
+.mainFlex button.outline a {
+  text-decoration: none;
+}
+.mainFlex button.outline:hover {
+  color: black;
+  background: #fd9215;
+  border-color: white;
+  transition: all 0.2s linear;
+}
+.mainFlex button.outline:active {
+  border-radius: 22px;
+}
+.mainFlex button.orange {
+  font-weight: 700;
+  color: #fd9215;
+  border-color: #fd9215;
+  background: transparent;
+}
+.mainFlex .buttonContainer {
+  display: flex;
+  padding-top: 40px;
+  justify-content: space-around;
+}
+.mainFlex .addSelect {
+  display: flex;
+  justify-content: center;
+  /*text-align: center;*/
+}
+.mainFlex .box select {
+  width: 350px;
+  padding: 10px;
+  height: 50px;
+  border: none;
+  background: darkorange;
+  font-family: "Russo One", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+.mainFlex .box select option:hover {
+  background: green;
+}
+.mainFlex .box:hover::before {
+  background: coral;
 }
 .childFlex {
   margin-top: 20px;
