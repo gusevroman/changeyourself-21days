@@ -92,6 +92,7 @@
   font-weight: 800;
   color: black;
   font-size: 20px;
+  transition: all 0.5s linear;
 }
 .target .progress-bar__red {
   background-size: 30px 30px;
@@ -129,8 +130,11 @@
   margin: 0px 0px 20px;
 }
 .profile {
+  display: flex;
+  justify-content: center;
   margin: 1rem;
   color: whitesmoke;
+  text-align: center;
 }
 .profile .user-logo {
   display: block;
@@ -140,6 +144,39 @@
   width: 100%;
   height: 100%;
   margin: 0.5rem;
+}
+.profile .row button {
+  display: block;
+  margin: 30px auto 0px;
+}
+.profile__input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.profile__input span {
+  width: 100px;
+  text-align: right;
+}
+.profile__input input {
+  font-size: 20px;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border: 2px solid #fd9215;
+  border-radius: 25px;
+  width: 400px;
+}
+.profile__input input:focus {
+  outline: none;
+  box-shadow: 0 0 15px #fd9215;
+}
+.profile .link {
+  margin-top: 30px;
+  display: inline-block;
 }
 .carousel {
   position: relative;
@@ -845,6 +882,288 @@ svg rect {
   padding: 10px 20px;
   border-radius: 4px;
 }
+@font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Russo One'), local('RussoOne-Regular'), url(https://fonts.gstatic.com/s/russoone/v8/Z9XUDmZRWg6M1LvRYsHOz8mM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHh30AXC-v.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+.mainFlex {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* on hover placeholder */
+  /**/
+  /* Remove IE arrow */
+  /* Custom Select */
+  /* Arrow */
+  /* Transition */
+}
+.mainFlex input::-webkit-input-placeholder,
+.mainFlex textarea::-webkit-input-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+.mainFlex input:focus::-webkit-input-placeholder,
+.mainFlex textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+.mainFlex input::-moz-placeholder,
+.mainFlex textarea::-moz-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+.mainFlex input:focus::-moz-placeholder,
+.mainFlex textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+.mainFlex input::placeholder,
+.mainFlex textarea::placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+.mainFlex input:focus::placeholder,
+.mainFlex textarea::focus:placeholder {
+  color: #bbb5af;
+}
+.mainFlex input::-ms-placeholder,
+.mainFlex textarea::-ms-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+.mainFlex input:focus::-ms-placeholder,
+.mainFlex textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+.mainFlex input:hover::-webkit-input-placeholder,
+.mainFlex textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+.mainFlex input:hover:focus::-webkit-input-placeholder,
+.mainFlex textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+.mainFlex input:hover::-moz-placeholder,
+.mainFlex textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+.mainFlex input:hover:focus::-moz-placeholder,
+.mainFlex textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+.mainFlex input:hover::placeholder,
+.mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+.mainFlex input:hover:focus::placeholder,
+.mainFlex textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+.mainFlex input:hover::placeholder,
+.mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+.mainFlex input:hover:focus::-ms-placeholder,
+.mainFlex textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+.mainFlex .nameBar {
+  position: relative;
+  margin: 100px 0 25px 0;
+  font-size: 2.3em;
+  text-align: center;
+  letter-spacing: 7px;
+}
+.mainFlex #form {
+  position: relative;
+  width: 500px;
+  margin: 50px auto 100px auto;
+}
+.mainFlex .inputClass {
+  font-family: "Lato", sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #fd9215;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+.mainFlex input {
+  font-family: "Lato", sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #fd9215;
+  border-bottom: none;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+.mainFlex input:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+.mainFlex textarea {
+  width: 470px;
+  max-width: 470px;
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  font-family: "Lato", sans-serif;
+  font-size: 0.875em;
+  border: solid 1px #fd9215;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+.mainFlex .textareaClass {
+  width: 470px;
+  max-width: 470px;
+  height: 80px;
+  max-height: 70px;
+  padding: 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  font-family: "Lato", sans-serif;
+  font-size: 0.875em;
+  border: solid 1px #fd9215;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+.mainFlex textarea:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+.mainFlex #submit {
+  width: 502px;
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.875em;
+  color: #b3aca7;
+  outline: none;
+  cursor: pointer;
+  border: solid 1px #b3aca7;
+  border-top: none;
+}
+.mainFlex #submit:hover {
+  color: #e2dedb;
+}
+.mainFlex select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+.mainFlex select::-ms-expand {
+  display: none;
+}
+.mainFlex .select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+.mainFlex select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+.mainFlex .select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+.mainFlex .select:hover::after {
+  color: #f39c12;
+}
+.childFlex {
+  margin-top: 20px;
+}
+.allMethods {
+  padding: 50px 0px;
+}
+.allMethods__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.allMethods__search span {
+  margin-right: 15px;
+  font-size: 24px;
+}
+.allMethods__input {
+  color: #fff;
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border: 2px solid #fd9215;
+  border-radius: 25px;
+}
+.allMethods__input:focus {
+  outline: none;
+  box-shadow: 0 0 15px #fd9215;
+}
 body {
   margin: 0;
   padding: 0;
@@ -881,7 +1200,7 @@ header {
   align-items: center;
   height: 100%;
 }
-.nav__personal {
+.nav__section {
   display: flex;
 }
 .link {
@@ -929,4 +1248,28 @@ header {
   border: 2px solid red;
   background-color: #292929;
   box-shadow: 0 0 15px red;
+}
+.edit {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: #fff;
+  border: 2px solid #fd9215;
+  background-color: #fd9215;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  width: 230px;
+}
+.edit:hover {
+  color: #fd9215;
+  border: 2px solid #fd9215;
+  background-color: #292929;
+  box-shadow: 0 0 15px #fd9215;
 }

@@ -1,0 +1,30 @@
+// main: ../../index.less
+
+.allMethods {
+  padding: 50px 0px;
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-right: 15px;
+      font-size: 24px;
+    }
+  }
+
+  &__input {
+    color: @mainColorText;
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border: 2px solid @mainColor;
+    border-radius: 25px;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 15px @mainColor;
+    }
+  }
+}
