@@ -17,10 +17,26 @@ const targetSchema = new mongoose.Schema({
   },
   method: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Method'
+    ref: 'Method',
   },
   actions: [],
 });
+
+targetSchema.statics.updateStatus = async function  (id, actionsId) {
+  const doc = await this.findById(id)
+// console.log(doc.actions);
+
+  const aIndex = await doc.actions.findIndex( el =>  el._id==actionsId )
+  console.log(aIndex);
+console.log(doc.actions[aIndex].status);
+  
+ doc.actions[aIndex].status=true
+console.log(doc.actions[aIndex].status);
+
+  await doc.save()
+}
+
+
 module.exports = mongoose.model('Target', targetSchema);
 
 

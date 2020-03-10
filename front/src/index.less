@@ -2,13 +2,16 @@
 @import "./components/helpers/mixins.less";
 @import "./components/helpers/keyframes.less";
 
-
 @import "./scenes/user/target/target.less";
 @import "./scenes/user/profile/profile.less";
 @import "./scenes/user/Carousel/HomeAuth.less";
 @import "./scenes/home/topMethods.less";
 @import "./scenes/home/Methods/methodInfo/method.less";
 @import "./components/loader/loaders.less";
+@import "./scenes/user/methodButton.less";
+@import "./scenes/Auth/Modal/form.less";
+@import "./scenes/user/selectTarget/newMethod.less";
+@import "./components/methods/methods.less";
 
 
 body {
@@ -18,15 +21,15 @@ body {
   color: @mainColorText;
   overflow-y: scroll;
   background: @mainBgColor;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -46,13 +49,16 @@ header {
   padding: 20px;
   background-color: @mainBgColor;
   z-index: 1000;
-
 }
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  &__section {
+    display: flex;
+  }
 }
 .link {
   display: flex;
@@ -64,7 +70,7 @@ header {
   font-size: 20px;
   border-radius: 7px;
   text-decoration: none;
-  transition: .2s;
+  transition: 0.2s;
 }
 .link:hover {
   text-decoration: none;
@@ -76,5 +82,25 @@ header {
   text-shadow: 0 0 20px @mainColor;
 }
 .active:hover {
+  color: @mainColor;
+}
+
+.delete {
+  .button(red);
+}
+
+.edit {
+  .button(@mainColor);
+  font-size: 16px;
+  width: 230px;
+}
+
+.showAll {
+  .button(@mainColor);
+  font-size: 16px;
+  width: 230px;
+}
+
+.star {
   color: @mainColor;
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {withRouter, Link} from "react-router-dom";
-import HomeAuth from "../user/HomeAuth";
+import CarouselAccount from "../user/Carousel/CarouselAccount";
 import Methods from "./Methods/Methods";
+
 
 
 class Home extends React.Component {
@@ -11,19 +12,11 @@ class Home extends React.Component {
     state = {}
 
     render() {
-        const {isLoggined} = this.props
-        console.log('name',  isLoggined)
         return (
             <>
-                <h1 style={{textAlign: "center", margin: "30px 0px"}}>Главная</h1>
-
-                {isLoggined &&
-                <>
-                    <Link to="/newTarget">Добавить цель</Link>
-                    <HomeAuth/>
-                </>
-                }
-                <Methods />
+              <CarouselAccount />
+              <Methods />
+              <Link to="/methods"className="showAll">Смотреть все</Link>
             </>
         );
     }

@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 class Method extends React.Component {
   render() {
    const { day, counter } = this.props
-   console.log(counter);
     return (  
       <>
         <tr>

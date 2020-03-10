@@ -5,22 +5,36 @@ import Row from "./table/Row";
 
 
 class Method extends React.Component {
+  constructor(){
+    super()
+    this.deleteMethod = this.deleteMethod.bind(this)
+  }
   state = {
     method: false
   }
 
   async componentWillMount(){
     const { id } = this.props.match.params;
-    const url = 'http://localhost:5000/method/' + id
+    const url = 'http://localhost:5000/method/' + id;
     const { method } = await (await fetch(url, {method:"POST"})).json()
-    console.log(method);
-    
     this.setState({method})    
+  }
+
+  async deleteMethod(){
+    const { id } = this.props.match.params;
+    const url = 'http://localhost:5000/method/' + id;
+    const res = prompt("Введите 'да', что бы удалить методику")
+    if (res === 'да'){
+      this.props.history.push('/');
+      await fetch(url, { method:"DELETE" })
+    }
   }
 
   render() {
    const { method } = this.state;
    let counter = 1;
+   const {userId} = this.props;
+   const access = userId === method.author;   
     return (  
       <>
       { this.state.method 
@@ -45,6 +59,7 @@ class Method extends React.Component {
                 }
               </tbody>
             </table>
+            { access && <span className="delete" onClick={this.deleteMethod}>Удалить методику</span>}
           </div>
         : 
         <div class="loader loader--style3" title="2">
@@ -68,7 +83,8 @@ class Method extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isLoggined: state.isLoggined
+  isLoggined: state.isLoggined,
+  userId: state.userId,
 });
 
 const mapDispatchToProps = dispatch => ({});

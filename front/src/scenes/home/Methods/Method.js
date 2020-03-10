@@ -12,7 +12,7 @@ class Method extends React.Component {
         <h3>Метод расчитан на {this.props.method.method.length}д</h3>
       <div className="content__likes">
         <div>Уже оценили: {this.props.method.followers.length }</div>
-        <div>Не понравилась: {this.props.method.dislike || 0}</div>
+        <div>Рейтинг: <span className="star">{this.props.method.dislike || 0} ★</span></div>
       </div>
       <Link to={link} className="content__info">Узнать больше</Link>
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { logIn } from "../../../../redux/actions";
 import { withRouter } from 'react-router-dom';
-import "./style.css";
 
 class Login extends React.Component {
 
@@ -28,23 +27,21 @@ class Login extends React.Component {
     });
     const result = await response.json();
 
-    if (result.res) {      
-      this.props.logIn(result.res);
-      this.props.history.push('/');
-    } else {
+    if (result.error) {      
       this.setState({error: true})
+    } else {
+      this.props.logIn(result.login, result.id);
+      this.props.history.push('/user');
     }
   };
 
   render() {
     const loginForm = this.props.isLoginForm
-    console.log(loginForm);
-    
     return (
       <>
 
-        <h1 style={{ textAlign: "center", marginTop: "20px", color: 'white' }}>Вход</h1>
-        { !this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Неверный логин или пароль</h2> }
+        <h1>Вход</h1>
+        { !this.state.error || <h2 className="error">Неверный логин или пароль</h2> }
         <form
           action="http://localhost:5000/login"
           onSubmit={this.validate}
@@ -58,8 +55,8 @@ class Login extends React.Component {
             <label>Пароль:</label>
             <input type="password" name="password" required />
           </div>
-          <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <button className='btn' style={{width: "270px", backgroundColor:'green'}} type="submit">Войти</button>
+          <div>
+          <button className='btn' type="submit">Войти</button>
           </div>
         </form>
       </>
@@ -74,7 +71,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (login) => dispatch(logIn(login))
+  logIn: (login, id) => dispatch(logIn(login, id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

@@ -8,10 +8,11 @@ router.post('/registration', async (req, res) => {
   const { login, password } = req.body;
   const user = await User.findOne({ login })
   if (user) {
-    res.json({ res: false })
+    res.json({ error: true })
   } else {
-    await User.create({ login, password })
-    res.json({ res: login })
+    const newUser = await User.create({ login, password })
+    const { login, id } = newUser;
+    res.json({ login, id })
   }
 });
 
@@ -19,17 +20,22 @@ router.post('/login', async (req, res) => {
   const { login, password } = req.body;
   const user = await User.findOne({ login, password })
   if (user) {
-    res.json({ res: login })
+    const { login, id } = user;
+    res.json({ login, id })
   } else {
-    res.json({ res: false })
+    res.json({ error: true })
   }
 });
 
 router.get('/user/target/:id', async (req, res) => {
   const { id } = req.params;
-  const target = await Target.findById({_id: id} )
+  const target = await Target.findById( id )
   res.json({target})
+});
 
+router.delete('/user/target/:id', async (req, res) => {
+  const { id } = req.params;
+  await Target.findByIdAndDelete( id )
 });
 
 router.post('/user/:login', async (req, res) => {
@@ -57,6 +63,12 @@ router.post('/user/:login', async (req, res) => {
   })
   res.json({ targets })
 });
+
+router.post('/user/profile/edit', async (req, res) => {
+  const { login, name, about, email, tel, instagram } = req.body;
+  console.log('req.body', req.body);
+  await User.findOneAndUpdate({ login }, { name, about, email, tel, instagram })
+})
 
 router.post('/user/profile/:login', async (req, res) => {
   const { login } = req.params;

@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter, Redirect } from "react-router-dom";
 
-
-import CarouselAccount from "./Carousel/CarouselAccount";
 import TargetBlock from "./target/TargetBlock";
 
 
@@ -15,7 +13,6 @@ class HomeAuth extends React.Component {
       <>{ this.props.isLoggined 
         ? <>
             <TargetBlock />
-            < CarouselAccount />
           </>
         :   <Redirect to="/"/>
         }

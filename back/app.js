@@ -14,7 +14,9 @@ const usersRouter = require('./routes/users');
 const methodRouter = require('./routes/method');
 const newTargetRouter = require('./routes/newTarget');
 const getTagsRouter = require('./routes/getTags');
+const targetListRouter = require('./routes/targetlist');
 const newMethodRouter = require('./routes/newMethod');
+
 
 
 const app = express();
@@ -30,6 +32,7 @@ app.use('/', usersRouter);
 app.use('/method', methodRouter);
 app.use('/newTarget', newTargetRouter);
 app.use('/getTags', getTagsRouter);
+app.use('/targetlist', targetListRouter);
 app.use('/newMethod', newMethodRouter);
 
 module.exports = app

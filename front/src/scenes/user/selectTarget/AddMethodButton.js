@@ -1,5 +1,4 @@
 import React from "react";
-import './addMethodButton.css'
 
 export default class NewMethodButton extends React.Component {
     render() {
