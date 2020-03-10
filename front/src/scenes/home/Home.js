@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {withRouter, Link} from "react-router-dom";
 import CarouselAccount from "../user/Carousel/CarouselAccount";
 import Methods from "./Methods/Methods";
 
@@ -16,6 +16,7 @@ class Home extends React.Component {
             <>
               <CarouselAccount />
               <Methods />
+              <Link to="/methods"className="showAll">Смотреть все</Link>
             </>
         );
     }
