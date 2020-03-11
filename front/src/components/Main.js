@@ -8,7 +8,7 @@ import './styles/color.css';
 class Main extends React.Component {
   
   render() {
-    const color = "Dark"
+    const {color} = this.props
     const style = "styleColor" + color;
     return (
         <BrowserRouter>
@@ -26,7 +26,8 @@ class Main extends React.Component {
 
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
-  login: state.login
+  login: state.login,
+  color: state.color
 });
 
 export default connect(mapStateToProps)(Main);

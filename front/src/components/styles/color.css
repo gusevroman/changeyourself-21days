@@ -385,3 +385,390 @@
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
   border-left: solid 1px rgba(255, 255, 255, 0.1);
 }
+.styleColorLight {
+  color: black;
+}
+.styleColorLight .modalBg {
+  background: lightgrey;
+}
+.styleColorLight header {
+  border-bottom: 2px solid blue;
+  box-shadow: 0 0 25px blue;
+  background-color: lightgrey;
+}
+.styleColorLight .link {
+  color: #ab5d01;
+}
+.styleColorLight .link:hover {
+  color: blue;
+}
+.styleColorLight .active {
+  color: blue;
+  text-shadow: 0 0 20px blue;
+}
+.styleColorLight .active:hover {
+  color: blue;
+}
+.styleColorLight svg path,
+.styleColorLight svg rect {
+  fill: blue;
+}
+.styleColorLight .allMethods__input {
+  color: black;
+  background-color: #1a1a1a;
+  border: 2px solid blue;
+}
+.styleColorLight .allMethods__input:focus {
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .myModal {
+  background: #0e101c;
+  background: rgba(0, 0, 0, 0.185);
+}
+.styleColorLight .myModal-body {
+  background: #131313;
+  box-shadow: 0 0px 15px blue;
+}
+.styleColorLight .myModal h1 {
+  color: white;
+  border-bottom: 1px solid blue;
+}
+.styleColorLight .myModal .form {
+  background: #0e101c;
+}
+.styleColorLight .myModal input {
+  border: 1px solid blue;
+}
+.styleColorLight .myModal label {
+  color: white;
+}
+.styleColorLight .myModal .btn {
+  color: black;
+  border: 2px solid blue;
+  background-color: blue;
+}
+.styleColorLight .myModal .btn:hover {
+  color: blue;
+  border: 2px solid blue;
+  background-color: lightgrey;
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .myModal .auth-btn {
+  background-color: grey;
+}
+.styleColorLight .myModal .auth-btn:hover {
+  background-color: #676767;
+  box-shadow: 0 0 10px blue;
+  color: black;
+}
+.styleColorLight .myModal button[type="submit"],
+.styleColorLight .myModal input[type="submit"] {
+  background: blue;
+  color: black;
+  border: 2px solid blue;
+}
+.styleColorLight .myModal button[type="submit"]:hover,
+.styleColorLight .myModal input[type="submit"]:hover {
+  background: #ab5d01;
+  color: black;
+}
+.styleColorLight .myModal button[type="button"] {
+  background: lightgrey;
+  color: black;
+}
+.styleColorLight .myModal pre {
+  color: black;
+}
+.styleColorLight .myModal button {
+  border: 1px solid lightgrey;
+}
+.styleColorLight .topMethods .content__column,
+.styleColorLight .allMethods .content__column {
+  border: 2px solid blue;
+}
+.styleColorLight .topMethods .content__column:hover,
+.styleColorLight .allMethods .content__column:hover {
+  border: 2px solid #ab5d01;
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .topMethods .content__info,
+.styleColorLight .allMethods .content__info {
+  color: black;
+  border: 2px solid blue;
+  background-color: blue;
+}
+.styleColorLight .topMethods .content__info:hover,
+.styleColorLight .allMethods .content__info:hover {
+  color: blue;
+  border: 2px solid blue;
+  background-color: lightgrey;
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .profile {
+  color: whitesmoke;
+}
+.styleColorLight .profile__file {
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+.styleColorLight .profile__input input {
+  color: black;
+  background-color: #1a1a1a;
+  border: 2px solid blue;
+}
+.styleColorLight .profile__input input:focus {
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .mainFlex {
+  /**/
+  /* Arrow */
+  /* Transition */
+}
+.styleColorLight .mainFlex input::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea::-webkit-input-placeholder {
+  color: #aca49c;
+}
+.styleColorLight .mainFlex input:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+.styleColorLight .mainFlex input::-moz-placeholder,
+.styleColorLight .mainFlex textarea::-moz-placeholder {
+  color: #aca49c;
+}
+.styleColorLight .mainFlex input:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+.styleColorLight .mainFlex input::placeholder,
+.styleColorLight .mainFlex textarea::placeholder {
+  color: #aca49c;
+}
+.styleColorLight .mainFlex input:focus::placeholder,
+.styleColorLight .mainFlex textarea::focus:placeholder {
+  color: #bbb5af;
+}
+.styleColorLight .mainFlex input::-ms-placeholder,
+.styleColorLight .mainFlex textarea::-ms-placeholder {
+  color: #aca49c;
+}
+.styleColorLight .mainFlex input:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+.styleColorLight .mainFlex input:hover::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex input:hover:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+.styleColorLight .mainFlex input:hover::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex input:hover:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex input:hover:focus::placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex input:hover:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+.styleColorLight .mainFlex .inputClass {
+  color: black;
+  border: solid 1px blue;
+}
+.styleColorLight .mainFlex input {
+  color: black;
+  border: solid 1px blue;
+}
+.styleColorLight .mainFlex input:hover {
+  background: rgba(179, 172, 167, 0.1);
+  color: black;
+}
+.styleColorLight .mainFlex textarea {
+  color: black;
+  border: solid 1px blue;
+}
+.styleColorLight .mainFlex .textareaClass {
+  border: solid 1px blue;
+}
+.styleColorLight .mainFlex textarea:hover {
+  background: rgba(179, 172, 167, 0.1);
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex #submit {
+  color: #b3aca7;
+  border: solid 1px #b3aca7;
+}
+.styleColorLight .mainFlex #submit:hover {
+  color: #e2dedb;
+}
+.styleColorLight .mainFlex select {
+  background: #2c3e50;
+}
+.styleColorLight .mainFlex .select {
+  background: #2c3e50;
+}
+.styleColorLight .mainFlex select {
+  color: black;
+}
+.styleColorLight .mainFlex .select::after {
+  background: #34495e;
+}
+.styleColorLight .mainFlex .select:hover::after {
+  color: #f39c12;
+}
+.styleColorLight .mainFlex button.outline {
+  color: #1172c4;
+  border-color: #1172c4;
+}
+.styleColorLight .mainFlex button.outline:hover {
+  color: black;
+  background: blue;
+  border-color: white;
+}
+.styleColorLight .mainFlex button.orange {
+  color: blue;
+  border-color: blue;
+}
+.styleColorLight .mainFlex .box select {
+  background: darkorange;
+  color: black;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.styleColorLight .mainFlex .logoTrash {
+  color: blue;
+}
+.styleColorLight .mainFlex .logoTrash:hover i {
+  color: blue;
+}
+.styleColorLight .target {
+  border: 2px solid blue;
+  box-shadow: 0 0 5px blue;
+}
+.styleColorLight .target:hover {
+  box-shadow: 0 0 25px blue;
+}
+.styleColorLight .target__title {
+  color: black;
+}
+.styleColorLight .target__search .search__input {
+  color: black;
+  background-color: #1a1a1a;
+  border: 2px solid blue;
+}
+.styleColorLight .target__search .search__input:focus {
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .target .progress-bar {
+  background-color: #1a1a1a;
+  box-shadow: 0 1px 5px #000 inset;
+}
+.styleColorLight .target .progress-bar span {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  color: black;
+}
+.styleColorLight .target .progress-bar__red {
+  background-color: #ff0000;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+}
+.styleColorLight .target .progress-bar__orange {
+  background-color: #fecf23;
+  background-image: linear-gradient(to top, #fecf23, blue);
+}
+.styleColorLight .target .progress-bar__orange::after {
+  background: #fff;
+}
+.styleColorLight .target .progress-bar__green {
+  background-image: linear-gradient(to top, #a5df41, #4ca916);
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+}
+.styleColorLight .target .progress-bar__last {
+  color: black;
+}
+.styleColorLight .target_spoiler {
+  border: 2px solid #fff;
+}
+.styleColorLight .tgl-flip + .tgl-btn:after,
+.styleColorLight .tgl-flip + .tgl-btn:before {
+  color: black;
+}
+.styleColorLight .tgl-flip + .tgl-btn:after {
+  background: #02c66f;
+}
+.styleColorLight .tgl-flip + .tgl-btn:before {
+  background: #ff3a19;
+}
+.styleColorLight .tgl-flip:checked + .tgl-btn:after {
+  background: #7fc6a6;
+}
+.styleColorLight .bt {
+  color: blue;
+}
+.styleColorLight .more-bt {
+  border-right: 2px solid blue;
+  border-bottom: 2px solid blue;
+  border-color: blue;
+}
+.styleColorLight .more-bt:after,
+.styleColorLight .more-bt:before {
+  background: blue;
+}
+.styleColorLight ::selection {
+  background: green;
+  color: #ffffff;
+}
+.styleColorLight .more-bt i:after,
+.styleColorLight .more-bt i:before {
+  background: blue;
+}
+.styleColorLight .more-bt:hover i:after {
+  background: blue;
+}
+.styleColorLight .more-bt:hover i:before {
+  background: blue;
+}
+.styleColorLight .more-bt .fl,
+.styleColorLight .more-bt .sfl {
+  background: blue;
+}
+.styleColorLight .more-bt .cross:before,
+.styleColorLight .more-bt .cross:after {
+  background: #fff;
+}
+.styleColorLight .method__text {
+  border: 2px solid blue;
+  color: black;
+  background-color: lightgrey;
+  box-shadow: 0 0 15px blue;
+}
+.styleColorLight .method__table {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.styleColorLight .method__table thead {
+  color: blue;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.styleColorLight .method__table tbody tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.styleColorLight .method__table tbody td {
+  color: black;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-left: solid 1px rgba(0, 0, 0, 0.1);
+}

@@ -1,8 +1,9 @@
-import { LOGGINED, LOGOUT, TARGETS, PROFILE } from "./action-types";
+import { LOGGINED, LOGOUT, TARGETS, PROFILE, COLOR } from "./action-types";
 
 const initialState = {
   isLoggined: localStorage.isLoggined || false,
   userId: localStorage.userId || false,
+  color: "Dark"
 };
 
 export default (state = initialState, action) => {
@@ -32,6 +33,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         profile: action.profile
+      }
+      case COLOR:
+      return {
+        ...state,
+        color: action.color
       }
     default:
       return state;

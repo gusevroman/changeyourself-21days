@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter, Link } from "react-router-dom";
 
-import { logout } from "../../../redux/actions";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {withRouter, Link} from "react-router-dom";
+
+import { logout, changeColor,  } from "../../../redux/actions";
 import { showProfile } from "../../../redux/actions";
 import FilesUpload from "./files-upload"
 
@@ -242,6 +243,18 @@ class Profile extends Component {
     return <>
 
       {this.renderProfile()}
+    <form class="">
+      <div>
+      <label>
+        <input type="radio" name="stars" value="Dark" onChange={(e) => {this.props.changeColor(e.target.value)}}/>
+        <span class="">Темная</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="Light" onChange={(e) => {this.props.changeColor(e.target.value)}}/>
+        <span class="">Светлая</span>
+      </label>
+      </div>
+    </form>
       <FilesUpload />
     </>;
   }
@@ -254,8 +267,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  showProfile: profile => dispatch(showProfile(profile)),
-  logout: () => dispatch(logout())
+    showProfile: profile => dispatch(showProfile(profile)),
+    logout: () => dispatch(logout()),
+    changeColor: (color) => dispatch(changeColor(color)),
 });
 
 export default withRouter(
