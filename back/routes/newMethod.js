@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     req.body.days.forEach(elem => {
         methodArr.push(elem)
     });
-    await Method.create({
+    const newMethod = await Method.create({
         title: req.body.title.join(''),
         description: req.body.description.join(''),
         category: req.body.category,
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         author: user._id,
         method: methodArr,
     });
-    // return res.json(takeTags)
+    res.json({newMethod})
 });
 
 

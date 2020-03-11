@@ -31,12 +31,19 @@
   }
 }
 .target {
+  position: relative;
   min-height: 200px;
   padding: 0px 100px;
   margin: 0 0 30px;
   border-radius: 15px;
   transition: all 1s ease;
   cursor: pointer;
+}
+.target .icono-trash {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translate(0%, -50%);
 }
 .target__title {
   text-align: center;
