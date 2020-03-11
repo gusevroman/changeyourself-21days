@@ -11,7 +11,7 @@ router.post('/registration', async (req, res) => {
     res.json({ error: true })
   } else {
     const newUser = await User.create({ login, password })
-    const { login, id } = newUser;
+    const { id } = newUser;
     res.json({ login, id })
   }
 });
@@ -37,6 +37,13 @@ router.delete('/user/target/:id', async (req, res) => {
   const { id } = req.params;
   await Target.findByIdAndDelete( id )
 });
+
+router.post('/user/deleteAccount', async (req, res) => {
+  await User.findByIdAndDelete(req.body.id);
+
+  // return res.json(allTarget)
+});
+
 
 router.post('/user/:login', async (req, res) => {
   const { login } = req.params;
@@ -75,6 +82,8 @@ router.post('/user/profile/:login', async (req, res) => {
   const profile = await User.findOne({ login });
   return res.json(profile)
 });
+
+
 
 
 module.exports = router;
