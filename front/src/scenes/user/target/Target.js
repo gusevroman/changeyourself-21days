@@ -92,7 +92,8 @@ class Target extends React.Component {
           onClick={() => {
             this.props.history.push(link);
           }}
-        >
+        > 
+          <i onClick={this.deleteDay} className="icono-trash"></i>
           <h2 className="target__title">{parameters.title}</h2>
 
           <div className="progress-bar">
@@ -105,9 +106,8 @@ class Target extends React.Component {
           </div>
 
           <h3 className="progress-bar__last">{text}</h3>
-          <div className='logoTrash'>
-            <i onClick={this.deleteDay} className="icono-trash"></i>
-          </div>
+          {/* <div className='logoTrash'> */}
+          {/* </div> */}
         </div>
 
       </>

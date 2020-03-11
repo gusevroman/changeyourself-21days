@@ -6,7 +6,10 @@ import {connect} from "react-redux";
 
 
 class NewMethodForm extends React.Component {
-
+  constructor(props){
+    super(props)
+    this.sendForm = this.sendForm.bind(this);
+  }
     state = {
         title: '',
         description: '',
@@ -64,16 +67,18 @@ class NewMethodForm extends React.Component {
     };
 
     sendForm = async (event) => {
-        event.preventDefault();
-
-        const response = await fetch('http://localhost:5000/newMethod', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(this.state)
-
-        });
+      event.preventDefault(); 
+      const {newMethod} = await (await fetch('http://localhost:5000/newMethod', {
+          method: 'POST',
+          headers: {
+              'Content-type': 'application/json'
+          },
+          body: JSON.stringify(this.state)
+      })).json();
+      const url = `method/${newMethod._id}`;
+      console.log(newMethod);
+      
+      this.props.history.push(url);
     };
 
     deleteDay = (event) => {
@@ -89,7 +94,7 @@ class NewMethodForm extends React.Component {
         let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье'];
         return (
             <div className="box">
-                <form id="form" className="topBefore">
+                <form id="form" className="topBefore" onSubmit={this.sendForm}>
 
 
                     <input onChange={this.firstInputValue} placeholder="НАЗВАНИЕ МЕТОДА"
@@ -146,7 +151,7 @@ class NewMethodForm extends React.Component {
 
                     <div className="buttonContainer">
                         <button className="outline orange oneButton" onClick={this.plusDay}>Добавить день</button>
-                        <button className="outline orange oneButton" onSubmit={this.sendForm}>Отправить</button>
+                        <button className="outline orange oneButton" type="submit">Отправить</button>
                     </div>
                 </form>
             </div>
