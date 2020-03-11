@@ -28,7 +28,7 @@ router.post('/add', async (req, res) => {
     endDate: new Date().setDate(new Date().getDate()+method.method.method.length),
     status: 'active',
     author: userId,
-     actions: method.method.method
+    actions: method.method.method
   });
   await newTarget.save();
 
@@ -36,26 +36,26 @@ router.post('/add', async (req, res) => {
     author: userId
   });
 
-  
+
   let allTitleTarget = allTargetsUser.filter(elem => elem.title !== undefined).map(elem => elem.title).join(', ');
- 
+
 
   async function main() {
     let transporter = nodemailer.createTransport({
       host: "smtp.yandex.ru",
       port: 587,
-      secure: false, 
+      secure: false,
       auth: {
-        user: "days21go@yandex.ru", 
-        pass: '21DAYS' 
+        user: "days21go@yandex.ru",
+        pass: '21DAYS'
       }
     });
 
     let info = await transporter.sendMail({
-      from: '"НУ ЗДАРОВА 👻" <days21go@yandex.ru>', 
-      to: 'geroyan.artem@mail.ru', 
-      subject: "Вы записаны! ", 
-      text: "Информация о записе", 
+      from: '"НУ ЗДАРОВА 👻" <days21go@yandex.ru>',
+      to: ourUser.email,
+      subject: "Вы записаны! ",
+      text: "Информация о записе",
       html: `<b>Здравствуйте! Вы выбрали ${method.method.title}. Методика была добавлена.</b>
                                 <p>Список методик: ${allTitleTarget} </p>`
     });
@@ -66,7 +66,6 @@ router.post('/add', async (req, res) => {
   }
 
   main().catch(console.error);
-  })
 });
 
 module.exports = router;
