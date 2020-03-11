@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 
 class AddMethodToTarget extends Component {
 
   async addTarget(){
     const method = this.props.method
-    const userId = this.props.userId    
+    const userId = this.props.userId  
+    console.log('method', method);
+      
+    this.props.history.push('/user');
     await fetch('http://localhost:5000/newTarget/add', {
       method: "POST",
       headers: {

@@ -24,7 +24,6 @@ const targetSchema = new mongoose.Schema({
 
 targetSchema.statics.updateStatus = async function  (id, actionsId) {
   const doc = await this.findById(id)
-// console.log(doc.actions);
 
   const aIndex = await doc.actions.findIndex( el =>  el._id==actionsId )
 console.log(doc.actions[aIndex].status);
@@ -34,11 +33,6 @@ console.log(doc.actions[aIndex].status);
 
   await doc.save()
 }
-
-// targetSchema.statics.addNewTarget = async function  (method, userId) {
-
-//   await doc.save()
-// }
 
 module.exports = mongoose.model('Target', targetSchema);
 

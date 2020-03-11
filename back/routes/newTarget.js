@@ -1,6 +1,7 @@
 const express = require('express');
 const Target = require('../models/target');
 const router = express.Router();
+const Method = require('../models/method');
 
 router.get('/', async (req, res) => {
   const allTarget = await Target.find({});
@@ -9,18 +10,16 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   const { userId, method } = req.body
-  console.log(userId);
-  console.log(method);
-  const newTarget = await new Target({
-    category: method.category,
-    status: "active",
-    title: method.title,
-    description: method.description,
-    tag: method.tag,
+  const newTarget = new Target({
+    title: method.method.title,
+    description: method.method.description,
+    category: method.method.category,
+    tag: method.method.tag[0],
     startDate: new Date(),
-    endDate: new Date(),
+    endDate: new Date().setDate(new Date().getDate()+method.method.method.length),
+    status: 'active',
     author: userId,
-    method: method.method,
+    actions: method.method.method
   })
   await newTarget.save()
 });
