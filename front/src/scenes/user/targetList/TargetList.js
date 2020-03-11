@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import TargetHead from "./TargetHead";
 import TargetDay from "./TargetDay";
-import "./targetlist.css";
 
 class TargetList extends React.Component {
   constructor(props) {

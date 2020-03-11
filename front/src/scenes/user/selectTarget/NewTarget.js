@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 import NewMethodForm from "./AddMethodForm";
 import NewMethodButton from "./AddMethodButton";
 
-import "./selectTarget.css";
 import ShowSelectMetods from "./ShowSelectMetods";
 import Loader from "../../../components/loader/loader";
 
