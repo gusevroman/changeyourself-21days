@@ -205,15 +205,11 @@ class Profile extends Component {
             </button>
 
             {this.state.deleteAccount
-              ? <div className='edit'>
+              ? <div className='edit-block'>
                 <span>Вы точно хотите удалить аккаунт?</span>
                 <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                  <i
-                    className="icono-check"></i>
-                    onClick={this.deleteAccount}
-                  <i
-                    className="icono-cross"></i>
-                    onClick={this.showDanger}
+                  <i className="icono-check" onClick={this.deleteAccount}></i> 
+                  <i className="icono-cross" onClick={this.showDanger}></i>
                 </div>
               </div>
 

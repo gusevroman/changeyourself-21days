@@ -166,6 +166,15 @@
   margin-top: 30px;
   display: inline-block;
 }
+.profile .edit-block {
+  margin-top: 15px;
+}
+.profile .edit-block .icono-cross {
+  cursor: pointer;
+}
+.profile .edit-block .icono-check {
+  cursor: pointer;
+}
 .carousel {
   position: relative;
   width: 50vw;
