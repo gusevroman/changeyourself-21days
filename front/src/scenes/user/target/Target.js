@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
+import '../selectTarget/icono.min.css'
 
 class Target extends React.Component {
   state = {
@@ -98,10 +99,17 @@ class Target extends React.Component {
             <span className={color} style={{ flex: `0 0 ${personts}%` }}>
               {personts}%
             </span>
+
+
+
           </div>
 
           <h3 className="progress-bar__last">{text}</h3>
+          <div className='logoTrash'>
+            <i onClick={this.deleteDay} className="icono-trash"></i>
+          </div>
         </div>
+
       </>
     );
   }
