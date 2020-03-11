@@ -8,8 +8,10 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/top', async (req, res) => {
-  const methods = await Method.find().sort({followers:-1}).limit(10);
-  res.json(methods)
+  const methods = await Method.find();
+  const arr = [];
+  methods.sort(function(a, b) { return b.followers.length - a.followers.length }); 
+  res.json(methods.splice(0, 10))
 });
 
 router.post('/getmethods', async (req, res) => {

@@ -10,7 +10,6 @@ class Stars extends React.Component {
   }
   state={
     stars: false,
-    voted: false
   }
 
   addStars(event){
@@ -37,10 +36,6 @@ class Stars extends React.Component {
     return (
       <>
       { this.props.userId && 
-      <>
-        { this.state.voted ?
-        <h2>Спасибо за вашу оценку</h2>
-        :
         <>
         <form class="rating">
           <div>
@@ -77,8 +72,6 @@ class Stars extends React.Component {
           </div>
         </form>
         { this.state.stars && <span onClick={this.addScore} className="edit">Оценить</span> }
-        </>
-        }
       </>
       }
     </>
