@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     about: String,
     tel: String,
     instagram: String,
+    profileImg: String,
 });
 
 module.exports = mongoose.model('User', userSchema);

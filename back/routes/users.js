@@ -3,6 +3,39 @@ const router = express.Router();
 const User = require('../models/user');
 const Method = require('../models/method');
 const Target = require('../models/target');
+const multer = require('multer');
+
+
+const DIR = './public/';
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, DIR)
+  },
+  filename: async (req, file, cb) => {
+    const fileName = file.originalname.toLowerCase().split(' ').join('-');
+    const { id } = req.params;
+    const newFileName = id + fileName;
+    cb(null, newFileName)
+    console.log('fileName', fileName);
+    await User.findByIdAndUpdate(id, { profileImg: newFileName })
+  }
+})
+
+let upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+    }
+  }
+});
+
+router.post('/user/profile/edit/img/:id', upload.single('profileImg'), async (req, res, next) => {
+})
 
 router.post('/registration', async (req, res) => {
   const { login, password } = req.body;
@@ -29,19 +62,17 @@ router.post('/login', async (req, res) => {
 
 router.get('/user/target/:id', async (req, res) => {
   const { id } = req.params;
-  const target = await Target.findById( id )
-  res.json({target})
+  const target = await Target.findById(id)
+  res.json({ target })
 });
 
 router.delete('/user/target/:id', async (req, res) => {
   const { id } = req.params;
-  await Target.findByIdAndDelete( id )
+  await Target.findByIdAndDelete(id)
 });
 
 router.post('/user/deleteAccount', async (req, res) => {
   await User.findByIdAndDelete(req.body.id);
-
-  // return res.json(allTarget)
 });
 
 
@@ -82,7 +113,6 @@ router.post('/user/profile/:login', async (req, res) => {
   const profile = await User.findOne({ login });
   return res.json(profile)
 });
-
 
 
 
