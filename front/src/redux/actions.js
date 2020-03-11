@@ -1,4 +1,4 @@
-import { LOGGINED, LOGOUT, TARGETS, PROFILE } from "./action-types";
+import { LOGGINED, LOGOUT, TARGETS, PROFILE, COLOR } from "./action-types";
 
 export const logIn = (login, id) => ({
   type: LOGGINED,
@@ -16,11 +16,15 @@ export const showProfile = (profile) => ({
   type: PROFILE,
   profile: profile,
 })
-
+export const changeColor = (color) => ({
+  type: COLOR,
+  color
+})
 
 export default {
   logIn,
   logout,
   showTargets,
   showProfile,
+  changeColor
 };

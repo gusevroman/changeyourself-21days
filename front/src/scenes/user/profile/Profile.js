@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {withRouter, Link} from "react-router-dom";
-import {logout} from "../../../redux/actions";
+import {logout, changeColor} from "../../../redux/actions";
+
 
 import {showProfile} from "../../../redux/actions";
 
@@ -189,6 +190,19 @@ class Profile extends Component {
                         </h3>
                     </div>
 
+                    <form class="">
+                      <div>
+                      <label>
+                        <input type="radio" name="stars" value="Dark" onChange={(e) => {this.props.changeColor(e.target.value)}}/>
+                        <span class="">Темная</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="stars" value="Light" onChange={(e) => {this.props.changeColor(e.target.value)}}/>
+                        <span class="">Светлая</span>
+                      </label>
+                      </div>
+                    </form>
+
                     <div className="row">
                         <button className="edit" type="submit">Сохранить изменения</button>
 
@@ -225,7 +239,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     showProfile: profile => dispatch(showProfile(profile)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    changeColor: (color) => dispatch(changeColor(color)),
 });
 
 export default withRouter(

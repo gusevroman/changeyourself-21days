@@ -53,7 +53,7 @@ router.post('/add', async (req, res) => {
 
     let info = await transporter.sendMail({
       from: '"НУ ЗДАРОВА 👻" <days21go@yandex.ru>', 
-      to: 'geroyan.artem@mail.ru', 
+      to: ourUser.email, 
       subject: "Вы записаны! ", 
       text: "Информация о записе", 
       html: `<b>Здравствуйте! Вы выбрали ${method.method.title}. Методика была добавлена.</b>
@@ -66,7 +66,6 @@ router.post('/add', async (req, res) => {
   }
 
   main().catch(console.error);
-  })
 });
 
 module.exports = router;
