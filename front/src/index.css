@@ -34,18 +34,12 @@
   min-height: 200px;
   padding: 0px 100px;
   margin: 0 0 30px;
-  border: 2px solid #fd9215;
   border-radius: 15px;
   transition: all 1s ease;
   cursor: pointer;
-  box-shadow: 0 0 5px #fd9215;
-}
-.target:hover {
-  box-shadow: 0 0 25px #fd9215;
 }
 .target__title {
   text-align: center;
-  color: #fff;
 }
 .target__block {
   margin: 50px 0px 0px;
@@ -58,20 +52,15 @@
   margin-top: 30px;
 }
 .target__search .search__input {
-  color: #fff;
   font-size: 20px;
   margin-left: 10px;
   padding: 10px;
-  background-color: #1a1a1a;
-  border: 2px solid #fd9215;
   border-radius: 25px;
 }
 .target__search .search__input:focus {
   outline: none;
-  box-shadow: 0 0 15px #fd9215;
 }
 .target .progress-bar {
-  background-color: #1a1a1a;
   display: flex;
   align-items: center;
   height: 30px;
@@ -79,7 +68,6 @@
   width: 60%;
   margin: 30px auto 10px auto;
   border-radius: 5px;
-  box-shadow: 0 1px 5px #000 inset;
 }
 .target .progress-bar span {
   display: flex;
@@ -87,10 +75,8 @@
   align-items: center;
   height: 100%;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
   transition: width 0.4s ease-in-out;
   font-weight: 800;
-  color: black;
   font-size: 20px;
   transition: all 0.5s linear;
 }
@@ -98,12 +84,9 @@
   background-size: 30px 30px;
   background-color: #ff0000;
   animation: 3s stripes linear infinite;
-  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
 }
 .target .progress-bar__orange {
   position: relative;
-  background-color: #fecf23;
-  background-image: linear-gradient(to top, #fecf23, #fd9215);
 }
 .target .progress-bar__orange::after {
   content: "";
@@ -113,19 +96,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #fff;
   border-radius: 3px;
   animation: 2s shine ease-out infinite;
 }
-.target .progress-bar__green {
-  background-color: #a5df41;
-  background-image: linear-gradient(to top, #a5df41, #4ca916);
-  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
-  animation: 2s glow ease-out infinite;
-}
 .target .progress-bar__last {
   text-align: center;
-  color: #fff;
   font-size: 20px;
   margin: 0px 0px 20px;
 }
@@ -133,7 +108,6 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
-  color: whitesmoke;
   text-align: center;
 }
 .profile .user-logo {
@@ -155,8 +129,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: rgba(255, 255, 255, 0);
-  background-color: rgba(255, 255, 255, 0);
 }
 .profile .row button {
   display: block;
@@ -174,18 +146,14 @@
 }
 .profile__input input {
   font-size: 20px;
-  color: #fff;
   font-size: 18px;
   margin-left: 10px;
   padding: 10px;
-  background-color: #1a1a1a;
-  border: 2px solid #fd9215;
   border-radius: 25px;
   width: 400px;
 }
 .profile__input input:focus {
   outline: none;
-  box-shadow: 0 0 15px #fd9215;
 }
 .profile .link {
   margin-top: 30px;
@@ -380,18 +348,12 @@
 .topMethods .content__column,
 .allMethods .content__column {
   box-sizing: border-box;
-  border: 2px solid #fd9215;
   border-radius: 25px;
   margin: 20px 0px;
   padding: 25px 10px;
   flex: 0 0 45%;
   overflow: hidden;
   transition: 1s;
-}
-.topMethods .content__column:hover,
-.allMethods .content__column:hover {
-  border: 2px solid #ab5d01;
-  box-shadow: 0 0 15px #fd9215;
 }
 .topMethods .content__title,
 .allMethods .content__title {
@@ -420,20 +382,10 @@
   box-sizing: border-box;
   font-weight: 800;
   width: 160px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
   border-radius: 20px;
   padding: 10px;
   margin: 30px auto 0px;
   transition: 0.3s;
-}
-.topMethods .content__info:hover,
-.allMethods .content__info:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
 }
 .method {
   text-align: center;
@@ -463,43 +415,28 @@
 .method__text {
   font-size: 22px;
   padding: 20px;
-  border: 2px solid #fd9215;
   border-radius: 20px;
-  color: #fff;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
   margin-bottom: 50px;
 }
 .method h5 {
   font-size: 20px;
   margin-bottom: 10px;
 }
-.method__table {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
 .method__table td {
   margin: 0px;
   padding: 15px;
 }
 .method__table thead {
-  color: #fd9215;
-  background-color: rgba(255, 255, 255, 0.3);
   position: sticky;
 }
 .method__table tbody tr {
   padding: 20px 15px;
-}
-.method__table tbody tr:nth-child(2n) {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 .method__table tbody td {
   text-align: left;
   vertical-align: middle;
   font-weight: 300;
   font-size: 14px;
-  color: #fff;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
-  border-left: solid 1px rgba(255, 255, 255, 0.1);
 }
 .method__table tbody td:first-child {
   text-align: center;
@@ -516,10 +453,6 @@
   padding: 1em;
   margin: 0 auto 1em;
   vertical-align: top;
-}
-svg path,
-svg rect {
-  fill: #fd9215;
 }
 @font-face {
   font-family: 'Roboto';
@@ -539,7 +472,6 @@ svg rect {
   position: relative;
   font-family: "Roboto";
   text-transform: uppercase;
-  color: #fd9215;
   letter-spacing: 0.5px;
   -moz-user-select: none;
   user-select: none;
@@ -548,10 +480,7 @@ svg rect {
   text-align: center;
 }
 .more-bt {
-  border-right: 2px solid #fd9215;
-  border-bottom: 2px solid #fd9215;
   padding: 17px 29px 15px 31px;
-  border-color: #fd9215;
 }
 .more-bt p {
   font-size: 16px;
@@ -563,7 +492,6 @@ svg rect {
 .more-bt:before {
   content: " ";
   display: block;
-  background: #fd9215;
   position: absolute;
   transition: 0.5s;
   z-index: 10;
@@ -575,8 +503,6 @@ svg rect {
   height: 2px;
 }
 ::selection {
-  background: green;
-  color: #ffffff;
   text-shadow: none;
 }
 .more-bt .sfl {
@@ -607,7 +533,6 @@ svg rect {
   display: block;
   width: 2px;
   height: 20px;
-  background: #fd9215;
   position: absolute;
   margin: -10px -1px;
   left: 50%;
@@ -619,7 +544,6 @@ svg rect {
   display: block;
   width: 2px;
   height: 20px;
-  background: #fd9215;
   position: absolute;
   margin: 0px -1px;
   left: 50%;
@@ -630,7 +554,6 @@ svg rect {
   display: block;
   width: 2px;
   height: 20px;
-  background: #fd9215;
   position: absolute;
   margin: -10px 0px -10px 8px;
   left: 50%;
@@ -669,7 +592,6 @@ svg rect {
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #fd9215;
   top: 0;
   transition: 0.5s;
   transition-delay: 0.1s;
@@ -720,7 +642,6 @@ svg rect {
 .more-bt .cross:before,
 .more-bt .cross:after {
   content: " ";
-  background: #fff;
   display: block;
   position: absolute;
   opacity: 0;
@@ -741,14 +662,12 @@ svg rect {
   transition-duration: 0.6s;
 }
 .myModal {
-  background: #0e101c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.185);
   display: flex;
   justify-content: center;
   padding-top: 5rem;
@@ -759,10 +678,8 @@ svg rect {
   margin-top: 15vh;
   min-width: 60vw;
   border-radius: 5px;
-  background: #131313;
   height: 60vh;
   opacity: 1;
-  box-shadow: 0 0px 15px #fd9215;
 }
 .myModal .error {
   text-align: center;
@@ -778,13 +695,10 @@ svg rect {
 }
 .myModal h1 {
   font-weight: 100;
-  color: white;
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid #fd9215;
 }
 .myModal .form {
-  background: #0e101c;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -793,7 +707,6 @@ svg rect {
   box-sizing: border-box;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #fd9215;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -804,7 +717,6 @@ svg rect {
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: white;
   font-size: 14px;
   font-weight: 200;
 }
@@ -815,19 +727,10 @@ svg rect {
   box-sizing: border-box;
   font-weight: 800;
   width: 160px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
   border-radius: 20px;
   padding: 10px;
   margin: 30px auto 0px;
   transition: 0.3s;
-}
-.myModal .btn:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
 }
 .myModal .btn__close {
   cursor: pointer;
@@ -838,21 +741,12 @@ svg rect {
 }
 .myModal .auth-btn {
   transition: 0.2s;
-  background-color: grey;
   text-align: center;
   border-radius: 10px;
 }
-.myModal .auth-btn:hover {
-  background-color: #676767;
-  box-shadow: 0 0 10px #fd9215;
-  color: #fff;
-}
 .myModal button[type="submit"],
 .myModal input[type="submit"] {
-  background: #fd9215;
-  color: #fff;
   text-transform: uppercase;
-  border: 2px solid #fd9215;
   border-radius: 15px;
   margin-top: 40px;
   padding: 15px;
@@ -860,11 +754,6 @@ svg rect {
   font-weight: 100;
   letter-spacing: 10px;
   transition: 0.5s;
-}
-.myModal button[type="submit"]:hover,
-.myModal input[type="submit"]:hover {
-  background: #ab5d01;
-  color: #fff;
 }
 .myModal button[type="submit"]:active,
 .myModal input[type="button"]:active,
@@ -892,15 +781,10 @@ svg rect {
 .myModal button[type="button"] {
   display: block;
   appearance: none;
-  background: #292929;
-  color: #fff;
   border: none;
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 4px;
-}
-.myModal pre {
-  color: #fff;
 }
 .myModal hr {
   margin-top: 30px;
@@ -909,7 +793,6 @@ svg rect {
   display: block;
   appearance: none;
   margin-top: 40px;
-  border: 1px solid #292929;
   margin-bottom: 20px;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -954,75 +837,35 @@ svg rect {
 }
 .mainFlex input::-webkit-input-placeholder,
 .mainFlex textarea::-webkit-input-placeholder {
-  color: #aca49c;
   font-size: 0.875em;
-}
-.mainFlex input:focus::-webkit-input-placeholder,
-.mainFlex textarea:focus::-webkit-input-placeholder {
-  color: #bbb5af;
 }
 .mainFlex input::-moz-placeholder,
 .mainFlex textarea::-moz-placeholder {
-  color: #aca49c;
   font-size: 0.875em;
-}
-.mainFlex input:focus::-moz-placeholder,
-.mainFlex textarea:focus::-moz-placeholder {
-  color: #bbb5af;
 }
 .mainFlex input::placeholder,
 .mainFlex textarea::placeholder {
-  color: #aca49c;
   font-size: 0.875em;
-}
-.mainFlex input:focus::placeholder,
-.mainFlex textarea::focus:placeholder {
-  color: #bbb5af;
 }
 .mainFlex input::-ms-placeholder,
 .mainFlex textarea::-ms-placeholder {
-  color: #aca49c;
   font-size: 0.875em;
-}
-.mainFlex input:focus::-ms-placeholder,
-.mainFlex textarea:focus::-ms-placeholder {
-  color: #bbb5af;
 }
 .mainFlex input:hover::-webkit-input-placeholder,
 .mainFlex textarea:hover::-webkit-input-placeholder {
-  color: #e2dedb;
   font-size: 0.875em;
-}
-.mainFlex input:hover:focus::-webkit-input-placeholder,
-.mainFlex textarea:hover:focus::-webkit-input-placeholder {
-  color: #cbc6c1;
 }
 .mainFlex input:hover::-moz-placeholder,
 .mainFlex textarea:hover::-moz-placeholder {
-  color: #e2dedb;
   font-size: 0.875em;
-}
-.mainFlex input:hover:focus::-moz-placeholder,
-.mainFlex textarea:hover:focus::-moz-placeholder {
-  color: #cbc6c1;
 }
 .mainFlex input:hover::placeholder,
 .mainFlex textarea:hover::placeholder {
-  color: #e2dedb;
   font-size: 0.875em;
-}
-.mainFlex input:hover:focus::placeholder,
-.mainFlex textarea:hover:focus::placeholder {
-  color: #cbc6c1;
 }
 .mainFlex input:hover::placeholder,
 .mainFlex textarea:hover::placeholder {
-  color: #e2dedb;
   font-size: 0.875em;
-}
-.mainFlex input:hover:focus::-ms-placeholder,
-.mainFlex textarea:hover::focus:-ms-placeholder {
-  color: #cbc6c1;
 }
 .mainFlex .nameBar {
   position: relative;
@@ -1045,8 +888,6 @@ svg rect {
   padding: 0px 15px 0px 15px;
   background: transparent;
   outline: none;
-  color: #fff;
-  border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1060,17 +901,11 @@ svg rect {
   padding: 0px 15px 0px 15px;
   background: transparent;
   outline: none;
-  color: #fff;
-  border: solid 1px #fd9215;
   border-bottom: none;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
-}
-.mainFlex input:hover {
-  background: rgba(179, 172, 167, 0.1);
-  color: #fff;
 }
 .mainFlex textarea {
   width: 470px;
@@ -1080,10 +915,8 @@ svg rect {
   padding: 15px;
   background: transparent;
   outline: none;
-  color: #fff;
   font-family: "Lato", sans-serif;
   font-size: 20px;
-  border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1098,15 +931,10 @@ svg rect {
   background: transparent;
   outline: none;
   font-family: "Lato", sans-serif;
-  border: solid 1px #fd9215;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
-}
-.mainFlex textarea:hover {
-  background: rgba(179, 172, 167, 0.1);
-  color: #e2dedb;
 }
 .mainFlex #submit {
   width: 502px;
@@ -1114,14 +942,9 @@ svg rect {
   margin: -5px 0px 0px 0px;
   font-family: "Lato", sans-serif;
   font-size: 0.875em;
-  color: #b3aca7;
   outline: none;
   cursor: pointer;
-  border: solid 1px #b3aca7;
   border-top: none;
-}
-.mainFlex #submit:hover {
-  color: #e2dedb;
 }
 .mainFlex select {
   -webkit-appearance: none;
@@ -1131,7 +954,6 @@ svg rect {
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #2c3e50;
   background-image: none;
 }
 .mainFlex select::-ms-expand {
@@ -1143,14 +965,12 @@ svg rect {
   width: 20em;
   height: 3em;
   line-height: 3;
-  background: #2c3e50;
   overflow: hidden;
   border-radius: 0.25em;
 }
 .mainFlex select {
   flex: 0 0;
   padding: 0 20px;
-  color: #fff;
   cursor: pointer;
 }
 .mainFlex .select::after {
@@ -1159,15 +979,11 @@ svg rect {
   top: 0;
   right: 0;
   padding: 0 1em;
-  background: #34495e;
   cursor: pointer;
   pointer-events: none;
   -webkit-transition: 0.25s all ease;
   -o-transition: 0.25s all ease;
   transition: 0.25s all ease;
-}
-.mainFlex .select:hover::after {
-  color: #f39c12;
 }
 .mainFlex .addSelect {
   align-items: center;
@@ -1187,9 +1003,7 @@ svg rect {
   /*position: relative;*/
   /*z-index: 3;*/
   background: transparent;
-  color: #1172c4;
   font-size: 14px;
-  border-color: #1172c4;
   border-style: solid;
   border-width: 2px;
   border-radius: 22px;
@@ -1202,9 +1016,6 @@ svg rect {
   text-decoration: none;
 }
 .mainFlex button.outline:hover {
-  color: black;
-  background: #fd9215;
-  border-color: white;
   transition: all 0.2s linear;
 }
 .mainFlex button.outline:active {
@@ -1212,8 +1023,6 @@ svg rect {
 }
 .mainFlex button.orange {
   font-weight: 700;
-  color: #fd9215;
-  border-color: #fd9215;
   background: transparent;
 }
 .mainFlex .buttonContainer {
@@ -1231,11 +1040,8 @@ svg rect {
   padding: 10px;
   height: 50px;
   border: none;
-  background: darkorange;
   font-family: "Russo One", sans-serif;
-  color: #fff;
   font-size: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   outline: none;
 }
 .mainFlex .box select option:hover {
@@ -1251,7 +1057,6 @@ svg rect {
   opacity: 0.6;
 }
 .mainFlex .logoTrash {
-  color: #fd9215;
   padding: 10px;
   display: inline-block;
 }
@@ -1260,7 +1065,6 @@ svg rect {
 }
 .mainFlex .logoTrash:hover i {
   opacity: 0.8;
-  color: #fd9215;
   cursor: pointer;
 }
 .childFlex {
@@ -1275,17 +1079,13 @@ svg rect {
   align-items: center;
 }
 .allMethods__input {
-  color: #fff;
   font-size: 20px;
   margin-left: 10px;
   padding: 10px 15px;
-  background-color: #1a1a1a;
-  border: 2px solid #fd9215;
   border-radius: 25px;
 }
 .allMethods__input:focus {
   outline: none;
-  box-shadow: 0 0 15px #fd9215;
 }
 .rating {
   display: inline-block;
@@ -1339,22 +1139,126 @@ svg rect {
   color: #000;
   text-shadow: 0 0 5px #09f;
 }
+.target_spoiler {
+  min-height: 50px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.target_spoiler_title {
+  margin-left: 30px;
+  cursor: pointer;
+}
+.spoiler {
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+.task {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  justify-content: space-between;
+}
+.tgl {
+  display: none;
+}
+.tgl,
+.tgl:after,
+.tgl:before,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.tgl + .tgl-btn:after,
+.tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+.tgl-flip + .tgl-btn {
+  padding: 2px;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  perspective: 100px;
+}
+.tgl-flip + .tgl-btn:after,
+.tgl-flip + .tgl-btn:before {
+  display: inline-block;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: center;
+  line-height: 2em;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+.tgl-flip + .tgl-btn:after {
+  content: attr(data-tg-on);
+  transform: rotateY(-180deg);
+}
+.tgl-flip + .tgl-btn:before {
+  content: attr(data-tg-off);
+}
+.tgl-flip + .tgl-btn:active:before {
+  transform: rotateY(-20deg);
+}
+.tgl-flip:checked + .tgl-btn:before {
+  transform: rotateY(180deg);
+}
+.tgl-flip:checked + .tgl-btn:after {
+  transform: rotateY(0);
+  left: 0;
+}
+.tgl-flip:checked + .tgl-btn:active:after {
+  transform: rotateY(20deg);
+}
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  color: #fff;
   overflow-y: scroll;
-  background: #292929;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-.root {
+.styleColorDark {
   height: 100%;
+}
+.styleColorDark .modalBg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 .container {
   width: 1200px;
@@ -1363,10 +1267,7 @@ code {
 header {
   position: sticky;
   top: 0;
-  border-bottom: 2px solid #fd9215;
-  box-shadow: 0 0 25px #fd9215;
   padding: 20px;
-  background-color: #292929;
   z-index: 1000;
 }
 .nav {
@@ -1384,7 +1285,6 @@ header {
   align-items: center;
   height: 100%;
   margin-right: 10px;
-  color: #ab5d01;
   padding: 0px 10px;
   font-size: 20px;
   border-radius: 7px;
@@ -1393,14 +1293,23 @@ header {
 }
 .link:hover {
   text-decoration: none;
-  color: #fd9215;
 }
 .active {
   position: relative;
-  color: #fd9215;
-  text-shadow: 0 0 20px #fd9215;
 }
-.active:hover {
+.edit {
+  font-size: 16px;
+  width: 230px;
+}
+.use {
+  font-size: 16px;
+  width: 230px;
+}
+.showAll {
+  font-size: 16px;
+  width: 230px;
+}
+.star {
   color: #fd9215;
 }
 .delete {
@@ -1440,8 +1349,6 @@ header {
   margin: 30px auto 30px;
   transition: 0.3s;
   cursor: pointer;
-  font-size: 16px;
-  width: 230px;
 }
 .edit:hover {
   color: #fd9215;
@@ -1464,8 +1371,6 @@ header {
   margin: 30px auto 30px;
   transition: 0.3s;
   cursor: pointer;
-  font-size: 16px;
-  width: 230px;
 }
 .use:hover {
   color: green;
@@ -1488,15 +1393,10 @@ header {
   margin: 30px auto 30px;
   transition: 0.3s;
   cursor: pointer;
-  font-size: 16px;
-  width: 230px;
 }
 .showAll:hover {
   color: #fd9215;
   border: 2px solid #fd9215;
   background-color: #292929;
   box-shadow: 0 0 15px #fd9215;
-}
-.star {
-  color: #fd9215;
 }

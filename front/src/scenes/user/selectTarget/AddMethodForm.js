@@ -1,8 +1,6 @@
 import React from "react";
-import './addMethodForm.css'
 import './icono.min.css'
 import AddNewDay from "./AddNewDay";
-import {logIn} from "../../../redux/actions";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 

@@ -15,7 +15,6 @@
     position: relative;
     font-family: "Roboto";
     text-transform: uppercase;
-    color: @mainColor;
     letter-spacing: 0.5px;
     -moz-user-select: none;
     user-select: none;
@@ -25,10 +24,7 @@
   }
 
   .more-bt {
-    border-right: 2px solid @mainColor;
-    border-bottom: 2px solid @mainColor;
     padding: 17px 29px 15px 31px;
-    border-color: @mainColor;
   }
 
   .more-bt p {
@@ -43,7 +39,6 @@
   .more-bt:before {
     content: " ";
     display: block;
-    background: @mainColor;
     position: absolute;
     transition: 0.5s;
     z-index: 10;
@@ -57,8 +52,6 @@
   }
 
   ::selection {
-    background: green;
-    color: #ffffff;
     text-shadow: none;
   }
 
@@ -96,7 +89,6 @@
     display: block;
     width: 2px;
     height: 20px;
-    background: @mainColor;
     position: absolute;
     margin: -10px -1px;
     left: 50%;
@@ -109,7 +101,6 @@
     display: block;
     width: 2px;
     height: 20px;
-    background: @mainColor;
     position: absolute;
     margin: 0px -1px;
     left: 50%;
@@ -121,7 +112,6 @@
     display: block;
     width: 2px;
     height: 20px;
-    background: @mainColor;
     position: absolute;
     margin: -10px 0px -10px 8px;
     left: 50%;
@@ -166,7 +156,6 @@
     height: 100%;
     width: 0;
     z-index: 2;
-    background: @mainColor;
     top: 0;
     transition: 0.5s;
     transition-delay: 0.1s;
@@ -225,7 +214,6 @@
   .more-bt .cross:before,
   .more-bt .cross:after {
     content: " ";
-    background: #fff;
     display: block;
     position: absolute;
     opacity: 0;

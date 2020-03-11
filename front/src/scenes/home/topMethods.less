@@ -1,5 +1,6 @@
 // main: ../../index.less
-.topMethods, .allMethods {
+.topMethods,
+.allMethods {
   margin: 30px -20px;
   width: 100%;
   &__title {
@@ -12,21 +13,16 @@
     text-align: center;
     flex-wrap: wrap;
   }
-  
+
   .content {
     &__column {
       box-sizing: border-box;
-      border: 2px solid @mainColor;
       border-radius: 25px;
       margin: 20px 0px;
       padding: 25px 10px;
       flex: 0 0 45%;
       overflow: hidden;
       transition: 1s;
-      &:hover {
-        border: 2px solid darken(@mainColor, 20%);
-        box-shadow: 0 0 15px @mainColor;
-      }
     }
 
     &__title {
@@ -55,19 +51,10 @@
       box-sizing: border-box;
       font-weight: 800;
       width: 160px;
-      color: @mainColorText;
-      border: 2px solid @mainColor;
-      background-color: @mainColor;
       border-radius: 20px;
       padding: 10px;
       margin: 30px auto 0px;
-      transition: .3s;
-      &:hover{
-        color: @mainColor;
-        border: 2px solid @mainColor;
-        background-color: @mainBgColor;
-        box-shadow: 0 0 15px  @mainColor;
-      }
+      transition: 0.3s;
     }
   }
 }
