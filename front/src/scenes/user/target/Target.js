@@ -62,6 +62,10 @@ class Target extends React.Component {
     let color = "progress-bar__";
     switch (parameters.status) {
       case "active":
+         if(personts == 100){
+          color += "green";
+          break;
+         }
         color += "orange";
         break;
       case "fallen":
