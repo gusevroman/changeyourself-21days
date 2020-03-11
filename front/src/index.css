@@ -363,6 +363,7 @@
 .topMethods,
 .allMethods {
   margin: 30px -20px;
+  width: 100%;
 }
 .topMethods__title,
 .allMethods__title {

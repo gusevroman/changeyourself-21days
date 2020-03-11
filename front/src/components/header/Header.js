@@ -15,6 +15,7 @@ class Header extends Component {
     const { isLoggined } = this.props;
     return (
       <header>
+        <div className="container">
         <nav className="nav">
           <div className="nav__section">
             <LinkButton href="/" name="Главная" />
@@ -32,6 +33,7 @@ class Header extends Component {
           <Modal />
         }
         </nav>
+        </div>
       </header>
     );
   }

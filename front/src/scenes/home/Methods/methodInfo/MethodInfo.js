@@ -19,7 +19,8 @@ class Method extends React.Component {
   state = {
     method: false,
     followLeng: 0,
-    score: 0
+    voted: false,
+    score: 0,
     data: false
   }
 
@@ -66,7 +67,7 @@ class Method extends React.Component {
   }
 
   async reload(method){
-    this.setState({method});  
+    this.setState({method, voted: true});  
     this.getScore(this.state.method.followers);
   }
 
@@ -94,7 +95,11 @@ class Method extends React.Component {
                 <div>Рейтинг: <span className="star"> {score} ★</span></div>
             </div>
             <p className="method__text">{method.description}</p>
-            { voted || <Stars id={method._id} reload={this.reload}/> }
+            { this.state.voted ?
+              <h2>Спасибо за вашу оценку</h2>
+              :
+                 voted || <Stars id={method._id} reload={this.reload}/> 
+              }
             <h5>Методика расчитана на {method.method.length}д</h5>
             <table className="method__table" cellpadding="0" cellspacing="0" border="0">
               <thead>
