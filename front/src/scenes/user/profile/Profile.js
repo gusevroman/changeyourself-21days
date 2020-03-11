@@ -193,10 +193,13 @@ class Profile extends Component {
                         <button className="edit" type="submit">Сохранить изменения</button>
 
                         {this.state.deleteAccount ?
-                            <div>
-                                <div>Вы точно хотите удалить аккаунт?</div>
-                                <button onClick={this.deleteAccount}>Да</button>
-                                <button onClick={this.showDanger}>Нет</button>
+                            <div className='edit'>
+                                <span>Вы точно хотите удалить аккаунт?</span>
+                                <div style={{display: 'flex', justifyContent: 'space-around'}}>
+                                    <i onClick={this.deleteAccount} className="icono-check"></i>
+                                    <i onClick={this.showDanger} className="icono-cross"></i>
+                                </div>
+
                             </div> :
                             <button onClick={this.showDanger} className="delete" type="submit">Удалить аккаунт</button>
                         }
