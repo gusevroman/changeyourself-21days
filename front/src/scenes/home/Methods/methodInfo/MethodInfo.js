@@ -10,9 +10,13 @@ class Method extends React.Component {
   constructor(){
     super()
     this.deleteMethod = this.deleteMethod.bind(this);
+    this.getScore = this.getScore.bind(this);
+    this.reload = this.reload.bind(this);
   }
   state = {
-    method: false
+    method: false,
+    followLeng: 0,
+    score: 0
   }
 
   async componentWillMount(){
@@ -39,7 +43,11 @@ class Method extends React.Component {
     if (sum === 0){
       return 0;
     }
-    return (sum / followers.length).toFixed(1)
+    const score = (sum / followers.length).toFixed(1);
+
+    if (this.state.followLeng !== followers.length){
+      this.setState({ followLeng: followers.length, score })
+    }
   }
 
   checkVoted(id, followers){
@@ -51,17 +59,24 @@ class Method extends React.Component {
     return false;
   }
 
+  async reload(method){
+    this.setState({method});  
+    this.getScore(this.state.method.followers);
+  }
+
   render() {
    const { method } = this.state;
    let counter = 1;
    const {userId} = this.props;
    const access = userId === method.author;
-   let score = 0;
+   let score = this.state.score;
    let voted = true;
    if (method){
-     score = this.getScore(method.followers);
+     this.getScore(method.followers);
      voted = this.checkVoted(this.props.userId, method.followers);
    }
+   console.log(this.state.method.followers);
+   
    
     return (  
       <>
@@ -69,11 +84,11 @@ class Method extends React.Component {
         ? <div className="method">
             <h2 className="method__title">{method.title}</h2>
             <div className="method__likes">
-              <div>Всего оценок: {method.followers.length }</div>
+              <div>Всего оценок: {this.state.followLeng}</div>
                 <div>Рейтинг: <span className="star"> {score} ★</span></div>
             </div>
             <p className="method__text">{method.description}</p>
-            { voted || <Stars id={method._id}/> }
+            { voted || <Stars id={method._id} reload={this.reload}/> }
             <h5>Методика расчитана на {method.method.length}д</h5>
             <table className="method__table" cellpadding="0" cellspacing="0" border="0">
               <thead>
