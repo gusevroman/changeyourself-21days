@@ -1,6 +1,4 @@
 import React from "react";
-import {logIn} from "../../../redux/actions";
-
 
 export default class AddNewDay extends React.Component {
 

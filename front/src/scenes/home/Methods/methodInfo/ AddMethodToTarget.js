@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 
 class AddMethodToTarget extends Component {
 
   async addTarget(){
+
     const method = this.props.method
-    const userId = this.props.userId    
+    const userId = this.props.userId  
+    console.log('method', method);
+      
+    this.props.history.push('/user');
+
+    
     await fetch('http://localhost:5000/newTarget/add', {
       method: "POST",
       headers: {
@@ -27,7 +33,7 @@ class AddMethodToTarget extends Component {
 }
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
-  userId: state.userId,
+  userId: state.userId
 });
 
 const mapDispatchToProps = dispatch => ({});

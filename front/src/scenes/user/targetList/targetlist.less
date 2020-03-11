@@ -1,5 +1,6 @@
+// main: ../../../index.less
+
 .target_spoiler {
-  border: 2px solid #fff;
   min-height: 50px;
   border-radius: 15px;
   margin-bottom: 15px;
@@ -86,7 +87,6 @@
 			position: absolute;
 			line-height: 2em;
 			font-weight: bold;
-			color: #fff;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -96,12 +96,10 @@
     
 		&:after {
 			content: attr(data-tg-on);
-			background: #02C66F;
 			transform: rotateY(-180deg);
 		}
      
 		&:before {
-			background: #FF3A19;
 			content: attr(data-tg-off);
 		}
 
@@ -118,7 +116,6 @@
     &:after {
       transform: rotateY(0);
       left: 0;
-      background: #7FC6A6;
     }
     
     &:active:after {

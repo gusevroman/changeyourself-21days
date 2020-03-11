@@ -1,0 +1,387 @@
+.styleColorDark {
+  color: #fff;
+}
+.styleColorDark .modalBg {
+  background: #292929;
+}
+.styleColorDark header {
+  border-bottom: 2px solid #fd9215;
+  box-shadow: 0 0 25px #fd9215;
+  background-color: #292929;
+}
+.styleColorDark .link {
+  color: #ab5d01;
+}
+.styleColorDark .link:hover {
+  color: #fd9215;
+}
+.styleColorDark .active {
+  color: #fd9215;
+  text-shadow: 0 0 20px #fd9215;
+}
+.styleColorDark .active:hover {
+  color: #fd9215;
+}
+.styleColorDark svg path,
+.styleColorDark svg rect {
+  fill: #fd9215;
+}
+.styleColorDark .allMethods__input {
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 2px solid #fd9215;
+}
+.styleColorDark .allMethods__input:focus {
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .myModal {
+  background: #0e101c;
+  background: rgba(0, 0, 0, 0.185);
+}
+.styleColorDark .myModal-body {
+  background: #131313;
+  box-shadow: 0 0px 15px #fd9215;
+}
+.styleColorDark .myModal h1 {
+  color: white;
+  border-bottom: 1px solid #fd9215;
+}
+.styleColorDark .myModal .form {
+  background: #0e101c;
+}
+.styleColorDark .myModal input {
+  border: 1px solid #fd9215;
+}
+.styleColorDark .myModal label {
+  color: white;
+}
+.styleColorDark .myModal .btn {
+  color: #fff;
+  border: 2px solid #fd9215;
+  background-color: #fd9215;
+}
+.styleColorDark .myModal .btn:hover {
+  color: #fd9215;
+  border: 2px solid #fd9215;
+  background-color: #292929;
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .myModal .auth-btn {
+  background-color: grey;
+}
+.styleColorDark .myModal .auth-btn:hover {
+  background-color: #676767;
+  box-shadow: 0 0 10px #fd9215;
+  color: #fff;
+}
+.styleColorDark .myModal button[type="submit"],
+.styleColorDark .myModal input[type="submit"] {
+  background: #fd9215;
+  color: #fff;
+  border: 2px solid #fd9215;
+}
+.styleColorDark .myModal button[type="submit"]:hover,
+.styleColorDark .myModal input[type="submit"]:hover {
+  background: #ab5d01;
+  color: #fff;
+}
+.styleColorDark .myModal button[type="button"] {
+  background: #292929;
+  color: #fff;
+}
+.styleColorDark .myModal pre {
+  color: #fff;
+}
+.styleColorDark .myModal button {
+  border: 1px solid #292929;
+}
+.styleColorDark .topMethods .content__column,
+.styleColorDark .allMethods .content__column {
+  border: 2px solid #fd9215;
+}
+.styleColorDark .topMethods .content__column:hover,
+.styleColorDark .allMethods .content__column:hover {
+  border: 2px solid #ab5d01;
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .topMethods .content__info,
+.styleColorDark .allMethods .content__info {
+  color: #fff;
+  border: 2px solid #fd9215;
+  background-color: #fd9215;
+}
+.styleColorDark .topMethods .content__info:hover,
+.styleColorDark .allMethods .content__info:hover {
+  color: #fd9215;
+  border: 2px solid #fd9215;
+  background-color: #292929;
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .profile {
+  color: whitesmoke;
+}
+.styleColorDark .profile__file {
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+.styleColorDark .profile__input input {
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 2px solid #fd9215;
+}
+.styleColorDark .profile__input input:focus {
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .mainFlex {
+  /**/
+  /* Arrow */
+  /* Transition */
+}
+.styleColorDark .mainFlex input::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea::-webkit-input-placeholder {
+  color: #aca49c;
+}
+.styleColorDark .mainFlex input:focus::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+.styleColorDark .mainFlex input::-moz-placeholder,
+.styleColorDark .mainFlex textarea::-moz-placeholder {
+  color: #aca49c;
+}
+.styleColorDark .mainFlex input:focus::-moz-placeholder,
+.styleColorDark .mainFlex textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+.styleColorDark .mainFlex input::placeholder,
+.styleColorDark .mainFlex textarea::placeholder {
+  color: #aca49c;
+}
+.styleColorDark .mainFlex input:focus::placeholder,
+.styleColorDark .mainFlex textarea::focus:placeholder {
+  color: #bbb5af;
+}
+.styleColorDark .mainFlex input::-ms-placeholder,
+.styleColorDark .mainFlex textarea::-ms-placeholder {
+  color: #aca49c;
+}
+.styleColorDark .mainFlex input:focus::-ms-placeholder,
+.styleColorDark .mainFlex textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+.styleColorDark .mainFlex input:hover::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex input:hover:focus::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+.styleColorDark .mainFlex input:hover::-moz-placeholder,
+.styleColorDark .mainFlex textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex input:hover:focus::-moz-placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+.styleColorDark .mainFlex input:hover::placeholder,
+.styleColorDark .mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex input:hover:focus::placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+.styleColorDark .mainFlex input:hover::placeholder,
+.styleColorDark .mainFlex textarea:hover::placeholder {
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex input:hover:focus::-ms-placeholder,
+.styleColorDark .mainFlex textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+.styleColorDark .mainFlex .inputClass {
+  color: #fff;
+  border: solid 1px #fd9215;
+}
+.styleColorDark .mainFlex input {
+  color: #fff;
+  border: solid 1px #fd9215;
+}
+.styleColorDark .mainFlex input:hover {
+  background: rgba(179, 172, 167, 0.1);
+  color: #fff;
+}
+.styleColorDark .mainFlex textarea {
+  color: #fff;
+  border: solid 1px #fd9215;
+}
+.styleColorDark .mainFlex .textareaClass {
+  border: solid 1px #fd9215;
+}
+.styleColorDark .mainFlex textarea:hover {
+  background: rgba(179, 172, 167, 0.1);
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex #submit {
+  color: #b3aca7;
+  border: solid 1px #b3aca7;
+}
+.styleColorDark .mainFlex #submit:hover {
+  color: #e2dedb;
+}
+.styleColorDark .mainFlex select {
+  background: #2c3e50;
+}
+.styleColorDark .mainFlex .select {
+  background: #2c3e50;
+}
+.styleColorDark .mainFlex select {
+  color: #fff;
+}
+.styleColorDark .mainFlex .select::after {
+  background: #34495e;
+}
+.styleColorDark .mainFlex .select:hover::after {
+  color: #f39c12;
+}
+.styleColorDark .mainFlex button.outline {
+  color: #1172c4;
+  border-color: #1172c4;
+}
+.styleColorDark .mainFlex button.outline:hover {
+  color: black;
+  background: #fd9215;
+  border-color: white;
+}
+.styleColorDark .mainFlex button.orange {
+  color: #fd9215;
+  border-color: #fd9215;
+}
+.styleColorDark .mainFlex .box select {
+  background: darkorange;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.styleColorDark .mainFlex .logoTrash {
+  color: #fd9215;
+}
+.styleColorDark .mainFlex .logoTrash:hover i {
+  color: #fd9215;
+}
+.styleColorDark .target {
+  border: 2px solid #fd9215;
+  box-shadow: 0 0 5px #fd9215;
+}
+.styleColorDark .target:hover {
+  box-shadow: 0 0 25px #fd9215;
+}
+.styleColorDark .target__title {
+  color: #fff;
+}
+.styleColorDark .target__search .search__input {
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 2px solid #fd9215;
+}
+.styleColorDark .target__search .search__input:focus {
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .target .progress-bar {
+  background-color: #1a1a1a;
+  box-shadow: 0 1px 5px #000 inset;
+}
+.styleColorDark .target .progress-bar span {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  color: black;
+}
+.styleColorDark .target .progress-bar__red {
+  background-color: #ff0000;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+}
+.styleColorDark .target .progress-bar__orange {
+  background-color: #fecf23;
+  background-image: linear-gradient(to top, #fecf23, #fd9215);
+}
+.styleColorDark .target .progress-bar__orange::after {
+  background: #fff;
+}
+.styleColorDark .target .progress-bar__green {
+  background-image: linear-gradient(to top, #a5df41, #4ca916);
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+}
+.styleColorDark .target .progress-bar__last {
+  color: #fff;
+}
+.styleColorDark .target_spoiler {
+  border: 2px solid #fff;
+}
+.styleColorDark .tgl-flip + .tgl-btn:after,
+.styleColorDark .tgl-flip + .tgl-btn:before {
+  color: #fff;
+}
+.styleColorDark .tgl-flip + .tgl-btn:after {
+  background: #02c66f;
+}
+.styleColorDark .tgl-flip + .tgl-btn:before {
+  background: #ff3a19;
+}
+.styleColorDark .tgl-flip:checked + .tgl-btn:after {
+  background: #7fc6a6;
+}
+.styleColorDark .bt {
+  color: #fd9215;
+}
+.styleColorDark .more-bt {
+  border-right: 2px solid #fd9215;
+  border-bottom: 2px solid #fd9215;
+  border-color: #fd9215;
+}
+.styleColorDark .more-bt:after,
+.styleColorDark .more-bt:before {
+  background: #fd9215;
+}
+.styleColorDark ::selection {
+  background: green;
+  color: #ffffff;
+}
+.styleColorDark .more-bt i:after,
+.styleColorDark .more-bt i:before {
+  background: #fd9215;
+}
+.styleColorDark .more-bt:hover i:after {
+  background: #fd9215;
+}
+.styleColorDark .more-bt:hover i:before {
+  background: #fd9215;
+}
+.styleColorDark .more-bt .fl,
+.styleColorDark .more-bt .sfl {
+  background: #fd9215;
+}
+.styleColorDark .more-bt .cross:before,
+.styleColorDark .more-bt .cross:after {
+  background: #fff;
+}
+.styleColorDark .method__text {
+  border: 2px solid #fd9215;
+  color: #fff;
+  background-color: #292929;
+  box-shadow: 0 0 15px #fd9215;
+}
+.styleColorDark .method__table {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.styleColorDark .method__table thead {
+  color: #fd9215;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.styleColorDark .method__table tbody tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.styleColorDark .method__table tbody td {
+  color: #fff;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  border-left: solid 1px rgba(255, 255, 255, 0.1);
+}

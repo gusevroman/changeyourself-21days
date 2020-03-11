@@ -5,19 +5,12 @@
   min-height: 200px;
   padding: 0px 100px;
   margin: 0 0 30px;
-  border: 2px solid @mainColor;
   border-radius: 15px;
   transition: all 1s ease;
   cursor: pointer;
-  box-shadow: 0 0 5px @mainColor;
-
-  &:hover {
-    box-shadow: 0 0 25px @mainColor;
-  }
 
   &__title {
     text-align: center;
-    color: @mainColorText;
   }
 
   &__block {
@@ -31,23 +24,18 @@
     font-size: 20px;
     margin-top: 30px;
     .search__input {
-      color: @mainColorText;
       font-size: 20px;
       margin-left: 10px;
       padding: 10px;
-      background-color: #1a1a1a;
-      border: 2px solid @mainColor;
       border-radius: 25px;
         &:focus {
           outline: none;
-          box-shadow: 0 0 15px @mainColor;
         }
       }
 
   }
 
   .progress-bar {
-    background-color: #1a1a1a;
     display: flex;
     align-items: center;
     height: 30px;
@@ -55,7 +43,6 @@
     width: 60%;
     margin: 30px auto 10px auto;
     border-radius: 5px;
-    box-shadow: 0 1px 5px #000 inset;
 
     & span {
       display: flex;
@@ -63,10 +50,8 @@
       align-items: center;
       height: 100%;
       border-radius: 3px;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
       transition: width 0.4s ease-in-out;
       font-weight: 800;
-      color: black;
       font-size: 20px;
       transition: all .5s linear;
     }
@@ -76,22 +61,10 @@
       background-color: #ff0000;
       // background-image: linear-gradient(to top, #ff0000, #a52a2a);
       animation: 3s stripes linear infinite;
-      background-image: linear-gradient(
-        135deg,
-        rgba(0,0,0, 0.15) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(0,0,0, 0.15) 50%,
-        rgba(0,0,0, 0.15) 75%,
-        transparent 75%,
-        transparent
-      );
     }
 
     &__orange {
       position: relative;
-      background-color: #fecf23;
-      background-image: linear-gradient(to top, #fecf23, #fd9215);
 
       &::after {
         content: "";
@@ -101,23 +74,14 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: #fff;
         border-radius: 3px;
         animation: 2s shine ease-out infinite;
       }
     }
 
-    &__green {
-      background-color: #a5df41;
-      background-image: linear-gradient(to top, #a5df41, #4ca916);
-      box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
-        0 -5px 5px rgba(255, 255, 255, 0.7) inset;
-      animation: 2s glow ease-out infinite;
-    }
 
     &__last {
       text-align: center;
-      color: @mainColorText;
       font-size: 20px;
       margin: 0px 0px 20px;
     }
