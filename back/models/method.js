@@ -10,8 +10,8 @@ const methodSchema = new mongoose.Schema({
     ref: 'User'
   },
   followers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    author: { type: mongoose.Schema.Types.ObjectId,ref: 'User' },
+    score: Number
   }],
   method: [{
     title: String,

@@ -28,5 +28,17 @@ router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   await Method.findByIdAndDelete(id);
 });
-
+router.post('/score/:id', async (req, res) => {
+  const { id } = req.params;
+  const {userId} = req.body;
+  const {score} = req.body;
+  const newScore = {
+    author: userId,
+    score
+  }
+  const method = await Method.findById(id);
+  method.followers.push(newScore);
+  method.save();
+  res.json({method})
+});
 module.exports = router;

@@ -9,7 +9,8 @@ class Stars extends React.Component {
     this.addScore = this.addScore.bind(this);
   }
   state={
-    stars: false
+    stars: false,
+    voted: false
   }
 
   addStars(event){
@@ -21,20 +22,27 @@ class Stars extends React.Component {
     const url = 'http://localhost:5000/method/score/' + id;
     const {userId} = this.props;
     const score = this.state.stars;
-    await fetch(url, { 
+    this.setState({voted: true});
+    const res = await (await fetch(url, { 
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify({ userId, score })
-    })
-    this.props.history.push(`/method/${id}`);
+    })).json();
+    this.props.reload(res.method);
   }
 
   render() {
     return (
       <>
-        <form class="rating" onSubmit={this.addScore}>
+      { this.props.userId && 
+      <>
+        { this.state.voted ?
+        <h2>Спасибо за вашу оценку</h2>
+        :
+        <>
+        <form class="rating">
           <div>
           <label>
             <input type="radio" name="stars" value="1" onChange={this.addStars}/>
@@ -67,9 +75,13 @@ class Stars extends React.Component {
             <span class="icon">★</span>
           </label>
           </div>
-          { this.state.stars && <button type="submit" className="edit">Оценить</button> }
         </form>
+        { this.state.stars && <span onClick={this.addScore} className="edit">Оценить</span> }
+        </>
+        }
       </>
+      }
+    </>
     );
   }
 }
