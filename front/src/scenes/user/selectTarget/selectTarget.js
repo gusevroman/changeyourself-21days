@@ -64,21 +64,12 @@ class SelectTarget extends React.Component {
         return (
             <>
                 <div className="mainFlex">
-                    
+
                     {this.state.selectedTag.length > 1 ?
                     <ShowSelectMetods tag={this.state.selectedTag} />
                     : null
                     }
-
-
-                    {/*<div className='childFlex'>*/}
-                        {/* {(this.state.addClick) ?
-                            <> */}
-                            {/* <NewMethodButton value={'CANCEL'} addMethodsFunc={this.addMethods}/> */}
                             <NewMethodForm/>
-                            {/* </>
-                            : <NewMethodButton value={'ADD METHOD'} addMethodsFunc={this.addMethods}/>} */}
-                    {/*</div>*/}
                 </div>
             </>
         )

@@ -2,6 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Row from "./table/Row";
+
+import AddMethodToTarget from "./ AddMethodToTarget";
+import Loader from "../../../../components/loader/loader";
 import Stars from "../../../../components/stars/Stars";
 
 
@@ -16,15 +19,18 @@ class Method extends React.Component {
   state = {
     method: false,
     followLeng: 0,
-    score: 0,
     voted: false,
+    score: 0,
+    data: false
   }
 
   async componentWillMount(){
     const { id } = this.props.match.params;
     const url = 'http://localhost:5000/method/' + id;
-    const { method } = await (await fetch(url, {method:"POST"})).json()
+    const  data  = await (await fetch(url, {method:"POST"})).json()
+    const method = data.method
     this.setState({method})    
+    this.setState({data})    
   }
 
   async deleteMethod(){
@@ -113,24 +119,11 @@ class Method extends React.Component {
             </table>
             <div className="method__buttons">
             { access && <span className="delete" onClick={this.deleteMethod}>Удалить методику</span>}
-            { this.props.isLoggined && <span className="use">Воспользоваться</span>}
+            <AddMethodToTarget method={this.state.data} />
             </div>
           </div>
         : 
-        <div class="loader loader--style3" title="2">
-          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="40px" height="40px" viewBox="0 0 50 50" style={{enableBackground:"new 0 0 50 50"}} >
-          <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-            <animateTransform attributeType="xml"
-              attributeName="transform"
-              type="rotate"
-              from="0 25 25"
-              to="360 25 25"
-              dur="0.6s"
-              repeatCount="indefinite"/>
-            </path>
-          </svg>
-        </div>
+        <Loader />
       }
       </>
     );
