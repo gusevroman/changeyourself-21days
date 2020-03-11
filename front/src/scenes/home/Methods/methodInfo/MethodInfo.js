@@ -19,8 +19,8 @@ class Method extends React.Component {
   state = {
     method: false,
     followLeng: 0,
-    score: 0
-    data: false
+    score: 0,
+    data: false,
   }
 
   async componentWillMount(){

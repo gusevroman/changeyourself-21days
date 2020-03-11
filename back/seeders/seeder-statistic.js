@@ -23,7 +23,7 @@ let user2 = new User({
   email: "kolia@mail.ru",
   login: 'Nik',
   password: '111',
-  about: 'Я дантист, люблю зубы и собак',21challenge
+  about: 'Я дантист, люблю зубы и собак',
   tel: '+7(999)543-23-22',
   instagram: "@kolia-dantist",
 })

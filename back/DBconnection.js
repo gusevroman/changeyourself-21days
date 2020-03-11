@@ -5,8 +5,15 @@ function getConnection() {
 
   mongoose.connect(db, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  }).then(() => {
+    console.log('Database 21challenge sucessfully connected')
+  },
+    error => {
+      console.log('Database 21challenge could not be connected: ' + error)
+    }
+  );
 }
 
 module.exports = getConnection;
