@@ -4,7 +4,7 @@ const methodSchema = new mongoose.Schema({
   title: String,
   description: String,
   category: [String],
-  tag: Array,
+  tag: [String],
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
