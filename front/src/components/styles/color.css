@@ -1,388 +1,407 @@
-.styleColorDark {
+.styleColorLight {
   color: black;
-}
-.styleColorDark .modalBg {
   background: #ecf0f1;
 }
-.styleColorDark header {
-  border-bottom: 2px solid #405ca1;
-  box-shadow: 0 0 25px #405ca1;
+.styleColorLight .modalBg {
+  background: #ecf0f1;
+}
+.styleColorLight header {
+  border-bottom: 2px solid black;
+  box-shadow: 0 0 5px black;
   background: white;
 }
-.styleColorDark .link {
+.styleColorLight .link {
+  position: relative;
   color: black;
 }
-.styleColorDark .link:hover {
-  color: #405ca1;
+.styleColorLight .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
 }
-.styleColorDark .active {
-  color: #405ca1;
-  text-shadow: 0 0 20px #405ca1;
+.styleColorLight .link:hover {
+  color: black;
 }
-.styleColorDark .active:hover {
-  color: #405ca1;
+.styleColorLight .active {
+  color: black;
+  border-radius: 0;
+  box-sizing: border-box;
 }
-.styleColorDark svg path,
-.styleColorDark svg rect {
-  fill: #405ca1;
+.styleColorLight .active::after {
+  width: 100%;
 }
-.styleColorDark .allMethods__input {
+.styleColorLight .active:hover {
+  color: black;
+}
+.styleColorLight svg path,
+.styleColorLight svg rect {
+  fill: black;
+}
+.styleColorLight .allMethods__input {
   color: black;
   background-color: white;
   border: 2px solid black;
 }
-.styleColorDark .allMethods__input:focus {
-  box-shadow: 0 0 15px #405ca1;
+.styleColorLight .allMethods__input:focus {
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .myModal {
+.styleColorLight .myModal {
   background: #0e101c;
   background: rgba(0, 0, 0, 0.185);
 }
-.styleColorDark .myModal-body {
+.styleColorLight .myModal-body {
   background: #131313;
-  box-shadow: 0 0px 15px #405ca1;
+  box-shadow: 0 0px 15px black;
 }
-.styleColorDark .myModal h1 {
+.styleColorLight .myModal h1 {
   color: white;
-  border-bottom: 1px solid #405ca1;
+  border-bottom: 1px solid black;
 }
-.styleColorDark .myModal .form {
+.styleColorLight .myModal .form {
   background: #0e101c;
 }
-.styleColorDark .myModal input {
-  border: 1px solid #405ca1;
+.styleColorLight .myModal input {
+  border: 1px solid black;
 }
-.styleColorDark .myModal label {
+.styleColorLight .myModal label {
   color: white;
 }
-.styleColorDark .myModal .btn {
+.styleColorLight .myModal .btn {
   color: #000;
-  border: 2px solid #405ca1;
-  background-color: #405ca1;
+  border: 2px solid black;
+  background-color: black;
 }
-.styleColorDark .myModal .btn:hover {
-  color: #405ca1;
-  border: 2px solid #405ca1;
+.styleColorLight .myModal .btn:hover {
+  color: black;
+  border: 2px solid black;
   background-color: #292929;
-  box-shadow: 0 0 15px #405ca1;
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .myModal .auth-btn {
+.styleColorLight .myModal .auth-btn {
   background-color: grey;
 }
-.styleColorDark .myModal .auth-btn:hover {
+.styleColorLight .myModal .auth-btn:hover {
   background-color: #676767;
-  box-shadow: 0 0 10px #405ca1;
+  box-shadow: 0 0 10px black;
   color: #000;
 }
-.styleColorDark .myModal button[type="submit"],
-.styleColorDark .myModal input[type="submit"] {
-  background: #405ca1;
+.styleColorLight .myModal button[type="submit"],
+.styleColorLight .myModal input[type="submit"] {
+  background: black;
   color: #000;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
 }
-.styleColorDark .myModal button[type="submit"]:hover,
-.styleColorDark .myModal input[type="submit"]:hover {
+.styleColorLight .myModal button[type="submit"]:hover,
+.styleColorLight .myModal input[type="submit"]:hover {
   background: #ab5d01;
   color: #000;
 }
-.styleColorDark .myModal button[type="button"] {
+.styleColorLight .myModal button[type="button"] {
   background: #292929;
   color: #000;
 }
-.styleColorDark .myModal pre {
+.styleColorLight .myModal pre {
   color: #000;
 }
-.styleColorDark .myModal button {
+.styleColorLight .myModal button {
   border: 1px solid #292929;
 }
-.styleColorDark .topMethods .content__column,
-.styleColorDark .allMethods .content__column {
-  border: 2px solid #405ca1;
+.styleColorLight .topMethods .content__column,
+.styleColorLight .allMethods .content__column {
+  border: 2px solid black;
 }
-.styleColorDark .topMethods .content__column:hover,
-.styleColorDark .allMethods .content__column:hover {
-  border: 2px solid #405ca1;
-  box-shadow: 0 0 15px #405ca1;
+.styleColorLight .topMethods .content__column:hover,
+.styleColorLight .allMethods .content__column:hover {
+  border: 2px solid black;
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .topMethods .content__info,
-.styleColorDark .allMethods .content__info {
+.styleColorLight .topMethods .content__info,
+.styleColorLight .allMethods .content__info {
   color: black;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
   background-color: white;
 }
-.styleColorDark .topMethods .content__info:hover,
-.styleColorDark .allMethods .content__info:hover {
+.styleColorLight .topMethods .content__info:hover,
+.styleColorLight .allMethods .content__info:hover {
   color: white;
   border: 2px solid black;
-  background-color: #405ca1;
-  box-shadow: 0 0 15px #405ca1;
+  background-color: black;
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .profile {
+.styleColorLight .profile {
   color: black;
 }
-.styleColorDark .profile__file {
+.styleColorLight .profile__file {
   color: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0);
 }
-.styleColorDark .profile__input input {
+.styleColorLight .profile__input input {
   color: black;
   background-color: white;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
 }
-.styleColorDark .profile__input input:focus {
-  box-shadow: 0 0 15px #405ca1;
+.styleColorLight .profile__input input:focus {
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .mainFlex {
+.styleColorLight .mainFlex {
   /**/
   /* Arrow */
   /* Transition */
 }
-.styleColorDark .mainFlex input::-webkit-input-placeholder,
-.styleColorDark .mainFlex textarea::-webkit-input-placeholder {
+.styleColorLight .mainFlex input::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea::-webkit-input-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:focus::-webkit-input-placeholder,
-.styleColorDark .mainFlex textarea:focus::-webkit-input-placeholder {
+.styleColorLight .mainFlex input:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:focus::-webkit-input-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input::-moz-placeholder,
-.styleColorDark .mainFlex textarea::-moz-placeholder {
+.styleColorLight .mainFlex input::-moz-placeholder,
+.styleColorLight .mainFlex textarea::-moz-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:focus::-moz-placeholder,
-.styleColorDark .mainFlex textarea:focus::-moz-placeholder {
+.styleColorLight .mainFlex input:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:focus::-moz-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input::placeholder,
-.styleColorDark .mainFlex textarea::placeholder {
+.styleColorLight .mainFlex input::placeholder,
+.styleColorLight .mainFlex textarea::placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:focus::placeholder,
-.styleColorDark .mainFlex textarea::focus:placeholder {
+.styleColorLight .mainFlex input:focus::placeholder,
+.styleColorLight .mainFlex textarea::focus:placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input::-ms-placeholder,
-.styleColorDark .mainFlex textarea::-ms-placeholder {
+.styleColorLight .mainFlex input::-ms-placeholder,
+.styleColorLight .mainFlex textarea::-ms-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:focus::-ms-placeholder,
-.styleColorDark .mainFlex textarea:focus::-ms-placeholder {
+.styleColorLight .mainFlex input:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:focus::-ms-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover::-webkit-input-placeholder,
-.styleColorDark .mainFlex textarea:hover::-webkit-input-placeholder {
+.styleColorLight .mainFlex input:hover::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover::-webkit-input-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover:focus::-webkit-input-placeholder,
-.styleColorDark .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+.styleColorLight .mainFlex input:hover:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-webkit-input-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover::-moz-placeholder,
-.styleColorDark .mainFlex textarea:hover::-moz-placeholder {
+.styleColorLight .mainFlex input:hover::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover::-moz-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover:focus::-moz-placeholder,
-.styleColorDark .mainFlex textarea:hover:focus::-moz-placeholder {
+.styleColorLight .mainFlex input:hover:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-moz-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover::placeholder,
-.styleColorDark .mainFlex textarea:hover::placeholder {
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover:focus::placeholder,
-.styleColorDark .mainFlex textarea:hover:focus::placeholder {
+.styleColorLight .mainFlex input:hover:focus::placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover::placeholder,
-.styleColorDark .mainFlex textarea:hover::placeholder {
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
   color: black;
 }
-.styleColorDark .mainFlex input:hover:focus::-ms-placeholder,
-.styleColorDark .mainFlex textarea:hover::focus:-ms-placeholder {
+.styleColorLight .mainFlex input:hover:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:hover::focus:-ms-placeholder {
   color: black;
 }
-.styleColorDark .mainFlex .inputClass {
-  color: black;
-  border: solid 1px #405ca1;
-}
-.styleColorDark .mainFlex input {
-  color: black;
-  border: solid 1px #405ca1;
-}
-.styleColorDark .mainFlex input:hover {
-  background: white;
-  color: black;
-}
-.styleColorDark .mainFlex textarea {
-  color: black;
-  border: solid 1px #405ca1;
-}
-.styleColorDark .mainFlex .textareaClass {
-  border: solid 1px #405ca1;
-}
-.styleColorDark .mainFlex textarea:hover {
-  background: white;
-  color: black;
-}
-.styleColorDark .mainFlex #submit {
+.styleColorLight .mainFlex .inputClass {
   color: black;
   border: solid 1px black;
 }
-.styleColorDark .mainFlex #submit:hover {
+.styleColorLight .mainFlex input {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex input:hover {
+  background: white;
   color: black;
 }
-.styleColorDark .mainFlex select {
+.styleColorLight .mainFlex textarea {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex .textareaClass {
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex textarea:hover {
+  background: white;
+  color: black;
+}
+.styleColorLight .mainFlex #submit {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex #submit:hover {
+  color: black;
+}
+.styleColorLight .mainFlex select {
   background: black;
 }
-.styleColorDark .mainFlex .select {
+.styleColorLight .mainFlex .select {
   background: black;
 }
-.styleColorDark .mainFlex select {
+.styleColorLight .mainFlex select {
   color: black;
 }
-.styleColorDark .mainFlex .select::after {
+.styleColorLight .mainFlex .select::after {
   background: black;
 }
-.styleColorDark .mainFlex .select:hover::after {
+.styleColorLight .mainFlex .select:hover::after {
   color: black;
 }
-.styleColorDark .mainFlex button.outline {
+.styleColorLight .mainFlex button.outline {
   color: black;
-  border-color: #405ca1;
+  border-color: black;
 }
-.styleColorDark .mainFlex button.outline:hover {
+.styleColorLight .mainFlex button.outline:hover {
   color: white;
-  background: #405ca1;
+  background: black;
   border-color: white;
 }
-.styleColorDark .mainFlex button.orange {
-  color: #405ca1;
-  border-color: #405ca1;
+.styleColorLight .mainFlex button.orange {
+  color: black;
+  border-color: black;
 }
-.styleColorDark .mainFlex .box select {
-  background: #405ca1;
+.styleColorLight .mainFlex .box select {
+  background: black;
   color: white;
-  box-shadow: 0 5px 20px rgba(64, 92, 161, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
-.styleColorDark .mainFlex .logoTrash {
-  color: #405ca1;
-}
-.styleColorDark .mainFlex .logoTrash:hover i {
-  color: #405ca1;
-}
-.styleColorDark .target {
-  border: 2px solid #405ca1;
-  box-shadow: 0 0 5px #405ca1;
-}
-.styleColorDark .target:hover {
-  box-shadow: 0 0 25px #405ca1;
-}
-.styleColorDark .target__title {
+.styleColorLight .mainFlex .logoTrash {
   color: black;
 }
-.styleColorDark .target__search .search__input {
+.styleColorLight .mainFlex .logoTrash:hover i {
+  color: black;
+}
+.styleColorLight .target {
+  border: 2px solid black;
+  box-shadow: 0 0 5px black;
+}
+.styleColorLight .target:hover {
+  box-shadow: 0 0 25px black;
+}
+.styleColorLight .target__title {
+  color: black;
+}
+.styleColorLight .target__search .search__input {
   color: black;
   background-color: white;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
 }
-.styleColorDark .target__search .search__input:focus {
-  box-shadow: 0 0 15px #405ca1;
+.styleColorLight .target__search .search__input:focus {
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .target .progress-bar {
-  background-color: #1a1a1a;
+.styleColorLight .target .progress-bar {
+  background-color: #fff;
+  border: 2px solid black;
   box-shadow: 0 1px 5px #000 inset;
 }
-.styleColorDark .target .progress-bar span {
+.styleColorLight .target .progress-bar span {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
   color: black;
 }
-.styleColorDark .target .progress-bar__red {
+.styleColorLight .target .progress-bar__red {
   background-color: #ff0000;
   background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
 }
-.styleColorDark .target .progress-bar__orange {
+.styleColorLight .target .progress-bar__orange {
   background-color: #fecf23;
   background-image: linear-gradient(to top, #fecf23, #fd9215);
 }
-.styleColorDark .target .progress-bar__orange::after {
+.styleColorLight .target .progress-bar__orange::after {
   background: #fff;
 }
-.styleColorDark .target .progress-bar__green {
+.styleColorLight .target .progress-bar__green {
   background-image: linear-gradient(to top, #a5df41, #4ca916);
   box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
 }
-.styleColorDark .target .progress-bar__last {
+.styleColorLight .target .progress-bar__last {
   color: #000;
 }
-.styleColorDark .target_spoiler {
-  border: 2px solid #405ca1;
+.styleColorLight .target_spoiler {
+  border: 2px solid black;
 }
-.styleColorDark .tgl-flip + .tgl-btn:after,
-.styleColorDark .tgl-flip + .tgl-btn:before {
+.styleColorLight .tgl-flip + .tgl-btn:after,
+.styleColorLight .tgl-flip + .tgl-btn:before {
   color: #000;
 }
-.styleColorDark .tgl-flip + .tgl-btn:after {
+.styleColorLight .tgl-flip + .tgl-btn:after {
   background: #02c66f;
 }
-.styleColorDark .tgl-flip + .tgl-btn:before {
+.styleColorLight .tgl-flip + .tgl-btn:before {
   background: #ff3a19;
 }
-.styleColorDark .tgl-flip:checked + .tgl-btn:after {
+.styleColorLight .tgl-flip:checked + .tgl-btn:after {
   background: #7fc6a6;
 }
-.styleColorDark .bt {
-  color: #405ca1;
+.styleColorLight .bt {
+  color: black;
 }
-.styleColorDark .more-bt {
-  border-right: 2px solid #405ca1;
-  border-bottom: 2px solid #405ca1;
-  border-color: #405ca1;
+.styleColorLight .more-bt {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-color: black;
+  background-color: #fff;
 }
-.styleColorDark .more-bt:after,
-.styleColorDark .more-bt:before {
-  background: #405ca1;
+.styleColorLight .more-bt:after,
+.styleColorLight .more-bt:before {
+  background: black;
 }
-.styleColorDark ::selection {
+.styleColorLight ::selection {
   background: green;
   color: #ffffff;
 }
-.styleColorDark .more-bt i:after,
-.styleColorDark .more-bt i:before {
-  background: #405ca1;
+.styleColorLight .more-bt i:after,
+.styleColorLight .more-bt i:before {
+  background: black;
 }
-.styleColorDark .more-bt:hover i:after {
-  background: #405ca1;
+.styleColorLight .more-bt:hover i:after {
+  background: black;
 }
-.styleColorDark .more-bt:hover i:before {
-  background: #405ca1;
+.styleColorLight .more-bt:hover i:before {
+  background: black;
 }
-.styleColorDark .more-bt .fl,
-.styleColorDark .more-bt .sfl {
-  background: #405ca1;
+.styleColorLight .more-bt .fl,
+.styleColorLight .more-bt .sfl {
+  background: black;
 }
-.styleColorDark .more-bt .cross:before,
-.styleColorDark .more-bt .cross:after {
+.styleColorLight .more-bt .cross:before,
+.styleColorLight .more-bt .cross:after {
   background: #fff;
 }
-.styleColorDark .method__text {
+.styleColorLight .method__text {
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: #000;
   background-color: white;
-  box-shadow: 0 0 15px #405ca1;
+  box-shadow: 0 0 15px black;
 }
-.styleColorDark .method__table {
+.styleColorLight .method__table {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.styleColorDark .method__table thead {
+.styleColorLight .method__table thead {
   color: black;
   background-color: white;
   border: 1px solid black;
   border-bottom: none;
 }
-.styleColorDark .method__table tbody tr:nth-child(2n) {
+.styleColorLight .method__table tbody tr:nth-child(2n) {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.styleColorDark .method__table tbody td {
+.styleColorLight .method__table tbody td {
   color: #000;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   border-left: solid 1px rgba(0, 0, 0, 0.1);
@@ -398,7 +417,7 @@
   text-align: center;
   width: 200px;
   color: #000;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
@@ -420,7 +439,7 @@
   text-align: center;
   width: 200px;
   color: #000;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
@@ -429,10 +448,10 @@
   cursor: pointer;
 }
 .edit:hover {
-  color: #405ca1;
-  border: 2px solid #405ca1;
+  color: black;
+  border: 2px solid black;
   background-color: white;
-  box-shadow: 0 0 15px #405ca1;
+  box-shadow: 0 0 15px black;
 }
 .use {
   display: block;
@@ -442,7 +461,7 @@
   text-align: center;
   width: 200px;
   color: #000;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
@@ -464,7 +483,7 @@
   text-align: center;
   width: 200px;
   color: #000;
-  border: 2px solid #405ca1;
+  border: 2px solid black;
   background-color: white;
   border-radius: 20px;
   padding: 10px;
@@ -473,8 +492,8 @@
   cursor: pointer;
 }
 .showAll:hover {
-  color: #405ca1;
-  border: 2px solid #405ca1;
+  color: black;
+  border: 2px solid black;
   background-color: white;
-  box-shadow: 0 0 15px #405ca1;
+  box-shadow: 0 0 15px black;
 }
