@@ -9,6 +9,8 @@ const userSchema = new mongoose.Schema({
     tel: String,
     instagram: String,
     profileImg: String,
+    checkEmail: {type: Boolean, default: false},
+    style: {type: String, default: 'Light'},
 });
 
 module.exports = mongoose.model('User', userSchema);
