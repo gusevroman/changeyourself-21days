@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "./Routes";
 import Header from "./header/Header";
+import GlobalModal from "./GlobalModal";
 import { BrowserRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import './styles/color.css';
@@ -11,7 +12,8 @@ class Main extends React.Component {
     const {color} = this.props
     const style = "styleColor" + color;
     return (
-        <BrowserRouter>
+      <BrowserRouter>
+      { this.props.isLoggined ? 
         <div className={style}>
         <div className="modalBg"></div>
           <Header />
@@ -19,6 +21,9 @@ class Main extends React.Component {
             <Router />
           </div>
         </div>
+        :
+        <GlobalModal /> 
+      } 
         </BrowserRouter>
     );
   }
