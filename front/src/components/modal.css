@@ -109,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   font-size: 5vw;
   font-family: "verdana";
   font-weight: bold;
@@ -286,10 +286,11 @@
 }
 .buttons {
   position: sticky;
-  width: 100%;
+  width: auto;
+  height: 100%;
   transform: translate(0 -50%);
-  z-index: 10000;
-  padding: 20% 0px 0px;
+  z-index: 100;
+  overflow: hidden;
 }
 .buttons .global-container {
   display: flex;
@@ -303,6 +304,9 @@
   opacity: 0;
   animation: opacity 1s 12s 1 forwards;
   margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 47%;
 }
 .buttons .icons {
   display: flex;
@@ -373,7 +377,7 @@ a:visited {
 }
 .welcome .content {
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 160px;
