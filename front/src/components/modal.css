@@ -366,11 +366,7 @@
 .buttons .git:hover:before {
   right: 0;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 a:link,
 a:active,
 a:visited {
@@ -436,7 +432,7 @@ body {
   animation-iteration-count: infinite;
 }
 .welcome .content__container__list__item {
-  line-height: 40px;
+  line-height: 43px;
   margin: 0;
 }
 @keyframes opacity2 {
