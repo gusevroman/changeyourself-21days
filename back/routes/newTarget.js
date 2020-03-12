@@ -22,7 +22,7 @@ router.post('/add', async (req, res) => {
     category: method.method.category,
     tag: method.method.tag[0],
     startDate: new Date(),
-    endDate: new Date().setDate(new Date().getDate()+method.method.method.length),
+    endDate: new Date().setDate(new Date().getDate()+method.method.method.length - 1),
     status: 'active',
     author: userId,
     actions: method.method.method

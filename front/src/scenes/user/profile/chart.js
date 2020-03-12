@@ -5,7 +5,7 @@ import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 
 
-export default class Chart extends Component {
+class Chart extends Component {
 
     static defaultProps = {
         displayLegend: true,
@@ -27,12 +27,12 @@ export default class Chart extends Component {
 }
 
 
-// const mapStateToProps = state => ({
-//     userId: state.userId,
-// });
-//
-// const mapDispatchToProps = dispatch => ({});
-//
-// export default withRouter(
-//     connect(mapStateToProps, mapDispatchToProps)(Chart)
-// );
+const mapStateToProps = state => ({
+    userId: state.userId,
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(Chart)
+);

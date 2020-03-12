@@ -80,11 +80,8 @@ class TargetList extends React.Component {
       const { days, hours, minutes, seconds } = this.state;
       text = `Осталось ${days}д ${hours}ч ${minutes}м ${seconds}с`;
     }
-
-    let date = new Date(target.startDate);
-    date.setDate(date.getDate() - 2);
-    let counter = 1;
-
+    let counter = -86400000;
+    let date = Date.parse(target.startDate);
     return (
       <>
         <TargetHead target={target} text={text} />
@@ -92,6 +89,7 @@ class TargetList extends React.Component {
           <h2 className="target__title"></h2>
           {target.actions &&
             target.actions.map(elem => {
+              counter += 86400000;
               return (
                 <TargetDay
                   day={elem}
