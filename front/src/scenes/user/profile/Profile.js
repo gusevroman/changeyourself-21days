@@ -254,7 +254,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     showProfile: profile => dispatch(showProfile(profile)),
-    changeColor: color => dispatch(changeColor(color))
+    changeColor: color => dispatch(changeColor(color)),
+    logout: () => dispatch(logout()),
 });
 
 export default withRouter(

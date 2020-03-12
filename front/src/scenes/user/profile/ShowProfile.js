@@ -104,18 +104,7 @@ class ShowProfile extends Component {
     return (
       <div className="profile">
         <form class="">
-          <div>
-            <label>
-              <input
-                type="radio"
-                name="stars"
-                value="Dark"
-                onChange={e => {
-                  this.props.changeColor(e.target.value);
-                }}
-              />
-              <span class="">Темная</span>
-            </label>
+          <div className="profile__colors">
             <label>
               <input
                 type="radio"
@@ -126,6 +115,17 @@ class ShowProfile extends Component {
                 }}
               />
               <span class="">Светлая</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="stars"
+                value="Dark"
+                onChange={e => {
+                  this.props.changeColor(e.target.value);
+                }}
+              />
+              <span class="">Темная</span>
             </label>
           </div>
         </form>
@@ -185,7 +185,6 @@ class ShowProfile extends Component {
               <Chart chartData={this.state.chartData} displayTitle="false"/>
             </div>
           </div> : null}
-      }
     </>;
   }
 }
@@ -198,8 +197,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   showProfile: profile => dispatch(showProfile(profile)),
+  changeColor: color => dispatch(changeColor(color)),
   logout: () => dispatch(logout()),
-  changeColor: color => dispatch(changeColor(color))
 });
 
 export default withRouter(

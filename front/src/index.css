@@ -1316,12 +1316,13 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: 'Spectral', serif;
 }
-.styleColorDark {
+.styleColorLight {
   height: 100%;
 }
-.styleColorDark .modalBg {
+.styleColorLight .modalBg {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -1334,6 +1335,7 @@ body {
 header {
   position: sticky;
   top: 0;
+  width: 100%;
   padding: 20px;
   z-index: 1000;
 }

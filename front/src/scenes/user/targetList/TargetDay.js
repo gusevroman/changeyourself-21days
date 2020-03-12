@@ -14,15 +14,16 @@ export default class TargetDay extends Component {
   }
 
   componentDidMount(){
-    let { day, date, counter } = this.props
-    date = date.setDate(date.getDate() + counter);
     moment.lang('ru', {
       months : {
         format: 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_'),
         standalone: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_')
       }
     });
-    this.setState({date: moment(date).format('DD MMMM YYYY'), status:day.status});
+    let { day, date, counter } = this.props;
+
+
+    this.setState({date: moment(date + counter).format('DD MMMM YYYY'), status:day.status});
   }
 
   async handleStatus() {
