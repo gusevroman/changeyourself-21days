@@ -1,20 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import {withRouter, Link} from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./modal.css";
 import Modal from "../scenes/Auth/Modal/Modal"
+import Login from "../scenes/Auth/Modal/Form/Login";
+import Registration from "../scenes/Auth/Modal/Form/Registration";
 
 class Main extends React.Component {
 
-  state ={
-    isOpen: false
+  state = {
+    isOpen: null,
+    log: false,
+    reg: false
   }
   render() {
     return (
       <>
-        { !this.state.isOpen ? 
-          <>
-          <div className="global-modal">
+
+        <div className="global-modal">
 
           <div className="welcome-page">
             <div className="corner"></div>
@@ -40,17 +43,17 @@ class Main extends React.Component {
           <div className="global-container">
             <div className="icons">
               <div className="icon fb">
-                <a href="#2" target="_blank" onClick={(e)=>{
+                <a href="#2" target="_blank" onClick={(e) => {
                   e.preventDefault();
-                  this.setState({isOpen: true})
+                  this.setState({ reg: true })
                 }}>
                   REG
                 </a>
               </div>
               <div className="icon git">
-                <a href="#2" target="_blank" onClick={(e)=>{
+                <a href="#2" target="_blank" onClick={(e) => {
                   e.preventDefault();
-                  this.setState({isOpen: true})
+                  this.setState({ log: true })
                 }}>
                   LOG
                 </a>
@@ -60,30 +63,49 @@ class Main extends React.Component {
 
 
           <div className="welcome">
-          <div className="content">
-            <div className="content__container">
-              <p className="content__container__text">Стань</p>
+            <div className="content">
+              <div className="content__container">
+                <p className="content__container__text">Стань</p>
 
-              <ul className="content__container__list">
-                <li className="content__container__list__item">сильнее &nbsp;!</li>
-                <li className="content__container__list__item">лучше &nbsp;!</li>
-                <li className="content__container__list__item">быстрее &nbsp;!</li>
-                <li className="content__container__list__item">умнее &nbsp;!</li>
-              </ul>
+                <ul className="content__container__list">
+                  <li className="content__container__list__item">сильнее &nbsp;!</li>
+                  <li className="content__container__list__item">лучше &nbsp;!</li>
+                  <li className="content__container__list__item">быстрее &nbsp;!</li>
+                  <li className="content__container__list__item">умнее &nbsp;!</li>
+                </ul>
+              </div>
             </div>
           </div>
-          </div>
-
-          
         </div>
-        </>
-        :
-        <Modal isOpen={true}/>
+        {this.state.log && (
+          <>
+            <div className="myModal">
+              <div className="myModal-body">
+                <div className="close">
+                  <i class="material-icons btn__close" onClick={() => this.setState({ log: false })}>&#xE5C4;</i>
+                </div>
+                <Login />
+              </div>
+            </div>
+          </>)
         }
+        {this.state.reg && (
+          <>
+            <div className="myModal">
+              <div className="myModal-body">
+                <div className="close">
+                  <i class="material-icons btn__close" onClick={() => this.setState({ reg: false })}>&#xE5C4;</i>
+                </div>
+                <Registration />
+              </div>
+            </div>
+          </>
+        )}
       </>
-    );
+    )
   }
 }
+
 
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined
