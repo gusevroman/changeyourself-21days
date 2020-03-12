@@ -1,13 +1,21 @@
 const express = require('express');
-const Method = require('../models/method');
+const User = require('../models/user');
 const router = express.Router();
 
-router.post('/', (req, res) => {
-    console.log(req.body)
-
-    // const takeTags = await Method.find({category: req.body.value});
-    // return res.json(takeTags)
+router.post('/', async (req, res) => {
+    const user = await User.findByIdAndUpdate(
+        { _id: req.body.userId },
+        { checkEmail: req.body.value },
+        function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        }
+    );
 });
 
 
+// ЕСЛИ ТРУ ТО УВЕДОМЛЕНИЯ ВЫКЛЮЧЕНЫ
 module.exports = router;

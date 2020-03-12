@@ -25,22 +25,24 @@ class Profile extends Component {
         profileImg: false,
         deleteAccount: false,
         close: true,
-        checkBoxValue: false,
+        checkEmail: true,
     };
 
     changeButton = async () => {
-        let value = this.state.checkBoxValue;
+        let value = !this.state.checkEmail;
+        let userId  = this.props.userId;
+        console.log('YYYYYYY', value, userId);
+
         let response = await fetch('http://localhost:5000/emailButton', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify({ value })
+            body: JSON.stringify({ value, userId })
         });
 
-
         this.setState({
-            checkBoxValue: !this.state.checkBoxValue
+            checkEmail: !this.state.checkEmail
         });
 
     };
@@ -229,7 +231,7 @@ class Profile extends Component {
 
                 <li className="tg-list-item">
                     <p>включить уведомления</p>
-                    <input onClick={this.changeButton} className="tgl tgl-light" id="cb1" type="checkbox"/>
+                    <input onClick={this.changeButton} className="tgl tgl-light" id="cb1" checked={this.state.checkEmail} type="checkbox"/>
                     <label className="tgl-btn" htmlFor="cb1"></label>
                 </li>
 
