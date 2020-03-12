@@ -1,43 +1,68 @@
-@mainColor: #fd9215;
-@mainColorText: #fff;
+.button(@color){
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: @mainColorText;
+  border: 2px solid @mainColor;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: @color;
+    border: 2px solid @color;
+    background-color: white;
+    box-shadow: 0 0 15px @color;
+  }
+}
+
+
+@mainColor: #405ca1;
+@mainColorText: #000;
 @mainBgColor: #292929;
 
 .styleColorDark {
-  color: @mainColorText;
+  color: black;
   
   .modalBg {
-    background: @mainBgColor;
+    background: #ecf0f1;
   }
 
   header {
-    border-bottom: 2px solid @mainColor;
-    box-shadow: 0 0 25px @mainColor;
-    background-color: @mainBgColor;
+    border-bottom: 2px solid #405ca1;
+    box-shadow: 0 0 25px #405ca1;
+    background: white;
+
   }
   .link {
-    color: #ab5d01;
+    color: black;
   }
   .link:hover {
-    color: @mainColor;
+    color: #405ca1;
   }
   .active {
-    color: @mainColor;
-    text-shadow: 0 0 20px @mainColor;
+    color: #405ca1;
+    text-shadow: 0 0 20px #405ca1;
   }
   .active:hover {
-    color: @mainColor;
+    color: #405ca1;
   }
   svg path,
   svg rect {
-    fill: @mainColor;
+    fill: #405ca1;
   }
   .allMethods__input {
-    color: @mainColorText;
-    background-color: #1a1a1a;
-    border: 2px solid @mainColor;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
   }
   .allMethods__input:focus {
-    box-shadow: 0 0 15px @mainColor;
+    box-shadow: 0 0 15px #405ca1;
   }
   .myModal {
     background: #0e101c;
@@ -102,36 +127,36 @@
   }
   .topMethods .content__column,
   .allMethods .content__column {
-    border: 2px solid @mainColor;
+    border: 2px solid #405ca1;
   }
   .topMethods .content__column:hover,
   .allMethods .content__column:hover {
-    border: 2px solid #ab5d01;
-    box-shadow: 0 0 15px @mainColor;
+    border: 2px solid #405ca1;
+    box-shadow: 0 0 15px #405ca1;
   }
   .topMethods .content__info,
   .allMethods .content__info {
-    color: @mainColorText;
-    border: 2px solid @mainColor;
-    background-color: @mainColor;
+    color: black;
+    border: 2px solid #405ca1;
+    background-color: white;
   }
   .topMethods .content__info:hover,
   .allMethods .content__info:hover {
-    color: @mainColor;
-    border: 2px solid @mainColor;
-    background-color: @mainBgColor;
+    color: white;
+    border: 2px solid black;
+    background-color: #405ca1;
     box-shadow: 0 0 15px @mainColor;
   }
   .profile {
-    color: whitesmoke;
+    color: black;
   }
   .profile__file {
     color: rgba(255, 255, 255, 0);
     background-color: rgba(255, 255, 255, 0);
   }
   .profile__input input {
-    color: @mainColorText;
-    background-color: #1a1a1a;
+    color: black;
+    background-color: white;
     border: 2px solid @mainColor;
   }
   .profile__input input:focus {
@@ -144,120 +169,120 @@
   }
   .mainFlex input::-webkit-input-placeholder,
   .mainFlex textarea::-webkit-input-placeholder {
-    color: #aca49c;
+    color: black;
   }
   .mainFlex input:focus::-webkit-input-placeholder,
   .mainFlex textarea:focus::-webkit-input-placeholder {
-    color: #bbb5af;
+    color: black;
   }
   .mainFlex input::-moz-placeholder,
   .mainFlex textarea::-moz-placeholder {
-    color: #aca49c;
+    color: black;
   }
   .mainFlex input:focus::-moz-placeholder,
   .mainFlex textarea:focus::-moz-placeholder {
-    color: #bbb5af;
+    color: black;
   }
   .mainFlex input::placeholder,
   .mainFlex textarea::placeholder {
-    color: #aca49c;
+    color: black;
   }
   .mainFlex input:focus::placeholder,
   .mainFlex textarea::focus:placeholder {
-    color: #bbb5af;
+    color: black;
   }
   .mainFlex input::-ms-placeholder,
   .mainFlex textarea::-ms-placeholder {
-    color: #aca49c;
+    color: black;
   }
   .mainFlex input:focus::-ms-placeholder,
   .mainFlex textarea:focus::-ms-placeholder {
-    color: #bbb5af;
+    color: black;
   }
   .mainFlex input:hover::-webkit-input-placeholder,
   .mainFlex textarea:hover::-webkit-input-placeholder {
-    color: #e2dedb;
+    color: black;
   }
   .mainFlex input:hover:focus::-webkit-input-placeholder,
   .mainFlex textarea:hover:focus::-webkit-input-placeholder {
-    color: #cbc6c1;
+    color: black;
   }
   .mainFlex input:hover::-moz-placeholder,
   .mainFlex textarea:hover::-moz-placeholder {
-    color: #e2dedb;
+    color: black;
   }
   .mainFlex input:hover:focus::-moz-placeholder,
   .mainFlex textarea:hover:focus::-moz-placeholder {
-    color: #cbc6c1;
+    color: black;
   }
   .mainFlex input:hover::placeholder,
   .mainFlex textarea:hover::placeholder {
-    color: #e2dedb;
+    color: black;
   }
   .mainFlex input:hover:focus::placeholder,
   .mainFlex textarea:hover:focus::placeholder {
-    color: #cbc6c1;
+    color: black;
   }
   .mainFlex input:hover::placeholder,
   .mainFlex textarea:hover::placeholder {
-    color: #e2dedb;
+    color: black;
   }
   .mainFlex input:hover:focus::-ms-placeholder,
   .mainFlex textarea:hover::focus:-ms-placeholder {
-    color: #cbc6c1;
+    color: black;
   }
   .mainFlex .inputClass {
-    color: @mainColorText;
+    color: black;
     border: solid 1px @mainColor;
   }
   .mainFlex input {
-    color: @mainColorText;
+    color: black;
     border: solid 1px @mainColor;
   }
   .mainFlex input:hover {
-    background: rgba(179, 172, 167, 0.1);
-    color: @mainColorText;
+    background: white;
+    color: black;
   }
   .mainFlex textarea {
-    color: @mainColorText;
+    color: black;
     border: solid 1px @mainColor;
   }
   .mainFlex .textareaClass {
     border: solid 1px @mainColor;
   }
   .mainFlex textarea:hover {
-    background: rgba(179, 172, 167, 0.1);
-    color: #e2dedb;
+    background: white;
+    color: black;
   }
   .mainFlex #submit {
-    color: #b3aca7;
-    border: solid 1px #b3aca7;
+    color: black;
+    border: solid 1px black;
   }
   .mainFlex #submit:hover {
-    color: #e2dedb;
+    color: black;
   }
   .mainFlex select {
-    background: #2c3e50;
+    background: black;
   }
   .mainFlex .select {
-    background: #2c3e50;
+    background: black;
   }
   .mainFlex select {
-    color: @mainColorText;
+    color: black;
   }
   .mainFlex .select::after {
-    background: #34495e;
+    background: black;
   }
   .mainFlex .select:hover::after {
-    color: #f39c12;
+    color: black;
   }
   .mainFlex button.outline {
-    color: #1172c4;
-    border-color: #1172c4;
+    color: black;
+    border-color: #405ca1;
   }
   .mainFlex button.outline:hover {
-    color: black;
-    background: @mainColor;
+    color: white;
+    background: #405ca1;
     border-color: white;
   }
   .mainFlex button.orange {
@@ -265,9 +290,9 @@
     border-color: @mainColor;
   }
   .mainFlex .box select {
-    background: darkorange;
-    color: @mainColorText;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    background: #405ca1;
+    color: white;
+    box-shadow: 0 5px 20px fade(#405ca1, 20%);
   }
   .mainFlex .logoTrash {
     color: @mainColor;
@@ -283,11 +308,11 @@
     box-shadow: 0 0 25px @mainColor;
   }
   .target__title {
-    color: @mainColorText;
+    color: black;
   }
   .target__search .search__input {
-    color: @mainColorText;
-    background-color: #1a1a1a;
+    color: black;
+    background-color: white;
     border: 2px solid @mainColor;
   }
   .target__search .search__input:focus {
@@ -316,7 +341,7 @@
   }
   .target .progress-bar__orange {
     background-color: #fecf23;
-    background-image: linear-gradient(to top, #fecf23, @mainColor);
+    background-image: linear-gradient(to top, #fecf23, #fd9215);
   }
   .target .progress-bar__orange::after {
     background: #fff;
@@ -330,7 +355,7 @@
     color: @mainColorText;
   }
   .target_spoiler {
-    border: 2px solid #fff;
+    border: 2px solid @mainColor;
   }
   .tgl-flip + .tgl-btn:after,
   .tgl-flip + .tgl-btn:before {
@@ -382,22 +407,24 @@
 
   .method {
     &__text {
-      border: 2px solid @mainColor;
+      border: 1px solid fade(black, 20%);
       color: @mainColorText;
-      background-color: @mainBgColor;
+      background-color: white;
       box-shadow: 0 0 15px @mainColor;
     }
 
     &__table {
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid fade(black, 20%);
       thead {
-        color: @mainColor;
-        background-color: rgba(255, 255, 255, 0.3);
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        border-bottom: none;
       }
       tbody {
         tr {
           &:nth-child(2n) {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.4);
           }
         }
 
@@ -412,411 +439,26 @@
 }
 
 
-.styleColorLight {
-  color: black;
-  
-  .modalBg {
-    background: lightgrey;
-  }
 
-  header {
-    border-bottom: 2px solid blue;
-    box-shadow: 0 0 25px blue;
-    background-color: lightgrey;
-  }
-  .link {
-    color: #ab5d01;
-  }
-  .link:hover {
-    color: blue;
-  }
-  .active {
-    color: blue;
-    text-shadow: 0 0 20px blue;
-  }
-  .active:hover {
-    color: blue;
-  }
-  svg path,
-  svg rect {
-    fill: blue;
-  }
-  .allMethods__input {
-    color: black;
-    background-color: #1a1a1a;
-    border: 2px solid blue;
-  }
-  .allMethods__input:focus {
-    box-shadow: 0 0 15px blue;
-  }
-  .myModal {
-    background: #0e101c;
-    background: rgba(0, 0, 0, 0.185);
-  }
-  .myModal-body {
-    background: #131313;
-    box-shadow: 0 0px 15px blue;
-  }
-  .myModal h1 {
-    color: white;
-    border-bottom: 1px solid blue;
-  }
-  .myModal .form {
-    background: #0e101c;
-  }
-  .myModal input {
-    border: 1px solid blue;
-  }
-  .myModal label {
-    color: white;
-  }
-  .myModal .btn {
-    color: black;
-    border: 2px solid blue;
-    background-color: blue;
-  }
-  .myModal .btn:hover {
-    color: blue;
-    border: 2px solid blue;
-    background-color: lightgrey;
-    box-shadow: 0 0 15px blue;
-  }
-  .myModal .auth-btn {
-    background-color: grey;
-  }
-  .myModal .auth-btn:hover {
-    background-color: #676767;
-    box-shadow: 0 0 10px blue;
-    color: black;
-  }
-  .myModal button[type="submit"],
-  .myModal input[type="submit"] {
-    background: blue;
-    color: black;
-    border: 2px solid blue;
-  }
-  .myModal button[type="submit"]:hover,
-  .myModal input[type="submit"]:hover {
-    background: #ab5d01;
-    color: black;
-  }
-  .myModal button[type="button"] {
-    background: lightgrey;
-    color: black;
-  }
-  .myModal pre {
-    color: black;
-  }
-  .myModal button {
-    border: 1px solid lightgrey;
-  }
-  .topMethods .content__column,
-  .allMethods .content__column {
-    border: 2px solid blue;
-  }
-  .topMethods .content__column:hover,
-  .allMethods .content__column:hover {
-    border: 2px solid #ab5d01;
-    box-shadow: 0 0 15px blue;
-  }
-  .topMethods .content__info,
-  .allMethods .content__info {
-    color: black;
-    border: 2px solid blue;
-    background-color: blue;
-  }
-  .topMethods .content__info:hover,
-  .allMethods .content__info:hover {
-    color: blue;
-    border: 2px solid blue;
-    background-color: lightgrey;
-    box-shadow: 0 0 15px blue;
-  }
-  .profile {
-    color: whitesmoke;
-  }
-  .profile__file {
-    color: rgba(255, 255, 255, 0);
-    background-color: rgba(255, 255, 255, 0);
-  }
-  .profile__input input {
-    color: black;
-    background-color: #1a1a1a;
-    border: 2px solid blue;
-  }
-  .profile__input input:focus {
-    box-shadow: 0 0 15px blue;
-  }
-  .mainFlex {
-    /**/
-    /* Arrow */
-    /* Transition */
-  }
-  .mainFlex input::-webkit-input-placeholder,
-  .mainFlex textarea::-webkit-input-placeholder {
-    color: #aca49c;
-  }
-  .mainFlex input:focus::-webkit-input-placeholder,
-  .mainFlex textarea:focus::-webkit-input-placeholder {
-    color: #bbb5af;
-  }
-  .mainFlex input::-moz-placeholder,
-  .mainFlex textarea::-moz-placeholder {
-    color: #aca49c;
-  }
-  .mainFlex input:focus::-moz-placeholder,
-  .mainFlex textarea:focus::-moz-placeholder {
-    color: #bbb5af;
-  }
-  .mainFlex input::placeholder,
-  .mainFlex textarea::placeholder {
-    color: #aca49c;
-  }
-  .mainFlex input:focus::placeholder,
-  .mainFlex textarea::focus:placeholder {
-    color: #bbb5af;
-  }
-  .mainFlex input::-ms-placeholder,
-  .mainFlex textarea::-ms-placeholder {
-    color: #aca49c;
-  }
-  .mainFlex input:focus::-ms-placeholder,
-  .mainFlex textarea:focus::-ms-placeholder {
-    color: #bbb5af;
-  }
-  .mainFlex input:hover::-webkit-input-placeholder,
-  .mainFlex textarea:hover::-webkit-input-placeholder {
-    color: #e2dedb;
-  }
-  .mainFlex input:hover:focus::-webkit-input-placeholder,
-  .mainFlex textarea:hover:focus::-webkit-input-placeholder {
-    color: #cbc6c1;
-  }
-  .mainFlex input:hover::-moz-placeholder,
-  .mainFlex textarea:hover::-moz-placeholder {
-    color: #e2dedb;
-  }
-  .mainFlex input:hover:focus::-moz-placeholder,
-  .mainFlex textarea:hover:focus::-moz-placeholder {
-    color: #cbc6c1;
-  }
-  .mainFlex input:hover::placeholder,
-  .mainFlex textarea:hover::placeholder {
-    color: #e2dedb;
-  }
-  .mainFlex input:hover:focus::placeholder,
-  .mainFlex textarea:hover:focus::placeholder {
-    color: #cbc6c1;
-  }
-  .mainFlex input:hover::placeholder,
-  .mainFlex textarea:hover::placeholder {
-    color: #e2dedb;
-  }
-  .mainFlex input:hover:focus::-ms-placeholder,
-  .mainFlex textarea:hover::focus:-ms-placeholder {
-    color: #cbc6c1;
-  }
-  .mainFlex .inputClass {
-    color: black;
-    border: solid 1px blue;
-  }
-  .mainFlex input {
-    color: black;
-    border: solid 1px blue;
-  }
-  .mainFlex input:hover {
-    background: rgba(179, 172, 167, 0.1);
-    color: black;
-  }
-  .mainFlex textarea {
-    color: black;
-    border: solid 1px blue;
-  }
-  .mainFlex .textareaClass {
-    border: solid 1px blue;
-  }
-  .mainFlex textarea:hover {
-    background: rgba(179, 172, 167, 0.1);
-    color: #e2dedb;
-  }
-  .mainFlex #submit {
-    color: #b3aca7;
-    border: solid 1px #b3aca7;
-  }
-  .mainFlex #submit:hover {
-    color: #e2dedb;
-  }
-  .mainFlex select {
-    background: #2c3e50;
-  }
-  .mainFlex .select {
-    background: #2c3e50;
-  }
-  .mainFlex select {
-    color: black;
-  }
-  .mainFlex .select::after {
-    background: #34495e;
-  }
-  .mainFlex .select:hover::after {
-    color: #f39c12;
-  }
-  .mainFlex button.outline {
-    color: #1172c4;
-    border-color: #1172c4;
-  }
-  .mainFlex button.outline:hover {
-    color: black;
-    background: blue;
-    border-color: white;
-  }
-  .mainFlex button.orange {
-    color: blue;
-    border-color: blue;
-  }
-  .mainFlex .box select {
-    background: darkorange;
-    color: black;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  }
-  .mainFlex .logoTrash {
-    color: blue;
-  }
-  .mainFlex .logoTrash:hover i {
-    color: blue;
-  }
-  .target {
-    border: 2px solid blue;
-    box-shadow: 0 0 5px blue;
-  }
-  .target:hover {
-    box-shadow: 0 0 25px blue;
-  }
-  .target__title {
-    color: black;
-  }
-  .target__search .search__input {
-    color: black;
-    background-color: #1a1a1a;
-    border: 2px solid blue;
-  }
-  .target__search .search__input:focus {
-    box-shadow: 0 0 15px blue;
-  }
-  .target .progress-bar {
-    background-color: #1a1a1a;
-    box-shadow: 0 1px 5px #000 inset;
-  }
-  .target .progress-bar span {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    color: black;
-  }
-  .target .progress-bar__red {
-    background-color: #ff0000;
-    background-image: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.15) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.15) 50%,
-      rgba(0, 0, 0, 0.15) 75%,
-      transparent 75%,
-      transparent
-    );
-  }
-  .target .progress-bar__orange {
-    background-color: #fecf23;
-    background-image: linear-gradient(to top, #fecf23, blue);
-  }
-  .target .progress-bar__orange::after {
-    background: #fff;
-  }
-  .target .progress-bar__green {
-    background-image: linear-gradient(to top, #a5df41, #4ca916);
-    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
-      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
-  }
-  .target .progress-bar__last {
-    color: black;
-  }
-  .target_spoiler {
-    border: 2px solid #fff;
-  }
-  .tgl-flip + .tgl-btn:after,
-  .tgl-flip + .tgl-btn:before {
-    color: black;
-  }
-  .tgl-flip + .tgl-btn:after {
-    background: #02c66f;
-  }
-  .tgl-flip + .tgl-btn:before {
-    background: #ff3a19;
-  }
-  .tgl-flip:checked + .tgl-btn:after {
-    background: #7fc6a6;
-  }
-  .bt {
-    color: blue;
-  }
-  .more-bt {
-    border-right: 2px solid blue;
-    border-bottom: 2px solid blue;
-    border-color: blue;
-  }
-  .more-bt:after,
-  .more-bt:before {
-    background: blue;
-  }
-  ::selection {
-    background: green;
-    color: #ffffff;
-  }
-  .more-bt i:after,
-  .more-bt i:before {
-    background: blue;
-  }
-  .more-bt:hover i:after {
-    background: blue;
-  }
-  .more-bt:hover i:before {
-    background: blue;
-  }
-  .more-bt .fl,
-  .more-bt .sfl {
-    background: blue;
-  }
-  .more-bt .cross:before,
-  .more-bt .cross:after {
-    background: #fff;
-  }
 
-  .method {
-    &__text {
-      border: 2px solid blue;
-      color: black;
-      background-color: lightgrey;
-      box-shadow: 0 0 15px blue;
-    }
 
-    &__table {
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      thead {
-        color: blue;
-        background-color: rgba(255, 255, 255, 0.3);
-      }
-      tbody {
-        tr {
-          &:nth-child(2n) {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-        }
 
-        td {
-          color: black;
-          border-bottom: solid 1px fade(black, 20%);
-          border-left: solid 1px fade(black, 10%);
-        }
-      }
-    }
-  }
+
+.star {
+  color: blue;
+}
+.delete {
+  .button(red);
+}
+
+.edit {
+  .button(@mainColor);
+}
+
+.use {
+  .button(green);
+}
+
+.showAll {
+  .button(@mainColor);
 }

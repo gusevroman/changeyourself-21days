@@ -21,7 +21,8 @@ class Method extends React.Component {
     followLeng: 0,
     voted: false,
     score: 0,
-    data: false
+    data: false,
+    deleteMethod: false,
   }
 
   async componentWillMount(){
@@ -36,11 +37,8 @@ class Method extends React.Component {
   async deleteMethod(){
     const { id } = this.props.match.params;
     const url = 'http://localhost:5000/method/' + id;
-    const res = prompt("Введите 'да', что бы удалить методику")
-    if (res === 'да'){
-      this.props.history.push('/');
-      await fetch(url, { method:"DELETE" })
-    } 
+    this.props.history.push('/');
+    await fetch(url, { method:"DELETE" })
   }
 
   getScore(followers){
@@ -82,8 +80,8 @@ class Method extends React.Component {
      this.getScore(method.followers);
      voted = this.checkVoted(this.props.userId, method.followers);
    }
-   console.log(this.state.method.followers);
-   
+
+   console.log(this.state.deleteMethod);
    
     return (  
       <>
@@ -118,9 +116,32 @@ class Method extends React.Component {
               </tbody>
             </table>
             <div className="method__buttons">
-            { access && <span className="delete" onClick={this.deleteMethod}>Удалить методику</span>}
             <AddMethodToTarget method={this.state.data} />
             </div>
+            { access &&
+              <>
+              {this.state.deleteMethod ? (
+                  <div className="edit-block">
+                    <span>Вы точно хотите удалить методику?</span>
+                    <div>
+                      <i className="icono-check" onClick={this.deleteMethod}></i>
+                      <i className="icono-cross" onClick={()=>{this.setState({
+                      deleteMethod: !this.state.deleteMethod
+                      })}}></i>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={()=>{this.setState({
+                      deleteMethod: !this.state.deleteMethod
+                    })}}
+                    className="delete"
+                  >
+                    Удалить аккаунт
+                  </button>
+                )}
+              </>
+            }
           </div>
         : 
         <Loader />

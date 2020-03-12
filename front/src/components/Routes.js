@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import Home from '../scenes/home/Home';
 import Profile from '../scenes/user/profile/Profile';
+import ShowProfile from '../scenes/user/profile/ShowProfile';
 import Method from "../scenes/user/selectTarget/selectTarget";
 import Methods from "../components/methods/Methods";
 import TargetList from '../scenes/user/targetList/TargetList';
@@ -18,6 +19,9 @@ function Routes() {
                 <Home/>
             </Route>
             <Route exact path="/user/profile">
+                <ShowProfile />
+            </Route>
+            <Route exact path="/user/profile/edit">
                 <Profile />
             </Route>
             <Route exact path="/newMethod">

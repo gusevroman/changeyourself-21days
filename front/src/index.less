@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+
 @import "./components/helpers/variables.less";
 @import "./components/helpers/mixins.less";
 @import "./components/helpers/keyframes.less";
@@ -19,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  font-family: 'Spectral', serif;
 }
 .styleColorDark {
   height: 100%;
@@ -85,21 +88,4 @@ header {
   width: 230px;
 }
 
-.star {
-  color: @mainColor;
-}
-.delete {
-  .button(red);
-}
 
-.edit {
-  .button(#fd9215);
-}
-
-.use {
-  .button(green);
-}
-
-.showAll {
-  .button(#fd9215);
-}

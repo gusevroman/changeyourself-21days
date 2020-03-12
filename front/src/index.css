@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v6/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
+}
 @keyframes glow {
   0% {
     box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
@@ -114,19 +121,58 @@
 .profile {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 1rem;
   text-align: center;
 }
-.profile .user-logo {
+.profile-image {
   position: relative;
-  display: block;
+  border: 2px solid black;
   width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+}
+.profile-image-file {
+  position: absolute;
+  left: -1000px;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+}
+.profile__content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 30px auto 20px;
+}
+.profile__show {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile__show span {
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+.profile__show .profile__title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.profile .user-logo {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  overflow: hidden;
+  border-radius: 50%;
   margin: 0px auto;
 }
 .profile .user-logo img {
   width: 100%;
   height: 100%;
-  margin: 0.5rem;
 }
 .profile .user-logo__file {
   position: absolute;
@@ -144,12 +190,13 @@
 .profile__input {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
   align-items: center;
 }
 .profile__input span {
-  width: 100px;
   text-align: right;
+  margin-bottom: 10px;
 }
 .profile__input input {
   font-size: 20px;
@@ -166,14 +213,16 @@
   margin-top: 30px;
   display: inline-block;
 }
-.profile .edit-block {
-  margin-top: 15px;
+.edit-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px 40px;
 }
-.profile .edit-block .icono-cross {
+.edit-block i {
   cursor: pointer;
-}
-.profile .edit-block .icono-check {
-  cursor: pointer;
+  margin: 20px 10px 0px;
 }
 .carousel {
   position: relative;
@@ -687,7 +736,8 @@
   display: flex;
   justify-content: center;
   padding-top: 5rem;
-  z-index: 100;
+  z-index: 10000;
+  background-color: #fff;
 }
 .myModal-body {
   padding: 2rem;
@@ -753,7 +803,7 @@
 }
 .myModal .close {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .myModal .auth-btn {
   transition: 0.2s;
@@ -1266,6 +1316,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  font-family: 'Spectral', serif;
 }
 .styleColorDark {
   height: 100%;
@@ -1324,95 +1375,4 @@ header {
 .showAll {
   font-size: 16px;
   width: 230px;
-}
-.star {
-  color: #fd9215;
-}
-.delete {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.delete:hover {
-  color: red;
-  border: 2px solid red;
-  background-color: #292929;
-  box-shadow: 0 0 15px red;
-}
-.edit {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.edit:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
-}
-.use {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.use:hover {
-  color: green;
-  border: 2px solid green;
-  background-color: #292929;
-  box-shadow: 0 0 15px green;
-}
-.showAll {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.showAll:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
 }

@@ -36,6 +36,10 @@ let upload = multer({
 });
 
 router.post('/user/profile/edit/img/:id', upload.single('profileImg'), async (req, res, next) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  const name = user.profileImg;
+  res.json({name})
 })
 
 router.post('/registration', async (req, res) => {
@@ -146,7 +150,8 @@ router.post('/user/:login', async (req, res) => {
 router.post('/user/profile/edit', async (req, res) => {
   const { login, name, about, email, tel, instagram } = req.body;
   console.log('req.body', req.body);
-  await User.findOneAndUpdate({ login }, { name, about, email, tel, instagram })
+  await User.findOneAndUpdate({ login }, { name, about, email, tel, instagram });
+  res.json({res:true})
 })
 
 router.post('/user/profile/:login', async (req, res) => {
