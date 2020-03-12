@@ -736,7 +736,8 @@
   display: flex;
   justify-content: center;
   padding-top: 5rem;
-  z-index: 100;
+  z-index: 10000;
+  background-color: #fff;
 }
 .myModal-body {
   padding: 2rem;
@@ -802,7 +803,7 @@
 }
 .myModal .close {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .myModal .auth-btn {
   transition: 0.2s;
