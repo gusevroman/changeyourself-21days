@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Spectral Regular'), local('Spectral-Regular'), url(https://fonts.gstatic.com/s/spectral/v6/rnCr-xNNww_2s0amA9M5kn0.ttf) format('truetype');
+}
 @keyframes glow {
   0% {
     box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
@@ -1309,6 +1316,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  font-family: 'Spectral', serif;
 }
 .styleColorDark {
   height: 100%;
@@ -1367,95 +1375,4 @@ header {
 .showAll {
   font-size: 16px;
   width: 230px;
-}
-.star {
-  color: #fd9215;
-}
-.delete {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.delete:hover {
-  color: red;
-  border: 2px solid red;
-  background-color: #292929;
-  box-shadow: 0 0 15px red;
-}
-.edit {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.edit:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
-}
-.use {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.use:hover {
-  color: green;
-  border: 2px solid green;
-  background-color: #292929;
-  box-shadow: 0 0 15px green;
-}
-.showAll {
-  display: block;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-weight: 800;
-  text-align: center;
-  width: 200px;
-  color: #fff;
-  border: 2px solid #fd9215;
-  background-color: #fd9215;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 30px auto 30px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.showAll:hover {
-  color: #fd9215;
-  border: 2px solid #fd9215;
-  background-color: #292929;
-  box-shadow: 0 0 15px #fd9215;
 }
