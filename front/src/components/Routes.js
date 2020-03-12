@@ -22,7 +22,8 @@ function Routes() {
             </Route>
             <Route exact path="/newMethod">
                 <Method />
-            </Route>            
+            </Route>
+
             <Route exact path="/newTarget">
                 <NewTarget />
             </Route>
