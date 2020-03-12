@@ -16,10 +16,11 @@ class Registration extends React.Component {
     event.preventDefault();
     const login = event.target.login.value;
     const password = event.target.password.value;
+    const email = event.target.email.value;
     const response = await fetch(event.target.action, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ login, password })
+      body: JSON.stringify({ login, password, email })
     });
     const result = await response.json();
 
@@ -44,6 +45,11 @@ class Registration extends React.Component {
           <div >
             <label>Логин:</label>
             <input type="Login" name="login" required />
+          </div>
+
+          <div >
+            <label>Почта:</label>
+            <input type="email" name="email" required />
           </div>
 
           <div >

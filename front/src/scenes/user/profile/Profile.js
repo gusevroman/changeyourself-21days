@@ -5,6 +5,7 @@ import { withRouter, Link } from "react-router-dom";
 import { logout, changeColor } from "../../../redux/actions";
 import { showProfile } from "../../../redux/actions";
 import FilesUpload from "./files-upload";
+import Chart from "./chart";
 
 class Profile extends Component {
   constructor() {
@@ -22,7 +23,19 @@ class Profile extends Component {
     about: "",
     profileImg: false,
     deleteAccount: false,
-    close: true
+    close: true,
+    
+    
+    checkBoxValue: false,
+
+        chartData: {
+            labels: [], //name
+            datasets: [{
+                label: "Student A",
+                backgroundColor: ["rgba(200,0,0,0.2)", "rgba(30,10,0.2)"],
+                data: [1, 2] //number
+            }]
+        }
   };
 
   logout() {
@@ -30,9 +43,45 @@ class Profile extends Component {
     this.props.history.push("/");
   }
 
-  componentDidMount() {
-    this.getProfile();
-  }
+  
+    async componentDidMount() {
+        await this.getProfile();
+        let id = this.props.userId;
+        const response = await fetch('http://localhost:5000/chart', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({id})
+        });
+
+        let newResponse = await response.json();
+        let newArrCategory = [];
+        newResponse.forEach(elem => newArrCategory.push(elem.category));
+
+        let a = newArrCategory.flat();
+        let newUniqArr = [];
+        for (let str of a) {
+            if (!newUniqArr.includes(str)) {
+                newUniqArr.push(str);
+            }
+        }
+        let result = a.reduce(function(acc, el) {
+            acc[el] = (acc[el] || 0) + 1;
+            return acc;
+        }, {});
+
+
+        let newChartData = {...this.state.chartData};
+
+        console.log('массив ключей', Object.keys(result));
+        newChartData.labels = Object.keys(result);
+        newChartData.datasets.data = Object.values(result)
+            this.setState({
+            chartData: newChartData
+        })
+    }
+  
 
   componentWillUnmount() {}
 
@@ -201,6 +250,24 @@ class Profile extends Component {
     return (
       <>
         {this.renderProfile()}
+      
+      {this.state.chartData.labels.length !== 0 ?
+                <div style={{display: 'flex', justifyContent: 'space-around', height: 300}}>
+                    <div style={{width: '50%'}}>
+                        <Chart chartData={this.state.chartData} displayTitle="false"/>
+                    </div>
+                    <div style={{width: '50%'}}>
+                        <Chart chartData={this.state.chartData} displayTitle="false"/>
+                    </div>
+                </div> : null}
+      
+      <li className="tg-list-item">
+                                <p>Включить уведомления</p>
+                                <input className="tgl tgl-light" checked={this.state.checkBoxValue}
+                                       onChange={this.soldCheckbox} id="cb1" type="checkbox"/>
+                                <label className="tgl-btn" htmlFor="cb1"></label>
+                            </li>
+      
         {this.state.deleteAccount ? (
               <div className="edit-block">
                 <span>Вы точно хотите удалить аккаунт?</span>
@@ -221,12 +288,13 @@ class Profile extends Component {
       </>
     );
   }
+
 }
 
 const mapStateToProps = state => ({
-  isLoggined: state.isLoggined,
-  userId: state.userId,
-  profile: state.profile
+    isLoggined: state.isLoggined,
+    userId: state.userId,
+    profile: state.profile
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -235,5 +303,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Profile)
+    connect(mapStateToProps, mapDispatchToProps)(Profile)
 );

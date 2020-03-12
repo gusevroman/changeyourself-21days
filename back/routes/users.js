@@ -4,6 +4,7 @@ const User = require('../models/user');
 const Method = require('../models/method');
 const Target = require('../models/target');
 const multer = require('multer');
+const nodemailer = require("nodemailer");
 
 
 const DIR = './public/';
@@ -42,15 +43,55 @@ router.post('/user/profile/edit/img/:id', upload.single('profileImg'), async (re
 })
 
 router.post('/registration', async (req, res) => {
-  const { login, password } = req.body;
-  const user = await User.findOne({ login })
+  const { login, password, email } = req.body;
+  const user = await User.findOne({ login });
+
   if (user) {
     res.json({ error: true })
   } else {
-    const newUser = await User.create({ login, password })
+    const newUser = await User.create({ login, password, email })
     const { id } = newUser;
     res.json({ login, id })
+
+
+    async function main() {
+      let transporter = nodemailer.createTransport({
+        host: "smtp.yandex.ru",
+        port: 587,
+        secure: false,
+        auth: {
+          user: "days21go@yandex.ru",
+          pass: '21DAYS'
+        }
+      });
+
+      let info = await transporter.sendMail({
+
+        from: '<days21go@yandex.ru>',
+        to: newUser.email,
+        subject: "Вы зарегистрированы! ",
+        text: "Информация о записе",
+        html: `<b>Здравствуйте! Вы были зарегистрированы.</b>`
+
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+    }
+
+    main().catch(console.error);
+
+
+
+
+
   }
+
+
+
+
+
 });
 
 router.post('/login', async (req, res) => {

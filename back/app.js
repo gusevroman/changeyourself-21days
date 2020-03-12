@@ -17,6 +17,7 @@ const newTargetRouter = require('./routes/newTarget');
 const getTagsRouter = require('./routes/getTags');
 const targetListRouter = require('./routes/targetlist');
 const newMethodRouter = require('./routes/newMethod');
+const chartRouter = require('./routes/chart');
 
 
 
@@ -39,6 +40,7 @@ app.use('/newTarget', newTargetRouter);
 app.use('/getTags', getTagsRouter);
 app.use('/targetlist', targetListRouter);
 app.use('/newMethod', newMethodRouter);
+app.use('/chart', chartRouter);
 
 app.use('/public/', express.static('public'));
 
@@ -56,7 +58,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-module.exports = app
+module.exports = app;
 
 
 module.exports = app;

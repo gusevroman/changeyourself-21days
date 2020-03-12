@@ -3,13 +3,16 @@ import './icono.min.css'
 import AddNewDay from "./AddNewDay";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 
 class NewMethodForm extends React.Component {
-  constructor(props){
-    super(props)
-    this.sendForm = this.sendForm.bind(this);
-  }
+    constructor(props) {
+        super(props)
+        this.sendForm = this.sendForm.bind(this);
+        this.myRef = React.createRef();
+    }
+
     state = {
         title: '',
         description: '',
@@ -20,10 +23,13 @@ class NewMethodForm extends React.Component {
             {
                 title: 1,
                 description: '',
-                task: ''
+                task: '',
             }
-        ]
+        ],
+
+
     };
+
 
     selectValue = (value) => {
         this.setState({
@@ -44,6 +50,7 @@ class NewMethodForm extends React.Component {
         this.setState({
             days: newArr
         })
+        this.scrollToBottom();
     };
 
     firstInputValue = (event) => {
@@ -67,19 +74,24 @@ class NewMethodForm extends React.Component {
     };
 
     sendForm = async (event) => {
-      event.preventDefault(); 
-      const {newMethod} = await (await fetch('http://localhost:5000/newMethod', {
-          method: 'POST',
-          headers: {
-              'Content-type': 'application/json'
-          },
-          body: JSON.stringify(this.state)
-      })).json();
-      const url = `method/${newMethod._id}`;
-      console.log(newMethod);
-      
-      this.props.history.push(url);
+        event.preventDefault();
+        const {newMethod} = await (await fetch('http://localhost:5000/newMethod', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        })).json();
+        const url = `method/${newMethod._id}`;
+
+        this.props.history.push(url);
     };
+
+
+    scrollToBottom = () => {
+        scroll.scrollToBottom();
+    };
+
 
     deleteDay = (event) => {
         event.preventDefault();
@@ -117,15 +129,14 @@ class NewMethodForm extends React.Component {
                            name="tag" type="text"/>
 
 
-                    <div className="selectContainer"><select className="addSelect" onChange={(elem) => this.selectValue(elem.target.value)}>
+                    <div className="selectContainer"><select className="addSelect"
+                                                             onChange={(elem) => this.selectValue(elem.target.value)}>
                         <option>Выберите категорию</option>
                         {uniqArr.map(elem => {
                             return <option value={elem}>{elem}</option>
                         })}
                     </select>
                     </div>
-
-
 
 
                     {this.state.days.length > 1 ?
@@ -135,11 +146,12 @@ class NewMethodForm extends React.Component {
                             })
                             }
                             </div>
+
                             <div className='logoTrash'>
-                                <i onClick={this.deleteDay} className="icono-trash"></i>
+                                <i ref={this.myRef} onClick={this.deleteDay} className="icono-trash"></i>
                             </div>
 
-                        {/*<button onClick={this.deleteDay}>удалить день</button>*/}
+                            {/*<button onClick={this.deleteDay}>удалить день</button>*/}
                         </>
                         : <div>{this.state.days.map((elem) => {
                             return <AddNewDay day={elem} inputValueDays={this.inputValue}/>
@@ -148,9 +160,8 @@ class NewMethodForm extends React.Component {
                         </div>}
 
 
-
                     <div className="buttonContainer">
-                        <button className="outline orange oneButton" onClick={this.plusDay}>Добавить день</button>
+                        <button className="outline orange oneButton" onClick={this.scrollToBottom} onClick={this.plusDay}>Добавить день</button>
                         <button className="outline orange oneButton" type="submit">Отправить</button>
                     </div>
                 </form>
