@@ -366,11 +366,6 @@
 .buttons .git:hover:before {
   right: 0;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 a:link,
 a:active,
 a:visited {
@@ -382,7 +377,7 @@ body {
 }
 .welcome .content {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 160px;

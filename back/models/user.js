@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     about: String,
     tel: String,
     instagram: String,
-    profileImg: String,
+    profileImg:  {type: String, default: 'avatar.png'},
     checkEmail: {type: Boolean, default: false},
     style: {type: String, default: 'Light'},
 });
