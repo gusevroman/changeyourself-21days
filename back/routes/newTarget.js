@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/add', async (req, res) => {
-  const { userId, method } = req.body
+  const { userId, method } = req.body;
   let ourUser = await User.findById(userId);
   const newTarget = new Target({
     title: method.method.title,
@@ -22,10 +22,11 @@ router.post('/add', async (req, res) => {
     category: method.method.category,
     tag: method.method.tag[0],
     startDate: new Date(),
-    endDate: new Date().setDate(new Date().getDate()+method.method.method.length),
+    endDate: new Date().setDate(new Date().getDate()+method.method.method.length - 1),
     status: 'active',
     author: userId,
     actions: method.method.method
+
   });
   await newTarget.save();
 
@@ -48,10 +49,10 @@ router.post('/add', async (req, res) => {
 
     let info = await transporter.sendMail({
 
-      from: '"НУ ЗДАРОВА 👻" <days21go@yandex.ru>', 
-      to: ourUser.email, 
-      subject: "Вы записаны! ", 
-      text: "Информация о записе", 
+      from: '"НУ ЗДАРОВА 👻" <days21go@yandex.ru>',
+      to: ourUser.email,
+      subject: "Вы записаны! ",
+      text: "Информация о записе",
 
       html: `<b>Здравствуйте! Вы выбрали ${method.method.title}. Методика была добавлена.</b>
                                 <p>Список методик: ${allTitleTarget} </p>`

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {withRouter, Link} from "react-router-dom";
+import './profile.css'
 
 import {logout, changeColor} from "../../../redux/actions";
 import {showProfile} from "../../../redux/actions";
@@ -24,10 +25,23 @@ class Profile extends Component {
         profileImg: false,
         deleteAccount: false,
         close: true,
-
-
         checkBoxValue: false,
+    };
 
+    changeButton = async () => {
+        let value = this.state.checkBoxValue;
+        let response = await fetch('http://localhost:5000/emailButton', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({ value })
+        });
+
+
+        this.setState({
+            checkBoxValue: !this.state.checkBoxValue
+        });
 
     };
 
@@ -78,7 +92,7 @@ class Profile extends Component {
             )
         ).json();
         this.props.showProfile(profile);
-        console.log(profile);
+
 
         this.setState(profile);
     }
@@ -208,18 +222,14 @@ class Profile extends Component {
     }
 
     render() {
-        console.log(this.state.profileImg);
-
         return (
             <>
                 {this.renderProfile()}
 
 
-
                 <li className="tg-list-item">
-                    <p>Включить уведомления</p>
-                    <input className="tgl tgl-light" checked={this.state.checkBoxValue}
-                           onChange={this.soldCheckbox} id="cb1" type="checkbox"/>
+                    <p>включить уведомления</p>
+                    <input onClick={this.changeButton} className="tgl tgl-light" id="cb1" type="checkbox"/>
                     <label className="tgl-btn" htmlFor="cb1"></label>
                 </li>
 
@@ -254,7 +264,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     showProfile: profile => dispatch(showProfile(profile)),
-    changeColor: color => dispatch(changeColor(color))
+    changeColor: color => dispatch(changeColor(color)),
+    logout: () => dispatch(logout()),
 });
 
 export default withRouter(

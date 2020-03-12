@@ -22,39 +22,59 @@
 }
 
 
-@mainColor: #405ca1;
+@mainColor: black;
 @mainColorText: #000;
 @mainBgColor: #292929;
+body {
+  // background: #ecf0f1;
+}
 
-.styleColorDark {
+.styleColorLight {
   color: black;
-  
+  background: #ecf0f1;  
+
   .modalBg {
     background: #ecf0f1;
   }
 
   header {
-    border-bottom: 2px solid #405ca1;
-    box-shadow: 0 0 25px #405ca1;
+    border-bottom: 2px solid @mainColor;
+    box-shadow: 0 0 5px @mainColor;
     background: white;
-
   }
   .link {
-    color: black;
+    position: relative;
+    color:black;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 0%; 
+      height: 2px;
+      background-color: #000;
+      transition: .5s;
+    }
   }
   .link:hover {
-    color: #405ca1;
+    color: @mainColor;
   }
   .active {
-    color: #405ca1;
-    text-shadow: 0 0 20px #405ca1;
+    color: black;
+    border-radius: 0;
+    box-sizing: border-box;
+    &::after {
+      width: 100%; 
+    }
+    
   }
   .active:hover {
-    color: #405ca1;
+    color: black;
   }
   svg path,
   svg rect {
-    fill: #405ca1;
+    fill: @mainColor;
   }
   .allMethods__input {
     color: black;
@@ -62,7 +82,7 @@
     border: 2px solid black;
   }
   .allMethods__input:focus {
-    box-shadow: 0 0 15px #405ca1;
+    box-shadow: 0 0 15px @mainColor;
   }
   .myModal {
     background: #0e101c;
@@ -127,24 +147,24 @@
   }
   .topMethods .content__column,
   .allMethods .content__column {
-    border: 2px solid #405ca1;
+    border: 2px solid @mainColor;
   }
   .topMethods .content__column:hover,
   .allMethods .content__column:hover {
-    border: 2px solid #405ca1;
-    box-shadow: 0 0 15px #405ca1;
+    border: 2px solid @mainColor;
+    box-shadow: 0 0 15px @mainColor;
   }
   .topMethods .content__info,
   .allMethods .content__info {
     color: black;
-    border: 2px solid #405ca1;
+    border: 2px solid @mainColor;
     background-color: white;
   }
   .topMethods .content__info:hover,
   .allMethods .content__info:hover {
     color: white;
     border: 2px solid black;
-    background-color: #405ca1;
+    background-color: @mainColor;
     box-shadow: 0 0 15px @mainColor;
   }
   .profile {
@@ -278,11 +298,11 @@
   }
   .mainFlex button.outline {
     color: black;
-    border-color: #405ca1;
+    border-color: @mainColor;
   }
   .mainFlex button.outline:hover {
     color: white;
-    background: #405ca1;
+    background: @mainColor;
     border-color: white;
   }
   .mainFlex button.orange {
@@ -290,9 +310,9 @@
     border-color: @mainColor;
   }
   .mainFlex .box select {
-    background: #405ca1;
+    background: @mainColor;
     color: white;
-    box-shadow: 0 5px 20px fade(#405ca1, 20%);
+    box-shadow: 0 5px 20px fade(@mainColor, 20%);
   }
   .mainFlex .logoTrash {
     color: @mainColor;
@@ -319,7 +339,8 @@
     box-shadow: 0 0 15px @mainColor;
   }
   .target .progress-bar {
-    background-color: #1a1a1a;
+    background-color: #fff;
+    border: 2px solid black;
     box-shadow: 0 1px 5px #000 inset;
   }
   .target .progress-bar span {
@@ -377,6 +398,7 @@
     border-right: 2px solid @mainColor;
     border-bottom: 2px solid @mainColor;
     border-color: @mainColor;
+    background-color: #fff;
   }
   .more-bt:after,
   .more-bt:before {

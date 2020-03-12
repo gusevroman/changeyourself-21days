@@ -3,7 +3,7 @@ import { LOGGINED, LOGOUT, TARGETS, PROFILE, COLOR } from "./action-types";
 const initialState = {
   isLoggined: localStorage.isLoggined || false,
   userId: localStorage.userId || false,
-  color: "Dark"
+  color: "Light"
 };
 
 export default (state = initialState, action) => {
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
       delete localStorage.userId;
       return {
         state: initialState,
-        color: "Dark"
+        color: "Light"
       }
     case TARGETS:
       return {
