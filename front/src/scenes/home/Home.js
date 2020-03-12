@@ -8,15 +8,16 @@ import Methods from "./Methods/Methods";
 
 class Home extends React.Component {
 
-
-    state = {}
-
     render() {
         return (
             <>
-              <CarouselAccount />
-              <Methods />
-              <Link to="/methods"className="showAll">Смотреть все</Link>
+              { this.props.isLoggined && 
+              <>
+                <CarouselAccount />
+                <Methods />
+                <Link to="/methods"className="showAll">Смотреть все</Link>
+              </>
+              }
             </>
         );
     }

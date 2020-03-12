@@ -12,7 +12,7 @@ export default class Modal extends React.Component {
   }
 
   state = {
-    isOpen: false,
+    isOpen: this.props.isOpen,
     isLoginForm: true
   };
 

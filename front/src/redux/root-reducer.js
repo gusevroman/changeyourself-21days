@@ -22,7 +22,8 @@ export default (state = initialState, action) => {
       delete localStorage.isLoggined;
       delete localStorage.userId;
       return {
-        state: initialState
+        state: initialState,
+        color: "Dark"
       }
     case TARGETS:
       return {

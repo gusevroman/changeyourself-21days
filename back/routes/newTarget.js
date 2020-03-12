@@ -15,10 +15,7 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   const { userId, method } = req.body
-
   let ourUser = await User.findById(userId);
-
-
   const newTarget = new Target({
     title: method.method.title,
     description: method.method.description,
@@ -35,8 +32,6 @@ router.post('/add', async (req, res) => {
   let allTargetsUser = await Target.find({
     author: userId
   });
-
-
   let allTitleTarget = allTargetsUser.filter(elem => elem.title !== undefined).map(elem => elem.title).join(', ');
 
 
@@ -68,6 +63,7 @@ router.post('/add', async (req, res) => {
   }
 
   main().catch(console.error);
+  res.json({res:true})
 });
 
 module.exports = router;

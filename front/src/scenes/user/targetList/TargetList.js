@@ -7,14 +7,15 @@ import TargetDay from "./TargetDay";
 class TargetList extends React.Component {
   constructor(props) {
     super(props);
-    this.deleteTarget = this.deleteTarget.bind(this)
+    this.deleteTarget = this.deleteTarget.bind(this);
   }
   state = {
     target: ["123"],
     days: "",
     hours: "",
     minutes: "",
-    seconds: ""
+    seconds: "",
+    deleteTarget: false
   };
 
   getCountdown() {
@@ -63,14 +64,11 @@ class TargetList extends React.Component {
     }
   }
 
-  async deleteTarget(){
+  async deleteTarget() {
     const { id } = this.props.match.params;
-    const url = 'http://localhost:5000/user/target/' + id;
-    const res = prompt("Введите 'да', что бы удалить свою цель")
-    if (res === 'да'){
-      this.props.history.push('/user');
-      await fetch(url, { method:"DELETE" })
-    }
+    const url = "http://localhost:5000/user/target/" + id;
+    this.props.history.push("/user");
+    await fetch(url, { method: "DELETE" });
   }
 
   render() {
@@ -104,9 +102,33 @@ class TargetList extends React.Component {
               );
             })}
         </div>
-        <span className="delete" onClick={this.deleteTarget}>
-          Удалить методику
-        </span>
+        {this.state.deleteTarget ? (
+          <div className="edit-block">
+            <span>Вы точно хотите удалить методику?</span>
+            <div>
+              <i className="icono-check" onClick={this.deleteTarget}></i>
+              <i
+                className="icono-cross"
+                onClick={() => {
+                  this.setState({
+                    deleteTarget: !this.state.deleteTarget
+                  });
+                }}
+              ></i>
+            </div>
+          </div>
+        ) : (
+          <button
+            onClick={() => {
+              this.setState({
+                deleteTarget: !this.state.deleteTarget
+              });
+            }}
+            className="delete"
+          >
+            Удалить аккаунт
+          </button>
+        )}
       </>
     );
   }
