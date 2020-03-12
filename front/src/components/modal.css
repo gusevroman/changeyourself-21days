@@ -101,7 +101,7 @@
   background: black;
   z-index: 10000;
   /* //   optionally */
-  animation: moveTop 2s 11s forwards;
+  animation: moveTop 2s 7s forwards;
 }
 .global-modal .content {
   user-select: none;
@@ -301,7 +301,7 @@
   border-radius: 10px;
   overflow: hidden;
   opacity: 0;
-  animation: opacity 1s 12s 1 forwards;
+  animation: opacity 1s 8s 1 forwards;
   margin: auto;
 }
 .buttons .icons {

@@ -162,7 +162,7 @@ class NewMethodForm extends React.Component {
 
                     <div className="buttonContainer">
                         <button className="outline orange oneButton" onClick={this.scrollToBottom} onClick={this.plusDay}>Добавить день</button>
-                        <button className="outline orange oneButton" type="submit">Отправить</button>
+                        <button className="outline orange oneButton" type="submit">Добавить</button>
                     </div>
                 </form>
             </div>

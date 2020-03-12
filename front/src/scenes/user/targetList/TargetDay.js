@@ -57,7 +57,7 @@ export default class TargetDay extends Component {
               onClick={this.handleStatus.bind(this)}
               checked={this.state.status}
             />
-          <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Done!" for={this.props.day._id}></label>
+          <label class="tgl-btn" data-tg-off="Nope!" data-tg-on="Done!" for={this.props.day._id}></label>
           </div>
           <div className="spoiler" style={{ display: this.state.display }}>
             <h2 align="center">{day.description}</h2>

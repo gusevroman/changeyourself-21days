@@ -102,7 +102,7 @@ class TargetList extends React.Component {
         </div>
         {this.state.deleteTarget ? (
           <div className="edit-block">
-            <span>Вы точно хотите удалить методику?</span>
+            <span>Вы точно хотите удалить цель?</span>
             <div>
               <i className="icono-check" onClick={this.deleteTarget}></i>
               <i
@@ -124,7 +124,7 @@ class TargetList extends React.Component {
             }}
             className="delete"
           >
-            Удалить аккаунт
+            Удалить цель
           </button>
         )}
       </>

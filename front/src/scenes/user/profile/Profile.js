@@ -137,7 +137,7 @@ class Profile extends Component {
             profileImgAvatar = `http://localhost:5000/${profileImg}`;
             img = `http://localhost:5000/${profileImg}`;
         } else {
-            profileImgAvatar = "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png";
+            profileImgAvatar = "http://localhost:5000/user-default.jpg";
         }
 
         return (
@@ -228,13 +228,13 @@ class Profile extends Component {
             <>
                 {this.renderProfile()}
 
-
+              <div className="email">
                 <li className="tg-list-item">
-                    <p>включить уведомления</p>
+                    <p>Включить уведомления</p>
                     <input onClick={this.changeButton} className="tgl tgl-light" id="cb1" checked={this.state.checkEmail} type="checkbox"/>
                     <label className="tgl-btn" htmlFor="cb1"></label>
                 </li>
-
+                </div>
                 {this.state.deleteAccount ? (
                     <div className="edit-block">
                         <span>Вы точно хотите удалить аккаунт?</span>
