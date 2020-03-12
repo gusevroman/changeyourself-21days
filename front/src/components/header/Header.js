@@ -1,39 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 // import store from '../redux/store';
-import { logout } from "../../redux/actions";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 import LinkButton from "./LinkButton"
 import Modal from "../../scenes/Auth/Modal/Modal";
 
-class Header extends React.Component {
+class Header extends Component {
   constructor(...args) {
+    console.log('<<< Header args', ...args);
     super(...args);
-    this.logout = this.logout.bind(this);
-  }
-
-  logout() {
-    this.props.logout();
-    this.props.history.push("/");
   }
 
   render() {
     const { isLoggined } = this.props;
     return (
-      <header style={{ position: "relative" }} bg="dark" variant="dark">
+      <header>
+        <div className="container">
         <nav className="nav">
-        {isLoggined ? 
-          <div className="logout">
+          <div className="nav__section">
             <LinkButton href="/" name="Главная" />
-            <Link to="/" onClick={this.logout} className="link" >Выйти</Link>
+            <LinkButton href="/methods" name="Все методики" />
           </div>
-         : 
+        {isLoggined ? 
           <>
-            <LinkButton href="/" name="Главная" />
-            <Modal />
+            <div className="nav__section">
+              <LinkButton href="/newMethod" name="Добавить методику"/>
+              <LinkButton href="/user" name="Мои цели"/>
+              <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
+            </div>
           </>
+         : 
+          <Modal />
         }
         </nav>
+        </div>
       </header>
     );
   }
@@ -43,8 +43,6 @@ const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

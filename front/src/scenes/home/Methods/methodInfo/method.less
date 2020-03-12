@@ -1,0 +1,70 @@
+// main: ../../../../index.less
+
+.method {
+  text-align: center;
+  margin: 30px 0px 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0px 0px;
+    span {
+      display: inline-block;
+      margin: 0px auto;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+
+  h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__table {
+    td {
+      margin: 0px;
+      padding: 15px;
+    }
+    thead {
+      position: sticky;
+    }
+    tbody {
+      tr {
+        padding: 20px 15px;
+
+      }
+
+      td {
+        text-align: left;
+        vertical-align: middle;
+        font-weight: 300;
+        font-size: 14px;
+
+        &:first-child {
+          text-align: center;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

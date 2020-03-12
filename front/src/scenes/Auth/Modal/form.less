@@ -1,0 +1,178 @@
+// main: ../../../index.less
+
+.myModal {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  z-index: 10000;
+  background-color: #fff;
+  
+  &-body {
+    padding: 2rem;
+    margin-top: 15vh;
+    min-width: 60vw;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 60vh;
+    opacity: 1;
+    }
+
+  .error {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  .btn {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-weight: 800;
+    width: 160px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 30px auto 0px;
+    transition: .3s;
+
+    &__close {
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .auth-btn {
+    transition: 0.2s;
+    text-align: center;
+    border-radius: 10px;
+    &:hover {
+    }
+  }
+
+  button[type="submit"],
+  input[type="submit"] {
+    text-transform: uppercase;
+    border-radius: 15px;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
+    transition: .5s;
+  }
+
+  button[type="submit"]:active,
+  input[type="button"]:active,
+  input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+
+  input:disabled {
+    opacity: 0.4;
+  }
+
+  input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+
+  button[type="submit"],
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+  }
+
+  .App {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  button[type="button"] {
+    display: block;
+    appearance: none;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+  hr {
+    margin-top: 30px;
+  }
+
+  button {
+    display: block;
+    appearance: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+  .modal-input {
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  .modal-label {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+
+
+

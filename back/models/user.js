@@ -8,6 +8,9 @@ const userSchema = new mongoose.Schema({
     about: String,
     tel: String,
     instagram: String,
+    profileImg:  {type: String, default: ''},
+    checkEmail: {type: Boolean, default: true},
+    style: {type: String, default: 'Light'},
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -4,14 +4,14 @@ const methodSchema = new mongoose.Schema({
   title: String,
   description: String,
   category: [String],
-  tag: String,
+  tag: [String],
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
   followers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    author: { type: mongoose.Schema.Types.ObjectId,ref: 'User' },
+    score: Number
   }],
   method: [{
     title: String,

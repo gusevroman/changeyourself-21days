@@ -14,49 +14,50 @@ class Registration extends React.Component {
 
   registration = async event => {
     event.preventDefault();
-
-    const { logIn } = this.props;
-
     const login = event.target.login.value;
     const password = event.target.password.value;
-    console.log(login, password);
-
+    const email = event.target.email.value;
     const response = await fetch(event.target.action, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ login, password })
+      body: JSON.stringify({ login, password, email })
     });
     const result = await response.json();
 
-    if (result.res) {
-      logIn(result.res);
-      this.props.history.push('/')
-    } else {
+    if (result.error) {
       this.setState({ error: true })
+    } else {
+      this.props.logIn(result.login, result.id);
+      this.props.history.push('/user')
     }
   };
 
   render() {
     return (
       <>
-        <h1 style={{ textAlign: "center", marginTop: "20px" }}>Регистрация</h1>
-        {!this.state.error || <h2 style={{ textAlign: "center", marginTop: "20px", color: "red" }}>Этот логин уже существует</h2>}
+        <h1>Регистрация</h1>
+        {!this.state.error || <h2 className="error">Этот логин уже существует</h2>}
         <form
-          style={{ width: "600px", margin: "auto", textAlign: "center" }}
           action="http://localhost:5000/registration"
           onSubmit={this.registration}
+          className="form-auth"
         >
           <div >
-            <label>Логин:</label>
-            <input type="Login" name="login" required />
+            <label className="modal-label">Логин:</label>
+            <input type="Login" name="login" className="modal-input" required />
           </div>
 
           <div >
-            <label>Пароль:</label>
-            <input type="password" name="password" required />
+            <label className="modal-label">Почта:</label>
+            <input type="email" name="email" className="modal-input" required />
           </div>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <button className='btn' style={{ width: "270px", backgroundColor: 'green' }} type="submit">Создать</button>
+
+          <div >
+            <label className="modal-label">Пароль:</label>
+            <input type="password" name="password" className="modal-input" required />
+          </div>
+          <div>
+            <button className='btn edit' type="submit">Создать</button>
           </div>
         </form>
       </>
@@ -71,7 +72,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logIn: (login) => dispatch(logIn(login))
+  logIn: (login, id) => dispatch(logIn(login, id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Registration));

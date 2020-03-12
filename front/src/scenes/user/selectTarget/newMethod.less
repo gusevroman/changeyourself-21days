@@ -1,0 +1,311 @@
+// main: ../../../index.less
+
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
+
+.mainFlex {
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    font-size: 0.875em;
+  }
+
+
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
+    font-size: 0.875em;
+  }
+
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 0.875em;
+  }
+
+  input::-ms-placeholder,
+  textarea::-ms-placeholder {
+    font-size: 0.875em;
+  }
+
+
+  /* on hover placeholder */
+
+  input:hover::-webkit-input-placeholder,
+  textarea:hover::-webkit-input-placeholder {
+    font-size: 0.875em;
+  }
+
+
+  input:hover::-moz-placeholder,
+  textarea:hover::-moz-placeholder {
+    font-size: 0.875em;
+  }
+
+ 
+
+  input:hover::placeholder,
+  textarea:hover::placeholder {
+    font-size: 0.875em;
+  }
+
+  input:hover::placeholder,
+  textarea:hover::placeholder {
+    font-size: 0.875em;
+  }
+
+
+  .nameBar {
+    position: relative;
+    margin: 100px 0 25px 0;
+    font-size: 2.3em;
+    text-align: center;
+    letter-spacing: 7px;
+  }
+
+  #form {
+    position: relative;
+    /*display: flex;*/
+    width: 500px;
+    margin: 0;
+  }
+
+  .inputClass {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+
+    background: transparent;
+    outline: none;
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+  input {
+    font-family: "Lato", sans-serif;
+    font-size: 26px;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+
+    background: transparent;
+    outline: none;
+
+    border-bottom: none;
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+
+  textarea {
+    width: 470px;
+    max-width: 470px;
+    height: 110px;
+    max-height: 110px;
+    padding: 15px;
+
+    background: transparent;
+    outline: none;
+
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+  .textareaClass {
+    width: 470px;
+    max-width: 470px;
+    height: 80px;
+    max-height: 70px;
+    padding: 15px;
+
+    background: transparent;
+    outline: none;
+
+    font-family: "Lato", sans-serif;
+
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+  }
+
+
+  #submit {
+    width: 502px;
+
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 0.875em;
+
+    outline: none;
+    cursor: pointer;
+
+    border-top: none;
+  }
+
+  /**/
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: 0.25em;
+  }
+  select {
+    flex: 0 0;
+    padding: 0 20px;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+  }
+
+  .addSelect {
+    align-items: center;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .selectContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  /*кнопки*/
+
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+  button.outline {
+    /*position: relative;*/
+    /*z-index: 3;*/
+    background: transparent;
+    font-size: 14px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 22px;
+    width: 200px;
+    padding: 20px 0;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+  }
+  button.outline a {
+    text-decoration: none;
+  }
+  button.outline:hover {
+    transition: all 0.2s linear;
+  }
+  button.outline:active {
+    border-radius: 22px;
+  }
+
+  button.orange {
+    font-weight: 700;
+    background: transparent;
+  }
+
+  .buttonContainer {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-around;
+  }
+
+  .addSelect {
+    display: flex;
+    justify-content: center;
+    /*text-align: center;*/
+  }
+
+  .box select {
+    width: 350px;
+    padding: 10px;
+    height: 50px;
+    border: none;
+    font-family: "Russo One", sans-serif;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .box select option:hover {
+    background: green;
+  }
+
+  .box:hover::before {
+    background: coral;
+  }
+
+  .stage {
+    text-align: left;
+  }
+  [class*="icono"] {
+    opacity: 0.6;
+  }
+  .logoTrash {
+    padding: 10px;
+    display: inline-block;
+  }
+  .logoTrash:hover {
+    transform: scale(1.5);
+  }
+  .logoTrash:hover i {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+} 
+
+.childFlex {
+  margin-top: 20px;
+}

@@ -1,0 +1,534 @@
+@keyframes moveToLeft {
+  from {
+    right: 0%;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  to {
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveToRight {
+  from {
+    right: 100%;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  to {
+    right: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backToPosition {
+  to {
+    left: 0;
+    top: 0;
+    // box-shadow:0 20px 10px -10px white;
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-35%, 0) scale(2);
+  }
+  10% {
+    opacity: 0.01;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.01;
+  }
+  100% {
+    transform: translate(-65%, 0) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+  // if color of text is 'transparent' the opacity of text is controled by blur property of text-shadow
+  @keyframes textShadow {
+    0% {
+      text-shadow: 10px 0px 2px rgba(#fff, 0.5);
+      filter: blur(0px);
+    }
+    100% {
+      text-shadow: 5px 0px 2px rgba(#fff, 0.5);
+      filter: blur(1px);
+    }
+  }
+
+
+.global-modal {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  .welcome-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 10000;
+    /* //   optionally */
+    animation: moveTop 2s 7s forwards;
+  }
+
+  .content {
+    user-select: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 5vw;
+    font-family: "verdana";
+    font-weight: bold;
+    letter-spacing: 20px;
+    opacity: 0;
+    animation: opacity 2s 2s forwards 1 ease-in-out;
+    position: relative;
+    p {
+      position: relative;
+      width: 80%;
+      text-align: center;
+      opacity: 1;
+      text-shadow: 10px 0px 2px rgba(#fff, 0.5);
+      animation: textShadow 3s 4s alternate infinite;
+      &:before {
+        content: attr(data-shadow);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0) scale(2);
+        filter: blur(4px);
+        opacity: 0;
+        animation: rightToLeft 3s 3s forwards 1 ease-in-out;
+      }
+    }
+    span {
+      //HIGHLIGHTS
+      animation: backToPosition 2s 2s forwards 1 ease-in-out;
+      // box-shadow: 0 20px 10px -10px transparent;
+      position: relative;
+      //     strange but i like it ;o
+      color: transparent;
+      &:hover {
+        // color:red;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -20%;
+        left: 5%;
+        width: 90%;
+        height: 5px;
+        background: white;
+        opacity: 0;
+        filter: blur(5px);
+        animation: opacity 1s 5s alternate infinite;
+      }
+      &:nth-of-type(1) {
+        top: -70px;
+        left: -40px;
+      }
+      &:nth-of-type(2) {
+        top: 20px;
+        left: -50px;
+        &:before {
+          animation: opacity 1s 5.25s alternate infinite;
+        }
+      }
+      &:nth-of-type(3) {
+        top: -50px;
+        left: 0px;
+        &:before {
+          animation: opacity 1s 5.5s alternate infinite;
+        }
+      }
+      &:nth-of-type(4) {
+        top: -90px;
+        left: -40px;
+        &:before {
+          animation: opacity 1s 5.75s alternate infinite;
+        }
+      }
+      &:nth-of-type(5) {
+        top: 100px;
+        left: -10px;
+        &:before {
+          animation: opacity 1s 6s alternate infinite;
+        }
+      }
+      &:nth-of-type(6) {
+        top: -60px;
+        left: 20px;
+        &:before {
+          animation: opacity 1s 6.25s alternate infinite;
+        }
+      }
+      &:nth-of-type(7) {
+        top: -80px;
+        left: 70px;
+        &:before {
+          animation: opacity 1s 6.5s alternate infinite;
+        }
+      }
+    }
+  }
+
+  .corner {
+    font-family: "Verdana";
+    width: 50px;
+    height: 50px;
+    animation: scale 2s alternate infinite ease-in;
+    filter: blur(2px);
+    position: absolute;
+    opacity: 0.1;
+    &:nth-of-type(1) {
+      top: 2rem;
+      left: 2rem;
+      border-top: 2px solid white;
+      border-left: 2px solid white;
+    }
+    &:nth-of-type(2) {
+      top: 2rem;
+      right: 2rem;
+      border-top: 2px solid white;
+      border-right: 2px solid white;
+      animation-delay: 0.5s;
+    }
+    &:nth-of-type(3) {
+      bottom: 2rem;
+      left: 2rem;
+      border-bottom: 2px solid white;
+      border-left: 2px solid white;
+      animation-delay: 1s;
+    }
+    &:nth-of-type(4) {
+      bottom: 2rem;
+      right: 2rem;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+      animation-delay: 1.5s;
+    }
+  }
+
+  .continue {
+    filter: blur(1px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid white;
+    color: white;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 15px white inset;
+    // z-index:4;
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      transparent 33%,
+      white 34%,
+      transparent 35%,
+      transparent 65%,
+      white 66%,
+      transparent 67%
+    );
+    background-size: 300%;
+    background-position: left;
+    transition: all 0.5s;
+    animation: opacity 2s 7s forwards 1;
+    opacity: 0;
+    &:hover {
+      background-position: right;
+      color: green;
+      filter: blur(0);
+    }
+  }
+
+  .right-vert-line {
+    position: absolute;
+    background: linear-gradient(transparent, green);
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    right: -5%;
+    width: 2px;
+    animation: moveToLeft 2s 1s forwards ease-in-out;
+    filter: blur(1px);
+  }
+
+  .left-vert-line {
+    position: absolute;
+    background: linear-gradient(green, transparent);
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    right: 105%;
+    width: 2px;
+    animation: moveToRight 2s 1s forwards ease-in-out;
+    filter: blur(1px);
+  }
+}
+/////////////////////////////////////////////////////////
+////////////////// KEYFRAMES SECTION////////////////////
+///////////////////////////////////////////////////////
+
+
+  ///////////////////////////////////////////////////
+  /////////////////STYLES FOR ICONS/////////////////
+  //////////////////////////////////////////////////
+
+  .buttons {
+    position: sticky;
+    width: 100%;
+    transform: translate(0 -50%);
+    z-index: 10000;
+    padding: 20% 0px 0px;
+    .global-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //optionally
+      // border: 5px solid black;
+      width: 150px;
+      height: 150px;
+      transform: rotateX(45deg) rotate(45deg);
+      border-radius: 10px;
+      overflow: hidden;
+      opacity: 0;
+      animation: opacity 1s 8s 1 forwards;
+      margin: auto;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      transform: rotate(-45deg);
+      width: 400px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      height: 210px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+    }
+
+    .fb {
+      justify-content: flex-end;
+      transition: color 0.4s;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        background: #405ca1;
+        transition: left 0.4s;
+        z-index: -1;
+        border-right: 1px solid rgba(black, 0.4);
+      }
+      &:hover {
+        color: white;
+        &:before {
+          left: 0;
+        }
+      }
+    }
+
+    .git {
+      justify-content: flex-start;
+      transition: color 0.4s;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: #24292e;
+        transition: right 0.4s;
+        z-index: -1;
+      }
+      &:hover {
+        color: white;
+        &:before {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  ///////////////////////////////////////////////////////
+  ////////////////////OBVIOUS STUFF/////////////////////
+  //////////////////////////////////////////////////////
+
+
+  a:link,
+  a:active,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
+
+
+
+.welcome {
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow:hidden;
+    // font-family: "Verdana";
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    // color: #ecf0f1;
+    color: black;
+
+    
+    &__container {
+      font-weight: 600;
+      overflow: hidden;
+      height: 40px;
+      padding: 0 40px;
+  
+      &:before {
+        content: '[';
+        left: 0;
+      }
+  
+      &:after {
+        content: ']';
+        position: absolute;
+        right: 0;
+      }
+  
+      &:after, &:before {
+        position: absolute;
+        top: 0;
+        
+        // color: #16a085;
+        color: #405ca1;
+        font-size: 40px;
+        line-height: 40px;
+        
+        -webkit-animation-name: opacity;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-name: opacity2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+  
+      &__text {
+        display: inline;
+        float: left;
+        margin: 0;
+      }
+  
+      &__list {
+        margin-top: 0;
+        padding-left: 110px;
+        text-align: left;
+        list-style: none;
+        animation-name: change;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+  
+        &__item {
+          line-height:40px;
+          margin:0;
+        }
+      }
+    }
+  }
+
+  @keyframes opacity2 {
+    0%, 100% {opacity:0;}
+    50% {opacity:1;}
+  }
+  
+  @keyframes change {
+    0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+    16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+    33.32%,45.98% {transform:translate3d(0,-50%,0);}
+    49.98%,62.64% {transform:translate3d(0,-75%,0);}
+    66.64%,79.3% {transform:translate3d(0,-50%,0);}
+    83.3%,95.96% {transform:translate3d(0,-25%,0);}
+  }
+  
+  // 6 is the number of animation.
+  // Here, there are 4 lines :
+  
+  // 1 to 2
+  // 2 to 3
+  // 3 to 4
+  // 4 to 3
+  // 3 to 2
+  // 2 to 1
+  
+  // 6x + 6y = 100 (100% duration)
+  
+  // HERE : 
+  // y = 4 -> Animation between two lines
+  // x = 12.66 -> Time spent on a line
+  
+  // You can define a value and calculate the other if you want change speed or the number of lines
+}

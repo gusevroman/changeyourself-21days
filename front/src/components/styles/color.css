@@ -1,0 +1,498 @@
+.styleColorLight {
+  color: black;
+  background: #ecf0f1;
+}
+.styleColorLight .modalBg {
+  background: #ecf0f1;
+}
+.styleColorLight header {
+  border-bottom: 2px solid black;
+  box-shadow: 0 0 5px black;
+  background: white;
+}
+.styleColorLight .link {
+  position: relative;
+  color: black;
+}
+.styleColorLight .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
+}
+.styleColorLight .link:hover {
+  color: black;
+}
+.styleColorLight .active {
+  color: black;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.styleColorLight .active::after {
+  width: 100%;
+}
+.styleColorLight .active:hover {
+  color: black;
+}
+.styleColorLight svg path,
+.styleColorLight svg rect {
+  fill: black;
+}
+.styleColorLight .allMethods__input {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+.styleColorLight .allMethods__input:focus {
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .myModal {
+  background: #0e101c;
+  background: rgba(0, 0, 0, 0.185);
+}
+.styleColorLight .myModal-body {
+  background: #131313;
+  box-shadow: 0 0px 15px black;
+}
+.styleColorLight .myModal h1 {
+  color: white;
+  border-bottom: 1px solid black;
+}
+.styleColorLight .myModal .form {
+  background: #0e101c;
+}
+.styleColorLight .myModal input {
+  border: 1px solid black;
+}
+.styleColorLight .myModal label {
+  color: white;
+}
+.styleColorLight .myModal .btn {
+  color: #000;
+  border: 2px solid black;
+  background-color: black;
+}
+.styleColorLight .myModal .btn:hover {
+  color: black;
+  border: 2px solid black;
+  background-color: #292929;
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .myModal .auth-btn {
+  background-color: grey;
+}
+.styleColorLight .myModal .auth-btn:hover {
+  background-color: #676767;
+  box-shadow: 0 0 10px black;
+  color: #000;
+}
+.styleColorLight .myModal button[type="submit"],
+.styleColorLight .myModal input[type="submit"] {
+  background: black;
+  color: #000;
+  border: 2px solid black;
+}
+.styleColorLight .myModal button[type="submit"]:hover,
+.styleColorLight .myModal input[type="submit"]:hover {
+  background: #ab5d01;
+  color: #000;
+}
+.styleColorLight .myModal button[type="button"] {
+  background: #292929;
+  color: #000;
+}
+.styleColorLight .myModal pre {
+  color: #000;
+}
+.styleColorLight .myModal button {
+  border: 1px solid #292929;
+}
+.styleColorLight .topMethods .content__column,
+.styleColorLight .allMethods .content__column {
+  border: 2px solid black;
+}
+.styleColorLight .topMethods .content__column:hover,
+.styleColorLight .allMethods .content__column:hover {
+  border: 2px solid black;
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .topMethods .content__info,
+.styleColorLight .allMethods .content__info {
+  color: black;
+  border: 2px solid black;
+  background-color: white;
+}
+.styleColorLight .topMethods .content__info:hover,
+.styleColorLight .allMethods .content__info:hover {
+  color: white;
+  border: 2px solid black;
+  background-color: black;
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .profile {
+  color: black;
+}
+.styleColorLight .profile__file {
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+.styleColorLight .profile__input input {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+.styleColorLight .profile__input input:focus {
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .mainFlex {
+  /**/
+  /* Arrow */
+  /* Transition */
+}
+.styleColorLight .mainFlex input::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:focus::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input::-moz-placeholder,
+.styleColorLight .mainFlex textarea::-moz-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:focus::-moz-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input::placeholder,
+.styleColorLight .mainFlex textarea::placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:focus::placeholder,
+.styleColorLight .mainFlex textarea::focus:placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input::-ms-placeholder,
+.styleColorLight .mainFlex textarea::-ms-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:focus::-ms-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover:focus::-webkit-input-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover::-moz-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover:focus::-moz-placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::-moz-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover:focus::placeholder,
+.styleColorLight .mainFlex textarea:hover:focus::placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover::placeholder,
+.styleColorLight .mainFlex textarea:hover::placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex input:hover:focus::-ms-placeholder,
+.styleColorLight .mainFlex textarea:hover::focus:-ms-placeholder {
+  color: black;
+}
+.styleColorLight .mainFlex .inputClass {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex input {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex input:hover {
+  background: white;
+  color: black;
+}
+.styleColorLight .mainFlex textarea {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex .textareaClass {
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex textarea:hover {
+  background: white;
+  color: black;
+}
+.styleColorLight .mainFlex #submit {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorLight .mainFlex #submit:hover {
+  color: black;
+}
+.styleColorLight .mainFlex select {
+  background: black;
+}
+.styleColorLight .mainFlex .select {
+  background: black;
+}
+.styleColorLight .mainFlex select {
+  color: black;
+}
+.styleColorLight .mainFlex .select::after {
+  background: black;
+}
+.styleColorLight .mainFlex .select:hover::after {
+  color: black;
+}
+.styleColorLight .mainFlex button.outline {
+  color: black;
+  border-color: black;
+}
+.styleColorLight .mainFlex button.outline:hover {
+  color: white;
+  background: black;
+  border-color: white;
+}
+.styleColorLight .mainFlex button.orange {
+  color: black;
+  border-color: black;
+}
+.styleColorLight .mainFlex .box select {
+  background: black;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.styleColorLight .mainFlex .logoTrash {
+  color: black;
+}
+.styleColorLight .mainFlex .logoTrash:hover i {
+  color: black;
+}
+.styleColorLight .target {
+  border: 2px solid black;
+  box-shadow: 0 0 5px black;
+}
+.styleColorLight .target:hover {
+  box-shadow: 0 0 25px black;
+}
+.styleColorLight .target__title {
+  color: black;
+}
+.styleColorLight .target__search .search__input {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+.styleColorLight .target__search .search__input:focus {
+  box-shadow: 0 0 15px black;
+}
+.styleColorLight .target .progress-bar {
+  background-color: #fff;
+  border: 2px solid black;
+  box-shadow: 0 1px 5px #000 inset;
+}
+.styleColorLight .target .progress-bar span {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  color: black;
+}
+.styleColorLight .target .progress-bar__red {
+  background-color: #ff0000;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+}
+.styleColorLight .target .progress-bar__orange {
+  background-color: #fecf23;
+  background-image: linear-gradient(to top, #fecf23, #fd9215);
+}
+.styleColorLight .target .progress-bar__orange::after {
+  background: #fff;
+}
+.styleColorLight .target .progress-bar__green {
+  background-image: linear-gradient(to top, #a5df41, #4ca916);
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+}
+.styleColorLight .target .progress-bar__last {
+  color: #000;
+}
+.styleColorLight .target_spoiler {
+  border: 2px solid black;
+}
+.styleColorLight .tgl-flip + .tgl-btn:after,
+.styleColorLight .tgl-flip + .tgl-btn:before {
+  color: #fff;
+}
+.styleColorLight .tgl-flip + .tgl-btn:after {
+  background: #02c66f;
+}
+.styleColorLight .tgl-flip + .tgl-btn:before {
+  background: #ff3a19;
+}
+.styleColorLight .tgl-flip:checked + .tgl-btn:after {
+  background: #7fc6a6;
+}
+.styleColorLight .bt {
+  color: black;
+}
+.styleColorLight .more-bt {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-color: black;
+  background-color: #fff;
+}
+.styleColorLight .more-bt:after,
+.styleColorLight .more-bt:before {
+  background: black;
+}
+.styleColorLight ::selection {
+  background: green;
+  color: #ffffff;
+}
+.styleColorLight .more-bt i:after,
+.styleColorLight .more-bt i:before {
+  background: black;
+}
+.styleColorLight .more-bt:hover i:after {
+  background: black;
+}
+.styleColorLight .more-bt:hover i:before {
+  background: black;
+}
+.styleColorLight .more-bt .fl,
+.styleColorLight .more-bt .sfl {
+  background: black;
+}
+.styleColorLight .more-bt .cross:before,
+.styleColorLight .more-bt .cross:after {
+  background: #fff;
+}
+.styleColorLight .method__text {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: #000;
+  background-color: white;
+}
+.styleColorLight .method__table {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.styleColorLight .method__table thead {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.styleColorLight .method__table tbody tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.styleColorLight .method__table tbody td {
+  color: #000;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-left: solid 1px rgba(0, 0, 0, 0.1);
+}
+.star {
+  color: #fd9215;
+}
+.delete {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: #000;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.delete:hover {
+  color: red;
+  border: 2px solid red;
+  background-color: white;
+  box-shadow: 0 0 15px red;
+}
+.edit {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: #000;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.edit:hover {
+  color: black;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 0 0 15px black;
+}
+.use {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: #000;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.use:hover {
+  color: green;
+  border: 2px solid green;
+  background-color: white;
+  box-shadow: 0 0 15px green;
+}
+.showAll {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: #000;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.showAll:hover {
+  color: black;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 0 0 15px black;
+}
