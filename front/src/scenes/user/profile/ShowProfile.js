@@ -129,36 +129,10 @@ class ShowProfile extends Component {
             profileImgAvatar = `http://localhost:5000/${profileImg}`;
         } else {
             profileImgAvatar =
-                "https://www.windstream.com/getmedia/b2e4e38a-7cb6-4ca9-9544-54dfeaca6304/icon_user-circle.png?width=1920&height=1280&ext=.png";
+                "http://localhost:5000/user-default.jpg";
         }
         return (
             <div className="profile">
-                <form class="">
-                    <div>
-                        <label>
-                            <input
-                                type="radio"
-                                name="stars"
-                                value="Dark"
-                                onChange={e => {
-                                    this.props.changeColor(e.target.value);
-                                }}
-                            />
-                            <span class="">Темная</span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="stars"
-                                value="Light"
-                                onChange={e => {
-                                    this.props.changeColor(e.target.value);
-                                }}
-                            />
-                            <span class="">Светлая</span>
-                        </label>
-                    </div>
-                </form>
                 <div className="profile__content">
                     <div className="profile__main">
                         <div className="user-logo">
@@ -195,9 +169,6 @@ class ShowProfile extends Component {
                         <Link to="/user/profile/edit" className="edit">
                             Изменить данные
                         </Link>
-                        <Link to="/" onClick={this.logout} className="link">
-                            Выйти
-                        </Link>
                     </div>
                 </div>
             </div>
@@ -205,19 +176,50 @@ class ShowProfile extends Component {
     }
 
     render() {
-        return <>{this.renderProfile()}
+        return <div className="prof">
+          <form class="form">
+                    <div>
+                        <label>
+                            <input
+                                type="radio"
+                                name="stars"
+                                value="Dark"
+                                onChange={e => {
+                                    this.props.changeColor(e.target.value);
+                                }}
+                            />
+                            <span class="">Темная</span>
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="stars"
+                                value="Light"
+                                onChange={e => {
+                                    this.props.changeColor(e.target.value);
+                                }}
+                            />
+                            <span class="">Светлая</span>
+                        </label>
+                    </div>
+                </form> 
+        {this.renderProfile()}
             {this.state.chartData.labels.length !== 0 ?
-                <div style={{display: 'flex', justifyContent: 'space-around', height: 300}}>
-                    <div style={{width: '50%'}}>
+                <div className="graf">
+                    <div >
                         <Chart chartData={this.state.chartData} displayTitle="false"/>
                     </div>
-                    <div style={{width: '50%'}}>
+                    <div >
                         <Chart chartData={this.state.chartDataTwo} displayTitle="false"/>
                     </div>
                 </div> : null}
+                <div className="row">
+                        <Link to="/" onClick={this.logout} className="edit">
+                            Выйти
+                        </Link>
+                    </div>
+        </div>;
             }
-        </>;
-    }
 }
 
 const mapStateToProps = state => ({

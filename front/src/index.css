@@ -122,8 +122,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem;
   text-align: center;
+  flex: 0 0 47%;
 }
 .profile-image {
   position: relative;
@@ -152,17 +152,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 10px 0 0;
 }
 .profile__show span {
   text-align: center;
   width: 100%;
   font-size: 20px;
+  height: 30px;
 }
 .profile__show .profile__title {
   font-size: 14px;
   margin-bottom: 5px;
 }
 .profile .user-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   border: 2px solid black;
@@ -182,10 +188,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-}
-.profile .row button {
-  display: block;
-  margin: 30px auto 0px;
 }
 .profile__input {
   display: flex;
@@ -223,6 +225,118 @@
 .edit-block i {
   cursor: pointer;
   margin: 20px 10px 0px;
+}
+.email li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.email .tg-list-item {
+  margin: 0 2em;
+}
+.email .tgl {
+  display: none;
+}
+.email .tgl,
+.email .tgl:after,
+.email .tgl:before,
+.email .tgl *,
+.email .tgl *:after,
+.email .tgl *:before,
+.email .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.email .tgl::-moz-selection,
+.email .tgl:after::-moz-selection,
+.email .tgl:before::-moz-selection,
+.email .tgl *::-moz-selection,
+.email .tgl *:after::-moz-selection,
+.email .tgl *:before::-moz-selection,
+.email .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.email .tgl::selection,
+.email .tgl:after::selection,
+.email .tgl:before::selection,
+.email .tgl *::selection,
+.email .tgl *:after::selection,
+.email .tgl *:before::selection,
+.email .tgl + .tgl-btn::selection {
+  background: none;
+}
+.email .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.email .tgl + .tgl-btn:after,
+.email .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.email .tgl + .tgl-btn:after {
+  left: 0;
+}
+.email .tgl + .tgl-btn:before {
+  display: none;
+}
+.email .tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+.email .tgl-light + .tgl-btn {
+  background: #f0f0f0;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.email .tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.email .tgl-light:checked + .tgl-btn {
+  background: #9FD6AE;
+}
+.prof {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+.prof .row {
+  flex: 0 0 99%;
+}
+.graf {
+  flex: 0 0 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.graf > div {
+  margin: 50px 0px;
+  width: 100%;
+  height: 100%;
+}
+.form {
+  flex: 0 0 95%;
+  display: flex;
+  justify-content: center;
 }
 .carousel {
   position: relative;

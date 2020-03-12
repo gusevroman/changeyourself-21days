@@ -97,7 +97,6 @@ class Target extends React.Component {
             this.props.history.push(link);
           }}
         > 
-          <i onClick={this.deleteDay} className="icono-trash"></i>
           <h2 className="target__title">{parameters.title}</h2>
 
           <div className="progress-bar">
