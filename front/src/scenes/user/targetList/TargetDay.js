@@ -47,6 +47,7 @@ export default class TargetDay extends Component {
 
   render() {
     const { day } = this.props;
+    
     return (
       <>
         <div className="target_spoiler">
