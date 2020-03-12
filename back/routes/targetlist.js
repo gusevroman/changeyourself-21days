@@ -11,7 +11,7 @@ if(doc.actions[aIndex].status == true){
 }else{
   doc.actions[aIndex].status = true
 }
-  doc.markModified('actions')
+  doc.markModified('actions');
   await doc.save()
 });
 
