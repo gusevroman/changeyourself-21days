@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {withRouter, Link} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import "./modal.css";
 import Modal from "../scenes/Auth/Modal/Modal"
 
