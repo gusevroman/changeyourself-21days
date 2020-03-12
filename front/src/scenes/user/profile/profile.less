@@ -7,6 +7,10 @@
   text-align: center;
   flex: 0 0 47%;
 
+  &__main {
+    margin-top: 25px;
+  }
+
   &-image {
     position: relative;
     border: 2px solid black;
@@ -14,6 +18,10 @@
     height: 200px;
     border-radius: 50%;
     margin: auto;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.9;
+    }
     &-file {
       position: absolute;
       left: -1000px;
@@ -36,15 +44,14 @@
     align-items: center;
     flex-direction: column;
     margin: 10px 0 0;
-    span {
+    .discr {
       text-align: center;
       width: 100%;
       font-size: 20px;
-      height: 30px;
+      min-height: 30px;
     }
     .profile__title {
-      font-size: 14px;
-      margin-bottom: 5px;
+      font-size: 16px;
     }
   }
 
@@ -173,7 +180,7 @@
 }
 
 .tgl-light + .tgl-btn {
-  background: #f0f0f0;
+  background: grey;
   border-radius: 2em;
   padding: 2px;
   -webkit-transition: all .4s ease;
@@ -186,7 +193,10 @@
   transition: all .2s ease;
 }
 .tgl-light:checked + .tgl-btn {
-  background: #9FD6AE;
+  background: green;
+}
+
+.tgl-btn {
 }
 }
 
