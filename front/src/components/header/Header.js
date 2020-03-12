@@ -10,13 +10,14 @@ class Header extends Component {
     console.log('<<< Header args', ...args);
     super(...args);
   }
-
+ 
   render() {
     const { isLoggined } = this.props;
     return (
       <header>
         <div className="container">
         <nav className="nav">
+        <img src="/img/21logo.jpg" className="logo"/>
           <div className="nav__section">
             <LinkButton href="/" name="Главная" />
             <LinkButton href="/methods" name="Все методики" />

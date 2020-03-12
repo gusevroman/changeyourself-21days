@@ -18,6 +18,9 @@ class Main extends React.Component {
     return (
       <>
         <div className="global-modal">
+     
+
+
 
           <div className="welcome-page">
             <div className="corner"></div>
@@ -40,6 +43,9 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="buttons">
+        <video autoplay="autoplay" muted="muted" loop="loop">
+    <source src="video/Sunset-Desert-Run.mp4" type="video/mp4"></source>
+  </video>
           <div className="global-container">
             <div className="icons">
               <div className="icon fb" onClick={(e) => {

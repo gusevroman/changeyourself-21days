@@ -125,6 +125,9 @@
   text-align: center;
   flex: 0 0 47%;
 }
+.profile__main {
+  margin-top: 25px;
+}
 .profile-image {
   position: relative;
   border: 2px solid black;
@@ -132,6 +135,10 @@
   height: 200px;
   border-radius: 50%;
   margin: auto;
+  cursor: pointer;
+}
+.profile-image:hover {
+  opacity: 0.9;
 }
 .profile-image-file {
   position: absolute;
@@ -154,15 +161,14 @@
   flex-direction: column;
   margin: 10px 0 0;
 }
-.profile__show span {
+.profile__show .discr {
   text-align: center;
   width: 100%;
   font-size: 20px;
-  height: 30px;
+  min-height: 30px;
 }
 .profile__show .profile__title {
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 16px;
 }
 .profile .user-logo {
   position: relative;
@@ -296,7 +302,7 @@
   left: 50%;
 }
 .email .tgl-light + .tgl-btn {
-  background: #f0f0f0;
+  background: grey;
   border-radius: 2em;
   padding: 2px;
   -webkit-transition: all 0.4s ease;
@@ -309,7 +315,7 @@
   transition: all 0.2s ease;
 }
 .email .tgl-light:checked + .tgl-btn {
-  background: #9FD6AE;
+  background: green;
 }
 .prof {
   display: flex;
@@ -851,7 +857,6 @@
   justify-content: center;
   padding-top: 5rem;
   z-index: 10000;
-  background-color: #fff;
 }
 .myModal-body {
   padding: 2rem;
@@ -861,6 +866,7 @@
   border: 1px solid black;
   height: 60vh;
   opacity: 1;
+  background-color: #fff;
 }
 .myModal .error {
   text-align: center;
@@ -1435,6 +1441,10 @@
 .tgl-flip:checked + .tgl-btn:active:after {
   transform: rotateY(20deg);
 }
+::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(255, 255, 255, 0);
+}
 body {
   margin: 0;
   padding: 0;
@@ -1455,6 +1465,15 @@ body {
   width: 1200px;
   margin: auto;
 }
+video {
+  position: sticky;
+  width: 100vw;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  margin: 0;
+}
 header {
   position: sticky;
   top: 0;
@@ -1463,10 +1482,20 @@ header {
   z-index: 1000;
 }
 .nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+.nav .logo {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  right: 0;
+  width: 60px;
+  transform: translate(-80%, 0%);
+  border-radius: 50%;
 }
 .nav__section {
   display: flex;

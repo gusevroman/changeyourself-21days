@@ -142,27 +142,27 @@ class ShowProfile extends Component {
 
                     <h3 className="profile__show">
                         <span className="profile__title">Имя</span>
-                        <span>{name}</span>
+                        <span className="profile__discr">{name}</span>
                     </h3>
 
                     <h3 className="profile__show">
                         <span className="profile__title">Email</span>
-                        <span>{email}</span>
+                        <span className="profile__discr">{email}</span>
                     </h3>
 
                     <h3 className="profile__show">
                         <span className="profile__title">Обо мне</span>
-                        <span>{about}</span>
+                        <span className="profile__discr">{about}</span>
                     </h3>
 
                     <h3 className="profile__show">
                         <span className="profile__title">Телефон</span>
-                        <span>{tel}</span>
+                        <span className="profile__discr">{tel}</span>
                     </h3>
 
                     <h3 className="profile__show">
                         <span className="profile__title">Инстаграм</span>
-                        <span>{instagram}</span>
+                        <span className="profile__discr">{instagram}</span>
                     </h3>
 
                     <div className="row">
