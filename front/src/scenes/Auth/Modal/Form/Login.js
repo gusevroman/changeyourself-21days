@@ -47,16 +47,16 @@ class Login extends React.Component {
           onSubmit={this.validate}
         >
           <div >
-            <label>Логин:</label>
-            <input type="Login" name="login" required />
+            <label className="modal-label">Логин:</label>
+            <input type="Login" name="login" className="modal-input" required />
           </div>
 
           <div>
-            <label>Пароль:</label>
-            <input type="password" name="password" required />
+            <label className="modal-label">Пароль:</label>
+            <input type="password" name="password" className="modal-input" required />
           </div>
           <div>
-          <button className='btn' type="submit">Войти</button>
+          <button className='btn edit' type="submit">Войти</button>
           </div>
         </form>
 

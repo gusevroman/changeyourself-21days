@@ -42,19 +42,19 @@ class Main extends React.Component {
         <div className="buttons">
           <div className="global-container">
             <div className="icons">
-              <div className="icon fb">
-                <a href="#2" target="_blank" onClick={(e) => {
+              <div className="icon fb" onClick={(e) => {
                   e.preventDefault();
                   this.setState({ reg: true })
                 }}>
+                <a href="#" target="_blank">
                   REG
                 </a>
               </div>
-              <div className="icon git">
-                <a href="#2" target="_blank" onClick={(e) => {
+              <div className="icon git" onClick={(e) => {
                   e.preventDefault();
                   this.setState({ log: true })
                 }}>
+                <a href="#" target="_blank">
                   LOG
                 </a>
               </div>

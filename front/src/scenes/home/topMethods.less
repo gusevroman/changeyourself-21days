@@ -1,7 +1,7 @@
 // main: ../../index.less
 .topMethods,
 .allMethods {
-  margin: 30px -20px;
+  // margin: 30px -20px;
   width: 100%;
   &__title {
     text-align: center;
@@ -35,15 +35,11 @@
       overflow: hidden;
       text-overflow: ellipsis;
       flex: 0 0 100%;
+      // font-weight: 600;
+      font-size: 16px;
     }
 
-    &__likes {
-      margin: 20px 0px 0px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-    }
+    
 
     &__info {
       display: block;
@@ -57,4 +53,13 @@
       transition: 0.3s;
     }
   }
+}
+
+.content__likes {
+  margin: 20px 0px 0px;
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

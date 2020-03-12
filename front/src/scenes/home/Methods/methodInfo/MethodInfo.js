@@ -88,11 +88,11 @@ class Method extends React.Component {
       { this.state.method 
         ? <div className="method">
             <h2 className="method__title">{method.title}</h2>
-            <div className="method__likes">
+            <p className="method__text">{method.description}</p>
+            <div className="content__likes">
               <div>Всего оценок: {this.state.followLeng}</div>
                 <div>Рейтинг: <span className="star"> {score} ★</span></div>
             </div>
-            <p className="method__text">{method.description}</p>
             { this.state.voted ?
               <h2>Спасибо за вашу оценку</h2>
               :
@@ -137,7 +137,7 @@ class Method extends React.Component {
                     })}}
                     className="delete"
                   >
-                    Удалить аккаунт
+                    Удалить методику
                   </button>
                 )}
               </>
