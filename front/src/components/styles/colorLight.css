@@ -10,6 +10,17 @@
   box-shadow: 0 0 5px black;
   background: white;
 }
+.styleColorLight header .logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  right: 0;
+  width: 100px;
+  transform: translate(-80%, -30%);
+  border-radius: 50%;
+  border-bottom: 2px solid black;
+  box-shadow: 0 0 5px black;
+}
 .styleColorLight .link {
   position: relative;
   color: black;
@@ -404,6 +415,13 @@
   color: #000;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   border-left: solid 1px rgba(0, 0, 0, 0.1);
+}
+.styleColorLight .profile-image {
+  border: 2px solid black;
+  transition: 0.5s;
+}
+.styleColorLight .profile-image:hover {
+  background-color: #cccccc;
 }
 .star {
   color: #fd9215;

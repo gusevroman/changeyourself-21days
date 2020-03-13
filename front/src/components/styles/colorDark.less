@@ -14,33 +14,53 @@
   transition: 0.3s;
   cursor: pointer;
   &:hover {
-    color: @color;
+    color: black;
     border: 2px solid @color;
     background-color: white;
     box-shadow: 0 0 15px @color;
   }
 }
+ 
 
-
-@mainColor: black;
-@mainColorText: #000;
-@mainBgColor: #292929;
+@mainColor: white;
+@mainColorText: black;
+@mainBgColor: black;
 body {
   // background: #ecf0f1;
 }
 
-.styleColorLight {
-  color: black;
-  background: #ecf0f1;  
+.styleColorDark {
+  color: white;
+  background: black;  
 
   .modalBg {
-    background: #ecf0f1;
+    background: black;
+  }
+  .container {
+    overflow: hidden;
+    padding-bottom: 40px;
   }
 
   header {
-    border-bottom: 2px solid @mainColor;
-    box-shadow: 0 0 5px @mainColor;
-    background: white;
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 5px white;
+    background: black;
+    .container {
+      padding: 0px;
+      overflow: visible;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      right: 0;
+      width: 100px;
+      transform: translate(-80%, -30%);
+      border-radius: 50%;
+      border-bottom: 2px solid white;
+      box-shadow: 0 0 5px white;
+    }
   }
   .link {
     position: relative;
@@ -57,11 +77,26 @@ body {
       transition: .5s;
     }
   }
+  .link {
+    position: relative;
+    color:white;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 0%; 
+      height: 2px;
+      background-color: white;
+      transition: .5s;
+    }
+  }
   .link:hover {
-    color: @mainColor;
+    color: darken(white, 30%);
   }
   .active {
-    color: black;
+    color: white;
     border-radius: 0;
     box-sizing: border-box;
     &::after {
@@ -70,11 +105,11 @@ body {
     
   }
   .active:hover {
-    color: black;
+    color: darken(white, 30%);
   }
   svg path,
   svg rect {
-    fill: @mainColor;
+    fill: white;
   }
   .allMethods__input {
     color: black;
@@ -97,7 +132,7 @@ body {
     border-bottom: 1px solid @mainColor;
   }
   .myModal .form {
-    background: #0e101c;
+    background-color: white;
   }
   .myModal input {
     border: 1px solid @mainColor;
@@ -108,12 +143,12 @@ body {
   .myModal .btn {
     color: @mainColorText;
     border: 2px solid @mainColor;
-    background-color: @mainColor;
+    background-color: white;
   }
   .myModal .btn:hover {
     color: @mainColor;
     border: 2px solid @mainColor;
-    background-color: @mainBgColor;
+    background-color: white;
     box-shadow: 0 0 15px @mainColor;
   }
   .myModal .auth-btn {
@@ -162,13 +197,13 @@ body {
   }
   .topMethods .content__info:hover,
   .allMethods .content__info:hover {
-    color: white;
-    border: 2px solid black;
+    color: black;
+    border: 2px solid white;
     background-color: @mainColor;
     box-shadow: 0 0 15px @mainColor;
   }
   .profile {
-    color: black;
+    color: white;
   }
   .profile__file {
     color: rgba(255, 255, 255, 0);
@@ -252,20 +287,23 @@ body {
     color: black;
   }
   .mainFlex .inputClass {
+    background: white;
     color: black;
     border: solid 1px @mainColor;
   }
   .mainFlex input {
+    background: white;
     color: black;
-    border: solid 1px @mainColor;
+    border: solid 1px black;
   }
   .mainFlex input:hover {
     background: white;
     color: black;
   }
   .mainFlex textarea {
+    background: white;
     color: black;
-    border: solid 1px @mainColor;
+    border: solid 1px white;
   }
   .mainFlex .textareaClass {
     border: solid 1px @mainColor;
@@ -310,15 +348,15 @@ body {
     border-color: @mainColor;
   }
   .mainFlex .box select {
-    background: @mainColor;
-    color: white;
+    background: white;
+    color: black;
     box-shadow: 0 5px 20px fade(@mainColor, 20%);
   }
   .mainFlex .logoTrash {
-    color: @mainColor;
+    color: white;
   }
   .mainFlex .logoTrash:hover i {
-    color: @mainColor;
+    color: white;
   }
   .target {
     border: 2px solid @mainColor;
@@ -328,7 +366,7 @@ body {
     box-shadow: 0 0 25px @mainColor;
   }
   .target__title {
-    color: black;
+    color: white;
   }
   .target__search .search__input {
     color: black;
@@ -373,7 +411,7 @@ body {
       0 -5px 5px rgba(255, 255, 255, 0.7) inset;
   }
   .target .progress-bar__last {
-    color: @mainColorText;
+    color: white;
   }
   .target_spoiler {
     border: 2px solid @mainColor;
@@ -395,6 +433,7 @@ body {
     color: @mainColor;
   }
   .more-bt {
+    color: black;
     border-right: 2px solid @mainColor;
     border-bottom: 2px solid @mainColor;
     border-color: @mainColor;
@@ -402,7 +441,7 @@ body {
   }
   .more-bt:after,
   .more-bt:before {
-    background: @mainColor;
+    background: darken(white, 40%);
   }
   ::selection {
     background: green;
@@ -410,17 +449,17 @@ body {
   }
   .more-bt i:after,
   .more-bt i:before {
-    background: @mainColor;
+    background:  darken(white, 40%);
   }
   .more-bt:hover i:after {
-    background: @mainColor;
+    background:  darken(white, 40%);
   }
   .more-bt:hover i:before {
-    background: @mainColor;
+    background:  darken(white, 40%);
   }
   .more-bt .fl,
   .more-bt .sfl {
-    background: @mainColor;
+    background:  darken(white, 40%);
   }
   .more-bt .cross:before,
   .more-bt .cross:after {
@@ -436,7 +475,7 @@ body {
     }
 
     &__table {
-      border: 1px solid fade(black, 20%);
+      border: 1px solid white;
       thead {
         color: black;
         background-color: white;
@@ -445,8 +484,9 @@ body {
       }
       tbody {
         tr {
+          background-color: darken(white, 20%);
           &:nth-child(2n) {
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: darken(white, 30%);
           }
         }
 
@@ -458,6 +498,47 @@ body {
       }
     }
   }
+
+  .star {
+    color: #fd9215;;
+  }
+  .delete {
+    .button(red);
+  }
+  
+  .edit {
+    .button(white);
+  }
+  
+  .use {
+    .button(green);
+  }
+  
+  .showAll {
+    .button(white);
+    color: black;
+    border: 2px solid @mainColor;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 30px auto 0px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      color:black;
+      border: 2px solid white;
+      background-color: white;
+      box-shadow: 0 0 15px white;
+    }
+  }
+
+  .profile-image {
+    border: 2px solid white;
+    transition: .5s;
+    &:hover {
+      background-color: lighten(black, 20%);
+    }
+  }
 }
 
 
@@ -466,21 +547,4 @@ body {
 
 
 
-.star {
-  color: #fd9215;;
-}
-.delete {
-  .button(red);
-}
 
-.edit {
-  .button(@mainColor);
-}
-
-.use {
-  .button(green);
-}
-
-.showAll {
-  .button(@mainColor);
-}
