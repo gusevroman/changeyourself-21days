@@ -11,7 +11,7 @@ class SelectTarget extends React.Component {
     state = {
         dataTarget: false,
         dataMethods: false,
-        uniqArr: ['Спорт', 'Образование', 'Хобби', 'Здоровье'],
+        uniqArr: ['Спорт', 'Образование', 'Хобби', 'Здоровье', 'Музыка', 'Технологии'],
         uniqMet: [],
         value: '',
         addClick: false,

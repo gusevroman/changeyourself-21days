@@ -1,0 +1,553 @@
+.styleColorDark {
+  color: white;
+  background: black;
+}
+.styleColorDark .modalBg {
+  background: black;
+}
+.styleColorDark .container {
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+.styleColorDark header {
+  border-bottom: 2px solid white;
+  box-shadow: 0 0 5px white;
+  background: black;
+}
+.styleColorDark header .container {
+  padding: 0px;
+  overflow: visible;
+}
+.styleColorDark header .logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  right: 0;
+  width: 100px;
+  transform: translate(-70%, -30%);
+  border-radius: 50%;
+  border-bottom: 2px solid white;
+  box-shadow: 0 0 5px white;
+}
+.styleColorDark .link {
+  position: relative;
+  color: black;
+}
+.styleColorDark .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
+}
+.styleColorDark .link {
+  position: relative;
+  color: white;
+}
+.styleColorDark .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: 0.5s;
+}
+.styleColorDark .link:hover {
+  color: #b3b3b3;
+}
+.styleColorDark .active {
+  color: white;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.styleColorDark .active::after {
+  width: 100%;
+}
+.styleColorDark .active:hover {
+  color: #b3b3b3;
+}
+.styleColorDark svg path,
+.styleColorDark svg rect {
+  fill: white;
+}
+.styleColorDark .allMethods__input {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
+.styleColorDark .allMethods__input:focus {
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .myModal {
+  background: #0e101c;
+  background: rgba(0, 0, 0, 0.185);
+}
+.styleColorDark .myModal-body {
+  background: #131313;
+  box-shadow: 0 0px 15px white;
+}
+.styleColorDark .myModal h1 {
+  color: white;
+  border-bottom: 1px solid white;
+}
+.styleColorDark .myModal .form {
+  background-color: white;
+}
+.styleColorDark .myModal input {
+  border: 1px solid white;
+}
+.styleColorDark .myModal label {
+  color: white;
+}
+.styleColorDark .myModal .btn {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+}
+.styleColorDark .myModal .btn:hover {
+  color: white;
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .myModal .auth-btn {
+  background-color: grey;
+}
+.styleColorDark .myModal .auth-btn:hover {
+  background-color: #676767;
+  box-shadow: 0 0 10px white;
+  color: black;
+}
+.styleColorDark .myModal button[type="submit"],
+.styleColorDark .myModal input[type="submit"] {
+  background: white;
+  color: black;
+  border: 2px solid white;
+}
+.styleColorDark .myModal button[type="submit"]:hover,
+.styleColorDark .myModal input[type="submit"]:hover {
+  background: #ab5d01;
+  color: black;
+}
+.styleColorDark .myModal button[type="button"] {
+  background: black;
+  color: black;
+}
+.styleColorDark .myModal pre {
+  color: black;
+}
+.styleColorDark .myModal button {
+  border: 1px solid black;
+}
+.styleColorDark .topMethods .content__column,
+.styleColorDark .allMethods .content__column {
+  border: 2px solid white;
+}
+.styleColorDark .topMethods .content__column:hover,
+.styleColorDark .allMethods .content__column:hover {
+  border: 2px solid white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .topMethods .content__info,
+.styleColorDark .allMethods .content__info {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+}
+.styleColorDark .topMethods .content__info:hover,
+.styleColorDark .allMethods .content__info:hover {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .profile {
+  color: white;
+}
+.styleColorDark .profile__file {
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+}
+.styleColorDark .profile__input input {
+  color: black;
+  background-color: white;
+  border: 2px solid white;
+}
+.styleColorDark .profile__input input:focus {
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .mainFlex {
+  /**/
+  /* Arrow */
+  /* Transition */
+}
+.styleColorDark .mainFlex input::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:focus::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:focus::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input::-moz-placeholder,
+.styleColorDark .mainFlex textarea::-moz-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:focus::-moz-placeholder,
+.styleColorDark .mainFlex textarea:focus::-moz-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input::placeholder,
+.styleColorDark .mainFlex textarea::placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:focus::placeholder,
+.styleColorDark .mainFlex textarea::focus:placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input::-ms-placeholder,
+.styleColorDark .mainFlex textarea::-ms-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:focus::-ms-placeholder,
+.styleColorDark .mainFlex textarea:focus::-ms-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:hover::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover:focus::-webkit-input-placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover::-moz-placeholder,
+.styleColorDark .mainFlex textarea:hover::-moz-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover:focus::-moz-placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::-moz-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover::placeholder,
+.styleColorDark .mainFlex textarea:hover::placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover:focus::placeholder,
+.styleColorDark .mainFlex textarea:hover:focus::placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover::placeholder,
+.styleColorDark .mainFlex textarea:hover::placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex input:hover:focus::-ms-placeholder,
+.styleColorDark .mainFlex textarea:hover::focus:-ms-placeholder {
+  color: black;
+}
+.styleColorDark .mainFlex .inputClass {
+  background: white;
+  color: black;
+  border: solid 1px white;
+}
+.styleColorDark .mainFlex input {
+  background: white;
+  color: black;
+  border: solid 1px black;
+}
+.styleColorDark .mainFlex input:hover {
+  background: white;
+  color: black;
+}
+.styleColorDark .mainFlex textarea {
+  background: white;
+  color: black;
+  border: solid 1px white;
+}
+.styleColorDark .mainFlex .textareaClass {
+  border: solid 1px white;
+}
+.styleColorDark .mainFlex textarea:hover {
+  background: white;
+  color: black;
+}
+.styleColorDark .mainFlex #submit {
+  color: black;
+  border: solid 1px black;
+}
+.styleColorDark .mainFlex #submit:hover {
+  color: black;
+}
+.styleColorDark .mainFlex select {
+  background: black;
+}
+.styleColorDark .mainFlex .select {
+  background: black;
+}
+.styleColorDark .mainFlex select {
+  color: black;
+}
+.styleColorDark .mainFlex .select::after {
+  background: black;
+}
+.styleColorDark .mainFlex .select:hover::after {
+  color: black;
+}
+.styleColorDark .mainFlex button.outline {
+  color: black;
+  border-color: white;
+}
+.styleColorDark .mainFlex button.outline:hover {
+  color: white;
+  background: white;
+  border-color: white;
+}
+.styleColorDark .mainFlex button.orange {
+  color: white;
+  border-color: white;
+}
+.styleColorDark .mainFlex .box select {
+  background: white;
+  color: black;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+.styleColorDark .mainFlex .logoTrash {
+  color: white;
+}
+.styleColorDark .mainFlex .logoTrash:hover i {
+  color: white;
+}
+.styleColorDark .target {
+  border: 2px solid white;
+  box-shadow: 0 0 5px white;
+}
+.styleColorDark .target:hover {
+  box-shadow: 0 0 25px white;
+}
+.styleColorDark .target__title {
+  color: white;
+}
+.styleColorDark .target__search .search__input {
+  color: black;
+  background-color: white;
+  border: 2px solid white;
+}
+.styleColorDark .target__search .search__input:focus {
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .target .progress-bar {
+  background-color: #fff;
+  border: 2px solid black;
+  box-shadow: 0 1px 5px #000 inset;
+}
+.styleColorDark .target .progress-bar span {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  color: black;
+}
+.styleColorDark .target .progress-bar__red {
+  background-color: #ff0000;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+}
+.styleColorDark .target .progress-bar__orange {
+  background-color: #fecf23;
+  background-image: linear-gradient(to top, #fecf23, #fd9215);
+}
+.styleColorDark .target .progress-bar__orange::after {
+  background: #fff;
+}
+.styleColorDark .target .progress-bar__green {
+  background-image: linear-gradient(to top, #a5df41, #4ca916);
+  box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset, 0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+}
+.styleColorDark .target .progress-bar__last {
+  color: white;
+}
+.styleColorDark .target_spoiler {
+  border: 2px solid white;
+}
+.styleColorDark .tgl-flip + .tgl-btn:after,
+.styleColorDark .tgl-flip + .tgl-btn:before {
+  color: #fff;
+}
+.styleColorDark .tgl-flip + .tgl-btn:after {
+  background: #02c66f;
+}
+.styleColorDark .tgl-flip + .tgl-btn:before {
+  background: #ff3a19;
+}
+.styleColorDark .tgl-flip:checked + .tgl-btn:after {
+  background: #7fc6a6;
+}
+.styleColorDark .bt {
+  color: white;
+}
+.styleColorDark .more-bt {
+  color: black;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-color: white;
+  background-color: #fff;
+}
+.styleColorDark .more-bt:after,
+.styleColorDark .more-bt:before {
+  background: #999999;
+}
+.styleColorDark ::selection {
+  background: green;
+  color: #ffffff;
+}
+.styleColorDark .more-bt i:after,
+.styleColorDark .more-bt i:before {
+  background: #999999;
+}
+.styleColorDark .more-bt:hover i:after {
+  background: #999999;
+}
+.styleColorDark .more-bt:hover i:before {
+  background: #999999;
+}
+.styleColorDark .more-bt .fl,
+.styleColorDark .more-bt .sfl {
+  background: #999999;
+}
+.styleColorDark .more-bt .cross:before,
+.styleColorDark .more-bt .cross:after {
+  background: #fff;
+}
+.styleColorDark .method__text {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: black;
+  background-color: white;
+}
+.styleColorDark .method__table {
+  border: 1px solid white;
+}
+.styleColorDark .method__table thead {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.styleColorDark .method__table tbody tr {
+  background-color: #cccccc;
+}
+.styleColorDark .method__table tbody tr:nth-child(2n) {
+  background-color: #b3b3b3;
+}
+.styleColorDark .method__table tbody td {
+  color: black;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-left: solid 1px rgba(0, 0, 0, 0.1);
+}
+.styleColorDark .star {
+  color: #fd9215;
+}
+.styleColorDark .delete {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.styleColorDark .delete:hover {
+  color: black;
+  border: 2px solid red;
+  background-color: white;
+  box-shadow: 0 0 15px red;
+}
+.styleColorDark .edit {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.styleColorDark .edit:hover {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .use {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.styleColorDark .use:hover {
+  color: black;
+  border: 2px solid green;
+  background-color: white;
+  box-shadow: 0 0 15px green;
+}
+.styleColorDark .showAll {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  margin: 30px auto 30px;
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.styleColorDark .showAll:hover {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .showAll:hover {
+  color: black;
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 0 0 15px white;
+}
+.styleColorDark .profile-image {
+  border: 2px solid white;
+  transition: 0.5s;
+}
+.styleColorDark .profile-image:hover {
+  background-color: #333333;
+}

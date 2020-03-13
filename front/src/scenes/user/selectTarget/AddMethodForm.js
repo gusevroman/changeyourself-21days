@@ -103,7 +103,7 @@ class NewMethodForm extends React.Component {
     };
 
     render() {
-        let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье'];
+        let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье', 'Музыка', 'Технологии'];
         return (
             <div className="box">
                 <form id="form" className="topBefore" onSubmit={this.sendForm}>

@@ -1,0 +1,550 @@
+.button(@color){
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 800;
+  text-align: center;
+  width: 200px;
+  color: @mainColorText;
+  border: 2px solid @mainColor;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 30px auto 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    border: 2px solid @color;
+    background-color: white;
+    box-shadow: 0 0 15px @color;
+  }
+}
+ 
+
+@mainColor: white;
+@mainColorText: black;
+@mainBgColor: black;
+body {
+  // background: #ecf0f1;
+}
+
+.styleColorDark {
+  color: white;
+  background: black;  
+
+  .modalBg {
+    background: black;
+  }
+  .container {
+    overflow: hidden;
+    padding-bottom: 40px;
+  }
+
+  header {
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 5px white;
+    background: black;
+    .container {
+      padding: 0px;
+      overflow: visible;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      right: 0;
+      width: 100px;
+      transform: translate(-70%, -30%);
+      border-radius: 50%;
+      border-bottom: 2px solid white;
+      box-shadow: 0 0 5px white;
+    }
+  }
+  .link {
+    position: relative;
+    color:black;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 0%; 
+      height: 2px;
+      background-color: #000;
+      transition: .5s;
+    }
+  }
+  .link {
+    position: relative;
+    color:white;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 0%; 
+      height: 2px;
+      background-color: white;
+      transition: .5s;
+    }
+  }
+  .link:hover {
+    color: darken(white, 30%);
+  }
+  .active {
+    color: white;
+    border-radius: 0;
+    box-sizing: border-box;
+    &::after {
+      width: 100%; 
+    }
+    
+  }
+  .active:hover {
+    color: darken(white, 30%);
+  }
+  svg path,
+  svg rect {
+    fill: white;
+  }
+  .allMethods__input {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+  }
+  .allMethods__input:focus {
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .myModal {
+    background: #0e101c;
+    background: rgba(0, 0, 0, 0.185);
+  }
+  .myModal-body {
+    background: #131313;
+    box-shadow: 0 0px 15px @mainColor;
+  }
+  .myModal h1 {
+    color: white;
+    border-bottom: 1px solid @mainColor;
+  }
+  .myModal .form {
+    background-color: white;
+  }
+  .myModal input {
+    border: 1px solid @mainColor;
+  }
+  .myModal label {
+    color: white;
+  }
+  .myModal .btn {
+    color: @mainColorText;
+    border: 2px solid @mainColor;
+    background-color: white;
+  }
+  .myModal .btn:hover {
+    color: @mainColor;
+    border: 2px solid @mainColor;
+    background-color: white;
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .myModal .auth-btn {
+    background-color: grey;
+  }
+  .myModal .auth-btn:hover {
+    background-color: #676767;
+    box-shadow: 0 0 10px @mainColor;
+    color: @mainColorText;
+  }
+  .myModal button[type="submit"],
+  .myModal input[type="submit"] {
+    background: @mainColor;
+    color: @mainColorText;
+    border: 2px solid @mainColor;
+  }
+  .myModal button[type="submit"]:hover,
+  .myModal input[type="submit"]:hover {
+    background: #ab5d01;
+    color: @mainColorText;
+  }
+  .myModal button[type="button"] {
+    background: @mainBgColor;
+    color: @mainColorText;
+  }
+  .myModal pre {
+    color: @mainColorText;
+  }
+  .myModal button {
+    border: 1px solid @mainBgColor;
+  }
+  .topMethods .content__column,
+  .allMethods .content__column {
+    border: 2px solid @mainColor;
+  }
+  .topMethods .content__column:hover,
+  .allMethods .content__column:hover {
+    border: 2px solid @mainColor;
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .topMethods .content__info,
+  .allMethods .content__info {
+    color: black;
+    border: 2px solid @mainColor;
+    background-color: white;
+  }
+  .topMethods .content__info:hover,
+  .allMethods .content__info:hover {
+    color: black;
+    border: 2px solid white;
+    background-color: @mainColor;
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .profile {
+    color: white;
+  }
+  .profile__file {
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .profile__input input {
+    color: black;
+    background-color: white;
+    border: 2px solid @mainColor;
+  }
+  .profile__input input:focus {
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .mainFlex {
+    /**/
+    /* Arrow */
+    /* Transition */
+  }
+  .mainFlex input::-webkit-input-placeholder,
+  .mainFlex textarea::-webkit-input-placeholder {
+    color: black;
+  }
+  .mainFlex input:focus::-webkit-input-placeholder,
+  .mainFlex textarea:focus::-webkit-input-placeholder {
+    color: black;
+  }
+  .mainFlex input::-moz-placeholder,
+  .mainFlex textarea::-moz-placeholder {
+    color: black;
+  }
+  .mainFlex input:focus::-moz-placeholder,
+  .mainFlex textarea:focus::-moz-placeholder {
+    color: black;
+  }
+  .mainFlex input::placeholder,
+  .mainFlex textarea::placeholder {
+    color: black;
+  }
+  .mainFlex input:focus::placeholder,
+  .mainFlex textarea::focus:placeholder {
+    color: black;
+  }
+  .mainFlex input::-ms-placeholder,
+  .mainFlex textarea::-ms-placeholder {
+    color: black;
+  }
+  .mainFlex input:focus::-ms-placeholder,
+  .mainFlex textarea:focus::-ms-placeholder {
+    color: black;
+  }
+  .mainFlex input:hover::-webkit-input-placeholder,
+  .mainFlex textarea:hover::-webkit-input-placeholder {
+    color: black;
+  }
+  .mainFlex input:hover:focus::-webkit-input-placeholder,
+  .mainFlex textarea:hover:focus::-webkit-input-placeholder {
+    color: black;
+  }
+  .mainFlex input:hover::-moz-placeholder,
+  .mainFlex textarea:hover::-moz-placeholder {
+    color: black;
+  }
+  .mainFlex input:hover:focus::-moz-placeholder,
+  .mainFlex textarea:hover:focus::-moz-placeholder {
+    color: black;
+  }
+  .mainFlex input:hover::placeholder,
+  .mainFlex textarea:hover::placeholder {
+    color: black;
+  }
+  .mainFlex input:hover:focus::placeholder,
+  .mainFlex textarea:hover:focus::placeholder {
+    color: black;
+  }
+  .mainFlex input:hover::placeholder,
+  .mainFlex textarea:hover::placeholder {
+    color: black;
+  }
+  .mainFlex input:hover:focus::-ms-placeholder,
+  .mainFlex textarea:hover::focus:-ms-placeholder {
+    color: black;
+  }
+  .mainFlex .inputClass {
+    background: white;
+    color: black;
+    border: solid 1px @mainColor;
+  }
+  .mainFlex input {
+    background: white;
+    color: black;
+    border: solid 1px black;
+  }
+  .mainFlex input:hover {
+    background: white;
+    color: black;
+  }
+  .mainFlex textarea {
+    background: white;
+    color: black;
+    border: solid 1px white;
+  }
+  .mainFlex .textareaClass {
+    border: solid 1px @mainColor;
+  }
+  .mainFlex textarea:hover {
+    background: white;
+    color: black;
+  }
+  .mainFlex #submit {
+    color: black;
+    border: solid 1px black;
+  }
+  .mainFlex #submit:hover {
+    color: black;
+  }
+  .mainFlex select {
+    background: black;
+  }
+  .mainFlex .select {
+    background: black;
+  }
+  .mainFlex select {
+    color: black;
+  }
+  .mainFlex .select::after {
+    background: black;
+  }
+  .mainFlex .select:hover::after {
+    color: black;
+  }
+  .mainFlex button.outline {
+    color: black;
+    border-color: @mainColor;
+  }
+  .mainFlex button.outline:hover {
+    color: white;
+    background: @mainColor;
+    border-color: white;
+  }
+  .mainFlex button.orange {
+    color: @mainColor;
+    border-color: @mainColor;
+  }
+  .mainFlex .box select {
+    background: white;
+    color: black;
+    box-shadow: 0 5px 20px fade(@mainColor, 20%);
+  }
+  .mainFlex .logoTrash {
+    color: white;
+  }
+  .mainFlex .logoTrash:hover i {
+    color: white;
+  }
+  .target {
+    border: 2px solid @mainColor;
+    box-shadow: 0 0 5px @mainColor;
+  }
+  .target:hover {
+    box-shadow: 0 0 25px @mainColor;
+  }
+  .target__title {
+    color: white;
+  }
+  .target__search .search__input {
+    color: black;
+    background-color: white;
+    border: 2px solid @mainColor;
+  }
+  .target__search .search__input:focus {
+    box-shadow: 0 0 15px @mainColor;
+  }
+  .target .progress-bar {
+    background-color: #fff;
+    border: 2px solid black;
+    box-shadow: 0 1px 5px #000 inset;
+  }
+  .target .progress-bar span {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    color: black;
+  }
+  .target .progress-bar__red {
+    background-color: #ff0000;
+    background-image: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+  }
+  .target .progress-bar__orange {
+    background-color: #fecf23;
+    background-image: linear-gradient(to top, #fecf23, #fd9215);
+  }
+  .target .progress-bar__orange::after {
+    background: #fff;
+  }
+  .target .progress-bar__green {
+    background-image: linear-gradient(to top, #a5df41, #4ca916);
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.7) inset,
+      0 -5px 5px rgba(255, 255, 255, 0.7) inset;
+  }
+  .target .progress-bar__last {
+    color: white;
+  }
+  .target_spoiler {
+    border: 2px solid @mainColor;
+  }
+  .tgl-flip + .tgl-btn:after,
+  .tgl-flip + .tgl-btn:before {
+    color: #fff;
+  }
+  .tgl-flip + .tgl-btn:after {
+    background: #02c66f;
+  }
+  .tgl-flip + .tgl-btn:before {
+    background: #ff3a19;
+  }
+  .tgl-flip:checked + .tgl-btn:after {
+    background: #7fc6a6;
+  }
+  .bt {
+    color: @mainColor;
+  }
+  .more-bt {
+    color: black;
+    border-right: 2px solid @mainColor;
+    border-bottom: 2px solid @mainColor;
+    border-color: @mainColor;
+    background-color: #fff;
+  }
+  .more-bt:after,
+  .more-bt:before {
+    background: darken(white, 40%);
+  }
+  ::selection {
+    background: green;
+    color: #ffffff;
+  }
+  .more-bt i:after,
+  .more-bt i:before {
+    background:  darken(white, 40%);
+  }
+  .more-bt:hover i:after {
+    background:  darken(white, 40%);
+  }
+  .more-bt:hover i:before {
+    background:  darken(white, 40%);
+  }
+  .more-bt .fl,
+  .more-bt .sfl {
+    background:  darken(white, 40%);
+  }
+  .more-bt .cross:before,
+  .more-bt .cross:after {
+    background: #fff;
+  }
+
+  .method {
+    &__text {
+      border: 2px solid fade(black, 20%);
+      color: @mainColorText;
+      background-color: white;
+      // box-shadow: 0 0 3px @mainColor;
+    }
+
+    &__table {
+      border: 1px solid white;
+      thead {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        border-bottom: none;
+      }
+      tbody {
+        tr {
+          background-color: darken(white, 20%);
+          &:nth-child(2n) {
+            background-color: darken(white, 30%);
+          }
+        }
+
+        td {
+          color: @mainColorText;
+          border-bottom: solid 1px fade(@mainColorText, 20%);
+          border-left: solid 1px fade(@mainColorText, 10%);
+        }
+      }
+    }
+  }
+
+  .star {
+    color: #fd9215;;
+  }
+  .delete {
+    .button(red);
+  }
+  
+  .edit {
+    .button(white);
+  }
+  
+  .use {
+    .button(green);
+  }
+  
+  .showAll {
+    .button(white);
+    color: black;
+    border: 2px solid @mainColor;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 30px auto 0px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      color:black;
+      border: 2px solid white;
+      background-color: white;
+      box-shadow: 0 0 15px white;
+    }
+  }
+
+  .profile-image {
+    border: 2px solid white;
+    transition: .5s;
+    &:hover {
+      background-color: lighten(black, 20%);
+    }
+  }
+}
+
+
+
+
+
+
+
+

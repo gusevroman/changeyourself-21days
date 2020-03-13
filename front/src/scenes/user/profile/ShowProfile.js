@@ -32,7 +32,7 @@ class ShowProfile extends Component {
         },
 
         chartDataTwo: {
-            labels: ['Активны', 'Неактивны'], //name
+            labels: ['Незавершенные', 'Завершенные'], //name
             datasets: [{
                 label: "Незаконченные",
                 backgroundColor: ["rgba(200,0,0,0.2)", "rgba(8, 60, 194, 0.2)", "rgb(7%, 82%, 82%, 0.2)"],
@@ -177,32 +177,24 @@ class ShowProfile extends Component {
 
     render() {
         return <div className="prof">
-          <form class="form">
-                    <div>
-                        <label>
-                            <input
-                                type="radio"
-                                name="stars"
-                                value="Dark"
-                                onChange={e => {
-                                    this.props.changeColor(e.target.value);
-                                }}
-                            />
-                            <span class="">Темная</span>
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="stars"
-                                value="Light"
-                                onChange={e => {
-                                    this.props.changeColor(e.target.value);
-                                }}
-                            />
-                            <span class="">Светлая</span>
-                        </label>
-                    </div>
-                </form> 
+          <form className="form">
+              <div className="toggle toggle--daynight">
+                { this.props.color === "Light" ?
+                  <input type="checkbox" id="toggle--daynight" 
+                  className="toggle--checkbox" 
+                  checked={true}
+                  onChange={()=>{this.props.changeColor("Dark")}}
+                  />
+                  :
+                  <input type="checkbox" id="toggle--daynight" 
+                  className="toggle--checkbox" 
+                  checked={false}
+                  onChange={()=>{this.props.changeColor("Light")}}
+                  />
+                }
+                <label className="toggle--btn" for="toggle--daynight"><span className="toggle--feature"></span></label>
+              </div>
+          </form> 
         {this.renderProfile()}
             {this.state.chartData.labels.length !== 0 ?
                 <div className="graf">
@@ -225,7 +217,8 @@ class ShowProfile extends Component {
 const mapStateToProps = state => ({
     isLoggined: state.isLoggined,
     userId: state.userId,
-    profile: state.profile
+    profile: state.profile,
+    color: state.color
 });
 
 const mapDispatchToProps = dispatch => ({

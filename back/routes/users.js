@@ -60,18 +60,18 @@ router.post('/registration', async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-          user: "days21go@yandex.ru",
-          pass: '21DAYS'
+          user: "go.21days@yandex.ru",
+          pass: '89151004170'
         }
       });
 
       let info = await transporter.sendMail({
 
-        from: '<days21go@yandex.ru>',
+        from: '<go.21days@yandex.ru>',
         to: newUser.email,
         subject: "Вы зарегистрированы! ",
-        text: "Информация о записе",
-        html: `<b>Здравствуйте! Вы были зарегистрированы.</b>`
+        // text: "Информация о записе",
+        html: `<b>Добро пожаловать на 21days.</b>`
 
       });
 

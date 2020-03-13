@@ -322,6 +322,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 20px 0px;
+  overflow: hidden;
 }
 .prof .row {
   flex: 0 0 99%;
@@ -343,6 +344,521 @@
   flex: 0 0 95%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* ===================================================
+     Day/Night and Gender toggle buttons
+     =================================================== */
+  /* ==================================================
+     Like specific styling
+     ================================================== */
+  /* ====================================================
+     Text toggle button
+     ==================================================== */
+  /* =====================================================
+     Toggle - knob button style
+     ===================================================== */
+  /* =====================================================
+     Toggle - switch stylee
+     ===================================================== */
+  /* ======================================================
+     Push button toggle
+     ====================================================== */
+  /* ======================================================
+     Neon toggle
+     ====================================================== */
+}
+.form .toggle {
+  display: block;
+  text-align: center;
+  user-select: none;
+}
+.form .toggle--checkbox {
+  display: none;
+}
+.form .toggle--btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.4em;
+  transition: all 350ms ease-in;
+}
+.form .toggle--btn:hover {
+  cursor: pointer;
+}
+.form .toggle--btn,
+.form .toggle--btn:before,
+.form .toggle--btn:after,
+.form .toggle--checkbox,
+.form .toggle--checkbox:before,
+.form .toggle--checkbox:after,
+.form .toggle--feature,
+.form .toggle--feature:before,
+.form .toggle--feature:after {
+  transition: all 250ms ease-in;
+}
+.form .toggle--btn:before,
+.form .toggle--btn:after,
+.form .toggle--checkbox:before,
+.form .toggle--checkbox:after,
+.form .toggle--feature:before,
+.form .toggle--feature:after {
+  content: '';
+  display: block;
+}
+.form .toggle--daynight .toggle--btn,
+.form .toggle--like .toggle--btn {
+  position: relative;
+  height: 70px;
+  width: 125px;
+  border-radius: 70px;
+}
+.form .toggle--daynight .toggle--btn:before,
+.form .toggle--like .toggle--btn:before {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.form .toggle--daynight .toggle--btn {
+  border: 5px solid #1c1c1c;
+  background-color: #3c4145;
+}
+.form .toggle--daynight .toggle--btn:before {
+  background-color: #fff;
+  border: 5px solid #e3e3c7;
+}
+.form .toggle--daynight .toggle--btn:after {
+  position: absolute;
+  top: 62%;
+  left: 39px;
+  z-index: 10;
+  width: 11.2px;
+  height: 11.2px;
+  opacity: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: #fff 0 0, #fff 3px 0, #fff 6px 0, #fff 9px 0, #fff 11px 0, #fff 14px 0, #fff 16px 0, #fff 21px -1px 0 1px, #fff 16px -7px 0 -2px, #fff 7px -7px 0 1px, #d3d3d3 0 0 0 4px, #d3d3d3 6px 0 0 4px, #d3d3d3 11px 0 0 4px, #d3d3d3 16px 0 0 4px, #d3d3d3 21px -1px 0 5px, #d3d3d3 16px -7px 0 1px, #d3d3d3 7px -7px 0 5px;
+  transition: opacity 100ms ease-in;
+}
+@keyframes starry_star {
+  50% {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: #fff 30px -3px 0 0, #fff 12px 10px 0 -1px, rgba(255, 255, 255, 0.1) 38px 18px 0 1px, #fff 32px 34px 0 0, rgba(255, 255, 255, 0.1) 20px 24px 0 -1.5px, #fff 5px 38px 0 1px;
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 100;
+    transform: scale(1.1);
+  }
+  55% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 100;
+    transform: scale(1);
+  }
+}
+.form .toggle--daynight .toggle--feature {
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 52.5%;
+  z-index: 20;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 0, rgba(255, 255, 255, 0.1) 12px 10px 0 -1px, #fff 38px 18px 0 1px, rgba(255, 255, 255, 0.1) 32px 34px 0 0, #fff 20px 24px 0 -1.5px, rgba(255, 255, 255, 0.1) 5px 38px 0 1px;
+  animation: starry_star 5s ease-in-out infinite;
+}
+.form .toggle--daynight .toggle--feature:before {
+  position: absolute;
+  top: -2px;
+  left: -25px;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 5px solid #e3e3c7;
+  box-shadow: #e3e3c7 -28px 0 0 -3px, #e3e3c7 -8px 24px 0 -2px;
+  transform-origin: -6px 130%;
+}
+.form .toggle--daynight .toggle--checkbox:checked + .toggle--btn {
+  background-color: #9ee3fb;
+  border: 5px solid #86c3d7;
+}
+.form .toggle--daynight .toggle--checkbox:checked + .toggle--btn:before {
+  left: 55px;
+  background-color: #ffdf6d;
+  border: 5px solid #e1c348;
+}
+.form .toggle--daynight .toggle--checkbox:checked + .toggle--btn:after {
+  opacity: 100;
+  animation-name: bounceIn;
+  animation-duration: 0.6s;
+  animation-delay: 0.1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+.form .toggle--daynight .toggle--checkbox:checked + .toggle--btn > .toggle--feature {
+  opacity: 0;
+  box-shadow: rgba(255, 255, 255, 0.1) 30px -3px 0 -4px, rgba(255, 255, 255, 0.1) 12px 10px 0 -5px, #fff 38px 18px 0 -3px, rgba(255, 255, 255, 0.1) 32px 34px 0 -4px, #fff 20px 24px 0 -5.5px, rgba(255, 255, 255, 0.1) 5px 38px 0 -3px;
+  animation: none;
+}
+.form .toggle--daynight .toggle--checkbox:checked + .toggle--btn > .toggle--feature:before {
+  left: 25px;
+  transform: rotate(70deg);
+}
+.form .toggle--like {
+  position: relative;
+}
+.form .toggle--like .toggle--btn {
+  border: 5px solid #0865B0;
+  background-color: #3498db;
+}
+.form .toggle--like .toggle--btn:before {
+  background-color: #f2dd68;
+  border: 5px solid #e5ce5e;
+}
+.form .toggle--like .toggle--feature {
+  position: absolute;
+  left: 14px;
+  top: 32%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #995710;
+  box-shadow: 28px 0 0 0 #995710;
+}
+.form .toggle--like .toggle--feature:before {
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 36px;
+  height: 17px;
+  background-color: #995710;
+  border-radius: 36px 36px 0 0;
+}
+.form .toggle--like .toggle--feature:after {
+  position: absolute;
+  left: 9px;
+  top: 21px;
+  width: 17px;
+  height: 7px;
+  background-color: #d8aa2b;
+  border-radius: 17px 17px 0 0;
+}
+.form .toggle--like .toggle--checkbox:checked + .toggle--btn {
+  background-color: #e25d5d;
+  border: 5px solid #AD1000;
+}
+.form .toggle--like .toggle--checkbox:checked + .toggle--btn:before {
+  transform: translate(51px, 0);
+}
+.form .toggle--like .toggle--checkbox:checked + .toggle--btn .toggle--feature {
+  transform: translate(53px, 0);
+}
+.form .toggle--like .toggle--checkbox:checked + .toggle--btn .toggle--feature:before {
+  border-radius: 0 0 36px 36px;
+  top: 11px;
+}
+.form .toggle--like .toggle--checkbox:checked + .toggle--btn .toggle--feature:after {
+  top: 21px;
+  border-radius: 1%;
+}
+.form .toggle--text .toggle--btn {
+  position: relative;
+  width: 180px;
+  height: 70px;
+  font-family: 'PT Sans', Sans Serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 40px;
+  border: 1px solid #8c8c8c;
+  border-right: 2px solid #8c8c8c;
+  box-shadow: inset 90px 0 10px rgba(255, 255, 255, 0.6), inset -3px 3px 18px -2px #8c8c8c, 0 0 15px #ccc, 0px -5px 16px 1px #ddd, -5px -5px 16px 1px #ddd, 5px -5px 16px 1px #ddd, -5px -5px 16px 1px #ddd, 5px -5px 16px 1px #ddd, 17px 9px 0 -5px rgba(255, 255, 255, 0.6), -3px 6px 12px -7px #000, 0 0 0 14px #fff, 0 0 0 15px #999;
+}
+.form .toggle--text .toggle--btn:before,
+.form .toggle--text .toggle--btn:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form .toggle--text .toggle--btn:before {
+  content: attr(data-label-on);
+  left: 15%;
+  color: #999;
+}
+.form .toggle--text .toggle--btn:after {
+  content: attr(data-label-off);
+  right: 15%;
+  color: #db4c00;
+}
+.form .toggle--text .toggle--checkbox:checked + .toggle--btn {
+  border-left: 2px solid #8c8c8c;
+  border-right: 1px solid #8c8c8c;
+  box-shadow: inset 90px 0 10px rgba(255, 255, 255, 0), inset 3px 3px 18px -2px #8c8c8c, 0 0 15px #ccc, 0px -5px 16px 1px #ddd, -5px -5px 16px 1px #ddd, 5px -5px 16px 1px #ddd, -5px -5px 16px 1px #ddd, 5px -5px 16px 1px #ddd, -17px 9px 0 -5px rgba(255, 255, 255, 0.6), 3px 6px 12px -7px #000, 0 0 0 14px #fff, 0 0 0 15px #999;
+}
+.form .toggle--text .toggle--checkbox:checked + .toggle--btn:before {
+  color: #db4c00;
+}
+.form .toggle--text .toggle--checkbox:checked + .toggle--btn:after {
+  color: #999;
+}
+.form .toggle--knob .toggle--btn {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  font-family: 'PT Sans', Sans Serif;
+  text-transform: uppercase;
+  color: #fff;
+  background: #a4bf4d;
+  box-shadow: inset 0 20px 40px -10px #7b9d25;
+  border-radius: 40px;
+}
+.form .toggle--knob .toggle--btn:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  box-shadow: 0 4px 10px 0 #999, inset 0 10px 10px 8px rgba(241, 241, 241, 0.6), inset 0 0 8px 0px #333, inset 0 0 0 13px #ccc, inset 0 0 0 14px #f1f1f1;
+  text-indent: -100%;
+}
+.form .toggle--knob .toggle--feature {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 40px;
+  text-shadow: 0 1px 2px #666;
+}
+.form .toggle--knob .toggle--feature:before,
+.form .toggle--knob .toggle--feature:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form .toggle--knob .toggle--feature:before {
+  content: attr(data-label-on);
+  left: 20%;
+}
+.form .toggle--knob .toggle--feature:after {
+  content: attr(data-label-off);
+  right: -60%;
+}
+.form .toggle--knob .toggle--checkbox:checked + .toggle--btn {
+  background: #a2a2a2;
+  box-shadow: inset 0 20px 40px -10px #7e7e7e;
+}
+.form .toggle--knob .toggle--checkbox:checked + .toggle--btn:before {
+  left: 0;
+}
+.form .toggle--knob .toggle--checkbox:checked + .toggle--btn .toggle--feature:before {
+  left: -60%;
+}
+.form .toggle--knob .toggle--checkbox:checked + .toggle--btn .toggle--feature:after {
+  right: 20%;
+}
+.form .toggle--switch .toggle--btn {
+  position: relative;
+  width: 120px;
+  height: 44px;
+  font-family: 'PT Sans', Sans Serif;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #a4bf4d 0%, #a4bf4d 50%, #ca5046 50%, #ca5046 200%);
+  background-position: -80px 0;
+  background-size: 200% 100%;
+  box-shadow: inset 0 0px 22px -8px #111;
+}
+.form .toggle--switch .toggle--btn,
+.form .toggle--switch .toggle--btn:before {
+  border-radius: 4px;
+}
+.form .toggle--switch .toggle--btn:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 44px;
+  border: 2px solid #202027;
+  background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.15) 100%);
+  background-color: #2b2e3a;
+  background-size: 5px 5px;
+  text-indent: -100%;
+}
+.form .toggle--switch .toggle--feature {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 44px;
+  text-shadow: 0 1px 2px #666;
+}
+.form .toggle--switch .toggle--feature:before,
+.form .toggle--switch .toggle--feature:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form .toggle--switch .toggle--feature:before {
+  content: attr(data-label-on);
+  left: -60%;
+}
+.form .toggle--switch .toggle--feature:after {
+  content: attr(data-label-off);
+  right: 16%;
+}
+.form .toggle--switch .toggle--checkbox:checked + .toggle--btn {
+  background-position: 0 0;
+}
+.form .toggle--switch .toggle--checkbox:checked + .toggle--btn:before {
+  left: calc(100% - 52px);
+}
+.form .toggle--switch .toggle--checkbox:checked + .toggle--btn .toggle--feature:before {
+  left: 20%;
+}
+.form .toggle--switch .toggle--checkbox:checked + .toggle--btn .toggle--feature:after {
+  right: -60%;
+}
+.form .toggle--push .toggle--btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #f9f8f6;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0px #333, 0 15px 20px 0px #cccccc;
+}
+.form .toggle--push .toggle--btn,
+.form .toggle--push .toggle--btn:before,
+.form .toggle--push .toggle--btn:after {
+  transition-duration: 150ms;
+}
+.form .toggle--push .toggle--btn:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22.72727273px;
+  height: 22.72727273px;
+  border-radius: 50%;
+  background-color: #FF9900;
+  box-shadow: inset 0 0 0 5px #ccc, inset 0 0 0 14px #f9f8f6;
+}
+.form .toggle--push .toggle--btn:after {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 12px;
+  background-color: #ccc;
+  box-shadow: 0 0 0 2.5px #f9f8f6;
+}
+.form .toggle--push .toggle--btn:hover:before {
+  box-shadow: inset 0 0 0 5px #b3b3b3, inset 0 0 0 14px #f9f8f6;
+}
+.form .toggle--push .toggle--btn:hover:after {
+  background-color: #b3b3b3;
+}
+.form .toggle--push .toggle--checkbox:checked + .toggle--btn {
+  box-shadow: 0 2px 5px 0px gray, 0 15px 20px 0px transparent;
+}
+.form .toggle--push .toggle--checkbox:checked + .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px #FF9900, inset 0 0 0 14px #f9f8f6;
+}
+.form .toggle--push .toggle--checkbox:checked + .toggle--btn:after {
+  background-color: #FF9900;
+}
+.form .toggle--push--glow {
+  background: #111;
+  padding: 50px 0;
+  margin-bottom: -50px;
+}
+.form .toggle--push--glow .toggle--btn {
+  background-color: #dfdfdf;
+  box-shadow: 0 5px 10px 0px #333, 0 0 0 3px #444444, 0 0 8px 2px transparent, 0 0 0 6px #919191;
+}
+.form .toggle--push--glow .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px #aaa, inset 0 0 0 14px #dfdfdf;
+}
+.form .toggle--push--glow .toggle--btn:after {
+  background-color: #aaa;
+  box-shadow: 0 0 0 2.5px #dfdfdf;
+}
+.form .toggle--push--glow .toggle--btn:hover:before {
+  box-shadow: inset 0 0 0 5px #777777, inset 0 0 0 14px #dfdfdf;
+}
+.form .toggle--push--glow .toggle--btn:hover:after {
+  background-color: #777777;
+}
+.form .toggle--push--glow .toggle--checkbox:checked + .toggle--btn {
+  box-shadow: 0 0px 8px 0 #0072ad, 0 0 0 3px #0094e0, 0 0 30px 0 #0094e0, 0 0 0 6px #777777;
+}
+.form .toggle--push--glow .toggle--checkbox:checked + .toggle--btn:before {
+  box-shadow: inset 0 0 0 5px #0094e0, inset 0 0 0 14px #dfdfdf;
+}
+.form .toggle--push--glow .toggle--checkbox:checked + .toggle--btn:after {
+  background-color: #0094e0;
+}
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 90px #FF9900, 0 0 90px #FF9900;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900;
+  }
+}
+.form .toggle--neon {
+  background-color: #222;
+  margin-top: 0;
+  padding: 50px 0;
+}
+.form .toggle--neon .toggle--btn {
+  font-family: Audiowide;
+  text-transform: uppercase;
+  font-size: 6.2em;
+  color: #333;
+  text-shadow: 0 0 10px transparent, 0 0 15px  transparent, 0 0 25px  transparent, 0 0 40px  transparent, 0 0 70px  transparent, 0 0 90px  transparent, 0 0 90px  transparent;
+}
+.form .toggle--neon .toggle--btn:before,
+.form .toggle--neon .toggle--btn:after {
+  display: inline-block;
+  margin: 0 20px;
+  transition: all 220ms ease-in-out;
+}
+.form .toggle--neon .toggle--btn:before {
+  content: attr(data-label-off);
+  animation: neon 1.5s ease-in-out infinite alternate;
+  animation-delay: 90ms;
+  color: #f1f1f1;
+}
+.form .toggle--neon .toggle--btn:after {
+  content: attr(data-label-on);
+}
+.form .toggle--neon .toggle--checkbox:checked + .toggle--btn:before {
+  animation: none;
+  color: #333;
+}
+.form .toggle--neon .toggle--checkbox:checked + .toggle--btn:after {
+  animation: neon 1.5s ease-in-out infinite alternate;
+  animation-delay: 90ms;
+  color: #f1f1f1;
 }
 .carousel {
   position: relative;
@@ -519,6 +1035,7 @@
 }
 .topMethods__title,
 .allMethods__title {
+  font-size: 26px;
   text-align: center;
 }
 .topMethods__content,
@@ -1464,6 +1981,7 @@ body {
 .container {
   width: 1200px;
   margin: auto;
+  padding: 40px 0px 0px;
 }
 video {
   position: sticky;
@@ -1481,21 +1999,15 @@ header {
   padding: 20px;
   z-index: 1000;
 }
+header .container {
+  padding: 0px;
+}
 .nav {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-}
-.nav .logo {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  right: 0;
-  width: 60px;
-  transform: translate(-80%, 0%);
-  border-radius: 50%;
 }
 .nav__section {
   display: flex;
