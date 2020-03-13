@@ -1035,6 +1035,7 @@
 }
 .topMethods__title,
 .allMethods__title {
+  font-size: 26px;
   text-align: center;
 }
 .topMethods__content,
@@ -1961,9 +1962,6 @@
   width: 0px;
   background: rgba(255, 255, 255, 0);
 }
-* {
-  transition: 0.2s;
-}
 body {
   margin: 0;
   padding: 0;
@@ -1983,7 +1981,7 @@ body {
 .container {
   width: 1200px;
   margin: auto;
-  padding: 20px 0px 0px;
+  padding: 40px 0px 0px;
 }
 video {
   position: sticky;

@@ -32,7 +32,7 @@ class ShowProfile extends Component {
         },
 
         chartDataTwo: {
-            labels: ['Активны', 'Неактивны'], //name
+            labels: ['Незавершенные', 'Завершенные'], //name
             datasets: [{
                 label: "Незаконченные",
                 backgroundColor: ["rgba(200,0,0,0.2)", "rgba(8, 60, 194, 0.2)", "rgb(7%, 82%, 82%, 0.2)"],
