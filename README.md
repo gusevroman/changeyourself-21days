@@ -1,18 +1,18 @@
-# change-yourself (https://#.herokuapp.com/)
+# change-yourself (https://change-yorself.herokuapp.com/)
 **change-yoursel** - Агрегатор авторских программ под любые задачи и интересы. Вы можете заниматься личностным ростом, спортом, пробовать новые хобби, найти интенсив своей мечты, одним словом формировать новые полезные для себя привычки. У каждого есть возможность загрузить на сервис свою собственную программу.
-## Our Mission
+## Скриншоты
 ![Страница авторизации](/preview_1.png)
 ![Список целей пользователя](/preview_2.png)
 ![Подробная информация о цели](/preview_3.png)
 ![Светлая тема](/preview_4.png)
 ![Темная тема](/preview_5.png)
 
-## Getting Started
+## Для запуска проекта:
 ```
 npm install
 npm run start-dev
 ```
-## MVP Functionality
+## MVP фунциональность
 * Создание авторской методики.
 * Выбор методики для своих целей.
 * Возможность оценивать методики.
@@ -22,14 +22,14 @@ npm run start-dev
 * Создание личных целей.
 * Возможность менять стилистику сайта.
 * Отслеживание своего прогресса выполнения цели.
-## Authors
+## Авторы
 - [Роман Гусев](https://github.com/gusevroman)
 - [Илья Трущелев](https://github.com/truschelev-ilya)
 - [Артём Героян](https://github.com/artemmartov)
 - [Александр Полубнев](https://github.com/alexpolubnev)
-## Next Steps
+## Следующие шаги
 - Сделать адаптивную верстку
 - Мобильное приложение
 - Расширить разнообразие стилей
-## Contributing
+## Контрибуция
 We conform to the [AirBnB JavaScript Style Guide](http://airbnb.io/projects/javascript)
