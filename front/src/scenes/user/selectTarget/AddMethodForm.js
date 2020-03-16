@@ -1,5 +1,5 @@
 import React from "react";
-import './icono.min.css'
+// import './icono.min.css'
 import AddNewDay from "./AddNewDay";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
