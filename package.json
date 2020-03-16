@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "npm install && concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd back && npm i && npm start",
+    "client": "cd front && npm i && npm start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
+  }
+}
