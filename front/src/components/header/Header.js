@@ -12,12 +12,13 @@ class Header extends Component {
   }
  
   render() {
-    const { isLoggined } = this.props;
+    const { isLoggined, color } = this.props;
+    const img = `/img/logo${color}.png`
     return (
       <header>
         <div className="container">
         <nav className="nav">
-        <img src="/img/21logo.jpg" className="logo"/>
+        <img src={img} className="logo"/>
           <div className="nav__section">
             <LinkButton href="/" name="Главная" />
             <LinkButton href="/methods" name="Все методики" />
@@ -27,7 +28,7 @@ class Header extends Component {
             <div className="nav__section">
               <LinkButton href="/newMethod" name="Добавить методику"/>
               <LinkButton href="/user" name="Мои цели"/>
-              <LinkButton href="/user/profile" name={`Профиль ${this.props.isLoggined}`}/>
+              <LinkButton href="/user/profile" name={`Профиль`}/>
             </div>
           </>
          : 
@@ -42,6 +43,7 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   isLoggined: state.isLoggined,
+  color: state.color,
 });
 
 const mapDispatchToProps = dispatch => ({});

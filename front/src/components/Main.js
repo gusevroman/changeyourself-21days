@@ -4,7 +4,9 @@ import Header from "./header/Header";
 import GlobalModal from "./GlobalModal";
 import { BrowserRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import './styles/color.css';
+import './styles/colorDark.css';
+import './styles/colorLight.css';
+
 
 class Main extends React.Component {
   

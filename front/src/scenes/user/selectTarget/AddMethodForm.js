@@ -1,5 +1,5 @@
 import React from "react";
-import './icono.min.css'
+// import './icono.min.css'
 import AddNewDay from "./AddNewDay";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
@@ -103,7 +103,7 @@ class NewMethodForm extends React.Component {
     };
 
     render() {
-        let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье'];
+        let uniqArr = ['Спорт', 'Образование', 'Хобби', 'Здоровье', 'Музыка', 'Технологии'];
         return (
             <div className="box">
                 <form id="form" className="topBefore" onSubmit={this.sendForm}>

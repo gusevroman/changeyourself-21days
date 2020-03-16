@@ -41,6 +41,18 @@ body {
     border-bottom: 2px solid @mainColor;
     box-shadow: 0 0 5px @mainColor;
     background: white;
+
+    .logo {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      right: 0;
+      width: 100px;
+      transform: translate(-70%, -30%);
+      border-radius: 50%;
+      border-bottom: 2px solid black;
+      box-shadow: 0 0 5px black;
+    }
   }
   .link {
     position: relative;
@@ -416,7 +428,7 @@ body {
     background: @mainColor;
   }
   .more-bt:hover i:before {
-    background: @mainColor;
+    background: @mainColor; 
   }
   .more-bt .fl,
   .more-bt .sfl {
@@ -456,6 +468,13 @@ body {
           border-left: solid 1px fade(@mainColorText, 10%);
         }
       }
+    }
+  }
+  .profile-image {
+    border: 2px solid black;
+    transition: .5s;
+    &:hover {
+      background-color: darken(white, 20%);
     }
   }
 }

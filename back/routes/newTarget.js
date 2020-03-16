@@ -20,7 +20,7 @@ router.post('/add', async (req, res) => {
         category: method.method.category,
         tag: method.method.tag[0],
         startDate: new Date(),
-        endDate: new Date().setDate(new Date().getDate() + method.method.method.length - 1),
+        endDate: new Date().setDate(new Date().getDate() + method.method.method.length),
         status: 'active',
         author: userId,
         actions: method.method.method
@@ -40,20 +40,20 @@ router.post('/add', async (req, res) => {
             port: 587,
             secure: false,
             auth: {
-                user: "ql1sa@yandex.ru",
-                pass: 'Qwert123'
+                user: "go.21days@yandex.ru",
+                pass: '89151004170'
             }
         });
 
         let info = await transporter.sendMail({
 
-            from: '"НУ ЗДАРОВА 👻" <ql1sa@yandex.ru>',
+            from: '"НУ ЗДАРОВА 👻" <go.21days@yandex.ru>',
             to: ourUser.email,
-            subject: "Вы записаны! ",
-            text: "Информация о записе",
+            // subject: "Вы записаны! ",
+            text: "Добавлена новая цель",
 
-            html: `<b>Здравствуйте! Вы выбрали ${method.method.title}. Методика была добавлена.</b>
-                                <p>Список методик: ${allTitleTarget} </p>`
+            html: `<b>Здравствуйте! Вы выбрали ${method.method.title}. Цель была добавлена.</b>
+                                <p>Список ваших целей: ${allTitleTarget} </p>`
         });
 
         console.log("Message sent: %s", info.messageId);
