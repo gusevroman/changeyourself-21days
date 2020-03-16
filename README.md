@@ -26,5 +26,3 @@ npm start
 - Сделать адаптивную верстку
 - Мобильное приложение
 - Расширить разнообразие стилей
-## Контрибуция
-We conform to the [AirBnB JavaScript Style Guide](http://airbnb.io/projects/javascript)
