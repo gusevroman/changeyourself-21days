@@ -21,7 +21,7 @@ npm start
 - [Roman Gusev](https://github.com/gusevroman)
 - [Ilya Truschelev](https://github.com/truschelev-ilya)
 - [Artem Geroyan](https://github.com/artemmartov)
-- [alex Polubnev](https://github.com/alexpolubnev)
+- [Alex Polubnev](https://github.com/alexpolubnev)
 ## Next steps
 - Make adaptive layout
 - Mobile app
