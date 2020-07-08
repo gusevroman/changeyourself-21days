@@ -1,28 +1,28 @@
    ## [21days-change-yourself](https://changeyourself-21days.herokuapp.com/)
-**21days-change-yourself** - Агрегатор авторских методик под любые задачи и интересы. Вы можете заниматься личностным ростом, спортом, пробовать новые хобби, найти интенсив своей мечты. Одним словом, формировать новые полезные для себя привычки. У каждого есть возможность загрузить на сервис свою собственную методику.
-## Скриншоты
+**21days-change-yourself** - Aggregator of copyright methods for any tasks and interests. You can engage in personal growth, sports, try new hobbies, find the intensity of your dreams. In a word, to form new useful habits for yourself. Everyone has the opportunity to upload their own methodology to the service.
+## Screenshots
 ![Страница авторизации](/public/download) 
 
-## Для запуска проекта:
+## To start a project:
 ```
 npm start
 ```
-## MVP фунциональность
-* Создание авторской методики.
-* Выбор методики для своих целей.
-* Возможность оценивать методики.
-* Вывод самых популярных методик.
-* Поиск по всем методикам.
-* Поиск нужным категориям.
-* Создание личных целей.
-* Возможность менять стилистику сайта.
-* Отслеживание своего прогресса выполнения цели.
-## Авторы
-- [Роман Гусев](https://github.com/gusevroman)
+## MVP Functionality
+* Creation of an author's technique.
+* The choice of methods for their own purposes.
+* Ability to evaluate techniques.
+* Conclusion of the most popular methods.
+* Search by all methods.
+* Search for the desired categories.
+* Create personal goals.
+* Ability to change the style of the site.
+* Track your progress towards a goal.
+## Authors
+- [Roman Gusev](https://github.com/gusevroman)
 - [Илья Трущелев](https://github.com/truschelev-ilya)
 - [Артём Героян](https://github.com/artemmartov)
 - [Александр Полубнев](https://github.com/alexpolubnev)
-## Следующие шаги
-- Сделать адаптивную верстку
-- Мобильное приложение
-- Расширить разнообразие стилей
+## Next steps
+- Make adaptive layout
+- Mobile app
+- Expand a variety of styles
