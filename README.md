@@ -19,9 +19,9 @@ npm start
 * Track your progress towards a goal.
 ## Authors
 - [Roman Gusev](https://github.com/gusevroman)
-- [Илья Трущелев](https://github.com/truschelev-ilya)
-- [Артём Героян](https://github.com/artemmartov)
-- [Александр Полубнев](https://github.com/alexpolubnev)
+- [Ilya Truschelev](https://github.com/truschelev-ilya)
+- [Artem Geroyan](https://github.com/artemmartov)
+- [alex Polubnev](https://github.com/alexpolubnev)
 ## Next steps
 - Make adaptive layout
 - Mobile app
